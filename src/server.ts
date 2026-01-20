@@ -140,10 +140,11 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
 });
 
 // Start server
-app.listen(PORT, () => {
-  logger.info(`🚀 SoftIonyx server running on port ${PORT}`);
+const HOST = process.env.HOST || '0.0.0.0';
+app.listen(PORT, HOST, () => {
+  logger.info(`🚀 SoftIonyx server running on http://${HOST}:${PORT}`);
   logger.info(`📝 Environment: ${process.env.NODE_ENV || 'development'}`);
-  console.log(`🚀 SoftIonyx server running on port ${PORT}`);
+  console.log(`🚀 SoftIonyx server running on http://${HOST}:${PORT}`);
   console.log(`📝 Environment: ${process.env.NODE_ENV || 'development'}`);
 });
 
