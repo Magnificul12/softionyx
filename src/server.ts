@@ -141,10 +141,11 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
 
 // Start server
 const HOST = process.env.HOST || '0.0.0.0';
-app.listen(PORT, HOST, () => {
-  logger.info(`🚀 SoftIonyx server running on http://${HOST}:${PORT}`);
+const serverPort = typeof PORT === 'string' ? parseInt(PORT, 10) : PORT;
+app.listen(serverPort, HOST, () => {
+  logger.info(`🚀 SoftIonyx server running on http://${HOST}:${serverPort}`);
   logger.info(`📝 Environment: ${process.env.NODE_ENV || 'development'}`);
-  console.log(`🚀 SoftIonyx server running on http://${HOST}:${PORT}`);
+  console.log(`🚀 SoftIonyx server running on http://${HOST}:${serverPort}`);
   console.log(`📝 Environment: ${process.env.NODE_ENV || 'development'}`);
 });
 
