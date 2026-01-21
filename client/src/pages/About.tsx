@@ -1,3 +1,5 @@
+import { Icon } from '@iconify/react';
+
 export default function About() {
   return (
     <div className="pt-32 pb-20 min-h-screen">
@@ -36,7 +38,7 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="group p-8 rounded-2xl glass border border-white/5 hover:border-indigo-500/30 hover:bg-white/[0.04] transition-all duration-500 backdrop-blur-md card-glow">
               <div className="h-12 w-12 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
-                <span className="iconify" data-icon="lucide:target" data-width="24"></span>
+                <Icon icon="lucide:target" width={24} />
               </div>
               <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-indigo-300 transition-colors">Our Mission</h3>
               <p className="text-slate-400 text-sm leading-relaxed font-light group-hover:text-slate-300 transition-colors">
@@ -46,7 +48,7 @@ export default function About() {
             </div>
             <div className="group p-8 rounded-2xl glass border border-white/5 hover:border-purple-500/30 hover:bg-white/[0.04] transition-all duration-500 backdrop-blur-md card-glow">
               <div className="h-12 w-12 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
-                <span className="iconify" data-icon="lucide:eye" data-width="24"></span>
+                <Icon icon="lucide:eye" width={24} />
               </div>
               <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-purple-300 transition-colors">Our Vision</h3>
               <p className="text-slate-400 text-sm leading-relaxed font-light group-hover:text-slate-300 transition-colors">
@@ -56,7 +58,7 @@ export default function About() {
             </div>
             <div className="group p-8 rounded-2xl glass border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500 backdrop-blur-md card-glow">
               <div className="h-12 w-12 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
-                <span className="iconify" data-icon="lucide:heart" data-width="24"></span>
+                <Icon icon="lucide:heart" width={24} />
               </div>
               <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-emerald-300 transition-colors">Our Values</h3>
               <ul className="text-slate-400 text-sm space-y-2 font-light group-hover:text-slate-300 transition-colors">
@@ -90,12 +92,11 @@ export default function About() {
       <section className="py-20 relative z-10 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-12 text-center">Our Team</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { name: 'John Doe', role: 'CEO & Founder', bio: 'Visionary leader with 15+ years in tech', initials: 'JD' },
-              { name: 'Jane Smith', role: 'CTO', bio: 'Expert in cloud architecture and DevOps', initials: 'JS' },
-              { name: 'Mike Johnson', role: 'Lead Developer', bio: 'Full-stack developer specializing in modern frameworks', initials: 'MJ' },
-              { name: 'Sarah Williams', role: 'UX/UI Designer', bio: 'Creating beautiful and intuitive user experiences', initials: 'SW' }
+              { name: 'Vutcari Ion', role: 'CEO & Founder', bio: 'Leading strategy and innovation for SoftIonyx.', initials: 'VI' },
+              { name: 'Popovici Vasile', role: 'CTO', bio: 'Architecting reliable, scalable, and secure platforms.', initials: 'PV' },
+              { name: 'Tertea Nicu', role: 'Lead Developer', bio: 'Building high-quality software with modern stacks.', initials: 'TN' }
             ].map((member, idx) => (
               <div key={idx} className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-sm hover:bg-white/[0.04] transition-all">
                 <div className="h-16 w-16 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-xl font-semibold mb-4">
@@ -115,22 +116,15 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-12">Achievements & Milestones</h2>
           <div className="space-y-8">
-            {[
-              { year: '2020', title: 'Company Founded', desc: 'Started with a vision to transform businesses through technology' },
-              { year: '2021', title: '100+ Projects Completed', desc: 'Reached milestone of 100 successful project deliveries' },
-              { year: '2022', title: 'International Expansion', desc: 'Extended services to clients across 5 countries' },
-              { year: '2023', title: '500+ Happy Clients', desc: 'Achieved 500+ satisfied clients worldwide' }
-            ].map((item, idx) => (
-              <div key={idx} className="flex gap-8 items-start">
-                <div className="flex-shrink-0 w-20 h-20 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 font-semibold text-lg">
-                  {item.year}
-                </div>
-                <div className="flex-1 pt-2">
-                  <h4 className="text-white font-medium text-lg mb-2">{item.title}</h4>
-                  <p className="text-slate-400 text-sm font-light">{item.desc}</p>
-                </div>
+            <div className="flex gap-8 items-start">
+              <div className="flex-shrink-0 w-20 h-20 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 font-semibold text-lg">
+                2026
               </div>
-            ))}
+              <div className="flex-1 pt-2">
+                <h4 className="text-white font-medium text-lg mb-2">Company Founded</h4>
+                <p className="text-slate-400 text-sm font-light">Started with a vision to transform businesses through technology</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState, memo } from 'react';
+import { Icon } from '@iconify/react';
 
 const services = [
   {
@@ -123,8 +124,8 @@ function Services() {
             <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-6">Comprehensive IT Ecosystem</h2>
             <p className="text-slate-400 text-lg font-light leading-relaxed">End-to-end digital solutions tailored to complex enterprise environments. We build the systems that power tomorrow.</p>
           </div>
-          <Link to="/services" className="text-white hover:text-indigo-300 text-sm font-medium flex items-center gap-2 transition-colors border-b border-transparent hover:border-indigo-300 pb-0.5">
-            View all services <span className="iconify" data-icon="lucide:arrow-right"></span>
+          <Link to="/services#service-details" className="text-white hover:text-indigo-300 text-sm font-medium flex items-center gap-2 transition-colors border-b border-transparent hover:border-indigo-300 pb-0.5">
+            View all services <Icon icon="lucide:arrow-right" width={16} />
           </Link>
         </div>
 
@@ -172,7 +173,7 @@ function Services() {
                 <div className={`absolute inset-0 bg-gradient-to-br ${colors.gradient} via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
                 <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className={`h-12 w-12 rounded-lg ${colors.bg} border ${colors.border} flex items-center justify-center ${colors.text} mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 relative z-10 shadow-lg`}>
-                  <span className="iconify group-hover:scale-110 transition-transform duration-300" data-icon={service.icon} data-width="24"></span>
+                  <Icon icon={service.icon} width={24} />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-3 relative z-10 group-hover:text-indigo-300 transition-colors">{service.title}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed relative z-10 font-light group-hover:text-slate-300 transition-colors">{service.description}</p>
