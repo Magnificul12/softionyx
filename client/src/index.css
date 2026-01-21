@@ -92,6 +92,90 @@ body {
   animation: gradient-shimmer 3s infinite;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .animate-blob,
+  .animate-blob-reverse,
+  .animate-grid,
+  .animate-text-gradient,
+  .animate-shimmer,
+  .animate-sheen-diag,
+  .animate-pulse-glow,
+  .shimmer,
+  .service-modal-enter,
+  .service-overlay-enter,
+  .service-grid-enter {
+    animation: none !important;
+  }
+}
+
+@keyframes service-modal-in {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes service-overlay-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes service-grid-in {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-modal-enter {
+  animation: service-modal-in 260ms ease-out both;
+}
+
+.service-overlay-enter {
+  animation: service-overlay-in 200ms ease-out both;
+}
+
+.service-grid-enter {
+  animation: service-grid-in 220ms ease-out both;
+}
+
+.service-card {
+  transition: transform 280ms ease, box-shadow 280ms ease, border-color 280ms ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+@keyframes sheen-diag {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.25;
+  }
+  45% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateX(320%);
+    opacity: 0;
+  }
+}
+
+.animate-sheen-diag {
+  animation: sheen-diag 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
 /* Infinite Scroll for Logos */
 @keyframes scroll {
   0% { transform: translateX(0); }

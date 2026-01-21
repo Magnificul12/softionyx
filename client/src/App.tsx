@@ -5,6 +5,8 @@ import ErrorBoundary from './components/ErrorBoundary';
 import Home from './pages/Home';
 import About from './pages/About';
 import ServicesPage from './pages/ServicesPage';
+import Solutions from './pages/Solutions';
+import Store from './pages/Store';
 import Portfolio from './pages/Portfolio';
 import Careers from './pages/Careers';
 import Blog from './pages/Blog';
@@ -24,6 +26,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<ServicesPage />} />
+              <Route path="/solutions" element={<Solutions />} />
+              <Route path="/store" element={<Store />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/careers" element={<Careers />} />
               <Route path="/blog" element={<Blog />} />

@@ -39,11 +39,10 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group cursor-pointer overflow-visible">
           <div className="relative flex items-center justify-center overflow-visible">
-            <span className="absolute inset-0 bg-indigo-500 blur-lg opacity-20 group-hover:opacity-50 transition-opacity duration-300"></span>
             <img 
               src="/logo.png" 
               alt="SoftIonyx Logo" 
-              className="relative z-10 h-28 md:h-32 w-auto group-hover:opacity-90 transition-opacity duration-300 object-contain"
+              className="relative z-10 h-28 md:h-32 w-auto group-hover:opacity-90 transition-opacity duration-300 object-contain drop-shadow-[0_6px_18px_rgba(15,23,42,0.45)]"
               style={{ transform: 'scale(1.2)' }}
             />
           </div>
@@ -62,6 +61,28 @@ export default function Header() {
             Services
           </Link>
           <Link 
+            to="/solutions" 
+            className={`relative hover:text-white transition-colors duration-200 ${
+              location.pathname === '/solutions' ? 'text-white' : 'text-slate-400'
+            }`}
+          >
+            {location.pathname === '/solutions' && (
+              <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-indigo-500"></span>
+            )}
+            Solutions
+          </Link>
+          <Link 
+            to="/store" 
+            className={`relative hover:text-white transition-colors duration-200 ${
+              location.pathname === '/store' ? 'text-white' : 'text-slate-400'
+            }`}
+          >
+            {location.pathname === '/store' && (
+              <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-indigo-500"></span>
+            )}
+            Store
+          </Link>
+          <Link 
             to="/about" 
             className={`relative hover:text-white transition-colors duration-200 ${
               location.pathname === '/about' ? 'text-white' : 'text-slate-400'
@@ -71,17 +92,6 @@ export default function Header() {
               <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-indigo-500"></span>
             )}
             About
-          </Link>
-          <Link 
-            to="/portfolio" 
-            className={`relative hover:text-white transition-colors duration-200 ${
-              location.pathname === '/portfolio' ? 'text-white' : 'text-slate-400'
-            }`}
-          >
-            {location.pathname === '/portfolio' && (
-              <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-indigo-500"></span>
-            )}
-            Portfolio
           </Link>
           <Link 
             to="/contact" 
@@ -115,20 +125,7 @@ export default function Header() {
                 Logout
               </button>
             </>
-          ) : (
-            <>
-              <Link to="/login" className="hidden md:block text-sm font-medium hover:text-white transition-colors">Log in</Link>
-              <Link
-                to="/register"
-                className="group relative inline-flex h-9 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-950"
-              >
-                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#6366f1_0%,#8b5cf6_50%,#6366f1_100%)]"></span>
-                <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-4 py-1 text-xs font-medium text-white backdrop-blur-3xl hover:bg-slate-900 transition-all group-hover:shadow-lg group-hover:shadow-indigo-500/30">
-                  Get Started
-                </span>
-              </Link>
-            </>
-          )}
+          ) : null}
           
           {/* Mobile menu button */}
           <button
@@ -146,8 +143,9 @@ export default function Header() {
         <div className="md:hidden border-t border-white/5 bg-slate-950/95 backdrop-blur-xl">
           <div className="px-6 py-4 space-y-4">
             <Link to="/services" className="block text-sm font-medium hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Services</Link>
+            <Link to="/solutions" className="block text-sm font-medium hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Solutions</Link>
+            <Link to="/store" className="block text-sm font-medium hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Store</Link>
             <Link to="/about" className="block text-sm font-medium hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
-            <Link to="/portfolio" className="block text-sm font-medium hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Portfolio</Link>
             <Link to="/contact" className="block text-sm font-medium hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
             {isAuthenticated ? (
               <>
@@ -164,12 +162,7 @@ export default function Header() {
                   Logout
                 </button>
               </>
-            ) : (
-              <>
-                <Link to="/login" className="block text-sm font-medium hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Log in</Link>
-                <Link to="/register" className="block text-sm font-medium hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Get Started</Link>
-              </>
-            )}
+            ) : null}
           </div>
         </div>
       )}

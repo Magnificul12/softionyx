@@ -95,6 +95,13 @@
   opacity: 0.3;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .gradient-orb,
+  .grid-pattern {
+    animation: none !important;
+  }
+}
+
 @keyframes grid-move {
   0% {
     transform: translate(0, 0);

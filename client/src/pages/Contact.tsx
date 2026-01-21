@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { Icon } from '@iconify/react';
 import axios from '../utils/axios';
 
 export default function Contact() {
+  const location = useLocation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,6 +17,15 @@ export default function Contact() {
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    if (location.hash === '#contact-info') {
+      const target = document.getElementById('contact-info');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }, [location.hash]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -58,7 +70,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Content */}
-      <section className="py-20 relative z-10">
+      <section id="contact-info" className="py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Info */}
@@ -67,48 +79,43 @@ export default function Contact() {
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="h-12 w-12 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 flex-shrink-0">
-                    <span className="iconify" data-icon="lucide:mail" data-width="20"></span>
+                    <Icon icon="lucide:mail" width={20} />
                   </div>
                   <div>
                     <h3 className="text-white font-medium mb-1">Email</h3>
-                    <p className="text-slate-400 text-sm"><a href="mailto:info@softionyx.com" className="hover:text-indigo-400 transition-colors">info@softionyx.com</a></p>
-                    <p className="text-slate-400 text-sm"><a href="mailto:support@softionyx.com" className="hover:text-indigo-400 transition-colors">support@softionyx.com</a></p>
+                    <p className="text-slate-400 text-sm">
+                      <a href="mailto:softionyxgroup@gmail.com" className="hover:text-indigo-400 transition-colors">
+                        softionyxgroup@gmail.com
+                      </a>
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="h-12 w-12 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 flex-shrink-0">
-                    <span className="iconify" data-icon="lucide:phone" data-width="20"></span>
+                    <Icon icon="lucide:phone" width={20} />
                   </div>
                   <div>
                     <h3 className="text-white font-medium mb-1">Phone</h3>
-                    <p className="text-slate-400 text-sm"><a href="tel:+1234567890" className="hover:text-indigo-400 transition-colors">+1 (234) 567-890</a></p>
+                    <p className="text-slate-400 text-sm">
+                      <a href="tel:+37378200341" className="hover:text-indigo-400 transition-colors">
+                        +373 78 200 341
+                      </a>
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="h-12 w-12 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 flex-shrink-0">
-                    <span className="iconify" data-icon="lucide:map-pin" data-width="20"></span>
+                    <Icon icon="lucide:map-pin" width={20} />
                   </div>
                   <div>
                     <h3 className="text-white font-medium mb-1">Address</h3>
-                    <p className="text-slate-400 text-sm">123 Tech Street<br />San Francisco, CA 94102<br />United States</p>
+                    <p className="text-slate-400 text-sm">
+                      Mun. Chisinau Str. Nicolae Titulescu 36/B
+                    </p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-12">
-                <h3 className="text-white font-medium mb-4">Follow Us</h3>
-                <div className="flex gap-4">
-                  <a href="#" className="h-10 w-10 rounded-lg bg-white/[0.02] border border-white/5 flex items-center justify-center text-slate-400 hover:text-white hover:border-indigo-500/20 transition-all">
-                    <span className="iconify" data-icon="lucide:linkedin" data-width="20"></span>
-                  </a>
-                  <a href="#" className="h-10 w-10 rounded-lg bg-white/[0.02] border border-white/5 flex items-center justify-center text-slate-400 hover:text-white hover:border-indigo-500/20 transition-all">
-                    <span className="iconify" data-icon="lucide:twitter" data-width="20"></span>
-                  </a>
-                  <a href="#" className="h-10 w-10 rounded-lg bg-white/[0.02] border border-white/5 flex items-center justify-center text-slate-400 hover:text-white hover:border-indigo-500/20 transition-all">
-                    <span className="iconify" data-icon="lucide:github" data-width="20"></span>
-                  </a>
-                </div>
-              </div>
             </div>
 
             {/* Contact Form */}
