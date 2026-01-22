@@ -11,7 +11,18 @@ const router = express.Router();
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Invalid email address'),
-  phone: z.string().optional(),
+  phone: z.string()
+    .optional()
+    .refine((val) => {
+      if (!val) return true;
+      // Verifică formatul (doar cifre și caractere telefonice)
+      if (!/^[0-9+\-() ]+$/.test(val)) return false;
+      // Verifică că nu are mai mult de 15 cifre
+      const digitsOnly = val.replace(/[^0-9]/g, '');
+      return digitsOnly.length <= 15;
+    }, {
+      message: 'Phone number can only contain numbers and phone characters (+, -, spaces, parentheses), and cannot exceed 15 digits',
+    }),
   subject: z.string().min(3, 'Subject must be at least 3 characters'),
   message: z.string().min(10, 'Message must be at least 10 characters'),
 });
