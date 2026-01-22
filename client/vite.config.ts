@@ -7,6 +7,7 @@ export default defineConfig({
     postcss: './postcss.config.js',
   },
   server: {
+    host: '0.0.0.0',
     port: 5173,
     proxy: {
       '/api': {

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState, memo } from 'react';
+import { Icon } from '@iconify/react';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -43,7 +44,7 @@ function Footer() {
             <div className="flex items-center gap-2 mb-6">
               <div className="relative">
                 <span className="absolute inset-0 bg-indigo-500 blur-md opacity-30"></span>
-                <span className="iconify text-indigo-400 relative z-10" data-icon="lucide:hexagon" data-width="24"></span>
+                <Icon icon="lucide:hexagon" width={24} className="text-indigo-400 relative z-10" />
               </div>
               <span className="text-white font-semibold tracking-tight text-lg">SOFTIONYX</span>
             </div>
@@ -56,19 +57,19 @@ function Footer() {
             <h4 className="text-white font-semibold text-sm mb-6">Services</h4>
             <ul className="space-y-3 text-xs text-slate-400 font-light">
               <li><Link to="/services" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
-                <span className="w-0 group-hover:w-1.5 h-0.5 bg-indigo-400 transition-all duration-300"></span>
+                <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 Web Development
               </Link></li>
               <li><Link to="/services" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
-                <span className="w-0 group-hover:w-1.5 h-0.5 bg-indigo-400 transition-all duration-300"></span>
+                <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 Frontend & Backend
               </Link></li>
               <li><Link to="/services" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
-                <span className="w-0 group-hover:w-1.5 h-0.5 bg-indigo-400 transition-all duration-300"></span>
+                <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 Blockchain Analytics
               </Link></li>
               <li><Link to="/services" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
-                <span className="w-0 group-hover:w-1.5 h-0.5 bg-indigo-400 transition-all duration-300"></span>
+                <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 Programming
               </Link></li>
             </ul>
@@ -78,19 +79,19 @@ function Footer() {
             <h4 className="text-white font-semibold text-sm mb-6">Company</h4>
             <ul className="space-y-3 text-xs text-slate-400 font-light">
               <li><Link to="/about" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
-                <span className="w-0 group-hover:w-1.5 h-0.5 bg-indigo-400 transition-all duration-300"></span>
+                <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 About Us
               </Link></li>
               <li><Link to="/careers" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
-                <span className="w-0 group-hover:w-1.5 h-0.5 bg-indigo-400 transition-all duration-300"></span>
+                <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 Careers
               </Link></li>
               <li><Link to="/blog" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
-                <span className="w-0 group-hover:w-1.5 h-0.5 bg-indigo-400 transition-all duration-300"></span>
+                <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 Blog
               </Link></li>
               <li><Link to="/contact" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
-                <span className="w-0 group-hover:w-1.5 h-0.5 bg-indigo-400 transition-all duration-300"></span>
+                <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 Contact
               </Link></li>
             </ul>
@@ -100,15 +101,15 @@ function Footer() {
             <h4 className="text-white font-semibold text-sm mb-6">Legal</h4>
             <ul className="space-y-3 text-xs text-slate-400 font-light">
               <li><a href="#" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
-                <span className="w-0 group-hover:w-1.5 h-0.5 bg-indigo-400 transition-all duration-300"></span>
+                <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 Privacy Policy
               </a></li>
               <li><a href="#" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
-                <span className="w-0 group-hover:w-1.5 h-0.5 bg-indigo-400 transition-all duration-300"></span>
+                <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 Terms of Service
               </a></li>
               <li><a href="#" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
-                <span className="w-0 group-hover:w-1.5 h-0.5 bg-indigo-400 transition-all duration-300"></span>
+                <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 Cookie Policy
               </a></li>
             </ul>
@@ -119,13 +120,13 @@ function Footer() {
           <p className="text-slate-500 text-xs">© {currentYear} SoftIonyx Technologies. All rights reserved.</p>
           <div className="flex gap-4 text-slate-400">
             <a href="#" className="h-9 w-9 rounded-lg glass border border-white/10 flex items-center justify-center hover:text-indigo-400 hover:border-indigo-500/30 hover:bg-indigo-500/10 transition-all group">
-              <span className="iconify group-hover:scale-110 transition-transform" data-icon="lucide:twitter" data-width="18"></span>
+              <Icon icon="lucide:twitter" width={18} className="group-hover:scale-110 transition-transform" />
             </a>
             <a href="#" className="h-9 w-9 rounded-lg glass border border-white/10 flex items-center justify-center hover:text-indigo-400 hover:border-indigo-500/30 hover:bg-indigo-500/10 transition-all group">
-              <span className="iconify group-hover:scale-110 transition-transform" data-icon="lucide:github" data-width="18"></span>
+              <Icon icon="lucide:github" width={18} className="group-hover:scale-110 transition-transform" />
             </a>
             <a href="#" className="h-9 w-9 rounded-lg glass border border-white/10 flex items-center justify-center hover:text-indigo-400 hover:border-indigo-500/30 hover:bg-indigo-500/10 transition-all group">
-              <span className="iconify group-hover:scale-110 transition-transform" data-icon="lucide:linkedin" data-width="18"></span>
+              <Icon icon="lucide:linkedin" width={18} className="group-hover:scale-110 transition-transform" />
             </a>
           </div>
         </div>

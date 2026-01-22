@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, memo } from 'react';
+import { Icon } from '@iconify/react';
 
 function About() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -54,7 +55,7 @@ function About() {
                   style={{ opacity: isVisible ? 1 : 0 }}
                 >
                   <div className="mt-1 flex-shrink-0 h-8 w-8 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
-                    <span className="iconify" data-icon={item.icon} data-width="16"></span>
+                    <Icon icon={item.icon} width={16} />
                   </div>
                   <div>
                     <h4 className="text-white font-medium text-lg">{item.title}</h4>
@@ -74,12 +75,12 @@ function About() {
                   { label: 'Projects', value: '100+', icon: 'lucide:folder' },
                   { label: 'Clients', value: '50+', icon: 'lucide:users' },
                   { label: 'Technologies', value: '10+', icon: 'lucide:code' },
-                  { label: 'Experience', value: '5+', subtext: 'Years', icon: 'lucide:calendar' }
+                  { label: 'Experience', value: '1+', subtext: 'Years', icon: 'lucide:calendar' }
                 ].map((stat, idx) => (
                   <div key={idx} className="group/stat glass rounded-lg p-6 border border-white/5 hover:border-indigo-500/30 transition-all duration-300 hover:bg-white/[0.03]">
                     <div className="flex items-center gap-3 mb-3">
                       <div className="h-8 w-8 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover/stat:scale-110 transition-transform">
-                        <span className="iconify" data-icon={stat.icon} data-width="16"></span>
+                        <Icon icon={stat.icon} width={16} />
                       </div>
                       <div className="text-xs text-slate-500 font-medium uppercase tracking-wider">{stat.label}</div>
                     </div>

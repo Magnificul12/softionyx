@@ -41,8 +41,14 @@ export const contactFormTemplate = (data: EmailData): string => {
           </div>
           <div class="field">
             <span class="label">Email:</span>
-            <span class="value">${data.email || 'N/A'}</span>
+            <span class="value"><a href="mailto:${data.email || ''}">${data.email || 'N/A'}</a></span>
           </div>
+          ${data.phone ? `
+          <div class="field">
+            <span class="label">Phone:</span>
+            <span class="value"><a href="tel:${data.phone}">${data.phone}</a></span>
+          </div>
+          ` : ''}
           <div class="field">
             <span class="label">Subject:</span>
             <span class="value">${data.subject || 'N/A'}</span>

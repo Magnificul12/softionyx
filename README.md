@@ -68,17 +68,25 @@ psql -d softionyx -f database/schema.sql
 
 ### 3. Environment Configuration
 
-Create a `.env` file in the root directory:
+**Important:** After cloning the repository, you need to create a `.env` file.
+
+1. Copy the example file:
+```bash
+cp .env.example .env
+```
+
+2. Edit `.env` and fill in your configuration values:
 
 ```env
 # Database Configuration
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=softionyx
-DB_USER=postgres
+DB_USER=deur  # or your PostgreSQL username
 DB_PASSWORD=your_password_here
 
 # JWT Secret (generate a strong random string, min 32 characters)
+# Generate one using: openssl rand -base64 32
 JWT_SECRET=your_super_secret_jwt_key_here_min_32_characters
 
 # Server Configuration
@@ -86,21 +94,23 @@ PORT=3000
 NODE_ENV=development
 BASE_URL=http://localhost:3000
 
-# Email Configuration (SMTP)
+# Email Configuration (SMTP) - Gmail
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=your_email@gmail.com
 SMTP_PASS=your_app_password_here
-CONTACT_EMAIL=contact@softionyx.com
+CONTACT_EMAIL=your_contact_email@example.com
 
 # Logging
 LOG_LEVEL=info
 ```
 
 **Important:** 
-- Generate a strong JWT_SECRET (min 32 characters)
+- Generate a strong JWT_SECRET (min 32 characters) - use: `openssl rand -base64 32`
 - For Gmail, use an App Password (not your regular password)
+- Update `DB_USER` to match your PostgreSQL username (default: `deur`)
 - Update BASE_URL for production
+- The `.env` file is gitignored for security - each developer needs their own copy
 
 ### 4. Run Development Server
 

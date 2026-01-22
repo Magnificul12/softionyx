@@ -79,6 +79,8 @@ export default function Hero() {
       // WebGL Aurora Background
       const scene = new THREE.Scene();
       const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const maxPixelRatio = prefersReducedMotion ? 1 : 1.5;
       const renderer = new THREE.WebGLRenderer({ 
         canvas: canvasRef.current, 
         alpha: true,
@@ -86,7 +88,7 @@ export default function Hero() {
         antialias: false // Disable antialiasing for better performance
       });
       renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit pixel ratio
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, maxPixelRatio)); // Limit pixel ratio
 
       const material = new THREE.ShaderMaterial({
         uniforms: {
@@ -179,7 +181,12 @@ export default function Hero() {
       meshRef.current = mesh;
 
       let lastTime = 0;
-      const targetFPS = 60; // Reduced to 60 FPS for better stability
+      if (prefersReducedMotion) {
+        renderer.render(scene, camera);
+        return;
+      }
+
+      const targetFPS = 45; // Reduced for better stability and lower GPU usage
       const frameInterval = 1000 / targetFPS;
       isAnimating = true;
 
@@ -224,6 +231,7 @@ export default function Hero() {
           if (renderer && material) {
             renderer.setSize(window.innerWidth, window.innerHeight);
             material.uniforms.iResolution.value.set(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, maxPixelRatio));
           }
         }, 150);
       };
@@ -337,9 +345,11 @@ export default function Hero() {
         
         <h1 className="animate-in delay-100 text-5xl md:text-7xl lg:text-8xl font-medium text-white tracking-tighter mb-8 max-w-5xl mx-auto leading-[1.1]">
           Scale your vision with <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-white via-purple-200 to-indigo-300 animate-text-gradient relative inline-block">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-white via-purple-200 to-indigo-300 animate-text-gradient relative inline-block overflow-hidden">
             Intelligent Systems
-            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></span>
+            <span className="absolute inset-0 pointer-events-none mix-blend-screen">
+              <span className="absolute inset-y-0 left-[-60%] w-[50%] bg-[linear-gradient(120deg,transparent,rgba(255,255,255,0.15),rgba(255,255,255,0.55),rgba(255,255,255,0.15),transparent)] blur-sm skew-x-[-12deg] animate-sheen-diag"></span>
+            </span>
           </span>
         </h1>
         
