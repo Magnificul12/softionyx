@@ -111,9 +111,9 @@ export default function About() {
               }
             `}</style>
             <div 
-              className="flex gap-6"
+              className="flex gap-4 md:gap-6"
               style={{
-                animation: `infiniteScroll ${teamMembers.length * 15}s linear infinite`,
+                animation: `infiniteScroll ${teamMembers.length * 12}s linear infinite`,
                 width: 'max-content',
                 willChange: 'transform'
               }}
@@ -121,12 +121,7 @@ export default function About() {
               {duplicatedMembers.map((member, idx) => (
                 <div 
                   key={idx}
-                  className="flex-shrink-0 p-6 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-sm hover:bg-white/[0.04] transition-all"
-                  style={{ 
-                    width: `calc((100vw - 7.5rem) / ${teamMembers.length})`,
-                    minWidth: '400px',
-                    maxWidth: '600px'
-                  }}
+                  className="flex-shrink-0 p-4 md:p-6 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-sm hover:bg-white/[0.04] transition-all w-[280px] md:w-[calc((100vw-7.5rem)/4)] md:min-w-[400px] md:max-w-[600px]"
                 >
                   <div className="h-16 w-16 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-xl font-semibold mb-4">
                     {member.initials}
