@@ -17,7 +17,7 @@ const serviceTypes = [
 
 export default function RequestHelp() {
   const navigate = useNavigate();
-  const { user, isAuthenticated, loadUser } = useAuthStore();
+  const { isAuthenticated, loadUser } = useAuthStore();
   const [formData, setFormData] = useState({
     name: '',
     email: '',

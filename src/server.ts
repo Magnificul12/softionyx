@@ -18,20 +18,110 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Security middleware
-app.use(helmet({
-  contentSecurityPolicy: {
-    directives: {
+// Security middleware - configure based on actual request protocol
+// Trust proxy if behind nginx (for X-Forwarded-Proto header)
+app.set('trust proxy', 1);
+
+app.use((req, res, next) => {
+  // Determine if request is HTTPS (check X-Forwarded-Proto from nginx or direct connection)
+  const isHttps = req.secure || req.headers['x-forwarded-proto'] === 'https';
+  
+  // Build CSP directives
+  const cspDirectives: any = {
       defaultSrc: ["'self'"],
       styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
       fontSrc: ["'self'", "https://fonts.gstatic.com"],
       scriptSrc: ["'self'", "https://cdn.jsdelivr.net", "https://cdnjs.cloudflare.com", "https://my.spline.design"],
       imgSrc: ["'self'", "data:", "https:", "blob:"],
-      connectSrc: ["'self'", "https://my.spline.design"],
+      connectSrc: [
+        "'self'",
+        "https://my.spline.design",
+        "https://api.iconify.design",
+        "https://api.simplesvg.com",
+        "https://api.unisvg.com"
+      ],
+      
       frameSrc: ["'self'", "https://my.spline.design"],
+  };
+  
+  // Only add upgrade-insecure-requests for HTTPS requests
+  if (isHttps) {
+    cspDirectives.upgradeInsecureRequests = [];
+  }
+  
+  // Configure Helmet dynamically based on request protocol
+  const helmetConfig: any = {
+    contentSecurityPolicy: {
+      directives: cspDirectives,
     },
-  },
-}));
+    // Only enforce strict headers for HTTPS requests
+    crossOriginOpenerPolicy: isHttps ? { policy: 'same-origin' } : false,
+    crossOriginResourcePolicy: isHttps ? { policy: 'same-origin' } : false,
+    strictTransportSecurity: isHttps ? {
+      maxAge: 15552000,
+      includeSubDomains: true,
+    } : false,
+  };
+  
+  // Explicitly disable upgrade-insecure-requests for HTTP
+  if (!isHttps) {
+    helmetConfig.contentSecurityPolicy.useDefaults = false;
+    helmetConfig.contentSecurityPolicy.directives = {
+      ...cspDirectives,
+      upgradeInsecureRequests: null, // Explicitly disable
+    };
+  }
+  
+  helmet(helmetConfig)(req, res, next);
+});
+
+// Remove problematic headers for HTTP requests (must run after Helmet)
+app.use((req, res, next) => {
+  const isHttps = req.secure || req.headers['x-forwarded-proto'] === 'https';
+  if (!isHttps) {
+    // Use writeHead to intercept headers before they're sent
+    const originalWriteHead = res.writeHead;
+    res.writeHead = function(statusCode: number, statusMessage?: any, headers?: any) {
+      // Get current headers
+      const currentHeaders = headers || statusMessage || {};
+      const resHeaders = res.getHeaders();
+      
+      // Clean CSP header
+      if (resHeaders['content-security-policy']) {
+        const csp = Array.isArray(resHeaders['content-security-policy']) 
+          ? resHeaders['content-security-policy'][0] 
+          : resHeaders['content-security-policy'];
+        if (typeof csp === 'string') {
+          const cleaned = csp.replace(/;?\s*upgrade-insecure-requests\s*/gi, '').trim();
+          res.setHeader('content-security-policy', cleaned);
+        }
+      }
+      
+      // Remove Origin-Agent-Cluster
+      res.removeHeader('origin-agent-cluster');
+      
+      // Call original writeHead
+      if (typeof statusMessage === 'object') {
+        return originalWriteHead.call(this, statusCode, statusMessage);
+      } else {
+        return originalWriteHead.call(this, statusCode, headers);
+      }
+    };
+    
+    // Also intercept end() as fallback
+    const originalEnd = res.end;
+    res.end = function(chunk?: any, encoding?: any, cb?: any) {
+      const cspHeader = res.getHeader('content-security-policy');
+      if (cspHeader && typeof cspHeader === 'string') {
+        const cleaned = cspHeader.replace(/;?\s*upgrade-insecure-requests\s*/gi, '').trim();
+        res.setHeader('content-security-policy', cleaned);
+      }
+      res.removeHeader('origin-agent-cluster');
+      return originalEnd.call(this, chunk, encoding, cb);
+    };
+  }
+  next();
+});
 
 // Middleware
 app.use(cors());
