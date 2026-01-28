@@ -1,6 +1,56 @@
+import { useEffect, useRef, useState } from 'react';
 import { Icon } from '@iconify/react';
+import { useTranslation } from 'react-i18next';
+import './AboutPage.css';
 
 export default function About() {
+  const { t } = useTranslation();
+  const overviewRef = useRef<HTMLElement | null>(null);
+  const missionRef = useRef<HTMLElement | null>(null);
+  const teamRef = useRef<HTMLElement | null>(null);
+  const achievementsRef = useRef<HTMLElement | null>(null);
+  const certRef = useRef<HTMLElement | null>(null);
+  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (prefersReducedMotion.matches) {
+      setVisibleSections(new Set(['overview', 'mission', 'team', 'achievements', 'cert']));
+      return;
+    }
+
+    const sections = [
+      { ref: overviewRef, id: 'overview' },
+      { ref: missionRef, id: 'mission' },
+      { ref: teamRef, id: 'team' },
+      { ref: achievementsRef, id: 'achievements' },
+      { ref: certRef, id: 'cert' }
+    ];
+
+    const observers = sections.map(({ ref, id }) => {
+      if (!ref.current) return null;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisibleSections((prev) => new Set(prev).add(id));
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.15 }
+      );
+
+      observer.observe(ref.current);
+      return { observer, id };
+    });
+
+    return () => {
+      observers.forEach((item) => {
+        if (item) item.observer.disconnect();
+      });
+    };
+  }, []);
+
   return (
     <div className="pt-32 pb-20 min-h-screen">
       {/* Hero Section */}
@@ -10,77 +60,78 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
           <div className="animate-in">
             <h1 className="text-5xl md:text-7xl font-medium text-white tracking-tighter mb-6">
-              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-300">SoftIonyx</span>
+              {t('aboutPage.heroTitlePrefix')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-300">SoftIonyx</span>
             </h1>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto font-light">Empowering businesses with cutting-edge IT solutions</p>
+            <p className="text-xl text-slate-400 max-w-2xl mx-auto font-light">{t('aboutPage.heroSubtitle')}</p>
           </div>
         </div>
       </section>
 
       {/* Company Overview */}
-      <section className="py-20 relative z-10">
+      <section
+        ref={overviewRef}
+        className={`py-20 relative z-10 about-reveal-section ${visibleSections.has('overview') ? 'is-visible' : ''}`}
+      >
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
-            <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-8">Company Overview</h2>
-            <p className="text-lg text-slate-400 leading-relaxed font-light">
-              SoftIonyx Technologies is a leading IT services company dedicated to delivering 
-              innovative technology solutions that drive business growth. With a team of expert 
-              developers, designers, and consultants, we help businesses transform their digital 
-              presence and achieve their technological goals.
+            <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-8 about-reveal-item">{t('aboutPage.overviewTitle')}</h2>
+            <p className="text-lg text-slate-400 leading-relaxed font-light about-reveal-item" style={{ ['--reveal-delay' as never]: '280ms' } as React.CSSProperties}>
+              {t('aboutPage.overviewText')}
             </p>
           </div>
         </div>
       </section>
 
       {/* Mission Vision Values */}
-      <section className="py-20 relative z-10 border-t border-white/5">
+      <section
+        ref={missionRef}
+        className={`py-20 relative z-10 border-t border-white/5 about-reveal-section ${visibleSections.has('mission') ? 'is-visible' : ''}`}
+      >
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="group p-8 rounded-2xl glass border border-white/5 hover:border-indigo-500/30 hover:bg-white/[0.04] transition-all duration-500 backdrop-blur-md card-glow">
+            <div className="group p-8 rounded-2xl glass border border-white/5 hover:border-indigo-500/30 hover:bg-white/[0.04] transition-all duration-500 backdrop-blur-md card-glow about-reveal-item" style={{ ['--reveal-delay' as never]: '0ms' } as React.CSSProperties}>
               <div className="h-12 w-12 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
                 <Icon icon="lucide:target" width={24} />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-indigo-300 transition-colors">Our Mission</h3>
+              <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-indigo-300 transition-colors">{t('aboutPage.missionTitle')}</h3>
               <p className="text-slate-400 text-sm leading-relaxed font-light group-hover:text-slate-300 transition-colors">
-                To provide exceptional IT services that enable businesses to thrive in the digital age, 
-                delivering innovative solutions with integrity, excellence, and customer-centric focus.
+                {t('aboutPage.missionText')}
               </p>
             </div>
-            <div className="group p-8 rounded-2xl glass border border-white/5 hover:border-purple-500/30 hover:bg-white/[0.04] transition-all duration-500 backdrop-blur-md card-glow">
+            <div className="group p-8 rounded-2xl glass border border-white/5 hover:border-purple-500/30 hover:bg-white/[0.04] transition-all duration-500 backdrop-blur-md card-glow about-reveal-item" style={{ ['--reveal-delay' as never]: '300ms' } as React.CSSProperties}>
               <div className="h-12 w-12 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
                 <Icon icon="lucide:eye" width={24} />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-purple-300 transition-colors">Our Vision</h3>
+              <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-purple-300 transition-colors">{t('aboutPage.visionTitle')}</h3>
               <p className="text-slate-400 text-sm leading-relaxed font-light group-hover:text-slate-300 transition-colors">
-                To be the most trusted IT partner for businesses worldwide, recognized for our 
-                technical expertise, innovative solutions, and unwavering commitment to client success.
+                {t('aboutPage.visionText')}
               </p>
             </div>
-            <div className="group p-8 rounded-2xl glass border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500 backdrop-blur-md card-glow">
+            <div className="group p-8 rounded-2xl glass border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500 backdrop-blur-md card-glow about-reveal-item" style={{ ['--reveal-delay' as never]: '600ms' } as React.CSSProperties}>
               <div className="h-12 w-12 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
                 <Icon icon="lucide:heart" width={24} />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-emerald-300 transition-colors">Our Values</h3>
+              <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-emerald-300 transition-colors">{t('aboutPage.valuesTitle')}</h3>
               <ul className="text-slate-400 text-sm space-y-2 font-light group-hover:text-slate-300 transition-colors">
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                  Innovation & Excellence
+                  {t('aboutPage.values.innovation')}
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                  Integrity & Transparency
+                  {t('aboutPage.values.integrity')}
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                  Customer-Centric Approach
+                  {t('aboutPage.values.customer')}
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                  Continuous Learning
+                  {t('aboutPage.values.learning')}
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                  Collaboration & Teamwork
+                  {t('aboutPage.values.collaboration')}
                 </li>
               </ul>
             </div>
@@ -89,16 +140,23 @@ export default function About() {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 relative z-10 border-t border-white/5">
+      <section
+        ref={teamRef}
+        className={`py-20 relative z-10 border-t border-white/5 about-reveal-section ${visibleSections.has('team') ? 'is-visible' : ''}`}
+      >
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-12 text-center">Our Team</h2>
+          <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-12 text-center about-reveal-item">{t('aboutPage.teamTitle')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { name: 'Vutcari Ion', role: 'CEO & Founder', bio: 'Leading strategy and innovation for SoftIonyx.', initials: 'VI' },
-              { name: 'Popovici Vasile', role: 'CTO', bio: 'Architecting reliable, scalable, and secure platforms.', initials: 'PV' },
-              { name: 'Tertea Nicu', role: 'Lead Developer', bio: 'Building high-quality software with modern stacks.', initials: 'TN' }
+              { name: 'Vutcari Ion', role: t('aboutPage.team.roles.ceo'), bio: t('aboutPage.team.bios.ceo'), initials: 'VI' },
+              { name: 'Popovici Vasile', role: t('aboutPage.team.roles.cto'), bio: t('aboutPage.team.bios.cto'), initials: 'PV' },
+              { name: 'Tertea Nicu', role: t('aboutPage.team.roles.lead'), bio: t('aboutPage.team.bios.lead'), initials: 'TN' }
             ].map((member, idx) => (
-              <div key={idx} className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-sm hover:bg-white/[0.04] transition-all">
+              <div
+                key={idx}
+                className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-sm hover:bg-white/[0.04] transition-all about-reveal-item"
+                style={{ ['--reveal-delay' as never]: `${200 + idx * 180}ms` } as React.CSSProperties}
+              >
                 <div className="h-16 w-16 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-xl font-semibold mb-4">
                   {member.initials}
                 </div>
@@ -112,17 +170,20 @@ export default function About() {
       </section>
 
       {/* Achievements */}
-      <section className="py-20 relative z-10 border-t border-white/5">
+      <section
+        ref={achievementsRef}
+        className={`py-20 relative z-10 border-t border-white/5 about-reveal-section ${visibleSections.has('achievements') ? 'is-visible' : ''}`}
+      >
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-12">Achievements & Milestones</h2>
+          <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-12 about-reveal-item">{t('aboutPage.achievementsTitle')}</h2>
           <div className="space-y-8">
-            <div className="flex gap-8 items-start">
+            <div className="flex gap-8 items-start about-reveal-item" style={{ ['--reveal-delay' as never]: '250ms' } as React.CSSProperties}>
               <div className="flex-shrink-0 w-20 h-20 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 font-semibold text-lg">
-                2026
+                {t('aboutPage.achievements.year')}
               </div>
               <div className="flex-1 pt-2">
-                <h4 className="text-white font-medium text-lg mb-2">Company Founded</h4>
-                <p className="text-slate-400 text-sm font-light">Started with a vision to transform businesses through technology</p>
+                <h4 className="text-white font-medium text-lg mb-2">{t('aboutPage.achievements.title')}</h4>
+                <p className="text-slate-400 text-sm font-light">{t('aboutPage.achievements.desc')}</p>
               </div>
             </div>
           </div>
@@ -130,15 +191,25 @@ export default function About() {
       </section>
 
       {/* Certifications */}
-      <section className="py-20 relative z-10 border-t border-white/5">
+      <section
+        ref={certRef}
+        className={`py-20 relative z-10 border-t border-white/5 about-reveal-section ${visibleSections.has('cert') ? 'is-visible' : ''}`}
+      >
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-12">Certifications & Partners</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {['AWS Certified', 'Microsoft Partner', 'Google Cloud Partner', 'ISO 27001 Certified'].map((cert, idx) => (
-              <div key={idx} className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-sm text-center hover:bg-white/[0.04] transition-all">
-                <p className="text-white font-medium">{cert}</p>
-              </div>
-            ))}
+          <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-12 about-reveal-item">{t('aboutPage.certTitle')}</h2>
+          <div className="relative overflow-hidden rounded-2xl">
+            <div className="cert-carousel-track flex items-center gap-6 min-w-max">
+              {[...t('aboutPage.certItems', { returnObjects: true }), ...t('aboutPage.certItems', { returnObjects: true })].map((cert: string, idx: number) => (
+                <div
+                  key={`${cert}-${idx}`}
+                  className="min-w-[220px] md:min-w-[240px] p-6 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-sm text-center hover:bg-white/[0.04] transition-all"
+                >
+                  <p className="text-white font-medium">{cert}</p>
+                </div>
+              ))}
+            </div>
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-slate-950/90 to-transparent"></div>
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-slate-950/90 to-transparent"></div>
           </div>
         </div>
       </section>

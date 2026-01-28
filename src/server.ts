@@ -12,6 +12,7 @@ import servicesRoutes from './routes/services';
 import adminRoutes from './routes/admin';
 import logger from './utils/logger';
 import { apiLimiter } from './middleware/rateLimiter';
+import { i18nMiddleware } from './i18n';
 
 dotenv.config();
 
@@ -37,6 +38,7 @@ app.use(helmet({
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(i18nMiddleware);
 
 // Serve uploaded files
 app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));

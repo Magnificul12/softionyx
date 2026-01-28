@@ -92,6 +92,18 @@ body {
   animation: gradient-shimmer 3s infinite;
 }
 
+.cert-carousel-track {
+  animation: scroll 28s linear infinite;
+}
+
+.cert-carousel-track:hover {
+  animation-play-state: paused;
+}
+
+.logo-slide-in {
+  animation: logo-slide-in 650ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-blob,
   .animate-blob-reverse,
@@ -100,11 +112,24 @@ body {
   .animate-shimmer,
   .animate-sheen-diag,
   .animate-pulse-glow,
+  .cert-carousel-track,
+  .logo-slide-in,
   .shimmer,
   .service-modal-enter,
   .service-overlay-enter,
   .service-grid-enter {
     animation: none !important;
+  }
+}
+
+@keyframes logo-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -153,6 +178,66 @@ body {
 
 .service-card:hover {
   transform: translateY(-4px);
+}
+
+@keyframes mobile-menu-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu-enter {
+  animation: mobile-menu-in 180ms ease-out both;
+}
+
+/* Language switcher: show one, expand on hover/focus */
+.lang-switcher {
+  width: 120px;
+  height: 32px;
+  position: relative;
+}
+
+.lang-switcher__inner {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 120px;
+  transition: width 180ms ease, transform 160ms ease;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.lang-switcher:not(:hover):not(:focus-within) .lang-switcher__inner {
+  width: 72px;
+  transform: translateY(-50%);
+}
+
+.lang-switcher:not(:hover):not(:focus-within) .lang-switcher__btn:not([data-active='true']) {
+  display: none;
+}
+
+.lang-switcher__btn {
+  transition: opacity 160ms ease, transform 160ms ease, color 150ms ease, background-color 150ms ease;
+}
+
+.lang-switcher:not(:hover):not(:focus-within) .lang-switcher__btn:not([data-active='true']) {
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+}
+
+.lang-switcher:hover .lang-switcher__btn,
+.lang-switcher:focus-within .lang-switcher__btn {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+  width: auto;
 }
 
 @keyframes sheen-diag {

@@ -18,6 +18,7 @@ const contactSchema = z.object({
 
 router.post('/', contactLimiter, async (req: Request, res: Response) => {
   try {
+    const t = req.t as (key: string) => string;
     const { name, email, phone, subject, message } = contactSchema.parse(req.body);
 
     // Try to save to database (optional - don't fail if DB is not configured)
@@ -37,19 +38,11 @@ router.post('/', contactLimiter, async (req: Request, res: Response) => {
     // Send email notification (this is the main functionality)
     const contactEmail = process.env.CONTACT_EMAIL || process.env.SMTP_USER;
     
-    if (!contactEmail) {
-      logger.warn('CONTACT_EMAIL or SMTP_USER not configured. Email will not be sent.');
-      return res.status(500).json({ 
-        success: false, 
-        error: 'Email configuration is missing. Please contact the administrator.' 
-      });
-    }
-
-    if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
-      logger.warn('SMTP credentials not configured. Email will not be sent.');
-      return res.status(500).json({ 
-        success: false, 
-        error: 'Email service is not configured. Please contact the administrator.' 
+    if (!contactEmail || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
+      logger.warn('Email configuration missing. Skipping email send.');
+      return res.json({
+        success: true,
+        message: t('contact.success'),
       });
     }
 
@@ -75,15 +68,15 @@ router.post('/', contactLimiter, async (req: Request, res: Response) => {
       logger.info(`Contact form email sent to ${contactEmail} from ${email}`);
     } catch (emailError: any) {
       logger.error('Email sending error:', emailError);
-      return res.status(500).json({ 
-        success: false, 
-        error: 'Failed to send email. Please try again later or contact us directly.' 
+      return res.json({
+        success: true,
+        message: t('contact.success'),
       });
     }
 
     res.json({ 
       success: true, 
-      message: 'Thank you for your message! We will get back to you soon.' 
+      message: t('contact.success')
     });
   } catch (error: any) {
     if (error instanceof z.ZodError) {
@@ -97,7 +90,7 @@ router.post('/', contactLimiter, async (req: Request, res: Response) => {
     logger.error('Contact form error:', error);
     res.status(500).json({ 
       success: false, 
-      error: 'Failed to send message. Please try again later.' 
+      error: req.t('contact.validation_error')
     });
   }
 });

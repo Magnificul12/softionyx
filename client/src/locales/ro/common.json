@@ -1,0 +1,648 @@
+{
+  "nav": {
+    "services": "Servicii",
+    "solutions": "Soluții",
+    "store": "Magazin",
+    "about": "Despre",
+    "contact": "Contact",
+    "admin": "Admin",
+    "logout": "Deconectare"
+  },
+  "language": {
+    "en": "EN",
+    "ro": "RO",
+    "ru": "RU"
+  },
+  "hero": {
+    "badge": "Soluții IT Profesionale",
+    "titleLine1": "Scalează-ți viziunea cu",
+    "titleHighlight": "Sisteme Inteligente",
+    "subtitle": "Livrăm soluții tehnologice de ultimă generație, inclusiv dezvoltare web, servicii frontend & backend, analiză blockchain și programare expertă.",
+    "ctaPrimary": "Solicită ajutor",
+    "ctaSecondary": "Serviciile noastre"
+  },
+  "homeServices": {
+    "title": "Ecosistem IT Complet",
+    "subtitle": "Soluții digitale end-to-end pentru medii enterprise complexe. Construim sistemele care alimentează viitorul.",
+    "cta": "Vezi toate serviciile",
+    "items": {
+      "cyber": {
+        "title": "Securitate Cibernetică",
+        "desc": "Arhitectură Zero-Trust și monitorizare autonomă 24/7."
+      },
+      "cloud": {
+        "title": "Infrastructură Cloud",
+        "desc": "Calcul serverless scalabil și strategii multi-cloud."
+      },
+      "ai": {
+        "title": "AI & Machine Learning",
+        "desc": "Analitică predictivă și modele personalizate pentru business."
+      },
+      "software": {
+        "title": "Inginerie Software",
+        "desc": "Software personalizat cu stack-uri moderne și testare riguroasă."
+      },
+      "data": {
+        "title": "Managementul Datelor",
+        "desc": "Stocare sigură, procesare și pipeline-uri în timp real."
+      },
+      "network": {
+        "title": "Soluții de Rețea",
+        "desc": "Arhitectură de rețea cu latență mică și bandă mare."
+      }
+    }
+  },
+  "homeAbout": {
+    "titleLine1": "Proiectat pentru",
+    "titleLine2": "viteză fără compromis.",
+    "subtitle": "Nu doar reparăm probleme; arhitectăm viitorul afacerii tale. Metodologia noastră este bazată pe date și implementare agilă.",
+    "points": {
+      "uptime": {
+        "title": "Garanție Uptime 99,99%",
+        "desc": "Sisteme redundante pentru continuitatea businessului."
+      },
+      "threat": {
+        "title": "Inteligență 24/7 împotriva amenințărilor",
+        "desc": "Monitorizare proactivă pentru neutralizarea riscurilor."
+      },
+      "deploy": {
+        "title": "Lansare rapidă",
+        "desc": "De la consultanță la live într-un timp record."
+      }
+    },
+    "stats": {
+      "projects": "Proiecte",
+      "clients": "Clienți",
+      "technologies": "Tehnologii",
+      "experience": "Experiență",
+      "years": "Ani"
+    }
+  },
+  "homeContact": {
+    "title": "Gata să accelerezi?",
+    "subtitle": "Alătură-te companiilor care au încredere în SoftIonyx pentru infrastructura lor critică.",
+    "fields": {
+      "name": "Nume",
+      "email": "Email de lucru",
+      "subject": "Subiect",
+      "message": "Mesaj"
+    },
+    "placeholders": {
+      "name": "Numele tău",
+      "email": "nume@companie.com",
+      "subject": "Subiect",
+      "message": "Mesajul tău"
+    },
+    "sending": "Se trimite...",
+    "cta": "Solicită consultanță"
+  },
+  "footer": {
+    "tagline": "Soluții IT profesionale pentru performanță, securitate și scalabilitate enterprise.",
+    "sections": {
+      "services": "Servicii",
+      "company": "Companie",
+      "legal": "Legal"
+    },
+    "links": {
+      "web": "Dezvoltare Web",
+      "frontendBackend": "Frontend & Backend",
+      "blockchain": "Analiză Blockchain",
+      "programming": "Programare",
+      "about": "Despre noi",
+      "careers": "Cariere",
+      "blog": "Blog",
+      "contact": "Contact",
+      "privacy": "Politica de confidențialitate",
+      "terms": "Termeni și condiții",
+      "cookies": "Politica cookies"
+    },
+    "copyright": "SoftIonyx Technologies. Toate drepturile rezervate."
+  },
+  "servicesPage": {
+    "heroTitlePrefix": "Serviciile",
+    "heroTitleHighlight": "Noastre",
+    "heroSubtitle": "Soluții IT complete, adaptate nevoilor afacerii tale",
+    "sections": {
+      "services": "Servicii",
+      "industries": "Industrii deservite",
+      "outcomes": "Rezultate tipice"
+    },
+    "back": "Înapoi la servicii",
+    "ctaTitle": "Gata să începi?",
+    "ctaSubtitle": "Hai să discutăm cum îți putem ajuta proiectul",
+    "ctaButton": "Contactează-ne",
+    "items": {
+      "cyber": {
+        "title": "Securitate Cibernetică",
+        "short": "Audituri, IAM, Zero-Trust, SIEM/SOC, DevSecOps, conformitate.",
+        "description": "Audituri de securitate, testare, control identitate și monitorizare continuă.",
+        "services": [
+          "Audituri și testare penetrare (web, mobile, infrastructură)",
+          "Evaluare vulnerabilități și remediere",
+          "Arhitectură Zero-Trust (design & implementare)",
+          "Management identitate și acces (IAM)",
+          "Securitate rețea (firewall, IDS/IPS, WAF)",
+          "Protecție endpoint & hardening",
+          "Monitorizare și alertare (SIEM, SOC)",
+          "Răspuns la incidente & recuperare",
+          "Autentificare sigură (SSO, MFA, OAuth, JWT)",
+          "Criptare date (în tranzit & la rest)",
+          "Conformitate (ISO 27001, GDPR, SOC 2)",
+          "DevSecOps (pipeline-uri)"
+        ],
+        "industries": ["FinTech", "E-commerce", "Sănătate", "SaaS", "Enterprise"],
+        "outcomes": ["Risc redus", "Conformitate", "Răspuns rapid", "Acces sigur"]
+      },
+      "cloud": {
+        "title": "Infrastructură Cloud",
+        "short": "Arhitectură, migrare, CI/CD, Kubernetes, optimizare costuri.",
+        "description": "Arhitectură cloud, migrare, orchestration și operare eficientă.",
+        "services": [
+          "Design arhitectură cloud (AWS, GCP, Azure)",
+          "Migrare cloud (on-prem → cloud)",
+          "Infrastructură serverless",
+          "Kubernetes & orchestrare containere",
+          "Infrastructure as Code (Terraform, CloudFormation)",
+          "Setare & optimizare CI/CD",
+          "Optimizare costuri cloud",
+          "Soluții multi-cloud & hybrid",
+          "Monitorizare & logging (CloudWatch, Datadog, Prometheus)"
+        ],
+        "industries": ["SaaS", "Logistică", "Media", "Retail", "FinTech"],
+        "outcomes": ["Uptime mai bun", "Costuri reduse", "Deploy rapid", "Scalabilitate"]
+      },
+      "software": {
+        "title": "Inginerie Software",
+        "short": "Aplicații web & mobile, microservicii, integrări, QA, documentație.",
+        "description": "Livrare software scalabilă cu asigurare de calitate.",
+        "services": [
+          "Dezvoltare aplicații web personalizate",
+          "Aplicații mobile (iOS, Android, cross-platform)",
+          "Arhitectură microservicii",
+          "Integrări API terțe",
+          "Dezvoltare CRM/ERP",
+          "Dezvoltare produse SaaS",
+          "Optimizare performanță",
+          "Testare automată & QA",
+          "Documentație & mentenanță"
+        ],
+        "industries": ["Startups", "Enterprise", "E-commerce", "Sănătate", "EdTech"],
+        "outcomes": ["Time-to-market mai rapid", "Release stabil", "UX mai bun", "Costuri mici"]
+      },
+      "data": {
+        "title": "Managementul Datelor",
+        "short": "Design DB, ETL/ELT, streaming, analytics, BI, guvernanță.",
+        "description": "Platforme de date pentru analytics și guvernanță.",
+        "services": [
+          "Design & optimizare baze de date",
+          "ETL / ELT pipeline-uri",
+          "Streaming date în timp real",
+          "Migrare & consolidare date",
+          "Dashboard-uri & raportare",
+          "Business Intelligence",
+          "Guvernanță & control acces",
+          "Backup & disaster recovery"
+        ],
+        "industries": ["FinTech", "Retail", "Sănătate", "Producție", "SaaS"],
+        "outcomes": ["Insight rapid", "Date fiabile", "Costuri reduse", "Vizibilitate operațională"]
+      },
+      "automation": {
+        "title": "Automatizare Business",
+        "short": "Procese, workflow, integrări, RPA, raportare.",
+        "description": "Automatizăm fluxuri critice pentru viteză și eficiență.",
+        "services": [
+          "Analiză procese & design automatizare",
+          "Automatizare workflow (aprobări, SLA)",
+          "RPA (robotic process automation)",
+          "Integrări sistem & API",
+          "Automatizare documente & e-sign",
+          "Notificări & escaladări",
+          "Dashboard-uri operaționale",
+          "Monitorizare & optimizare automatizări"
+        ],
+        "industries": ["E-commerce", "Logistică", "Finanțe", "Sănătate", "Servicii profesionale"],
+        "outcomes": ["Costuri mai mici", "Execuție rapidă", "Erori reduse", "Vizibilitate mai bună"]
+      },
+      "blockchain": {
+        "title": "Blockchain",
+        "short": "Smart contracts, wallet, tokenizare, audituri, integrări.",
+        "description": "Soluții blockchain sigure și conforme.",
+        "services": [
+          "Smart contract development & audit",
+          "Wallet & custody",
+          "Tokenizare & asset management",
+          "Integrări blockchain & API",
+          "Blockchain privat",
+          "Audit securitate & best practices",
+          "Optimizare performanță & scalare",
+          "Monitorizare & incident response"
+        ],
+        "industries": ["FinTech", "Gaming", "Supply Chain", "Sănătate", "Sector public"],
+        "outcomes": ["Încredere mai mare", "Trasabilitate", "Tranzacții sigure", "Eficiență"]
+      }
+    }
+  },
+  "aboutPage": {
+    "heroTitlePrefix": "Despre",
+    "heroSubtitle": "Împuternicim companiile cu soluții IT de ultimă generație",
+    "overviewTitle": "Prezentare generală",
+    "overviewText": "SoftIonyx Technologies este o companie IT dedicată livrării de soluții tehnologice inovatoare. Cu o echipă de experți, ajutăm companiile să își transforme prezența digitală.",
+    "missionTitle": "Misiunea noastră",
+    "missionText": "Să oferim servicii IT excepționale, cu integritate și excelență.",
+    "visionTitle": "Viziunea noastră",
+    "visionText": "Să fim partenerul IT de încredere pentru companiile din întreaga lume.",
+    "valuesTitle": "Valorile noastre",
+    "values": {
+      "innovation": "Inovație & Excelență",
+      "integrity": "Integritate & Transparență",
+      "customer": "Orientare către client",
+      "learning": "Învățare continuă",
+      "collaboration": "Colaborare & Teamwork"
+    },
+    "teamTitle": "Echipa noastră",
+    "team": {
+      "roles": {
+        "ceo": "CEO & Fondator",
+        "cto": "CTO",
+        "lead": "Lead Developer"
+      },
+      "bios": {
+        "ceo": "Coordonează strategia și inovația SoftIonyx.",
+        "cto": "Arhitectură scalabilă și securizată.",
+        "lead": "Software de calitate cu stack-uri moderne."
+      }
+    },
+    "achievementsTitle": "Realizări & Repere",
+    "achievements": {
+      "year": "2026",
+      "title": "Companie fondată",
+      "desc": "Am pornit cu viziunea de a transforma afacerile prin tehnologie"
+    },
+    "certTitle": "Certificări & Parteneri",
+    "certItems": ["AWS Certified", "Microsoft Partner", "Google Cloud Partner", "ISO 27001 Certified"]
+  },
+  "contactPage": {
+    "heroTitlePrefix": "Ia",
+    "heroTitleHighlight": "Legătura",
+    "heroSubtitle": "Trimite-ne un mesaj și îți răspundem cât mai curând.",
+    "infoTitle": "Informații de contact",
+    "info": {
+      "email": "Email",
+      "phone": "Telefon",
+      "address": "Adresă"
+    },
+    "formTitle": "Trimite-ne un mesaj",
+    "fields": {
+      "name": "Nume complet",
+      "email": "Email",
+      "phone": "Telefon",
+      "subject": "Subiect",
+      "message": "Mesaj"
+    },
+    "sending": "Se trimite...",
+    "cta": "Trimite mesaj",
+    "errors": {
+      "submit": "Nu s-a putut trimite mesajul. Încearcă din nou."
+    }
+  },
+  "solutionsPage": {
+    "heroTitlePrefix": "Soluții",
+    "heroTitleHighlight": "Scalabile",
+    "heroSubtitle": "Sisteme modulare, gata de producție, adaptate echipei tale.",
+    "items": {
+      "product": {
+        "title": "Inginerie de produs",
+        "desc": "De la discovery la lansare cu un stack fiabil."
+      },
+      "data": {
+        "title": "Date & Analitică",
+        "desc": "Dashboard-uri și pipeline-uri care ajută deciziile."
+      },
+      "automation": {
+        "title": "Automatizare",
+        "desc": "Fluxuri care reduc munca manuală și accelerează execuția."
+      }
+    },
+    "highlights": {
+      "title": "Gândit să elimine blocajele de livrare.",
+      "subtitle": "Combinăm claritate strategică cu execuție riguroasă pentru livrare rapidă și stabilă.",
+      "items": {
+        "clarity": {
+          "title": "Claritate și aliniere rapidă",
+          "desc": "Discovery structurat și milestone-uri realiste pentru ritm predictibil."
+        },
+        "delivery": {
+          "title": "Gata de producție din start",
+          "desc": "Observabilitate, testare și securitate integrate în fiecare release."
+        },
+        "growth": {
+          "title": "Pregătit pentru scalare",
+          "desc": "Arhitectură care crește odată cu trafic, date și produse noi."
+        }
+      }
+    },
+    "stats": {
+      "speed": "Viteză livrare",
+      "reliability": "Stabilitate release",
+      "weeks": "Săptămâni până la MVP"
+    },
+    "cta": {
+      "title": "Ai nevoie de o soluție care scalează?",
+      "subtitle": "Spune-ne ce construiești și îți propunem cel mai rapid drum spre producție.",
+      "button": "Solicită ajutor"
+    }
+  },
+  "storePage": {
+    "heroTitlePrefix": "Magazin",
+    "heroTitleHighlight": "Produse",
+    "heroSubtitle": "Template-uri, componente și instrumente digitale premium.",
+    "notice": "Magazinul este în pregătire. Produsele vor apărea în curând."
+  },
+  "requestHelp": {
+    "heroTitlePrefix": "Solicită",
+    "heroTitleHighlight": "Ajutor",
+    "heroSubtitle": "Spune-ne despre proiectul tău și revenim cât mai curând.",
+    "fields": {
+      "fullName": "Nume complet *",
+      "email": "Email *",
+      "company": "Companie",
+      "phone": "Telefon",
+      "serviceType": "Tip serviciu *",
+      "priority": "Prioritate",
+      "subject": "Subiect *",
+      "description": "Descriere *"
+    },
+    "placeholders": {
+      "serviceType": "Selectează un serviciu",
+      "subject": "Scurtă descriere a cererii",
+      "description": "Detalii despre proiect, cerințe, timeline etc..."
+    },
+    "priority": {
+      "low": "Scăzută",
+      "medium": "Mediu",
+      "high": "Înaltă",
+      "urgent": "Urgentă"
+    },
+    "submitting": "Se trimite...",
+    "cta": "Trimite cererea",
+    "errors": {
+      "submitFailed": "Nu s-a putut trimite cererea"
+    },
+    "serviceTypes": [
+      "Dezvoltare Web",
+      "Frontend & Backend",
+      "Analiză Blockchain",
+      "Programare",
+      "Cloud Computing",
+      "AI & Machine Learning",
+      "Blockchain & Criptomonede",
+      "Soluții Software Personalizate",
+      "Altele"
+    ]
+  },
+  "login": {
+    "title": "Bine ai revenit",
+    "subtitle": "Autentifică-te în cont",
+    "success": "Autentificare reușită! Redirecționare...",
+    "fields": {
+      "email": "Email",
+      "password": "Parolă"
+    },
+    "placeholders": {
+      "email": "emailul@tau.com",
+      "password": "••••••••"
+    },
+    "loading": "Se autentifică...",
+    "cta": "Autentificare",
+    "footerText": "Nu ai cont?",
+    "footerCta": "Înregistrează-te",
+    "errors": {
+      "required": "Completează toate câmpurile",
+      "failed": "Autentificare eșuată. Verifică datele."
+    }
+  },
+  "register": {
+    "title": "Creează cont",
+    "subtitle": "Alătură-te SoftIonyx Technologies",
+    "success": "Înregistrare reușită! Redirecționare...",
+    "fields": {
+      "fullName": "Nume complet *",
+      "email": "Email *",
+      "company": "Companie",
+      "phone": "Telefon",
+      "password": "Parolă *",
+      "confirmPassword": "Confirmă parola *"
+    },
+    "placeholders": {
+      "fullName": "Ion Popescu",
+      "email": "emailul@tau.com",
+      "company": "Companie SRL",
+      "phone": "+373 78 000 000",
+      "password": "••••••••",
+      "confirmPassword": "••••••••"
+    },
+    "loading": "Se creează cont...",
+    "cta": "Înregistrare",
+    "footerText": "Ai deja cont?",
+    "footerCta": "Autentificare",
+    "errors": {
+      "required": "Completează toate câmpurile obligatorii",
+      "passwordLength": "Parola trebuie să aibă minim 6 caractere",
+      "passwordMatch": "Parolele nu coincid",
+      "emailInvalid": "Email invalid",
+      "failed": "Înregistrare eșuată. Încearcă din nou."
+    }
+  },
+  "blog": {
+    "heroTitlePrefix": "Blog",
+    "heroTitleHighlight": "SoftIonyx",
+    "heroSubtitle": "Insight-uri, tutoriale și noutăți din partea echipei",
+    "categories": {
+      "all": "Toate",
+      "cloud": "Cloud",
+      "web": "Web Development",
+      "cyber": "Securitate",
+      "ai": "AI & Data",
+      "devops": "DevOps",
+      "mobile": "Mobile"
+    },
+    "posts": {
+      "cloud": {
+        "title": "Viitorul Cloud Computing în 2024",
+        "excerpt": "Explorăm cele mai noi tendințe și inovații în cloud..."
+      },
+      "react": {
+        "title": "Cele mai bune practici pentru React",
+        "excerpt": "Învață bune practici pentru aplicații React scalabile..."
+      },
+      "cyber": {
+        "title": "Amenințări de securitate în 2024",
+        "excerpt": "Înțelegerea peisajului în schimbare al securității..."
+      },
+      "ai": {
+        "title": "Tendințe AI și Machine Learning",
+        "excerpt": "Descoperă cele mai noi trenduri în AI și ML..."
+      }
+    },
+    "tags": {
+      "cloud": "Cloud",
+      "aws": "AWS",
+      "technology": "Tehnologie",
+      "react": "React",
+      "javascript": "JavaScript",
+      "frontend": "Frontend",
+      "security": "Securitate",
+      "cyber": "Cybersecurity",
+      "threats": "Amenințări",
+      "ai": "AI",
+      "ml": "Machine Learning",
+      "dataScience": "Data Science"
+    }
+  },
+  "careers": {
+    "heroTitlePrefix": "Alătură-te",
+    "heroTitleHighlight": "Echipei",
+    "heroSubtitle": "Construiește viitorul alături de noi. Explorează oportunități.",
+    "apply": "Aplică acum",
+    "departments": {
+      "development": "Dezvoltare",
+      "operations": "Operațiuni",
+      "design": "Design",
+      "security": "Securitate"
+    },
+    "locations": {
+      "remote": "Remote",
+      "hybrid": "Hibrid",
+      "onsite": "La birou"
+    },
+    "types": {
+      "fulltime": "Full-time",
+      "internship": "Internship"
+    },
+    "jobs": {
+      "fullstack": {
+        "title": "Senior Full-Stack Developer",
+        "desc": "Căutăm un dezvoltator full-stack cu experiență."
+      },
+      "devops": {
+        "title": "DevOps Engineer",
+        "desc": "Căutăm un DevOps pentru infrastructura cloud."
+      },
+      "design": {
+        "title": "UI/UX Designer",
+        "desc": "Creează experiențe frumoase pentru utilizatori."
+      },
+      "security": {
+        "title": "Specialist Cybersecurity",
+        "desc": "Ajută-ne să securizăm activele digitale."
+      },
+      "intern": {
+        "title": "Intern Dezvoltare Software",
+        "desc": "Oportunitate excelentă pentru studenți."
+      }
+    }
+  },
+  "portfolio": {
+    "heroTitlePrefix": "Portofoliul",
+    "heroTitleHighlight": "Nostru",
+    "heroSubtitle": "Proiecte de succes și soluții pentru clienți",
+    "categories": {
+      "all": "Toate",
+      "web": "Web Development",
+      "mobile": "Mobile App",
+      "cloud": "Cloud",
+      "ai": "AI & Data",
+      "cyber": "Cybersecurity",
+      "devops": "DevOps"
+    },
+    "projects": {
+      "ecommerce": {
+        "title": "Platformă E-Commerce",
+        "desc": "Soluție e-commerce modernă cu plăți integrate"
+      },
+      "banking": {
+        "title": "Aplicație Banking",
+        "desc": "Aplicație bancară cu autentificare biometrică"
+      },
+      "cloud": {
+        "title": "Migrare Cloud",
+        "desc": "Migrare completă a infrastructurii în cloud"
+      },
+      "ai": {
+        "title": "Dashboard Analytics AI",
+        "desc": "Dashboard în timp real cu insight-uri AI"
+      },
+      "cyber": {
+        "title": "Audit de securitate",
+        "desc": "Audit complet și testare de penetrare"
+      },
+      "devops": {
+        "title": "Pipeline DevOps",
+        "desc": "Implementare pipeline CI/CD automat"
+      }
+    }
+  },
+  "admin": {
+    "seoTitle": "Panou Admin",
+    "seoDescription": "Dashboard Admin SoftIonyx",
+    "titlePrefix": "Panou",
+    "titleHighlight": "Admin",
+    "defaultAdmin": "Admin",
+    "welcome": "Bine ai revenit, {{name}}",
+    "loading": "Se încarcă...",
+    "tabs": {
+      "dashboard": "Dashboard",
+      "pages": "Pagini",
+      "services": "Servicii",
+      "blog": "Articole Blog",
+      "contacts": "Contacte",
+      "jobs": "Joburi"
+    },
+    "dashboard": {
+      "title": "Prezentare Dashboard",
+      "failed": "Nu s-au putut încărca datele",
+      "recentContacts": "Contacte recente",
+      "stats": {
+        "totalContacts": "Total contacte",
+        "helpRequests": "Cereri ajutor",
+        "jobApplications": "Aplicații job",
+        "blogPosts": "Articole blog",
+        "totalUsers": "Utilizatori",
+        "services": "Servicii"
+      }
+    },
+    "pages": {
+      "title": "Gestionează paginile",
+      "items": ["Pagina Home", "Pagina About", "Pagina Services"]
+    },
+    "services": {
+      "title": "Gestionează servicii",
+      "add": "+ Adaugă serviciu",
+      "items": ["Dezvoltare Web", "Dezvoltare Mobile"]
+    },
+    "blog": {
+      "title": "Gestionează articole",
+      "add": "+ Adaugă articol",
+      "sampleTitle": "Viitorul Cloud Computing",
+      "sampleDate": "Publicat: 15 Ian 2024"
+    },
+    "contacts": {
+      "title": "Mesaje Contact",
+      "empty": "Nu există mesaje",
+      "markAs": "Marchează ca",
+      "read": "Citit",
+      "replied": "Răspuns"
+    },
+    "jobs": {
+      "title": "Aplicații job",
+      "empty": "Nu există aplicații",
+      "phone": "Telefon",
+      "viewResume": "Vezi CV",
+      "markReviewed": "Marchează ca revizuit"
+    },
+    "buttons": {
+      "edit": "Editează",
+      "delete": "Șterge"
+    }
+  }
+}

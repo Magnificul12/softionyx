@@ -1,0 +1,8 @@
+{
+  "contact": {
+    "success": "Mesaj primit. Vom reveni în cel mai scurt timp.",
+    "email_error": "Nu s-a putut trimite emailul. Încearcă din nou mai târziu sau contactează-ne direct.",
+    "validation_error": "Nu s-a putut trimite mesajul. Încearcă din nou mai târziu.",
+    "missing_email_config": "Serviciul de email nu este configurat. Vă rugăm contactați administratorul."
+  }
+}
