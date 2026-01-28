@@ -60,7 +60,7 @@ export default function About() {
 
   // Duplicate members for seamless infinite scroll
   const duplicatedMembers = [...teamMembers, ...teamMembers];
->>>>>>> afdad378b5bc43c5a82c5f894a9b8e19330171db
+
   return (
     <div className="pt-32 pb-20 min-h-screen">
       {/* Hero Section */}
@@ -150,30 +150,14 @@ export default function About() {
       </section>
 
       {/* Team Section */}
-<<<<<<< HEAD
       <section
         ref={teamRef}
         className={`py-20 relative z-10 border-t border-white/5 about-reveal-section ${visibleSections.has('team') ? 'is-visible' : ''}`}
       >
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-12 text-center about-reveal-item">{t('aboutPage.teamTitle')}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { name: 'Vutcari Ion', role: t('aboutPage.team.roles.ceo'), bio: t('aboutPage.team.bios.ceo'), initials: 'VI' },
-              { name: 'Popovici Vasile', role: t('aboutPage.team.roles.cto'), bio: t('aboutPage.team.bios.cto'), initials: 'PV' },
-              { name: 'Tertea Nicu', role: t('aboutPage.team.roles.lead'), bio: t('aboutPage.team.bios.lead'), initials: 'TN' }
-            ].map((member, idx) => (
-              <div
-                key={idx}
-                className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-sm hover:bg-white/[0.04] transition-all about-reveal-item"
-                style={{ ['--reveal-delay' as never]: `${200 + idx * 180}ms` } as React.CSSProperties}
-              >
-                <div className="h-16 w-16 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-xl font-semibold mb-4">
-                  {member.initials}
-=======
-      <section className="py-20 relative z-10 border-t border-white/5">
         <div className="w-full">
-          <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-12 text-center px-6">Our Team</h2>
+          <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-12 text-center px-6 about-reveal-item">
+            {t('aboutPage.teamTitle')}
+          </h2>
           
           {/* Infinite Carousel Container */}
           <div className="relative overflow-hidden w-full">
@@ -202,7 +186,6 @@ export default function About() {
                   <h4 className="text-white font-medium mb-1">{member.name}</h4>
                   <p className="text-indigo-400 text-sm mb-2">{member.role}</p>
                   <p className="text-slate-500 text-xs font-light">{member.bio}</p>
->>>>>>> afdad378b5bc43c5a82c5f894a9b8e19330171db
                 </div>
               ))}
             </div>
