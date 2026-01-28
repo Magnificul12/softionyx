@@ -11,7 +11,18 @@ const router = express.Router();
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Invalid email address'),
-  phone: z.string().optional(),
+  phone: z.string()
+    .optional()
+    .refine((val) => {
+      if (!val) return true;
+      // Verifică formatul (doar cifre și caractere telefonice)
+      if (!/^[0-9+\-() ]+$/.test(val)) return false;
+      // Verifică că nu are mai mult de 15 cifre
+      const digitsOnly = val.replace(/[^0-9]/g, '');
+      return digitsOnly.length <= 15;
+    }, {
+      message: 'Phone number can only contain numbers and phone characters (+, -, spaces, parentheses), and cannot exceed 15 digits',
+    }),
   subject: z.string().min(3, 'Subject must be at least 3 characters'),
   message: z.string().min(10, 'Message must be at least 10 characters'),
 });
@@ -57,15 +68,35 @@ router.post('/', contactLimiter, async (req: Request, res: Response) => {
         },
       });
 
-      await transporter.sendMail({
-        from: `"SoftIonyx Website" <${process.env.SMTP_USER}>`,
+      // Try to send email appearing to come from the user
+      // If Gmail rejects (from different than auth), fallback to SMTP_USER
+      let mailOptions = {
+        from: `"${name}" <${email}>`, // Try user's email first
         to: contactEmail,
         subject: `Contact Form: ${subject}`,
         html: contactFormTemplate({ name, email, phone, subject, message }),
-        replyTo: email,
-      });
+        replyTo: `"${name}" <${email}>`,
+        headers: {
+          'Reply-To': `"${name}" <${email}>`,
+          'X-Contact-Form': 'true',
+          'X-Original-Sender': email,
+        },
+      };
 
-      logger.info(`Contact form email sent to ${contactEmail} from ${email}`);
+      try {
+        await transporter.sendMail(mailOptions);
+        logger.info(`Contact form email sent to ${contactEmail} from ${email} (appearing as from user)`);
+      } catch (fromError: any) {
+        // If Gmail rejects due to 'from' mismatch, retry with SMTP_USER as from
+        if (fromError.message && fromError.message.includes('from')) {
+          logger.warn('Gmail rejected user email as from, using SMTP_USER instead:', fromError.message);
+          mailOptions.from = `"${name} via SoftIonyx" <${process.env.SMTP_USER}>`;
+          await transporter.sendMail(mailOptions);
+          logger.info(`Contact form email sent to ${contactEmail} (from SMTP_USER, replyTo: ${email})`);
+        } else {
+          throw fromError; // Re-throw if it's a different error
+        }
+      }
     } catch (emailError: any) {
       logger.error('Email sending error:', emailError);
       return res.json({

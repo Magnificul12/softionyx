@@ -504,6 +504,24 @@ svg *,
   backface-visibility: hidden;
 }
 
+/* Country code selector dropdown styling */
+select[name="countryCode"] {
+  height: 40px !important;
+  max-height: 40px !important;
+}
+
+/* Note: Native HTML select dropdowns cannot be fully controlled with CSS.
+   The browser controls the dropdown list appearance. */
+select[name="countryCode"] option {
+  padding: 4px 8px;
+  font-size: 0.875rem;
+  line-height: 1.3;
+  white-space: nowrap;
+  background-color: rgb(15 23 42);
+  color: white;
+  max-height: 20px;
+}
+
 /* Reduce animation complexity when not in viewport */
 @media (prefers-reduced-motion: reduce) {
   *,
