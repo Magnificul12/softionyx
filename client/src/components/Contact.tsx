@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import axios from '../utils/axios';
 
 function Contact() {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
@@ -74,8 +76,8 @@ function Contact() {
 
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <div className={isVisible ? 'animate-fade-scale delay-100' : ''} style={{ opacity: isVisible ? 1 : 0 }}>
-          <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tighter mb-6">Ready to accelerate?</h2>
-          <p className="text-slate-400 text-lg font-light mb-12">Join forward-thinking companies that trust SoftIonyx with their critical infrastructure.</p>
+          <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tighter mb-6">{t('homeContact.title')}</h2>
+          <p className="text-slate-400 text-lg font-light mb-12">{t('homeContact.subtitle')}</p>
         </div>
         
         <div className={`glass-strong border border-white/10 rounded-2xl p-8 md:p-12 max-w-lg mx-auto text-left shadow-2xl relative overflow-hidden ${isVisible ? 'animate-fade-scale delay-200' : ''}`} style={{ opacity: isVisible ? 1 : 0 }}>
@@ -92,7 +94,7 @@ function Contact() {
             )}
 
             <div>
-              <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">Name</label>
+              <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">{t('homeContact.fields.name')}</label>
               <div className="relative group">
                 <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500 group-focus-within:text-indigo-400 transition-colors">
                   <span className="iconify" data-icon="lucide:user" data-width="16"></span>
@@ -102,7 +104,7 @@ function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Your name"
+                  placeholder={t('homeContact.placeholders.name')}
                   required
                   className="w-full bg-slate-950/50 border border-white/10 rounded-lg pl-10 pr-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all placeholder:text-slate-600"
                 />
@@ -110,7 +112,7 @@ function Contact() {
             </div>
             
             <div>
-              <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">Work Email</label>
+              <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">{t('homeContact.fields.email')}</label>
               <div className="relative group">
                 <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500 group-focus-within:text-indigo-400 transition-colors">
                   <span className="iconify" data-icon="lucide:mail" data-width="16"></span>
@@ -120,7 +122,7 @@ function Contact() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="name@company.com"
+                  placeholder={t('homeContact.placeholders.email')}
                   required
                   className="w-full bg-slate-950/50 border border-white/10 rounded-lg pl-10 pr-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all placeholder:text-slate-600"
                 />
@@ -128,7 +130,7 @@ function Contact() {
             </div>
             
             <div>
-              <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">Subject</label>
+              <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">{t('homeContact.fields.subject')}</label>
               <div className="relative group">
                 <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500 group-focus-within:text-indigo-400 transition-colors">
                   <span className="iconify" data-icon="lucide:layers" data-width="16"></span>
@@ -138,7 +140,7 @@ function Contact() {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  placeholder="Subject"
+                  placeholder={t('homeContact.placeholders.subject')}
                   required
                   className="w-full bg-slate-950/50 border border-white/10 rounded-lg pl-10 pr-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all placeholder:text-slate-600"
                 />
@@ -146,13 +148,13 @@ function Contact() {
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">Message</label>
+              <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">{t('homeContact.fields.message')}</label>
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
                 rows={4}
-                placeholder="Your message"
+                placeholder={t('homeContact.placeholders.message')}
                 required
                 className="w-full bg-slate-950/50 border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all placeholder:text-slate-600 resize-none"
               ></textarea>
@@ -164,7 +166,7 @@ function Contact() {
                 disabled={isSubmitting}
                 className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-3 rounded-lg transition-all shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40 flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? 'Sending...' : 'Request Consultation'}
+                {isSubmitting ? t('homeContact.sending') : t('homeContact.cta')}
                 {!isSubmitting && (
                   <span className="iconify group-hover:translate-x-1 transition-transform" data-icon="lucide:arrow-right" data-width="16"></span>
                 )}

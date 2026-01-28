@@ -245,6 +245,58 @@
   box-shadow: 0 0 20px var(--primary-glow);
 }
 
+/* Reveal animations */
+.about-reveal-section .about-reveal-item {
+  opacity: 0;
+  transform: translateY(28px) scale(0.97);
+  transition:
+    opacity 1200ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1200ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 1200ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: transform, opacity;
+}
+
+.about-reveal-section.is-visible .about-reveal-item {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Special animation for cards with glow effect */
+.about-reveal-section .about-reveal-item.group {
+  box-shadow: 0 0 0 rgba(99, 102, 241, 0);
+}
+
+.about-reveal-section.is-visible .about-reveal-item.group {
+  animation: cardRevealGlow 1300ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+@keyframes cardRevealGlow {
+  0% {
+    opacity: 0;
+    transform: translateY(32px) scale(0.95);
+    box-shadow: 0 0 0 rgba(99, 102, 241, 0);
+  }
+  50% {
+    opacity: 0.6;
+    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.15);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 0 rgba(99, 102, 241, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-reveal-section .about-reveal-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 @media (max-width: 768px) {
   .about-hero {
     padding: 4rem 0;

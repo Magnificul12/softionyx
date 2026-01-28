@@ -1,0 +1,648 @@
+{
+  "nav": {
+    "services": "Services",
+    "solutions": "Solutions",
+    "store": "Store",
+    "about": "About",
+    "contact": "Contact",
+    "admin": "Admin",
+    "logout": "Logout"
+  },
+  "language": {
+    "en": "EN",
+    "ro": "RO",
+    "ru": "RU"
+  },
+  "hero": {
+    "badge": "Professional IT Solutions",
+    "titleLine1": "Scale your vision with",
+    "titleHighlight": "Intelligent Systems",
+    "subtitle": "We deliver cutting-edge technology solutions including web development, frontend & backend services, blockchain analytics, and expert programming across multiple languages.",
+    "ctaPrimary": "Request Help",
+    "ctaSecondary": "Our Services"
+  },
+  "homeServices": {
+    "title": "Comprehensive IT Ecosystem",
+    "subtitle": "End-to-end digital solutions tailored to complex enterprise environments. We build the systems that power tomorrow.",
+    "cta": "View all services",
+    "items": {
+      "cyber": {
+        "title": "Cyber Security",
+        "desc": "Zero-trust architecture and 24/7 autonomous threat monitoring."
+      },
+      "cloud": {
+        "title": "Cloud Infrastructure",
+        "desc": "Scalable serverless computing and multi-cloud management strategies."
+      },
+      "ai": {
+        "title": "AI & Machine Learning",
+        "desc": "Predictive analytics and custom model training for business intelligence."
+      },
+      "software": {
+        "title": "Software Engineering",
+        "desc": "Custom software developed with modern stacks and rigorous testing."
+      },
+      "data": {
+        "title": "Data Management",
+        "desc": "Secure warehousing, processing, and real-time data pipelines."
+      },
+      "network": {
+        "title": "Network Solutions",
+        "desc": "High-bandwidth, low-latency network architecture and optimization."
+      }
+    }
+  },
+  "homeAbout": {
+    "titleLine1": "Engineered for",
+    "titleLine2": "uncompromised speed.",
+    "subtitle": "We don't just fix problems; we architect the future of your business. Our methodology is rooted in data-driven decisions and agile implementation.",
+    "points": {
+      "uptime": {
+        "title": "99.99% Uptime Guarantee",
+        "desc": "Redundant systems ensuring business continuity."
+      },
+      "threat": {
+        "title": "24/7 Threat Intelligence",
+        "desc": "Proactive monitoring to neutralize threats before impact."
+      },
+      "deploy": {
+        "title": "Rapid Deployment",
+        "desc": "From consultation to live environment in record time."
+      }
+    },
+    "stats": {
+      "projects": "Projects",
+      "clients": "Clients",
+      "technologies": "Technologies",
+      "experience": "Experience",
+      "years": "Years"
+    }
+  },
+  "homeContact": {
+    "title": "Ready to accelerate?",
+    "subtitle": "Join forward-thinking companies that trust SoftIonyx with their critical infrastructure.",
+    "fields": {
+      "name": "Name",
+      "email": "Work Email",
+      "subject": "Subject",
+      "message": "Message"
+    },
+    "placeholders": {
+      "name": "Your name",
+      "email": "name@company.com",
+      "subject": "Subject",
+      "message": "Your message"
+    },
+    "sending": "Sending...",
+    "cta": "Request Consultation"
+  },
+  "footer": {
+    "tagline": "Professional IT solutions designed for modern enterprise performance, security, and scalability.",
+    "sections": {
+      "services": "Services",
+      "company": "Company",
+      "legal": "Legal"
+    },
+    "links": {
+      "web": "Web Development",
+      "frontendBackend": "Frontend & Backend",
+      "blockchain": "Blockchain Analytics",
+      "programming": "Programming",
+      "about": "About Us",
+      "careers": "Careers",
+      "blog": "Blog",
+      "contact": "Contact",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookie Policy"
+    },
+    "copyright": "SoftIonyx Technologies. All rights reserved."
+  },
+  "servicesPage": {
+    "heroTitlePrefix": "Our",
+    "heroTitleHighlight": "Services",
+    "heroSubtitle": "Comprehensive IT solutions tailored to your business needs",
+    "sections": {
+      "services": "Services",
+      "industries": "Industries Served",
+      "outcomes": "Typical Outcomes"
+    },
+    "back": "Back to services",
+    "ctaTitle": "Ready to Get Started?",
+    "ctaSubtitle": "Let's discuss how we can help bring your project to life",
+    "ctaButton": "Contact Us",
+    "items": {
+      "cyber": {
+        "title": "Cyber Security",
+        "short": "Audits, IAM, Zero-Trust, SIEM/SOC, DevSecOps, compliance.",
+        "description": "Security audits, penetration testing, identity controls, and continuous monitoring.",
+        "services": [
+          "Security audits & penetration testing (web, mobile, infrastructure)",
+          "Vulnerability assessment & remediation",
+          "Zero-Trust architecture design & implementation",
+          "Identity & Access Management (IAM)",
+          "Network security (firewalls, IDS/IPS, WAF)",
+          "Endpoint protection & device hardening",
+          "Security monitoring & alerting (SIEM, SOC setup)",
+          "Incident response & breach recovery",
+          "Secure authentication (SSO, MFA, OAuth, JWT)",
+          "Data encryption (at rest & in transit)",
+          "Compliance support (ISO 27001, GDPR, SOC 2)",
+          "Secure DevOps (DevSecOps pipelines)"
+        ],
+        "industries": ["FinTech", "E-commerce", "Healthcare", "SaaS", "Enterprise"],
+        "outcomes": ["Reduced risk", "Regulatory compliance", "Faster response times", "Safer access control"]
+      },
+      "cloud": {
+        "title": "Cloud Infrastructure",
+        "short": "Architecture design, migration, CI/CD, Kubernetes, cost optimization.",
+        "description": "Cloud architecture, migration, orchestration, and cost-aware operations.",
+        "services": [
+          "Cloud architecture design (AWS, GCP, Azure)",
+          "Cloud migration (on-prem → cloud)",
+          "Serverless infrastructure setup",
+          "Kubernetes & container orchestration",
+          "Infrastructure as Code (Terraform, CloudFormation)",
+          "CI/CD pipeline setup & optimization",
+          "Cloud cost optimization & billing analysis",
+          "Multi-cloud & hybrid cloud solutions",
+          "Monitoring & logging (CloudWatch, Datadog, Prometheus)"
+        ],
+        "industries": ["SaaS", "Logistics", "Media", "Retail", "FinTech"],
+        "outcomes": ["Higher uptime", "Lower cloud spend", "Faster deployments", "Scalable systems"]
+      },
+      "software": {
+        "title": "Software Engineering",
+        "short": "Web & mobile apps, microservices, integrations, QA, documentation.",
+        "description": "Custom software delivery with scalable architecture and quality assurance.",
+        "services": [
+          "Custom web application development for your business",
+          "Mobile app development (iOS, Android, cross-platform)",
+          "Microservices architecture",
+          "Third-party API integrations",
+          "CRM / ERP custom development",
+          "SaaS product development",
+          "Performance optimization",
+          "Automated testing & QA",
+          "Technical documentation & maintenance"
+        ],
+        "industries": ["Startups", "Enterprise", "E-commerce", "Healthcare", "EdTech"],
+        "outcomes": ["Faster time-to-market", "Stable releases", "Better user experience", "Lower maintenance cost"]
+      },
+      "data": {
+        "title": "Data Management",
+        "short": "DB design, ETL/ELT, streaming, analytics, BI, governance.",
+        "description": "Data platforms for analytics, governance, and operational visibility.",
+        "services": [
+          "Database design & optimization",
+          "ETL / ELT pipeline development",
+          "Real-time data streaming",
+          "Data migration & consolidation",
+          "Analytics dashboards & reporting",
+          "Business intelligence solutions",
+          "Data governance & access control",
+          "Backup & disaster recovery"
+        ],
+        "industries": ["FinTech", "Retail", "Healthcare", "Manufacturing", "SaaS"],
+        "outcomes": ["Faster insights", "Data reliability", "Cost reduction", "Operational visibility"]
+      },
+      "automation": {
+        "title": "Business Automation",
+        "short": "Process mapping, workflow automation, integrations, RPA, reporting.",
+        "description": "Automate critical workflows to reduce manual work and improve speed.",
+        "services": [
+          "Process analysis & automation design",
+          "Workflow automation (approvals, handoffs, SLAs)",
+          "RPA (robotic process automation)",
+          "System & API integrations",
+          "Document automation & e-signature flows",
+          "Notifications, alerts & escalation logic",
+          "Operational dashboards & reporting",
+          "Automation monitoring & optimization"
+        ],
+        "industries": ["E-commerce", "Logistics", "Finance", "Healthcare", "Professional Services"],
+        "outcomes": ["Lower operational costs", "Faster execution", "Reduced errors", "Better visibility"]
+      },
+      "blockchain": {
+        "title": "Blockchain",
+        "short": "Smart contracts, wallets, tokenization, audits, integrations.",
+        "description": "Build secure blockchain solutions with compliant architectures.",
+        "services": [
+          "Smart contract development & audits",
+          "Wallet and custody solutions",
+          "Tokenization & asset management",
+          "Blockchain integration & APIs",
+          "Private blockchain setup",
+          "Security reviews & best practices",
+          "Performance & scalability optimization",
+          "Monitoring & incident response"
+        ],
+        "industries": ["FinTech", "Gaming", "Supply Chain", "Healthcare", "Public Sector"],
+        "outcomes": ["Higher trust", "Improved traceability", "Secure transactions", "Operational efficiency"]
+      }
+    }
+  },
+  "aboutPage": {
+    "heroTitlePrefix": "About",
+    "heroSubtitle": "Empowering businesses with cutting-edge IT solutions",
+    "overviewTitle": "Company Overview",
+    "overviewText": "SoftIonyx Technologies is a leading IT services company dedicated to delivering innovative technology solutions that drive business growth. With a team of expert developers, designers, and consultants, we help businesses transform their digital presence and achieve their technological goals.",
+    "missionTitle": "Our Mission",
+    "missionText": "To provide exceptional IT services that enable businesses to thrive in the digital age, delivering innovative solutions with integrity, excellence, and customer-centric focus.",
+    "visionTitle": "Our Vision",
+    "visionText": "To be the most trusted IT partner for businesses worldwide, recognized for our technical expertise, innovative solutions, and unwavering commitment to client success.",
+    "valuesTitle": "Our Values",
+    "values": {
+      "innovation": "Innovation & Excellence",
+      "integrity": "Integrity & Transparency",
+      "customer": "Customer-Centric Approach",
+      "learning": "Continuous Learning",
+      "collaboration": "Collaboration & Teamwork"
+    },
+    "teamTitle": "Our Team",
+    "team": {
+      "roles": {
+        "ceo": "CEO & Founder",
+        "cto": "CTO",
+        "lead": "Lead Developer"
+      },
+      "bios": {
+        "ceo": "Leading strategy and innovation for SoftIonyx.",
+        "cto": "Architecting reliable, scalable, and secure platforms.",
+        "lead": "Building high-quality software with modern stacks."
+      }
+    },
+    "achievementsTitle": "Achievements & Milestones",
+    "achievements": {
+      "year": "2026",
+      "title": "Company Founded",
+      "desc": "Started with a vision to transform businesses through technology"
+    },
+    "certTitle": "Certifications & Partners",
+    "certItems": ["AWS Certified", "Microsoft Partner", "Google Cloud Partner", "ISO 27001 Certified"]
+  },
+  "contactPage": {
+    "heroTitlePrefix": "Get In",
+    "heroTitleHighlight": "Touch",
+    "heroSubtitle": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    "infoTitle": "Contact Information",
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address"
+    },
+    "formTitle": "Send Us a Message",
+    "fields": {
+      "name": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "subject": "Subject",
+      "message": "Message"
+    },
+    "sending": "Sending...",
+    "cta": "Send Message",
+    "errors": {
+      "submit": "Failed to send message. Please try again."
+    }
+  },
+  "solutionsPage": {
+    "heroTitlePrefix": "Solutions",
+    "heroTitleHighlight": "That Scale",
+    "heroSubtitle": "Modular, production-ready systems tailored to your product, team, and growth stage.",
+    "items": {
+      "product": {
+        "title": "Product Engineering",
+        "desc": "End-to-end delivery from discovery to launch with a reliable stack."
+      },
+      "data": {
+        "title": "Data & Analytics",
+        "desc": "Operational insights, dashboards, and pipelines that drive decisions."
+      },
+      "automation": {
+        "title": "Automation",
+        "desc": "Workflows that reduce manual work and speed up execution."
+      }
+    },
+    "highlights": {
+      "title": "Designed to remove delivery friction.",
+      "subtitle": "We combine strategic clarity with engineering rigor so teams can move fast without risking stability.",
+      "items": {
+        "clarity": {
+          "title": "Clear scope, fast alignment",
+          "desc": "Structured discovery and realistic milestones keep momentum predictable."
+        },
+        "delivery": {
+          "title": "Production-grade by default",
+          "desc": "Observability, testing, and security are built into every release."
+        },
+        "growth": {
+          "title": "Ready for the next stage",
+          "desc": "Architecture that scales with traffic, data, and new product lines."
+        }
+      }
+    },
+    "stats": {
+      "speed": "Delivery speed",
+      "reliability": "Release stability",
+      "weeks": "Weeks to MVP"
+    },
+    "cta": {
+      "title": "Need a solution that scales with you?",
+      "subtitle": "Tell us what you are building and we'll map the fastest path to production.",
+      "button": "Request help"
+    }
+  },
+  "storePage": {
+    "heroTitlePrefix": "Store",
+    "heroTitleHighlight": "Products",
+    "heroSubtitle": "Premium templates, components, and digital tools built for modern teams.",
+    "notice": "The store is being curated. New items will appear here soon."
+  },
+  "requestHelp": {
+    "heroTitlePrefix": "Request",
+    "heroTitleHighlight": "Help",
+    "heroSubtitle": "Tell us about your project and we'll get back to you as soon as possible",
+    "fields": {
+      "fullName": "Full Name *",
+      "email": "Email *",
+      "company": "Company Name",
+      "phone": "Phone",
+      "serviceType": "Service Type *",
+      "priority": "Priority",
+      "subject": "Subject *",
+      "description": "Description *"
+    },
+    "placeholders": {
+      "serviceType": "Select a service",
+      "subject": "Brief description of your request",
+      "description": "Please provide details about your project, requirements, timeline, and any other relevant information..."
+    },
+    "priority": {
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High",
+      "urgent": "Urgent"
+    },
+    "submitting": "Submitting...",
+    "cta": "Submit Help Request",
+    "errors": {
+      "submitFailed": "Failed to submit help request"
+    },
+    "serviceTypes": [
+      "Website Development",
+      "Frontend & Backend Development",
+      "Blockchain Analytics",
+      "Programming Languages",
+      "Cloud Computing",
+      "AI & Machine Learning",
+      "Blockchain & Cryptocurrency",
+      "Custom Software Solutions",
+      "Other"
+    ]
+  },
+  "login": {
+    "title": "Welcome Back",
+    "subtitle": "Login to your account",
+    "success": "Login successful! Redirecting...",
+    "fields": {
+      "email": "Email",
+      "password": "Password"
+    },
+    "placeholders": {
+      "email": "your@email.com",
+      "password": "••••••••"
+    },
+    "loading": "Logging in...",
+    "cta": "Login",
+    "footerText": "Don't have an account?",
+    "footerCta": "Register",
+    "errors": {
+      "required": "Please fill in all fields",
+      "failed": "Login failed. Please check your credentials."
+    }
+  },
+  "register": {
+    "title": "Create Account",
+    "subtitle": "Join SoftIonyx Technologies",
+    "success": "Registration successful! Redirecting...",
+    "fields": {
+      "fullName": "Full Name *",
+      "email": "Email *",
+      "company": "Company Name",
+      "phone": "Phone",
+      "password": "Password *",
+      "confirmPassword": "Confirm Password *"
+    },
+    "placeholders": {
+      "fullName": "John Doe",
+      "email": "your@email.com",
+      "company": "Company Inc.",
+      "phone": "+1 (234) 567-890",
+      "password": "••••••••",
+      "confirmPassword": "••••••••"
+    },
+    "loading": "Creating Account...",
+    "cta": "Register",
+    "footerText": "Already have an account?",
+    "footerCta": "Login",
+    "errors": {
+      "required": "Please fill in all required fields",
+      "passwordLength": "Password must be at least 6 characters",
+      "passwordMatch": "Passwords do not match",
+      "emailInvalid": "Please enter a valid email address",
+      "failed": "Registration failed. Please try again."
+    }
+  },
+  "blog": {
+    "heroTitlePrefix": "Our",
+    "heroTitleHighlight": "Blog",
+    "heroSubtitle": "Insights, tutorials, and updates from our team",
+    "categories": {
+      "all": "All",
+      "cloud": "Cloud Solutions",
+      "web": "Web Development",
+      "cyber": "Cybersecurity",
+      "ai": "AI & Data",
+      "devops": "DevOps",
+      "mobile": "Mobile"
+    },
+    "posts": {
+      "cloud": {
+        "title": "The Future of Cloud Computing in 2024",
+        "excerpt": "Exploring the latest trends and innovations in cloud computing..."
+      },
+      "react": {
+        "title": "Best Practices for React Development",
+        "excerpt": "Learn the essential best practices for building scalable React applications..."
+      },
+      "cyber": {
+        "title": "Cybersecurity Threats in 2024",
+        "excerpt": "Understanding the evolving landscape of cybersecurity threats..."
+      },
+      "ai": {
+        "title": "AI and Machine Learning Trends",
+        "excerpt": "Discover the latest trends in artificial intelligence and machine learning..."
+      }
+    },
+    "tags": {
+      "cloud": "Cloud",
+      "aws": "AWS",
+      "technology": "Technology",
+      "react": "React",
+      "javascript": "JavaScript",
+      "frontend": "Frontend",
+      "security": "Security",
+      "cyber": "Cybersecurity",
+      "threats": "Threats",
+      "ai": "AI",
+      "ml": "Machine Learning",
+      "dataScience": "Data Science"
+    }
+  },
+  "careers": {
+    "heroTitlePrefix": "Join Our",
+    "heroTitleHighlight": "Team",
+    "heroSubtitle": "Build the future with us. Explore exciting career opportunities.",
+    "apply": "Apply Now",
+    "departments": {
+      "development": "Development",
+      "operations": "Operations",
+      "design": "Design",
+      "security": "Security"
+    },
+    "locations": {
+      "remote": "Remote",
+      "hybrid": "Hybrid",
+      "onsite": "On-site"
+    },
+    "types": {
+      "fulltime": "Full-time",
+      "internship": "Internship"
+    },
+    "jobs": {
+      "fullstack": {
+        "title": "Senior Full-Stack Developer",
+        "desc": "We are looking for an experienced full-stack developer to join our team."
+      },
+      "devops": {
+        "title": "DevOps Engineer",
+        "desc": "Seeking a DevOps engineer to manage our cloud infrastructure."
+      },
+      "design": {
+        "title": "UI/UX Designer",
+        "desc": "Join our design team to create beautiful user experiences."
+      },
+      "security": {
+        "title": "Cybersecurity Specialist",
+        "desc": "Help us secure our clients' digital assets."
+      },
+      "intern": {
+        "title": "Software Development Intern",
+        "desc": "Great opportunity for students to gain real-world experience."
+      }
+    }
+  },
+  "portfolio": {
+    "heroTitlePrefix": "Our",
+    "heroTitleHighlight": "Portfolio",
+    "heroSubtitle": "Showcasing our successful projects and client solutions",
+    "categories": {
+      "all": "All",
+      "web": "Web Development",
+      "mobile": "Mobile App",
+      "cloud": "Cloud Solutions",
+      "ai": "AI & Data",
+      "cyber": "Cybersecurity",
+      "devops": "DevOps"
+    },
+    "projects": {
+      "ecommerce": {
+        "title": "E-Commerce Platform",
+        "desc": "Modern e-commerce solution with payment integration"
+      },
+      "banking": {
+        "title": "Mobile Banking App",
+        "desc": "Secure mobile banking application with biometric authentication"
+      },
+      "cloud": {
+        "title": "Cloud Migration",
+        "desc": "Complete cloud infrastructure migration for enterprise"
+      },
+      "ai": {
+        "title": "AI Analytics Dashboard",
+        "desc": "Real-time analytics dashboard with AI-powered insights"
+      },
+      "cyber": {
+        "title": "Cybersecurity Audit",
+        "desc": "Comprehensive security audit and penetration testing"
+      },
+      "devops": {
+        "title": "DevOps Pipeline",
+        "desc": "Automated CI/CD pipeline implementation"
+      }
+    }
+  },
+  "admin": {
+    "seoTitle": "Admin Panel",
+    "seoDescription": "SoftIonyx Admin Dashboard",
+    "titlePrefix": "Admin",
+    "titleHighlight": "Panel",
+    "defaultAdmin": "Admin",
+    "welcome": "Welcome back, {{name}}",
+    "loading": "Loading...",
+    "tabs": {
+      "dashboard": "Dashboard",
+      "pages": "Pages",
+      "services": "Services",
+      "blog": "Blog Posts",
+      "contacts": "Contacts",
+      "jobs": "Jobs"
+    },
+    "dashboard": {
+      "title": "Dashboard Overview",
+      "failed": "Failed to load dashboard data",
+      "recentContacts": "Recent Contacts",
+      "stats": {
+        "totalContacts": "Total Contacts",
+        "helpRequests": "Help Requests",
+        "jobApplications": "Job Applications",
+        "blogPosts": "Blog Posts",
+        "totalUsers": "Total Users",
+        "services": "Services"
+      }
+    },
+    "pages": {
+      "title": "Manage Pages",
+      "items": ["Home Page", "About Page", "Services Page"]
+    },
+    "services": {
+      "title": "Manage Services",
+      "add": "+ Add New Service",
+      "items": ["Web Development", "Mobile App Development"]
+    },
+    "blog": {
+      "title": "Manage Blog Posts",
+      "add": "+ Add New Post",
+      "sampleTitle": "The Future of Cloud Computing",
+      "sampleDate": "Published: Jan 15, 2024"
+    },
+    "contacts": {
+      "title": "Contact Form Submissions",
+      "empty": "No contact submissions yet",
+      "markAs": "Mark as",
+      "read": "Read",
+      "replied": "Replied"
+    },
+    "jobs": {
+      "title": "Job Applications",
+      "empty": "No job applications yet",
+      "phone": "Phone",
+      "viewResume": "View Resume",
+      "markReviewed": "Mark as Reviewed"
+    },
+    "buttons": {
+      "edit": "Edit",
+      "delete": "Delete"
+    }
+  }
+}

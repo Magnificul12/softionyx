@@ -11,55 +11,72 @@ const router = express.Router();
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Invalid email address'),
+  phone: z.string().optional(),
   subject: z.string().min(3, 'Subject must be at least 3 characters'),
   message: z.string().min(10, 'Message must be at least 10 characters'),
 });
 
 router.post('/', contactLimiter, async (req: Request, res: Response) => {
   try {
-    const { name, email, subject, message } = contactSchema.parse(req.body);
+    const t = req.t as (key: string) => string;
+    const { name, email, phone, subject, message } = contactSchema.parse(req.body);
 
-    // Save to database
-    const result = await pool.query(
-      `INSERT INTO contact_submissions (name, email, subject, message)
-       VALUES ($1, $2, $3, $4)
-       RETURNING *`,
-      [name, email, subject, message]
-    );
+    // Try to save to database (optional - don't fail if DB is not configured)
+    try {
+      const result = await pool.query(
+        `INSERT INTO contact_submissions (name, email, subject, message)
+         VALUES ($1, $2, $3, $4)
+         RETURNING *`,
+        [name, email, subject, message]
+      );
+      logger.info(`New contact submission saved to database from ${email}`);
+    } catch (dbError: any) {
+      logger.warn('Failed to save contact submission to database:', dbError.message);
+      // Continue with email sending even if DB save fails
+    }
 
-    logger.info(`New contact submission from ${email}`);
+    // Send email notification (this is the main functionality)
+    const contactEmail = process.env.CONTACT_EMAIL || process.env.SMTP_USER;
+    
+    if (!contactEmail || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
+      logger.warn('Email configuration missing. Skipping email send.');
+      return res.json({
+        success: true,
+        message: t('contact.success'),
+      });
+    }
 
-    // If email is configured, send email
-    if (process.env.SMTP_USER && process.env.SMTP_PASS) {
-      try {
-        const transporter = nodemailer.createTransport({
-          host: process.env.SMTP_HOST || 'smtp.gmail.com',
-          port: parseInt(process.env.SMTP_PORT || '587'),
-          secure: false,
-          auth: {
-            user: process.env.SMTP_USER,
-            pass: process.env.SMTP_PASS,
-          },
-        });
+    try {
+      const transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST || 'smtp.gmail.com',
+        port: parseInt(process.env.SMTP_PORT || '587'),
+        secure: false,
+        auth: {
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASS,
+        },
+      });
 
-        await transporter.sendMail({
-          from: process.env.SMTP_USER,
-          to: process.env.CONTACT_EMAIL || process.env.SMTP_USER,
-          subject: `Contact Form: ${subject}`,
-          html: contactFormTemplate({ name, email, subject, message }),
-          replyTo: email,
-        });
+      await transporter.sendMail({
+        from: `"SoftIonyx Website" <${process.env.SMTP_USER}>`,
+        to: contactEmail,
+        subject: `Contact Form: ${subject}`,
+        html: contactFormTemplate({ name, email, phone, subject, message }),
+        replyTo: email,
+      });
 
-        logger.info(`Contact form email sent for ${email}`);
-      } catch (emailError) {
-        logger.error('Email sending error:', emailError);
-        // Don't fail the request if email fails
-      }
+      logger.info(`Contact form email sent to ${contactEmail} from ${email}`);
+    } catch (emailError: any) {
+      logger.error('Email sending error:', emailError);
+      return res.json({
+        success: true,
+        message: t('contact.success'),
+      });
     }
 
     res.json({ 
       success: true, 
-      message: 'Thank you for your message! We will get back to you soon.' 
+      message: t('contact.success')
     });
   } catch (error: any) {
     if (error instanceof z.ZodError) {
@@ -73,7 +90,7 @@ router.post('/', contactLimiter, async (req: Request, res: Response) => {
     logger.error('Contact form error:', error);
     res.status(500).json({ 
       success: false, 
-      error: 'Failed to send message. Please try again later.' 
+      error: req.t('contact.validation_error')
     });
   }
 });
