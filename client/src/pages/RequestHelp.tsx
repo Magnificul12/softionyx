@@ -7,7 +7,7 @@ import axios from '../utils/axios';
 export default function RequestHelp() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { isAuthenticated, loadUser } = useAuthStore();
+  const { user, isAuthenticated, loadUser } = useAuthStore();
   const serviceTypes = t('requestHelp.serviceTypes', { returnObjects: true }) as string[];
   const [formData, setFormData] = useState({
     name: '',
