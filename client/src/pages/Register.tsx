@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
 import { Icon } from '@iconify/react';
+import { useTranslation } from 'react-i18next';
 
 export default function Register() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const register = useAuthStore((state) => state.register);
   const [formData, setFormData] = useState({
@@ -33,19 +35,19 @@ export default function Register() {
 
     // Validation
     if (!formData.full_name || !formData.email || !formData.password || !formData.confirmPassword) {
-      setError('Please fill in all required fields');
+      setError(t('register.errors.required'));
       setLoading(false);
       return;
     }
 
     if (formData.password.length < 6) {
-      setError('Password must be at least 6 characters');
+      setError(t('register.errors.passwordLength'));
       setLoading(false);
       return;
     }
 
     if (formData.password !== formData.confirmPassword) {
-      setError('Passwords do not match');
+      setError(t('register.errors.passwordMatch'));
       setLoading(false);
       return;
     }
@@ -53,7 +55,7 @@ export default function Register() {
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      setError('Please enter a valid email address');
+      setError(t('register.errors.emailInvalid'));
       setLoading(false);
       return;
     }
@@ -71,7 +73,7 @@ export default function Register() {
         navigate('/');
       }, 1500);
     } catch (err: any) {
-      setError(err.message || err.response?.data?.error || 'Registration failed. Please try again.');
+      setError(err.message || err.response?.data?.error || t('register.errors.failed'));
     } finally {
       setLoading(false);
     }
@@ -85,15 +87,15 @@ export default function Register() {
         <div className="glass-strong border border-white/10 rounded-2xl p-8 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl -z-10"></div>
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-medium text-white tracking-tight mb-2">Create Account</h1>
-            <p className="text-slate-400">Join SoftIonyx Technologies</p>
+            <h1 className="text-3xl font-medium text-white tracking-tight mb-2">{t('register.title')}</h1>
+            <p className="text-slate-400">{t('register.subtitle')}</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             {success && (
               <div className="p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-sm flex items-center gap-2">
                 <Icon icon="lucide:check-circle" width={20} />
-                <span>Registration successful! Redirecting...</span>
+                <span>{t('register.success')}</span>
               </div>
             )}
             {error && (
@@ -104,7 +106,7 @@ export default function Register() {
             )}
 
             <div>
-              <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">Full Name *</label>
+              <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">{t('register.fields.fullName')}</label>
               <input
                 type="text"
                 name="full_name"
@@ -112,12 +114,12 @@ export default function Register() {
                 onChange={handleChange}
                 required
                 className="w-full bg-slate-950/50 border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all placeholder:text-slate-600"
-                placeholder="John Doe"
+                placeholder={t('register.placeholders.fullName')}
               />
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">Email *</label>
+              <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">{t('register.fields.email')}</label>
               <input
                 type="email"
                 name="email"
@@ -125,36 +127,36 @@ export default function Register() {
                 onChange={handleChange}
                 required
                 className="w-full bg-slate-950/50 border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all placeholder:text-slate-600"
-                placeholder="your@email.com"
+                placeholder={t('register.placeholders.email')}
               />
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">Company Name</label>
+              <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">{t('register.fields.company')}</label>
               <input
                 type="text"
                 name="company_name"
                 value={formData.company_name}
                 onChange={handleChange}
                 className="w-full bg-slate-950/50 border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all placeholder:text-slate-600"
-                placeholder="Company Inc."
+                placeholder={t('register.placeholders.company')}
               />
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">Phone</label>
+              <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">{t('register.fields.phone')}</label>
               <input
                 type="tel"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
                 className="w-full bg-slate-950/50 border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all placeholder:text-slate-600"
-                placeholder="+1 (234) 567-890"
+                placeholder={t('register.placeholders.phone')}
               />
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">Password *</label>
+              <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">{t('register.fields.password')}</label>
               <input
                 type="password"
                 name="password"
@@ -163,12 +165,12 @@ export default function Register() {
                 required
                 minLength={6}
                 className="w-full bg-slate-950/50 border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all placeholder:text-slate-600"
-                placeholder="••••••••"
+                placeholder={t('register.placeholders.password')}
               />
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">Confirm Password *</label>
+              <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">{t('register.fields.confirmPassword')}</label>
               <input
                 type="password"
                 name="confirmPassword"
@@ -176,7 +178,7 @@ export default function Register() {
                 onChange={handleChange}
                 required
                 className="w-full bg-slate-950/50 border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all placeholder:text-slate-600"
-                placeholder="••••••••"
+                placeholder={t('register.placeholders.confirmPassword')}
               />
             </div>
 
@@ -185,9 +187,9 @@ export default function Register() {
               disabled={loading}
               className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-3 rounded-lg transition-all shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {loading ? 'Creating Account...' : (
+              {loading ? t('register.loading') : (
                 <>
-                  <span>Register</span>
+                  <span>{t('register.cta')}</span>
                   <Icon icon="lucide:arrow-right" width={16} />
                 </>
               )}
@@ -196,11 +198,12 @@ export default function Register() {
 
           <div className="mt-6 text-center text-sm text-slate-400">
             <p>
-              Already have an account? <Link 
+              {t('register.footerText')}{' '}
+              <Link 
                 to="/login" 
                 className="text-indigo-400 hover:text-indigo-300 transition-colors relative group"
               >
-                <span className="relative z-10">Login</span>
+                <span className="relative z-10">{t('register.footerCta')}</span>
                 <span className="absolute inset-0 bg-indigo-400/10 rounded blur-sm opacity-0 group-hover:opacity-100 transition-opacity"></span>
               </Link>
             </p>

@@ -1,0 +1,648 @@
+{
+  "nav": {
+    "services": "Услуги",
+    "solutions": "Решения",
+    "store": "Магазин",
+    "about": "О нас",
+    "contact": "Контакты",
+    "admin": "Админ",
+    "logout": "Выйти"
+  },
+  "language": {
+    "en": "EN",
+    "ro": "RO",
+    "ru": "RU"
+  },
+  "hero": {
+    "badge": "Профессиональные IT-решения",
+    "titleLine1": "Масштабируйте ваш замысел с",
+    "titleHighlight": "Интеллектуальными системами",
+    "subtitle": "Мы создаем передовые технологические решения: веб‑разработка, frontend и backend, аналитика блокчейн и экспертное программирование.",
+    "ctaPrimary": "Запросить помощь",
+    "ctaSecondary": "Наши услуги"
+  },
+  "homeServices": {
+    "title": "Комплексная IT‑экосистема",
+    "subtitle": "End‑to‑end цифровые решения для сложных корпоративных сред. Мы создаем системы будущего.",
+    "cta": "Все услуги",
+    "items": {
+      "cyber": {
+        "title": "Кибербезопасность",
+        "desc": "Zero‑Trust архитектура и круглосуточный мониторинг угроз."
+      },
+      "cloud": {
+        "title": "Облачная инфраструктура",
+        "desc": "Масштабируемые serverless решения и multi‑cloud стратегии."
+      },
+      "ai": {
+        "title": "AI & Machine Learning",
+        "desc": "Предиктивная аналитика и модели для бизнеса."
+      },
+      "software": {
+        "title": "Инженерия ПО",
+        "desc": "Кастомные решения на современных стеках с тестированием."
+      },
+      "data": {
+        "title": "Управление данными",
+        "desc": "Безопасное хранение, обработка и real‑time пайплайны."
+      },
+      "network": {
+        "title": "Сетевые решения",
+        "desc": "Высокая пропускная способность и низкая задержка."
+      }
+    }
+  },
+  "homeAbout": {
+    "titleLine1": "Спроектировано для",
+    "titleLine2": "безупречной скорости.",
+    "subtitle": "Мы не просто решаем проблемы — мы проектируем будущее вашего бизнеса на основе данных и agile‑подхода.",
+    "points": {
+      "uptime": {
+        "title": "Гарантия аптайма 99,99%",
+        "desc": "Резервные системы для непрерывной работы."
+      },
+      "threat": {
+        "title": "24/7 разведка угроз",
+        "desc": "Проактивный мониторинг до наступления инцидентов."
+      },
+      "deploy": {
+        "title": "Быстрый запуск",
+        "desc": "От консультации до продакшена за рекордные сроки."
+      }
+    },
+    "stats": {
+      "projects": "Проекты",
+      "clients": "Клиенты",
+      "technologies": "Технологии",
+      "experience": "Опыт",
+      "years": "Лет"
+    }
+  },
+  "homeContact": {
+    "title": "Готовы ускориться?",
+    "subtitle": "Компании доверяют SoftIonyx свою критическую инфраструктуру.",
+    "fields": {
+      "name": "Имя",
+      "email": "Рабочий Email",
+      "subject": "Тема",
+      "message": "Сообщение"
+    },
+    "placeholders": {
+      "name": "Ваше имя",
+      "email": "name@company.com",
+      "subject": "Тема",
+      "message": "Ваше сообщение"
+    },
+    "sending": "Отправка...",
+    "cta": "Запросить консультацию"
+  },
+  "footer": {
+    "tagline": "Профессиональные IT‑решения для производительности, безопасности и масштабируемости.",
+    "sections": {
+      "services": "Услуги",
+      "company": "Компания",
+      "legal": "Правовые"
+    },
+    "links": {
+      "web": "Веб‑разработка",
+      "frontendBackend": "Frontend & Backend",
+      "blockchain": "Аналитика блокчейн",
+      "programming": "Программирование",
+      "about": "О нас",
+      "careers": "Карьера",
+      "blog": "Блог",
+      "contact": "Контакты",
+      "privacy": "Политика конфиденциальности",
+      "terms": "Условия использования",
+      "cookies": "Политика cookies"
+    },
+    "copyright": "SoftIonyx Technologies. Все права защищены."
+  },
+  "servicesPage": {
+    "heroTitlePrefix": "Наши",
+    "heroTitleHighlight": "Услуги",
+    "heroSubtitle": "Комплексные IT‑решения под нужды вашего бизнеса",
+    "sections": {
+      "services": "Услуги",
+      "industries": "Отрасли",
+      "outcomes": "Результаты"
+    },
+    "back": "Назад к услугам",
+    "ctaTitle": "Готовы начать?",
+    "ctaSubtitle": "Обсудим, как помочь вашему проекту",
+    "ctaButton": "Связаться",
+    "items": {
+      "cyber": {
+        "title": "Кибербезопасность",
+        "short": "Аудиты, IAM, Zero‑Trust, SIEM/SOC, DevSecOps, соответствие.",
+        "description": "Аудиты, тесты, контроль доступа и мониторинг.",
+        "services": [
+          "Аудиты и пен‑тесты (web, mobile, инфраструктура)",
+          "Оценка уязвимостей и исправления",
+          "Zero‑Trust архитектура (дизайн и внедрение)",
+          "Управление доступом (IAM)",
+          "Сетевые меры (firewall, IDS/IPS, WAF)",
+          "Защита endpoint и hardening",
+          "Мониторинг и оповещения (SIEM, SOC)",
+          "Реагирование на инциденты",
+          "Безопасная аутентификация (SSO, MFA, OAuth, JWT)",
+          "Шифрование данных (в покое и в транзите)",
+          "Соответствие (ISO 27001, GDPR, SOC 2)",
+          "DevSecOps пайплайны"
+        ],
+        "industries": ["Финтех", "Электронная коммерция", "Медицина", "SaaS", "Корпоративный сектор"],
+        "outcomes": ["Снижение рисков", "Соответствие нормам", "Быстрый ответ", "Безопасный доступ"]
+      },
+      "cloud": {
+        "title": "Облачная инфраструктура",
+        "short": "Архитектура, миграция, CI/CD, Kubernetes, оптимизация затрат.",
+        "description": "Архитектура cloud, миграция, оркестрация и эффективная эксплуатация.",
+        "services": [
+          "Архитектура (AWS, GCP, Azure)",
+          "Миграция (on‑prem → cloud)",
+          "Serverless инфраструктура",
+          "Kubernetes и оркестрация",
+          "Infrastructure as Code (Terraform, CloudFormation)",
+          "Настройка и оптимизация CI/CD",
+          "Оптимизация облачных затрат",
+          "Multi‑cloud и hybrid",
+          "Мониторинг и логирование (CloudWatch, Datadog, Prometheus)"
+        ],
+        "industries": ["SaaS", "Логистика", "Медиа", "Ритейл", "Финтех"],
+        "outcomes": ["Лучший uptime", "Меньше затрат", "Быстрые деплои", "Масштабируемость"]
+      },
+      "software": {
+        "title": "Инженерия ПО",
+        "short": "Web & mobile, микросервисы, интеграции, QA, документация.",
+        "description": "Поставка ПО со стабильной архитектурой и качеством.",
+        "services": [
+          "Кастомная веб‑разработка",
+          "Мобильные приложения (iOS, Android, cross‑platform)",
+          "Архитектура микросервисов",
+          "Интеграции с внешними API",
+          "CRM/ERP решения",
+          "SaaS продукт",
+          "Оптимизация производительности",
+          "Автотесты & QA",
+          "Документация и сопровождение"
+        ],
+        "industries": ["Стартапы", "Корпоративный сектор", "Электронная коммерция", "Медицина", "EdTech"],
+        "outcomes": ["Быстрый запуск", "Стабильные релизы", "Лучший UX", "Ниже поддержка"]
+      },
+      "data": {
+        "title": "Управление данными",
+        "short": "DB дизайн, ETL/ELT, streaming, analytics, BI, governance.",
+        "description": "Платформы данных для аналитики и управления.",
+        "services": [
+          "Дизайн и оптимизация БД",
+          "ETL / ELT пайплайны",
+          "Streaming в реальном времени",
+          "Миграция и консолидация данных",
+          "Дашборды и отчетность",
+          "Business Intelligence",
+          "Governance и контроль доступа",
+          "Резервное копирование и recovery"
+        ],
+        "industries": ["Финтех", "Ритейл", "Медицина", "Производство", "SaaS"],
+        "outcomes": ["Быстрые инсайты", "Надежные данные", "Снижение затрат", "Прозрачность"]
+      },
+      "automation": {
+        "title": "Автоматизация бизнеса",
+        "short": "Процессы, workflow, интеграции, RPA, отчетность.",
+        "description": "Автоматизация ключевых процессов для скорости и эффективности.",
+        "services": [
+          "Анализ процессов и дизайн автоматизации",
+          "Workflow автоматизация (апрувы, SLA)",
+          "RPA (robotic process automation)",
+          "Интеграции систем и API",
+          "Автоматизация документов и e‑sign",
+          "Оповещения и эскалации",
+          "Операционные дашборды",
+          "Мониторинг и оптимизация"
+        ],
+        "industries": ["Электронная коммерция", "Логистика", "Финансы", "Медицина", "Проф. услуги"],
+        "outcomes": ["Меньше затрат", "Быстрее выполнение", "Меньше ошибок", "Лучшая видимость"]
+      },
+      "blockchain": {
+        "title": "Блокчейн",
+        "short": "Смарт‑контракты, кошельки, токенизация, аудит, интеграции.",
+        "description": "Безопасные блокчейн‑решения с соблюдением требований.",
+        "services": [
+          "Разработка и аудит смарт‑контрактов",
+          "Wallet и custody",
+          "Токенизация и управление активами",
+          "Интеграции и API",
+          "Частный блокчейн",
+          "Аудит безопасности и best practices",
+          "Оптимизация производительности",
+          "Мониторинг и реагирование"
+        ],
+        "industries": ["Финтех", "Игры", "Цепочки поставок", "Медицина", "Гос. сектор"],
+        "outcomes": ["Повышение доверия", "Трассируемость", "Безопасные транзакции", "Эффективность"]
+      }
+    }
+  },
+  "aboutPage": {
+    "heroTitlePrefix": "О",
+    "heroSubtitle": "Помогаем бизнесу с передовыми IT‑решениями",
+    "overviewTitle": "Обзор компании",
+    "overviewText": "SoftIonyx Technologies — IT‑компания, создающая инновационные решения для роста бизнеса.",
+    "missionTitle": "Наша миссия",
+    "missionText": "Предоставлять исключительные IT‑услуги с фокусом на клиента.",
+    "visionTitle": "Наше видение",
+    "visionText": "Быть самым надежным IT‑партнером для бизнеса по всему миру.",
+    "valuesTitle": "Наши ценности",
+    "values": {
+      "innovation": "Инновации и качество",
+      "integrity": "Честность и прозрачность",
+      "customer": "Ориентация на клиента",
+      "learning": "Постоянное развитие",
+      "collaboration": "Командная работа"
+    },
+    "teamTitle": "Наша команда",
+    "team": {
+      "roles": {
+        "ceo": "CEO и основатель",
+        "cto": "CTO",
+        "lead": "Ведущий разработчик"
+      },
+      "bios": {
+        "ceo": "Стратегия и инновации SoftIonyx.",
+        "cto": "Надежная и безопасная архитектура.",
+        "lead": "Качественный код на современных стеках."
+      }
+    },
+    "achievementsTitle": "Достижения",
+    "achievements": {
+      "year": "2026",
+      "title": "Основание компании",
+      "desc": "Начали с идеи трансформировать бизнес через технологии"
+    },
+    "certTitle": "Сертификации и партнеры",
+    "certItems": ["AWS Certified", "Microsoft Partner", "Google Cloud Partner", "ISO 27001 Certified"]
+  },
+  "contactPage": {
+    "heroTitlePrefix": "Свяжитесь",
+    "heroTitleHighlight": "с нами",
+    "heroSubtitle": "Отправьте сообщение, мы ответим как можно быстрее.",
+    "infoTitle": "Контактная информация",
+    "info": {
+      "email": "Email",
+      "phone": "Телефон",
+      "address": "Адрес"
+    },
+    "formTitle": "Отправьте сообщение",
+    "fields": {
+      "name": "Полное имя",
+      "email": "Email",
+      "phone": "Телефон",
+      "subject": "Тема",
+      "message": "Сообщение"
+    },
+    "sending": "Отправка...",
+    "cta": "Отправить",
+    "errors": {
+      "submit": "Не удалось отправить сообщение. Попробуйте снова."
+    }
+  },
+  "solutionsPage": {
+    "heroTitlePrefix": "Решения",
+    "heroTitleHighlight": "для роста",
+    "heroSubtitle": "Модульные, готовые к продакшену системы для вашей команды.",
+    "items": {
+      "product": {
+        "title": "Инженерия продукта",
+        "desc": "Полный цикл от discovery до релиза."
+      },
+      "data": {
+        "title": "Данные и аналитика",
+        "desc": "Дашборды и пайплайны для принятия решений."
+      },
+      "automation": {
+        "title": "Автоматизация",
+        "desc": "Автоматизация, ускоряющая выполнение задач."
+      }
+    },
+    "highlights": {
+      "title": "Создано, чтобы убрать трение в доставке.",
+      "subtitle": "Стратегическая ясность и инженерная строгость дают скорость без потери стабильности.",
+      "items": {
+        "clarity": {
+          "title": "Ясность и быстрое согласование",
+          "desc": "Структурированный discovery и реалистичные этапы удерживают темп."
+        },
+        "delivery": {
+          "title": "Продакшен-качество по умолчанию",
+          "desc": "Наблюдаемость, тестирование и безопасность в каждом релизе."
+        },
+        "growth": {
+          "title": "Готово к росту",
+          "desc": "Архитектура растет вместе с трафиком, данными и продуктами."
+        }
+      }
+    },
+    "stats": {
+      "speed": "Скорость доставки",
+      "reliability": "Стабильность релизов",
+      "weeks": "Недель до MVP"
+    },
+    "cta": {
+      "title": "Нужны решения, которые растут с вами?",
+      "subtitle": "Расскажите о проекте — подскажем самый быстрый путь в продакшен.",
+      "button": "Запросить помощь"
+    }
+  },
+  "storePage": {
+    "heroTitlePrefix": "Магазин",
+    "heroTitleHighlight": "Продукты",
+    "heroSubtitle": "Премиальные шаблоны, компоненты и инструменты.",
+    "notice": "Магазин в разработке. Скоро появятся новые товары."
+  },
+  "requestHelp": {
+    "heroTitlePrefix": "Запросить",
+    "heroTitleHighlight": "помощь",
+    "heroSubtitle": "Расскажите о проекте, и мы свяжемся с вами.",
+    "fields": {
+      "fullName": "Полное имя *",
+      "email": "Email *",
+      "company": "Компания",
+      "phone": "Телефон",
+      "serviceType": "Тип услуги *",
+      "priority": "Приоритет",
+      "subject": "Тема *",
+      "description": "Описание *"
+    },
+    "placeholders": {
+      "serviceType": "Выберите услугу",
+      "subject": "Краткое описание запроса",
+      "description": "Опишите проект, требования, сроки и т. д."
+    },
+    "priority": {
+      "low": "Низкий",
+      "medium": "Средний",
+      "high": "Высокий",
+      "urgent": "Срочный"
+    },
+    "submitting": "Отправка...",
+    "cta": "Отправить запрос",
+    "errors": {
+      "submitFailed": "Не удалось отправить запрос"
+    },
+    "serviceTypes": [
+      "Веб‑разработка",
+      "Frontend & Backend",
+      "Аналитика блокчейн",
+      "Программирование",
+      "Cloud Computing",
+      "AI & Machine Learning",
+      "Blockchain & Crypto",
+      "Кастомные решения",
+      "Другое"
+    ]
+  },
+  "login": {
+    "title": "С возвращением",
+    "subtitle": "Войдите в аккаунт",
+    "success": "Вход выполнен! Перенаправление...",
+    "fields": {
+      "email": "Email",
+      "password": "Пароль"
+    },
+    "placeholders": {
+      "email": "your@email.com",
+      "password": "••••••••"
+    },
+    "loading": "Вход...",
+    "cta": "Войти",
+    "footerText": "Нет аккаунта?",
+    "footerCta": "Регистрация",
+    "errors": {
+      "required": "Заполните все поля",
+      "failed": "Ошибка входа. Проверьте данные."
+    }
+  },
+  "register": {
+    "title": "Создать аккаунт",
+    "subtitle": "Присоединяйтесь к SoftIonyx Technologies",
+    "success": "Регистрация успешна! Перенаправление...",
+    "fields": {
+      "fullName": "Полное имя *",
+      "email": "Email *",
+      "company": "Компания",
+      "phone": "Телефон",
+      "password": "Пароль *",
+      "confirmPassword": "Подтвердите пароль *"
+    },
+    "placeholders": {
+      "fullName": "Иван Иванов",
+      "email": "your@email.com",
+      "company": "Company Inc.",
+      "phone": "+373 78 000 000",
+      "password": "••••••••",
+      "confirmPassword": "••••••••"
+    },
+    "loading": "Создание аккаунта...",
+    "cta": "Регистрация",
+    "footerText": "Уже есть аккаунт?",
+    "footerCta": "Войти",
+    "errors": {
+      "required": "Заполните обязательные поля",
+      "passwordLength": "Минимум 6 символов",
+      "passwordMatch": "Пароли не совпадают",
+      "emailInvalid": "Неверный email",
+      "failed": "Регистрация не удалась. Попробуйте снова."
+    }
+  },
+  "blog": {
+    "heroTitlePrefix": "Наш",
+    "heroTitleHighlight": "Блог",
+    "heroSubtitle": "Инсайты, гайды и новости команды",
+    "categories": {
+      "all": "Все",
+      "cloud": "Cloud",
+      "web": "Web Development",
+      "cyber": "Кибербезопасность",
+      "ai": "AI & Data",
+      "devops": "DevOps",
+      "mobile": "Mobile"
+    },
+    "posts": {
+      "cloud": {
+        "title": "Будущее облачных вычислений в 2024",
+        "excerpt": "Обзор трендов и инноваций в cloud..."
+      },
+      "react": {
+        "title": "Лучшие практики React",
+        "excerpt": "Ключевые практики для масштабируемых React‑приложений..."
+      },
+      "cyber": {
+        "title": "Угрозы кибербезопасности в 2024",
+        "excerpt": "Как меняется ландшафт киберугроз..."
+      },
+      "ai": {
+        "title": "Тренды AI и Machine Learning",
+        "excerpt": "Новейшие тренды в AI и ML..."
+      }
+    },
+    "tags": {
+      "cloud": "Cloud",
+      "aws": "AWS",
+      "technology": "Technology",
+      "react": "React",
+      "javascript": "JavaScript",
+      "frontend": "Frontend",
+      "security": "Security",
+      "cyber": "Cybersecurity",
+      "threats": "Threats",
+      "ai": "AI",
+      "ml": "Machine Learning",
+      "dataScience": "Data Science"
+    }
+  },
+  "careers": {
+    "heroTitlePrefix": "Присоединяйтесь",
+    "heroTitleHighlight": "к команде",
+    "heroSubtitle": "Стройте будущее вместе с нами.",
+    "apply": "Откликнуться",
+    "departments": {
+      "development": "Разработка",
+      "operations": "Операции",
+      "design": "Дизайн",
+      "security": "Безопасность"
+    },
+    "locations": {
+      "remote": "Удаленно",
+      "hybrid": "Гибрид",
+      "onsite": "Офис"
+    },
+    "types": {
+      "fulltime": "Full-time",
+      "internship": "Стажировка"
+    },
+    "jobs": {
+      "fullstack": {
+        "title": "Senior Full-Stack Developer",
+        "desc": "Ищем опытного full‑stack разработчика."
+      },
+      "devops": {
+        "title": "DevOps Engineer",
+        "desc": "Нужен DevOps для управления cloud."
+      },
+      "design": {
+        "title": "UI/UX Designer",
+        "desc": "Создавайте красивый пользовательский опыт."
+      },
+      "security": {
+        "title": "Cybersecurity Specialist",
+        "desc": "Защита цифровых активов клиентов."
+      },
+      "intern": {
+        "title": "Software Development Intern",
+        "desc": "Отличная возможность для студентов."
+      }
+    }
+  },
+  "portfolio": {
+    "heroTitlePrefix": "Наше",
+    "heroTitleHighlight": "Портфолио",
+    "heroSubtitle": "Успешные проекты и решения для клиентов",
+    "categories": {
+      "all": "Все",
+      "web": "Web Development",
+      "mobile": "Mobile App",
+      "cloud": "Cloud",
+      "ai": "AI & Data",
+      "cyber": "Cybersecurity",
+      "devops": "DevOps"
+    },
+    "projects": {
+      "ecommerce": {
+        "title": "E-Commerce платформа",
+        "desc": "Современное решение с платежной интеграцией"
+      },
+      "banking": {
+        "title": "Мобильный банк",
+        "desc": "Безопасное приложение с биометрией"
+      },
+      "cloud": {
+        "title": "Миграция в облако",
+        "desc": "Полная миграция инфраструктуры"
+      },
+      "ai": {
+        "title": "AI аналитика",
+        "desc": "Real‑time дашборд с AI‑инсайтами"
+      },
+      "cyber": {
+        "title": "Аудит безопасности",
+        "desc": "Полный аудит и penetration testing"
+      },
+      "devops": {
+        "title": "DevOps pipeline",
+        "desc": "Автоматизация CI/CD"
+      }
+    }
+  },
+  "admin": {
+    "seoTitle": "Админ‑панель",
+    "seoDescription": "Админ‑панель SoftIonyx",
+    "titlePrefix": "Админ",
+    "titleHighlight": "Панель",
+    "defaultAdmin": "Админ",
+    "welcome": "С возвращением, {{name}}",
+    "loading": "Загрузка...",
+    "tabs": {
+      "dashboard": "Dashboard",
+      "pages": "Страницы",
+      "services": "Услуги",
+      "blog": "Блог",
+      "contacts": "Контакты",
+      "jobs": "Вакансии"
+    },
+    "dashboard": {
+      "title": "Обзор",
+      "failed": "Не удалось загрузить данные",
+      "recentContacts": "Последние контакты",
+      "stats": {
+        "totalContacts": "Всего контактов",
+        "helpRequests": "Запросы помощи",
+        "jobApplications": "Отклики",
+        "blogPosts": "Посты блога",
+        "totalUsers": "Пользователи",
+        "services": "Услуги"
+      }
+    },
+    "pages": {
+      "title": "Управление страницами",
+      "items": ["Главная", "О нас", "Услуги"]
+    },
+    "services": {
+      "title": "Управление услугами",
+      "add": "+ Добавить услугу",
+      "items": ["Web Development", "Mobile App Development"]
+    },
+    "blog": {
+      "title": "Управление блогом",
+      "add": "+ Добавить пост",
+      "sampleTitle": "Будущее облачных вычислений",
+      "sampleDate": "Опубликовано: 15 янв 2024"
+    },
+    "contacts": {
+      "title": "Сообщения формы",
+      "empty": "Пока нет сообщений",
+      "markAs": "Отметить как",
+      "read": "Прочитано",
+      "replied": "Отвечено"
+    },
+    "jobs": {
+      "title": "Заявки на вакансии",
+      "empty": "Пока нет заявок",
+      "phone": "Телефон",
+      "viewResume": "Посмотреть резюме",
+      "markReviewed": "Отметить как проверено"
+    },
+    "buttons": {
+      "edit": "Редактировать",
+      "delete": "Удалить"
+    }
+  }
+}

@@ -1,42 +1,43 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState, memo } from 'react';
 import { Icon } from '@iconify/react';
+import { useTranslation } from 'react-i18next';
 
 const services = [
   {
     icon: 'lucide:shield-check',
-    title: 'Cyber Security',
-    description: 'Zero-trust architecture and 24/7 autonomous threat monitoring.',
+    title: 'homeServices.items.cyber.title',
+    description: 'homeServices.items.cyber.desc',
     color: 'indigo'
   },
   {
     icon: 'lucide:cloud',
-    title: 'Cloud Infrastructure',
-    description: 'Scalable serverless computing and multi-cloud management strategies.',
+    title: 'homeServices.items.cloud.title',
+    description: 'homeServices.items.cloud.desc',
     color: 'purple'
   },
   {
     icon: 'lucide:cpu',
-    title: 'AI & Machine Learning',
-    description: 'Predictive analytics and custom model training for business intelligence.',
+    title: 'homeServices.items.ai.title',
+    description: 'homeServices.items.ai.desc',
     color: 'emerald'
   },
   {
     icon: 'lucide:code-2',
-    title: 'Software Engineering',
-    description: 'Custom software developed with modern stacks and rigorous testing.',
+    title: 'homeServices.items.software.title',
+    description: 'homeServices.items.software.desc',
     color: 'blue'
   },
   {
     icon: 'lucide:database',
-    title: 'Data Management',
-    description: 'Secure warehousing, processing, and real-time data pipelines.',
+    title: 'homeServices.items.data.title',
+    description: 'homeServices.items.data.desc',
     color: 'orange'
   },
   {
     icon: 'lucide:network',
-    title: 'Network Solutions',
-    description: 'High-bandwidth, low-latency network architecture and optimization.',
+    title: 'homeServices.items.network.title',
+    description: 'homeServices.items.network.desc',
     color: 'pink'
   }
 ];
@@ -87,6 +88,7 @@ const colorClasses = {
 };
 
 function Services() {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -121,11 +123,11 @@ function Services() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-6">Comprehensive IT Ecosystem</h2>
-            <p className="text-slate-400 text-lg font-light leading-relaxed">End-to-end digital solutions tailored to complex enterprise environments. We build the systems that power tomorrow.</p>
+            <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-6">{t('homeServices.title')}</h2>
+            <p className="text-slate-400 text-lg font-light leading-relaxed">{t('homeServices.subtitle')}</p>
           </div>
           <Link to="/services#service-details" className="text-white hover:text-indigo-300 text-sm font-medium flex items-center gap-2 transition-colors border-b border-transparent hover:border-indigo-300 pb-0.5">
-            View all services <Icon icon="lucide:arrow-right" width={16} />
+            {t('homeServices.cta')} <Icon icon="lucide:arrow-right" width={16} />
           </Link>
         </div>
 
@@ -175,8 +177,8 @@ function Services() {
                 <div className={`h-12 w-12 rounded-lg ${colors.bg} border ${colors.border} flex items-center justify-center ${colors.text} mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 relative z-10 shadow-lg`}>
                   <Icon icon={service.icon} width={24} />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3 relative z-10 group-hover:text-indigo-300 transition-colors">{service.title}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed relative z-10 font-light group-hover:text-slate-300 transition-colors">{service.description}</p>
+                <h3 className="text-xl font-semibold text-white mb-3 relative z-10 group-hover:text-indigo-300 transition-colors">{t(service.title)}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed relative z-10 font-light group-hover:text-slate-300 transition-colors">{t(service.description)}</p>
               </div>
             );
           })}

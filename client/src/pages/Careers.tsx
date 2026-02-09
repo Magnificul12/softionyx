@@ -1,49 +1,51 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const jobListings = [
   {
     id: 1,
-    title: 'Senior Full-Stack Developer',
-    department: 'Development',
-    location: 'Remote',
-    type: 'Full-time',
-    description: 'We are looking for an experienced full-stack developer to join our team.',
+    title: 'careers.jobs.fullstack.title',
+    department: 'careers.departments.development',
+    location: 'careers.locations.remote',
+    type: 'careers.types.fulltime',
+    description: 'careers.jobs.fullstack.desc',
   },
   {
     id: 2,
-    title: 'DevOps Engineer',
-    department: 'Operations',
-    location: 'Hybrid',
-    type: 'Full-time',
-    description: 'Seeking a DevOps engineer to manage our cloud infrastructure.',
+    title: 'careers.jobs.devops.title',
+    department: 'careers.departments.operations',
+    location: 'careers.locations.hybrid',
+    type: 'careers.types.fulltime',
+    description: 'careers.jobs.devops.desc',
   },
   {
     id: 3,
-    title: 'UI/UX Designer',
-    department: 'Design',
-    location: 'On-site',
-    type: 'Full-time',
-    description: 'Join our design team to create beautiful user experiences.',
+    title: 'careers.jobs.design.title',
+    department: 'careers.departments.design',
+    location: 'careers.locations.onsite',
+    type: 'careers.types.fulltime',
+    description: 'careers.jobs.design.desc',
   },
   {
     id: 4,
-    title: 'Cybersecurity Specialist',
-    department: 'Security',
-    location: 'Remote',
-    type: 'Full-time',
-    description: 'Help us secure our clients\' digital assets.',
+    title: 'careers.jobs.security.title',
+    department: 'careers.departments.security',
+    location: 'careers.locations.remote',
+    type: 'careers.types.fulltime',
+    description: 'careers.jobs.security.desc',
   },
   {
     id: 5,
-    title: 'Software Development Intern',
-    department: 'Development',
-    location: 'Remote',
-    type: 'Internship',
-    description: 'Great opportunity for students to gain real-world experience.',
+    title: 'careers.jobs.intern.title',
+    department: 'careers.departments.development',
+    location: 'careers.locations.remote',
+    type: 'careers.types.internship',
+    description: 'careers.jobs.intern.desc',
   },
 ];
 
 export default function Careers() {
+  const { t } = useTranslation();
   const [selectedJob, setSelectedJob] = useState<number | null>(null);
 
   return (
@@ -55,9 +57,9 @@ export default function Careers() {
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
           <div className="animate-in">
             <h1 className="text-5xl md:text-7xl font-medium text-white tracking-tighter mb-6">
-              Join Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-300">Team</span>
+              {t('careers.heroTitlePrefix')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-300">{t('careers.heroTitleHighlight')}</span>
             </h1>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto font-light">Build the future with us. Explore exciting career opportunities.</p>
+            <p className="text-xl text-slate-400 max-w-2xl mx-auto font-light">{t('careers.heroSubtitle')}</p>
           </div>
         </div>
       </section>
@@ -75,26 +77,26 @@ export default function Careers() {
                 <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
-                    <h3 className="text-xl font-medium text-white mb-2">{job.title}</h3>
+                    <h3 className="text-xl font-medium text-white mb-2">{t(job.title)}</h3>
                     <div className="flex flex-wrap gap-3 text-sm text-slate-400 mb-3">
                       <span className="flex items-center gap-1">
                         <span className="iconify" data-icon="lucide:briefcase" data-width="16"></span>
-                        {job.department}
+                        {t(job.department)}
                       </span>
                       <span className="flex items-center gap-1">
                         <span className="iconify" data-icon="lucide:map-pin" data-width="16"></span>
-                        {job.location}
+                        {t(job.location)}
                       </span>
                       <span className="flex items-center gap-1">
                         <span className="iconify" data-icon="lucide:clock" data-width="16"></span>
-                        {job.type}
+                        {t(job.type)}
                       </span>
                     </div>
                     {selectedJob === job.id && (
                       <div className="mt-4 pt-4 border-t border-white/5">
-                        <p className="text-slate-400 text-sm font-light mb-4">{job.description}</p>
+                        <p className="text-slate-400 text-sm font-light mb-4">{t(job.description)}</p>
                         <button className="px-6 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-sm font-medium transition-all">
-                          Apply Now
+                          {t('careers.apply')}
                         </button>
                       </div>
                     )}

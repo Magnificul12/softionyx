@@ -1,129 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { Icon } from '@iconify/react';
-
-const services = [
-  {
-    icon: 'lucide:shield',
-    title: 'Cyber Security',
-    short: 'Audits, IAM, Zero-Trust, SIEM/SOC, DevSecOps, compliance.',
-    description: 'Security audits, penetration testing, identity controls, and continuous monitoring.',
-    services: [
-      'Security audits & penetration testing (web, mobile, infrastructure)',
-      'Vulnerability assessment & remediation',
-      'Zero-Trust architecture design & implementation',
-      'Identity & Access Management (IAM)',
-      'Network security (firewalls, IDS/IPS, WAF)',
-      'Endpoint protection & device hardening',
-      'Security monitoring & alerting (SIEM, SOC setup)',
-      'Incident response & breach recovery',
-      'Secure authentication (SSO, MFA, OAuth, JWT)',
-      'Data encryption (at rest & in transit)',
-      'Compliance support (ISO 27001, GDPR, SOC 2)',
-      'Secure DevOps (DevSecOps pipelines)'
-    ],
-    industries: ['FinTech', 'E-commerce', 'Healthcare', 'SaaS', 'Enterprise'],
-    outcomes: ['Reduced risk', 'Regulatory compliance', 'Faster response times', 'Safer access control'],
-    color: 'indigo'
-  },
-  {
-    icon: 'lucide:cloud',
-    title: 'Cloud Infrastructure',
-    short: 'Architecture design, migration, CI/CD, Kubernetes, cost optimization.',
-    description: 'Cloud architecture, migration, orchestration, and cost-aware operations.',
-    services: [
-      'Cloud architecture design (AWS, GCP, Azure)',
-      'Cloud migration (on-prem → cloud)',
-      'Serverless infrastructure setup',
-      'Kubernetes & container orchestration',
-      'Infrastructure as Code (Terraform, CloudFormation)',
-      'CI/CD pipeline setup & optimization',
-      'Cloud cost optimization & billing analysis',
-      'Multi-cloud & hybrid cloud solutions',
-      'Monitoring & logging (CloudWatch, Datadog, Prometheus)'
-    ],
-    industries: ['SaaS', 'Logistics', 'Media', 'Retail', 'FinTech'],
-    outcomes: ['Higher uptime', 'Lower cloud spend', 'Faster deployments', 'Scalable systems'],
-    color: 'purple'
-  },
-  {
-    icon: 'lucide:code-2',
-    title: 'Software Engineering',
-    short: 'Web & mobile apps, microservices, integrations, QA, documentation.',
-    description: 'Custom software delivery with scalable architecture and quality assurance.',
-    services: [
-      'Custom web application development for your business',
-      'Mobile app development (iOS, Android, cross-platform)',
-      'Microservices architecture',
-      'Third-party API integrations',
-      'CRM / ERP custom development',
-      'SaaS product development',
-      'Performance optimization',
-      'Automated testing & QA',
-      'Technical documentation & maintenance'
-    ],
-    industries: ['Startups', 'Enterprise', 'E-commerce', 'Healthcare', 'EdTech'],
-    outcomes: ['Faster time-to-market', 'Stable releases', 'Better user experience', 'Lower maintenance cost'],
-    color: 'emerald'
-  },
-  {
-    icon: 'lucide:database',
-    title: 'Data Management',
-    short: 'DB design, ETL/ELT, streaming, analytics, BI, governance.',
-    description: 'Data platforms for analytics, governance, and operational visibility.',
-    services: [
-      'Database design & optimization',
-      'ETL / ELT pipeline development',
-      'Real-time data streaming',
-      'Data migration & consolidation',
-      'Analytics dashboards & reporting',
-      'Business intelligence solutions',
-      'Data governance & access control',
-      'Backup & disaster recovery'
-    ],
-    industries: ['FinTech', 'Retail', 'Healthcare', 'Manufacturing', 'SaaS'],
-    outcomes: ['Faster insights', 'Data reliability', 'Cost reduction', 'Operational visibility'],
-    color: 'blue'
-  },
-  {
-    icon: 'lucide:workflow',
-    title: 'Business Automation',
-    short: 'Process mapping, workflow automation, integrations, RPA, reporting.',
-    description: 'Automate critical workflows to reduce manual work and improve speed.',
-    services: [
-      'Process analysis & automation design',
-      'Workflow automation (approvals, handoffs, SLAs)',
-      'RPA (robotic process automation)',
-      'System & API integrations',
-      'Document automation & e-signature flows',
-      'Notifications, alerts & escalation logic',
-      'Operational dashboards & reporting',
-      'Automation monitoring & optimization'
-    ],
-    industries: ['E-commerce', 'Logistics', 'Finance', 'Healthcare', 'Professional Services'],
-    outcomes: ['Lower operational costs', 'Faster execution', 'Reduced errors', 'Better visibility'],
-    color: 'purple'
-  },
-  {
-    icon: 'lucide:blocks',
-    title: 'Blockchain',
-    short: 'Smart contracts, wallets, tokenization, audits, integrations.',
-    description: 'Build secure blockchain solutions with compliant architectures.',
-    services: [
-      'Smart contract development & audits',
-      'Wallet and custody solutions',
-      'Tokenization & asset management',
-      'Blockchain integration & APIs',
-      'Private blockchain setup',
-      'Security reviews & best practices',
-      'Performance & scalability optimization',
-      'Monitoring & incident response'
-    ],
-    industries: ['FinTech', 'Gaming', 'Supply Chain', 'Healthcare', 'Public Sector'],
-    outcomes: ['Higher trust', 'Improved traceability', 'Secure transactions', 'Operational efficiency'],
-    color: 'indigo'
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 const colorClasses = {
   indigo: { bg: 'bg-indigo-500/10', border: 'border-indigo-500/20', text: 'text-indigo-400' },
@@ -135,11 +13,74 @@ const colorClasses = {
 };
 
 export default function ServicesPage() {
+  const { t } = useTranslation();
   const location = useLocation();
   const [activeServiceIndex, setActiveServiceIndex] = useState<number | null>(null);
-  const activeService = activeServiceIndex !== null ? services[activeServiceIndex] : null;
   const modalRef = useRef<HTMLDivElement | null>(null);
   const detailsRef = useRef<HTMLDivElement | null>(null);
+  const services = [
+    {
+      icon: 'lucide:shield',
+      title: t('servicesPage.items.cyber.title'),
+      short: t('servicesPage.items.cyber.short'),
+      description: t('servicesPage.items.cyber.description'),
+      services: t('servicesPage.items.cyber.services', { returnObjects: true }) as string[],
+      industries: t('servicesPage.items.cyber.industries', { returnObjects: true }) as string[],
+      outcomes: t('servicesPage.items.cyber.outcomes', { returnObjects: true }) as string[],
+      color: 'indigo'
+    },
+    {
+      icon: 'lucide:cloud',
+      title: t('servicesPage.items.cloud.title'),
+      short: t('servicesPage.items.cloud.short'),
+      description: t('servicesPage.items.cloud.description'),
+      services: t('servicesPage.items.cloud.services', { returnObjects: true }) as string[],
+      industries: t('servicesPage.items.cloud.industries', { returnObjects: true }) as string[],
+      outcomes: t('servicesPage.items.cloud.outcomes', { returnObjects: true }) as string[],
+      color: 'purple'
+    },
+    {
+      icon: 'lucide:code-2',
+      title: t('servicesPage.items.software.title'),
+      short: t('servicesPage.items.software.short'),
+      description: t('servicesPage.items.software.description'),
+      services: t('servicesPage.items.software.services', { returnObjects: true }) as string[],
+      industries: t('servicesPage.items.software.industries', { returnObjects: true }) as string[],
+      outcomes: t('servicesPage.items.software.outcomes', { returnObjects: true }) as string[],
+      color: 'emerald'
+    },
+    {
+      icon: 'lucide:database',
+      title: t('servicesPage.items.data.title'),
+      short: t('servicesPage.items.data.short'),
+      description: t('servicesPage.items.data.description'),
+      services: t('servicesPage.items.data.services', { returnObjects: true }) as string[],
+      industries: t('servicesPage.items.data.industries', { returnObjects: true }) as string[],
+      outcomes: t('servicesPage.items.data.outcomes', { returnObjects: true }) as string[],
+      color: 'blue'
+    },
+    {
+      icon: 'lucide:workflow',
+      title: t('servicesPage.items.automation.title'),
+      short: t('servicesPage.items.automation.short'),
+      description: t('servicesPage.items.automation.description'),
+      services: t('servicesPage.items.automation.services', { returnObjects: true }) as string[],
+      industries: t('servicesPage.items.automation.industries', { returnObjects: true }) as string[],
+      outcomes: t('servicesPage.items.automation.outcomes', { returnObjects: true }) as string[],
+      color: 'purple'
+    },
+    {
+      icon: 'lucide:blocks',
+      title: t('servicesPage.items.blockchain.title'),
+      short: t('servicesPage.items.blockchain.short'),
+      description: t('servicesPage.items.blockchain.description'),
+      services: t('servicesPage.items.blockchain.services', { returnObjects: true }) as string[],
+      industries: t('servicesPage.items.blockchain.industries', { returnObjects: true }) as string[],
+      outcomes: t('servicesPage.items.blockchain.outcomes', { returnObjects: true }) as string[],
+      color: 'indigo'
+    }
+  ];
+  const activeService = activeServiceIndex !== null ? services[activeServiceIndex] : null;
 
   useEffect(() => {
     if (activeService && modalRef.current) {
@@ -162,9 +103,9 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
           <div className="animate-in">
             <h1 className="text-5xl md:text-7xl font-medium text-white tracking-tighter mb-6">
-              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-300">Services</span>
+              {t('servicesPage.heroTitlePrefix')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-300">{t('servicesPage.heroTitleHighlight')}</span>
             </h1>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto font-light">Comprehensive IT solutions tailored to your business needs</p>
+            <p className="text-xl text-slate-400 max-w-2xl mx-auto font-light">{t('servicesPage.heroSubtitle')}</p>
           </div>
         </div>
       </section>
@@ -207,7 +148,7 @@ export default function ServicesPage() {
                 </div>
               <div className="grid grid-cols-1 gap-6 text-sm text-slate-400 font-light">
                 <div className="rounded-xl border border-white/5 bg-white/[0.02] p-5">
-                  <h4 className="text-white font-medium mb-3">Services</h4>
+                  <h4 className="text-white font-medium mb-3">{t('servicesPage.sections.services')}</h4>
                   <ul className="space-y-2">
                     {activeService.services.map((item) => (
                       <li key={item} className="flex items-start gap-2">
@@ -219,7 +160,7 @@ export default function ServicesPage() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="rounded-xl border border-white/5 bg-white/[0.02] p-5">
-                    <h4 className="text-white font-medium mb-3">Industries Served</h4>
+                    <h4 className="text-white font-medium mb-3">{t('servicesPage.sections.industries')}</h4>
                     <div className="flex flex-wrap gap-2">
                       {activeService.industries.map((industry) => (
                         <span key={industry} className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs">
@@ -229,7 +170,7 @@ export default function ServicesPage() {
                     </div>
                   </div>
                   <div className="rounded-xl border border-white/5 bg-white/[0.02] p-5">
-                    <h4 className="text-white font-medium mb-3">Typical Outcomes</h4>
+                    <h4 className="text-white font-medium mb-3">{t('servicesPage.sections.outcomes')}</h4>
                     <ul className="space-y-2">
                       {activeService.outcomes.map((outcome) => (
                         <li key={outcome} className="flex items-start gap-2">
@@ -247,7 +188,7 @@ export default function ServicesPage() {
                     className="inline-flex px-6 py-3 border border-white/10 text-white rounded-lg font-medium text-sm hover:border-indigo-400/60 hover:bg-white/5 transition-all"
                     onClick={() => setActiveServiceIndex(null)}
                   >
-                    Back to services
+                  {t('servicesPage.back')}
                   </button>
                 </div>
               </div>
@@ -281,13 +222,13 @@ export default function ServicesPage() {
       {/* CTA Section */}
       <section className="py-20 relative z-10 border-t border-white/5">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tighter mb-6">Ready to Get Started?</h2>
-          <p className="text-lg text-slate-400 mb-8 font-light">Let's discuss how we can help bring your project to life</p>
+          <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tighter mb-6">{t('servicesPage.ctaTitle')}</h2>
+          <p className="text-lg text-slate-400 mb-8 font-light">{t('servicesPage.ctaSubtitle')}</p>
           <Link
             to="/contact#contact-info"
             className="inline-flex px-8 py-3.5 bg-white text-slate-950 rounded-lg font-semibold text-sm hover:bg-slate-200 transition-all shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_-5px_rgba(255,255,255,0.4)] items-center gap-2 group"
           >
-            Contact Us
+            {t('servicesPage.ctaButton')}
             <span className="iconify group-hover:translate-x-0.5 transition-transform" data-icon="lucide:arrow-right" data-width="16"></span>
           </Link>
         </div>

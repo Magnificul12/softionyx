@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useAuthStore } from '../store/authStore';
 import { Navigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import axios from '../utils/axios';
 import SEO from '../components/SEO';
 
@@ -17,6 +18,7 @@ interface DashboardStats {
 }
 
 export default function Admin() {
+  const { t } = useTranslation();
   const { isAuthenticated, user } = useAuthStore();
   const [activeTab, setActiveTab] = useState('dashboard');
   const [stats, setStats] = useState<DashboardStats | null>(null);
@@ -58,8 +60,8 @@ export default function Admin() {
   return (
     <>
       <SEO 
-        title="Admin Panel" 
-        description="SoftIonyx Admin Dashboard"
+        title={t('admin.seoTitle')}
+        description={t('admin.seoDescription')}
       />
       <div className="pt-32 pb-20 min-h-screen relative overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] -z-10 animate-grid"></div>
@@ -67,9 +69,9 @@ export default function Admin() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-8 animate-in">
           <h1 className="text-4xl font-semibold text-white tracking-tight mb-2">
-            Admin <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-300">Panel</span>
+            {t('admin.titlePrefix')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-300">{t('admin.titleHighlight')}</span>
           </h1>
-          <p className="text-slate-400">Welcome back, {user?.full_name || 'Admin'}</p>
+          <p className="text-slate-400">{t('admin.welcome', { name: user?.full_name || t('admin.defaultAdmin') })}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
@@ -77,12 +79,12 @@ export default function Admin() {
           <aside className="lg:col-span-1">
             <nav className="space-y-2">
               {[
-                { id: 'dashboard', label: 'Dashboard', icon: 'lucide:bar-chart-3' },
-                { id: 'pages', label: 'Pages', icon: 'lucide:file-text' },
-                { id: 'services', label: 'Services', icon: 'lucide:settings' },
-                { id: 'blog', label: 'Blog Posts', icon: 'lucide:book' },
-                { id: 'contacts', label: 'Contacts', icon: 'lucide:mail' },
-                { id: 'jobs', label: 'Jobs', icon: 'lucide:briefcase' },
+                { id: 'dashboard', label: 'admin.tabs.dashboard', icon: 'lucide:bar-chart-3' },
+                { id: 'pages', label: 'admin.tabs.pages', icon: 'lucide:file-text' },
+                { id: 'services', label: 'admin.tabs.services', icon: 'lucide:settings' },
+                { id: 'blog', label: 'admin.tabs.blog', icon: 'lucide:book' },
+                { id: 'contacts', label: 'admin.tabs.contacts', icon: 'lucide:mail' },
+                { id: 'jobs', label: 'admin.tabs.jobs', icon: 'lucide:briefcase' },
               ].map((tab) => (
                 <button
                   key={tab.id}
@@ -94,7 +96,7 @@ export default function Admin() {
                   }`}
                 >
                   <span className="iconify" data-icon={tab.icon} data-width="20"></span>
-                  {tab.label}
+                  {t(tab.label)}
                 </button>
               ))}
             </nav>
@@ -106,22 +108,22 @@ export default function Admin() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl -z-10"></div>
               {activeTab === 'dashboard' && (
                 <div>
-                  <h2 className="text-2xl font-medium text-white mb-6">Dashboard Overview</h2>
+                  <h2 className="text-2xl font-medium text-white mb-6">{t('admin.dashboard.title')}</h2>
                   {loading ? (
-                    <div className="text-center py-12 text-slate-400">Loading...</div>
+                    <div className="text-center py-12 text-slate-400">{t('admin.loading')}</div>
                   ) : stats ? (
                     <>
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                         {[
-                          { label: 'Total Contacts', value: stats.totalContacts },
-                          { label: 'Help Requests', value: stats.totalHelpRequests },
-                          { label: 'Job Applications', value: stats.totalJobApplications },
-                          { label: 'Blog Posts', value: stats.totalBlogPosts },
-                          { label: 'Total Users', value: stats.totalUsers },
-                          { label: 'Services', value: stats.totalServices },
+                          { label: 'admin.dashboard.stats.totalContacts', value: stats.totalContacts },
+                          { label: 'admin.dashboard.stats.helpRequests', value: stats.totalHelpRequests },
+                          { label: 'admin.dashboard.stats.jobApplications', value: stats.totalJobApplications },
+                          { label: 'admin.dashboard.stats.blogPosts', value: stats.totalBlogPosts },
+                          { label: 'admin.dashboard.stats.totalUsers', value: stats.totalUsers },
+                          { label: 'admin.dashboard.stats.services', value: stats.totalServices },
                         ].map((stat, idx) => (
                           <div key={idx} className="p-6 rounded-lg bg-slate-900/50 border border-white/5 hover:bg-slate-900/70 transition-colors">
-                            <div className="text-xs text-slate-500 mb-2 font-medium uppercase tracking-wider">{stat.label}</div>
+                            <div className="text-xs text-slate-500 mb-2 font-medium uppercase tracking-wider">{t(stat.label)}</div>
                             <div className="text-3xl font-semibold text-white">{stat.value}</div>
                           </div>
                         ))}
@@ -129,7 +131,7 @@ export default function Admin() {
                       
                       {stats.recentContacts.length > 0 && (
                         <div className="mb-8">
-                          <h3 className="text-lg font-medium text-white mb-4">Recent Contacts</h3>
+                          <h3 className="text-lg font-medium text-white mb-4">{t('admin.dashboard.recentContacts')}</h3>
                           <div className="space-y-2">
                             {stats.recentContacts.slice(0, 5).map((contact: any) => (
                               <div key={contact.id} className="p-4 rounded-lg bg-white/[0.02] border border-white/5">
@@ -148,20 +150,20 @@ export default function Admin() {
                       )}
                     </>
                   ) : (
-                    <div className="text-center py-12 text-slate-400">Failed to load dashboard data</div>
+                    <div className="text-center py-12 text-slate-400">{t('admin.dashboard.failed')}</div>
                   )}
                 </div>
               )}
 
               {activeTab === 'pages' && (
                 <div>
-                  <h2 className="text-2xl font-medium text-white mb-6">Manage Pages</h2>
+                  <h2 className="text-2xl font-medium text-white mb-6">{t('admin.pages.title')}</h2>
                   <div className="space-y-4">
-                    {['Home Page', 'About Page', 'Services Page'].map((page, idx) => (
+                    {t('admin.pages.items', { returnObjects: true }).map((page: string, idx: number) => (
                       <div key={idx} className="flex items-center justify-between p-4 rounded-lg bg-white/[0.02] border border-white/5">
                         <h3 className="text-white font-medium">{page}</h3>
                         <button className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-sm font-medium transition-all">
-                          Edit
+                          {t('admin.buttons.edit')}
                         </button>
                       </div>
                     ))}
@@ -172,21 +174,21 @@ export default function Admin() {
               {activeTab === 'services' && (
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <h2 className="text-2xl font-medium text-white">Manage Services</h2>
+                    <h2 className="text-2xl font-medium text-white">{t('admin.services.title')}</h2>
                     <button className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-sm font-medium transition-all">
-                      + Add New Service
+                      {t('admin.services.add')}
                     </button>
                   </div>
                   <div className="space-y-4">
-                    {['Web Development', 'Mobile App Development'].map((service, idx) => (
+                    {t('admin.services.items', { returnObjects: true }).map((service: string, idx: number) => (
                       <div key={idx} className="flex items-center justify-between p-4 rounded-lg bg-white/[0.02] border border-white/5">
                         <h3 className="text-white font-medium">{service}</h3>
                         <div className="flex gap-2">
                           <button className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-sm font-medium transition-all">
-                            Edit
+                            {t('admin.buttons.edit')}
                           </button>
                           <button className="px-4 py-2 bg-red-600/20 hover:bg-red-600/30 text-red-400 border border-red-600/30 rounded-lg text-sm font-medium transition-all">
-                            Delete
+                            {t('admin.buttons.delete')}
                           </button>
                         </div>
                       </div>
@@ -198,21 +200,21 @@ export default function Admin() {
               {activeTab === 'blog' && (
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <h2 className="text-2xl font-medium text-white">Manage Blog Posts</h2>
+                    <h2 className="text-2xl font-medium text-white">{t('admin.blog.title')}</h2>
                     <button className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-sm font-medium transition-all">
-                      + Add New Post
+                      {t('admin.blog.add')}
                     </button>
                   </div>
                   <div className="space-y-4">
                     <div className="p-4 rounded-lg bg-white/[0.02] border border-white/5">
-                      <h3 className="text-white font-medium mb-2">The Future of Cloud Computing</h3>
-                      <p className="text-slate-500 text-sm mb-4">Published: Jan 15, 2024</p>
+                      <h3 className="text-white font-medium mb-2">{t('admin.blog.sampleTitle')}</h3>
+                      <p className="text-slate-500 text-sm mb-4">{t('admin.blog.sampleDate')}</p>
                       <div className="flex gap-2">
                         <button className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-sm font-medium transition-all">
-                          Edit
+                          {t('admin.buttons.edit')}
                         </button>
                         <button className="px-4 py-2 bg-red-600/20 hover:bg-red-600/30 text-red-400 border border-red-600/30 rounded-lg text-sm font-medium transition-all">
-                          Delete
+                          {t('admin.buttons.delete')}
                         </button>
                       </div>
                     </div>
@@ -222,9 +224,9 @@ export default function Admin() {
 
               {activeTab === 'contacts' && (
                 <div>
-                  <h2 className="text-2xl font-medium text-white mb-6">Contact Form Submissions</h2>
+                  <h2 className="text-2xl font-medium text-white mb-6">{t('admin.contacts.title')}</h2>
                   {loading ? (
-                    <div className="text-center py-12 text-slate-400">Loading...</div>
+                    <div className="text-center py-12 text-slate-400">{t('admin.loading')}</div>
                   ) : contacts.length > 0 ? (
                     <div className="space-y-4">
                       {contacts.map((contact) => (
@@ -256,23 +258,23 @@ export default function Admin() {
                               }}
                               className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-sm font-medium transition-all"
                             >
-                              Mark as {contact.status === 'new' ? 'Read' : 'Replied'}
+                              {t('admin.contacts.markAs')} {contact.status === 'new' ? t('admin.contacts.read') : t('admin.contacts.replied')}
                             </button>
                           </div>
                         </div>
                       ))}
                     </div>
                   ) : (
-                    <div className="text-center py-12 text-slate-400">No contact submissions yet</div>
+                    <div className="text-center py-12 text-slate-400">{t('admin.contacts.empty')}</div>
                   )}
                 </div>
               )}
 
               {activeTab === 'jobs' && (
                 <div>
-                  <h2 className="text-2xl font-medium text-white mb-6">Job Applications</h2>
+                  <h2 className="text-2xl font-medium text-white mb-6">{t('admin.jobs.title')}</h2>
                   {loading ? (
-                    <div className="text-center py-12 text-slate-400">Loading...</div>
+                    <div className="text-center py-12 text-slate-400">{t('admin.loading')}</div>
                   ) : jobApplications.length > 0 ? (
                     <div className="space-y-4">
                       {jobApplications.map((application) => (
@@ -293,7 +295,7 @@ export default function Admin() {
                               {application.status}
                             </span>
                           </div>
-                          {application.phone && <p className="text-slate-400 text-sm mb-2">Phone: {application.phone}</p>}
+                          {application.phone && <p className="text-slate-400 text-sm mb-2">{t('admin.jobs.phone')}: {application.phone}</p>}
                           {application.cover_letter && (
                             <p className="text-slate-500 text-sm mb-4 line-clamp-2">{application.cover_letter}</p>
                           )}
@@ -305,7 +307,7 @@ export default function Admin() {
                                 rel="noopener noreferrer"
                                 className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-sm font-medium transition-all"
                               >
-                                View Resume
+                                {t('admin.jobs.viewResume')}
                               </a>
                             )}
                             <button 
@@ -318,14 +320,14 @@ export default function Admin() {
                               }}
                               className="px-4 py-2 bg-green-600/20 hover:bg-green-600/30 text-green-400 border border-green-600/30 rounded-lg text-sm font-medium transition-all"
                             >
-                              Mark as Reviewed
+                              {t('admin.jobs.markReviewed')}
                             </button>
                           </div>
                         </div>
                       ))}
                     </div>
                   ) : (
-                    <div className="text-center py-12 text-slate-400">No job applications yet</div>
+                    <div className="text-center py-12 text-slate-400">{t('admin.jobs.empty')}</div>
                   )}
                 </div>
               )}

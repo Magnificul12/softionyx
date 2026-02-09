@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState, memo } from 'react';
 import { Icon } from '@iconify/react';
+import { useTranslation } from 'react-i18next';
 
 function Footer() {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
   const footerRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -49,75 +51,75 @@ function Footer() {
               <span className="text-white font-semibold tracking-tight text-lg">SOFTIONYX</span>
             </div>
             <p className="text-slate-400 text-xs leading-relaxed max-w-xs font-light">
-              Professional IT solutions designed for modern enterprise performance, security, and scalability.
+              {t('footer.tagline')}
             </p>
           </div>
           
           <div className={isVisible ? 'animate-fade-scale delay-100' : ''} style={{ opacity: isVisible ? 1 : 0 }}>
-            <h4 className="text-white font-semibold text-sm mb-6">Services</h4>
+            <h4 className="text-white font-semibold text-sm mb-6">{t('footer.sections.services')}</h4>
             <ul className="space-y-3 text-xs text-slate-400 font-light">
               <li><Link to="/services" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                Web Development
+                {t('footer.links.web')}
               </Link></li>
               <li><Link to="/services" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                Frontend & Backend
+                {t('footer.links.frontendBackend')}
               </Link></li>
               <li><Link to="/services" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                Blockchain Analytics
+                {t('footer.links.blockchain')}
               </Link></li>
               <li><Link to="/services" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                Programming
+                {t('footer.links.programming')}
               </Link></li>
             </ul>
           </div>
 
           <div className={isVisible ? 'animate-fade-scale delay-200' : ''} style={{ opacity: isVisible ? 1 : 0 }}>
-            <h4 className="text-white font-semibold text-sm mb-6">Company</h4>
+            <h4 className="text-white font-semibold text-sm mb-6">{t('footer.sections.company')}</h4>
             <ul className="space-y-3 text-xs text-slate-400 font-light">
               <li><Link to="/about" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                About Us
+                {t('footer.links.about')}
               </Link></li>
               <li><Link to="/careers" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                Careers
+                {t('footer.links.careers')}
               </Link></li>
               <li><Link to="/blog" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                Blog
+                {t('footer.links.blog')}
               </Link></li>
               <li><Link to="/contact" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                Contact
+                {t('footer.links.contact')}
               </Link></li>
             </ul>
           </div>
 
           <div className={isVisible ? 'animate-slide-right delay-300' : ''} style={{ opacity: isVisible ? 1 : 0 }}>
-            <h4 className="text-white font-semibold text-sm mb-6">Legal</h4>
+            <h4 className="text-white font-semibold text-sm mb-6">{t('footer.sections.legal')}</h4>
             <ul className="space-y-3 text-xs text-slate-400 font-light">
               <li><a href="#" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                Privacy Policy
+                {t('footer.links.privacy')}
               </a></li>
               <li><a href="#" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                Terms of Service
+                {t('footer.links.terms')}
               </a></li>
               <li><a href="#" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                Cookie Policy
+                {t('footer.links.cookies')}
               </a></li>
             </ul>
           </div>
         </div>
         
         <div className={`border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 ${isVisible ? 'animate-fade-scale delay-400' : ''}`} style={{ opacity: isVisible ? 1 : 0 }}>
-          <p className="text-slate-500 text-xs">© {currentYear} SoftIonyx Technologies. All rights reserved.</p>
+          <p className="text-slate-500 text-xs">© {currentYear} {t('footer.copyright')}</p>
           <div className="flex gap-4 text-slate-400">
             <a href="#" className="h-9 w-9 rounded-lg glass border border-white/10 flex items-center justify-center hover:text-indigo-400 hover:border-indigo-500/30 hover:bg-indigo-500/10 transition-all group">
               <Icon icon="lucide:twitter" width={18} className="group-hover:scale-110 transition-transform" />
@@ -127,6 +129,9 @@ function Footer() {
             </a>
             <a href="#" className="h-9 w-9 rounded-lg glass border border-white/10 flex items-center justify-center hover:text-indigo-400 hover:border-indigo-500/30 hover:bg-indigo-500/10 transition-all group">
               <Icon icon="lucide:linkedin" width={18} className="group-hover:scale-110 transition-transform" />
+            </a>
+            <a href="#" className="h-9 w-9 rounded-lg glass border border-white/10 flex items-center justify-center hover:text-indigo-400 hover:border-indigo-500/30 hover:bg-indigo-500/10 transition-all group">
+              <Icon icon="lucide:instagram" width={18} className="group-hover:scale-110 transition-transform" />
             </a>
           </div>
         </div>
