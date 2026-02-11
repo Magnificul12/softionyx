@@ -118,6 +118,38 @@
     },
     "copyright": "SoftIonyx Technologies. All rights reserved."
   },
+  "legal": {
+    "back": "Back",
+    "privacy": {
+      "title": "Privacy Policy",
+      "lastUpdated": "Last updated: 2025",
+      "sections": [
+        { "title": "Introduction", "content": "SoftIonyx Technologies (\"we\") respects your privacy. This policy describes what data we collect, how we use it, and your rights regarding your personal data." },
+        { "title": "Data we collect", "content": "We may collect: name, email address, phone number, messages sent via the contact form, and technical data (IP, browser type) for site operation." },
+        { "title": "Use of data", "content": "We use the data to respond to enquiries, provide services, improve the site and, if you have consented, for marketing communications." },
+        { "title": "Your rights", "content": "You have the right to access, rectify, delete and port your data, as well as to object to and restrict processing. To exercise your rights, contact us using the details on the contact page." }
+      ]
+    },
+    "terms": {
+      "title": "Terms and Conditions",
+      "lastUpdated": "Last updated: 2025",
+      "sections": [
+        { "title": "Acceptance of terms", "content": "By accessing and using the SoftIonyx website, you accept these terms and conditions. If you do not agree, please do not use the site." },
+        { "title": "Services", "content": "Information on the site is for reference. Contractual details for projects (pricing, timelines, scope) are set out in separate agreements." },
+        { "title": "Intellectual property", "content": "The site content (text, logo, design) is owned by SoftIonyx or its partners and is protected. Copying or use without written permission is not permitted." },
+        { "title": "Limitation of liability", "content": "We are not liable for indirect damages or losses resulting from use or inability to use the site. Use of the site is at your own risk." }
+      ]
+    },
+    "cookies": {
+      "title": "Cookie Policy",
+      "lastUpdated": "Last updated: 2025",
+      "sections": [
+        { "title": "What are cookies", "content": "Cookies are small files stored on your device when you visit a website. They help us provide a better experience and essential functionality." },
+        { "title": "Cookies we use", "content": "We use strictly necessary cookies for site operation (e.g. language preference, session), and may use analytics cookies to understand how the site is used. We do not use advertising cookies without consent." },
+        { "title": "How you can control cookies", "content": "You can set your browser to refuse or delete cookies. Some site features may be affected if you disable essential cookies." }
+      ]
+    }
+  },
   "servicesPage": {
     "heroTitlePrefix": "Our",
     "heroTitleHighlight": "Services",
@@ -309,6 +341,7 @@
     "heroTitlePrefix": "Solutions",
     "heroTitleHighlight": "That Scale",
     "heroSubtitle": "Modular, production-ready systems tailored to your product, team, and growth stage.",
+    "scrollHint": "Scroll for next card",
     "items": {
       "product": {
         "title": "Product Engineering",
@@ -321,6 +354,18 @@
       "automation": {
         "title": "Automation",
         "desc": "Workflows that reduce manual work and speed up execution."
+      },
+      "cloud": {
+        "title": "Cloud Infrastructure",
+        "desc": "Scalable deploy, containers, and serverless for modern apps."
+      },
+      "security": {
+        "title": "Security & Compliance",
+        "desc": "Data protection, audit, and regulatory alignment."
+      },
+      "integration": {
+        "title": "Integrations & API",
+        "desc": "Secure connections between systems and data ecosystems."
       }
     },
     "highlights": {

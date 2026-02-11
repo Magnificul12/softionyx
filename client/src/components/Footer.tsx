@@ -3,6 +3,8 @@ import { useEffect, useRef, useState, memo } from 'react';
 import { Icon } from '@iconify/react';
 import { useTranslation } from 'react-i18next';
 
+const INSTAGRAM_URL = 'https://www.instagram.com/softionix.group?igsh=NHU4bTJ2ZmxudWh0';
+
 function Footer() {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
@@ -88,10 +90,6 @@ function Footer() {
                 <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 {t('footer.links.careers')}
               </Link></li>
-              <li><Link to="/blog" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
-                <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                {t('footer.links.blog')}
-              </Link></li>
               <li><Link to="/contact" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 {t('footer.links.contact')}
@@ -102,18 +100,18 @@ function Footer() {
           <div className={isVisible ? 'animate-slide-right delay-300' : ''} style={{ opacity: isVisible ? 1 : 0 }}>
             <h4 className="text-white font-semibold text-sm mb-6">{t('footer.sections.legal')}</h4>
             <ul className="space-y-3 text-xs text-slate-400 font-light">
-              <li><a href="#" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
+              <li><Link to="/privacy" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 {t('footer.links.privacy')}
-              </a></li>
-              <li><a href="#" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
+              </Link></li>
+              <li><Link to="/terms" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 {t('footer.links.terms')}
-              </a></li>
-              <li><a href="#" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
+              </Link></li>
+              <li><Link to="/cookies" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon icon="lucide:arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 {t('footer.links.cookies')}
-              </a></li>
+              </Link></li>
             </ul>
           </div>
         </div>
@@ -130,7 +128,7 @@ function Footer() {
             <a href="#" className="h-9 w-9 rounded-lg glass border border-white/10 flex items-center justify-center hover:text-indigo-400 hover:border-indigo-500/30 hover:bg-indigo-500/10 transition-all group">
               <Icon icon="lucide:linkedin" width={18} className="group-hover:scale-110 transition-transform" />
             </a>
-            <a href="#" className="h-9 w-9 rounded-lg glass border border-white/10 flex items-center justify-center hover:text-indigo-400 hover:border-indigo-500/30 hover:bg-indigo-500/10 transition-all group">
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-lg glass border border-white/10 flex items-center justify-center hover:text-indigo-400 hover:border-indigo-500/30 hover:bg-indigo-500/10 transition-all group" aria-label="Instagram">
               <Icon icon="lucide:instagram" width={18} className="group-hover:scale-110 transition-transform" />
             </a>
           </div>

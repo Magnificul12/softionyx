@@ -4,6 +4,16 @@
   background: transparent;
 }
 
+/* Lista de coduri de țară – fundal 100% opac, culoare #0f172a */
+.country-code-dropdown {
+  background: #0f172a !important;
+  background-color: #0f172a !important;
+  background-image: none !important;
+  opacity: 1 !important;
+  isolation: isolate;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}
+
 .contact-hero {
   padding: 4rem 0;
   text-align: center;

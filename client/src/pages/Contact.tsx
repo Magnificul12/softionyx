@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import type { CSSProperties } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Icon } from '@iconify/react';
@@ -115,6 +116,25 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
   const [emailError, setEmailError] = useState<string>('');
+  const countryCodeButtonRef = useRef<HTMLDivElement>(null);
+  const [dropdownPosition, setDropdownPosition] = useState({ top: 0, left: 0 });
+
+  useEffect(() => {
+    if (!isCountryDropdownOpen || !countryCodeButtonRef.current) return;
+    const updatePosition = () => {
+      if (countryCodeButtonRef.current) {
+        const rect = countryCodeButtonRef.current.getBoundingClientRect();
+        setDropdownPosition({ top: rect.bottom + 4, left: rect.left });
+      }
+    };
+    updatePosition();
+    window.addEventListener('scroll', updatePosition, true);
+    window.addEventListener('resize', updatePosition);
+    return () => {
+      window.removeEventListener('scroll', updatePosition, true);
+      window.removeEventListener('resize', updatePosition);
+    };
+  }, [isCountryDropdownOpen]);
 
   useEffect(() => {
     if (location.hash === '#contact-info') {
@@ -402,7 +422,7 @@ export default function Contact() {
                   <div className="contact-reveal-item flex flex-col min-w-0" style={{ ['--reveal-delay' as never]: '840ms' } as CSSProperties}>
                     <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">{t('contactPage.fields.phone')}</label>
                     <div className="flex gap-2 min-w-0">
-                      <div className="relative shrink-0">
+                      <div className="relative shrink-0" ref={countryCodeButtonRef}>
                         <button
                           type="button"
                           onClick={() => setIsCountryDropdownOpen(!isCountryDropdownOpen)}
@@ -418,23 +438,33 @@ export default function Contact() {
                             {formData.countryCode}
                           </span>
                         </button>
-                        {isCountryDropdownOpen && (
+                        {isCountryDropdownOpen && createPortal(
                           <>
-                            <div 
-                              className="fixed inset-0 z-40" 
+                            <div
+                              className="fixed inset-0 z-[9998]"
                               onClick={() => setIsCountryDropdownOpen(false)}
-                            ></div>
-                            <div className="absolute top-full left-0 mt-1 w-[280px] bg-slate-900 border border-white/10 rounded-lg shadow-2xl z-50 max-h-[200px] overflow-y-auto">
+                              aria-hidden
+                            />
+                            <div
+                              className="country-code-dropdown w-[280px] border border-white/10 rounded-lg shadow-2xl z-[9999] max-h-[200px] overflow-y-auto"
+                              style={{
+                                position: 'fixed',
+                                top: dropdownPosition.top,
+                                left: dropdownPosition.left,
+                                backgroundColor: '#0f172a',
+                                backgroundImage: 'none',
+                              }}
+                            >
                               {countryCodes.map((country) => (
                                 <button
                                   key={country.code}
                                   type="button"
                                   onClick={() => {
-                                    setFormData({ ...formData, countryCode: country.code });
+                                    setFormData((prev) => ({ ...prev, countryCode: country.code }));
                                     setIsCountryDropdownOpen(false);
                                   }}
-                                  className={`w-full text-left px-3 py-2 text-sm text-white hover:bg-slate-800 transition-colors flex items-center gap-2 ${
-                                    formData.countryCode === country.code ? 'bg-indigo-500/20' : ''
+                                  className={`w-full text-left px-3 py-2 text-sm text-white hover:bg-slate-700 transition-colors flex items-center gap-2 ${
+                                    formData.countryCode === country.code ? 'bg-indigo-600' : ''
                                   }`}
                                 >
                                   <span className="font-medium">{country.code}</span>
@@ -442,7 +472,8 @@ export default function Contact() {
                                 </button>
                               ))}
                             </div>
-                          </>
+                          </>,
+                          document.body
                         )}
                       </div>
                       <input

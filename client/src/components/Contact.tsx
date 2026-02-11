@@ -319,7 +319,7 @@ function Contact() {
                         className="fixed inset-0 z-40" 
                         onClick={() => setIsCountryDropdownOpen(false)}
                       ></div>
-                      <div className="absolute top-full left-0 mt-1 w-[280px] bg-slate-900 border border-white/10 rounded-lg shadow-2xl z-50 max-h-[200px] overflow-y-auto">
+                      <div className="absolute top-full left-0 mt-1 w-[280px] bg-[#0f172a] border border-white/10 rounded-lg shadow-2xl z-50 max-h-[200px] overflow-y-auto">
                         {countryCodes.map((country) => (
                           <button
                             key={country.code}

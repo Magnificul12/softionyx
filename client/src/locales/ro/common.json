@@ -118,6 +118,38 @@
     },
     "copyright": "SoftIonyx Technologies. Toate drepturile rezervate."
   },
+  "legal": {
+    "back": "Înapoi",
+    "privacy": {
+      "title": "Politica de confidențialitate",
+      "lastUpdated": "Ultima actualizare: 2025",
+      "sections": [
+        { "title": "Introducere", "content": "SoftIonyx Technologies („noi”) respectă confidențialitatea dumneavoastră. Această politică descrie ce date colectăm, cum le folosim și ce drepturi aveți în legătură cu datele personale." },
+        { "title": "Date colectate", "content": "Putem colecta: nume, adresă de email, număr de telefon, mesaje trimise prin formularul de contact și date tehnice (IP, tip browser) pentru funcționarea site-ului." },
+        { "title": "Utilizarea datelor", "content": "Folosim datele pentru a răspunde la solicitări, a oferi servicii, a îmbunătăți site-ul și, dacă ați acceptat, pentru comunicări de marketing." },
+        { "title": "Drepturile dumneavoastră", "content": "Aveți dreptul la acces, rectificare, ștergere și portabilitate a datelor, precum și la opoziție și restricționare a prelucrării. Pentru exercitarea drepturilor, contactați-ne la datele din pagină de contact." }
+      ]
+    },
+    "terms": {
+      "title": "Termeni și condiții",
+      "lastUpdated": "Ultima actualizare: 2025",
+      "sections": [
+        { "title": "Acceptarea termenilor", "content": "Accesând și folosind site-ul SoftIonyx, acceptați acești termeni și condiții. Dacă nu sunteți de acord, vă rugăm să nu utilizați site-ul." },
+        { "title": "Servicii", "content": "Informațiile de pe site au caracter informativ. Detaliile contractuale pentru proiecte (prețuri, termene, domenii) se stabilesc prin acorduri separate." },
+        { "title": "Proprietate intelectuală", "content": "Conținutul site-ului (texte, logo, design) aparține SoftIonyx sau partenerilor săi și este protejat. Nu este permisă copierea sau utilizarea fără acord scris." },
+        { "title": "Limitarea răspunderii", "content": "Nu răspundem pentru daune indirecte sau pierderi rezultate din utilizarea sau imposibilitatea utilizării site-ului. Utilizarea site-ului se face pe propria răspundere." }
+      ]
+    },
+    "cookies": {
+      "title": "Politica cookies",
+      "lastUpdated": "Ultima actualizare: 2025",
+      "sections": [
+        { "title": "Ce sunt cookie-urile", "content": "Cookie-urile sunt fișiere mici stocate pe dispozitivul dumneavoastră când vizitați un site. Ne ajută să oferim o experiență mai bună și funcționalități esențiale." },
+        { "title": "Cookie-uri folosite", "content": "Folosim cookie-uri strict necesare pentru funcționarea site-ului (ex.: preferința de limbă, sesiune), eventual cookie-uri de analiză pentru a înțelege cum este folosit site-ul. Nu folosim publicitate bazată pe cookie-uri fără consimțământ." },
+        { "title": "Cum puteți controla cookie-urile", "content": "Puteți seta browserul să refuze sau să șteargă cookie-uri. Anumite funcții ale site-ului ar putea fi afectate dacă dezactivați cookie-urile esențiale." }
+      ]
+    }
+  },
   "servicesPage": {
     "heroTitlePrefix": "Serviciile",
     "heroTitleHighlight": "Noastre",
@@ -309,6 +341,7 @@
     "heroTitlePrefix": "Soluții",
     "heroTitleHighlight": "Scalabile",
     "heroSubtitle": "Sisteme modulare, gata de producție, adaptate echipei tale.",
+    "scrollHint": "Scroll pentru următorul card",
     "items": {
       "product": {
         "title": "Inginerie de produs",
@@ -321,6 +354,18 @@
       "automation": {
         "title": "Automatizare",
         "desc": "Fluxuri care reduc munca manuală și accelerează execuția."
+      },
+      "cloud": {
+        "title": "Infrastructură Cloud",
+        "desc": "Deploy scalabil, containere și serverless pentru aplicații moderne."
+      },
+      "security": {
+        "title": "Securitate & Compliance",
+        "desc": "Protecție a datelor, audit și aliniere la reglementări."
+      },
+      "integration": {
+        "title": "Integrări & API",
+        "desc": "Conectare sigură între sisteme și ecosisteme de date."
       }
     },
     "highlights": {

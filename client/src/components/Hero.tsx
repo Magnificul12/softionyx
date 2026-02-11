@@ -352,9 +352,9 @@ export default function Hero() {
           </div>
         </div>
         
-        <h1 className="animate-in delay-100 text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-medium text-white tracking-tight mb-6 sm:mb-8 max-w-5xl mx-auto leading-[1.15]">
+        <h1 className="animate-in delay-100 text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-medium text-white tracking-tight mb-6 sm:mb-8 max-w-5xl mx-auto leading-[1.2]">
           {t('hero.titleLine1')} <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-white via-purple-200 to-indigo-300 animate-text-gradient relative inline-block overflow-hidden">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-white via-purple-200 to-indigo-300 animate-text-gradient relative inline-block pb-[0.15em]">
             {t('hero.titleHighlight')}
             <span className="absolute inset-0 pointer-events-none mix-blend-screen">
               <span className="absolute inset-y-0 left-[-60%] w-[50%] bg-[linear-gradient(120deg,transparent,rgba(255,255,255,0.15),rgba(255,255,255,0.55),rgba(255,255,255,0.15),transparent)] blur-sm skew-x-[-12deg] animate-sheen-diag"></span>
@@ -368,7 +368,7 @@ export default function Hero() {
         
         <div className="animate-in delay-300 flex flex-col md:flex-row items-center justify-center gap-4">
           <Link
-            to="/request-help"
+            to="/contact#contact-info"
             className="group relative w-full md:w-auto px-8 py-3.5 bg-white text-slate-950 rounded-lg font-semibold text-sm hover:bg-slate-100 transition-all shadow-[0_0_40px_-10px_rgba(255,255,255,0.4)] hover:shadow-[0_0_60px_-10px_rgba(255,255,255,0.6)] flex items-center justify-center gap-2 overflow-hidden"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></span>
