@@ -74,7 +74,7 @@ function About() {
             <div className="relative glass-strong rounded-xl border border-white/10 p-4 sm:p-6 md:p-8 shadow-2xl">
               <div className="grid grid-cols-2 gap-3 sm:gap-6">
                 {[
-                  { label: 'homeAbout.stats.projects', value: '100+', icon: 'lucide:folder' },
+                  { label: 'homeAbout.stats.projects', value: '4', icon: 'lucide:folder' },
                   { label: 'homeAbout.stats.clients', value: '50+', icon: 'lucide:users' },
                   { label: 'homeAbout.stats.technologies', value: '10+', icon: 'lucide:code' },
                   { label: 'homeAbout.stats.experience', value: '1+', subtext: 'homeAbout.stats.years', icon: 'lucide:calendar' }

@@ -139,6 +139,68 @@
   cursor: not-allowed;
 }
 
+/* Country dropdown – animație și stil */
+.country-dropdown-backdrop {
+  animation: countryDropdownBackdropIn 0.2s ease-out forwards;
+}
+@keyframes countryDropdownBackdropIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.country-dropdown-panel {
+  transform-origin: top left;
+  animation: countryDropdownPanelIn 0.28s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  opacity: 0;
+}
+@keyframes countryDropdownPanelIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.country-dropdown-panel {
+  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 0.75rem;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 0 40px -10px rgba(99, 102, 241, 0.2);
+}
+
+.country-dropdown-panel .country-option {
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.country-dropdown-panel .country-option:hover {
+  background-color: rgba(51, 65, 85, 0.5);
+}
+.country-dropdown-panel .country-option.selected {
+  background: rgba(99, 102, 241, 0.18);
+  color: rgb(199, 210, 254);
+  border-left: 2px solid rgb(99, 102, 241);
+}
+
+.country-dropdown-panel::-webkit-scrollbar {
+  width: 6px;
+}
+.country-dropdown-panel::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: 3px;
+}
+.country-dropdown-panel::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.4);
+  border-radius: 3px;
+}
+.country-dropdown-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.6);
+}
+
 @media (max-width: 968px) {
   .contact-content {
     grid-template-columns: 1fr;

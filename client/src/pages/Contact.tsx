@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import type { CSSProperties } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Icon } from '@iconify/react';
@@ -115,6 +116,25 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
   const [emailError, setEmailError] = useState<string>('');
+  const countryCodeButtonRef = useRef<HTMLButtonElement | null>(null);
+  const [dropdownPosition, setDropdownPosition] = useState({ top: 0, left: 0 });
+
+  // Recalc position on open and on scroll/resize so list stays under button
+  useEffect(() => {
+    if (!isCountryDropdownOpen || !countryCodeButtonRef.current) return;
+    const update = () => {
+      if (!countryCodeButtonRef.current) return;
+      const rect = countryCodeButtonRef.current.getBoundingClientRect();
+      setDropdownPosition({ top: rect.bottom + 4, left: rect.left });
+    };
+    update();
+    window.addEventListener('scroll', update, true);
+    window.addEventListener('resize', update);
+    return () => {
+      window.removeEventListener('scroll', update, true);
+      window.removeEventListener('resize', update);
+    };
+  }, [isCountryDropdownOpen]);
 
   useEffect(() => {
     if (location.hash === '#contact-info') {
@@ -352,10 +372,10 @@ export default function Contact() {
             </div>
 
             {/* Contact Form */}
-            <div className="glass-strong border border-white/10 rounded-2xl p-8 shadow-2xl relative overflow-hidden contact-reveal-item" style={{ ['--reveal-delay' as never]: '480ms' } as CSSProperties}>
+            <div className="glass-strong border border-white/10 rounded-2xl p-8 shadow-2xl relative overflow-visible contact-reveal-item" style={{ ['--reveal-delay' as never]: '480ms' } as CSSProperties}>
               <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl -z-10"></div>
               <h2 className="text-2xl font-semibold text-white mb-6 relative z-10">{t('contactPage.formTitle')}</h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6 relative z-0">
                 {status.type && (
                   <div className={`p-4 rounded-lg text-sm ${
                     status.type === 'success' 
@@ -402,10 +422,19 @@ export default function Contact() {
                   <div className="contact-reveal-item flex flex-col min-w-0" style={{ ['--reveal-delay' as never]: '840ms' } as CSSProperties}>
                     <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">{t('contactPage.fields.phone')}</label>
                     <div className="flex gap-2 min-w-0">
-                      <div className="relative shrink-0">
+                      <div className="relative shrink-0 z-[100]">
                         <button
+                          ref={countryCodeButtonRef}
                           type="button"
-                          onClick={() => setIsCountryDropdownOpen(!isCountryDropdownOpen)}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                if (!isCountryDropdownOpen && countryCodeButtonRef.current) {
+                                  const rect = countryCodeButtonRef.current.getBoundingClientRect();
+                                  setDropdownPosition({ top: rect.bottom + 4, left: rect.left });
+                                }
+                                setIsCountryDropdownOpen(!isCountryDropdownOpen);
+                              }}
                           className="w-[70px] bg-slate-950/50 border border-white/10 rounded-lg px-1.5 py-3 text-sm text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all cursor-pointer pr-6 flex items-center justify-center"
                           style={{ 
                             backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'none\' viewBox=\'0 0 20 20\'%3E%3Cpath stroke=\'%236b7280\' stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1.5\' d=\'M6 8l4 4 4-4\'/%3E%3C/svg%3E")', 
@@ -418,31 +447,51 @@ export default function Contact() {
                             {formData.countryCode}
                           </span>
                         </button>
-                        {isCountryDropdownOpen && (
+                        {isCountryDropdownOpen && createPortal(
                           <>
-                            <div 
-                              className="fixed inset-0 z-40" 
+                            <div
+                              className="country-dropdown-backdrop"
+                              style={{ position: 'fixed', inset: 0, zIndex: 2147483646 }}
                               onClick={() => setIsCountryDropdownOpen(false)}
-                            ></div>
-                            <div className="absolute top-full left-0 mt-1 w-[280px] bg-slate-900 border border-white/10 rounded-lg shadow-2xl z-50 max-h-[200px] overflow-y-auto">
-                              {countryCodes.map((country) => (
-                                <button
-                                  key={country.code}
-                                  type="button"
-                                  onClick={() => {
-                                    setFormData({ ...formData, countryCode: country.code });
-                                    setIsCountryDropdownOpen(false);
-                                  }}
-                                  className={`w-full text-left px-3 py-2 text-sm text-white hover:bg-slate-800 transition-colors flex items-center gap-2 ${
-                                    formData.countryCode === country.code ? 'bg-indigo-500/20' : ''
-                                  }`}
-                                >
-                                  <span className="font-medium">{country.code}</span>
-                                  <span className="text-slate-400">{country.country}</span>
-                                </button>
-                              ))}
+                              aria-hidden="true"
+                            />
+                            <div
+                              className="country-dropdown-list country-dropdown-panel"
+                              role="listbox"
+                              style={{
+                                position: 'fixed',
+                                top: dropdownPosition.top,
+                                left: dropdownPosition.left,
+                                width: '280px',
+                                maxHeight: '220px',
+                                overflowY: 'auto',
+                                zIndex: 2147483647,
+                                padding: '4px',
+                              }}
+                            >
+                              {countryCodes.map((country, index) => {
+                                const isSelected = formData.countryCode === country.code;
+                                return (
+                                  <button
+                                    key={`${country.code}-${country.country}-${index}`}
+                                    type="button"
+                                    role="option"
+                                    aria-selected={isSelected}
+                                    onClick={() => {
+                                      setFormData((prev) => ({ ...prev, countryCode: country.code }));
+                                      setIsCountryDropdownOpen(false);
+                                    }}
+                                    className={`country-option w-full text-left px-3 py-2.5 text-sm rounded-lg flex items-center gap-3 ${isSelected ? 'selected' : 'text-white'}`}
+                                  >
+                                    <span className="font-medium tabular-nums">{country.code}</span>
+                                    <span className={isSelected ? 'text-slate-300' : 'text-slate-400'}>{country.country}</span>
+                                    {isSelected && <Icon icon="lucide:check" className="ml-auto w-4 h-4 shrink-0 text-indigo-400" />}
+                                  </button>
+                                );
+                              })}
                             </div>
-                          </>
+                          </>,
+                          document.body
                         )}
                       </div>
                       <input
