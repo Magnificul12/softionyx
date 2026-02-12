@@ -1,20 +1,16 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-
-const LEGAL_PATHS = ['/privacy', '/terms', '/cookies'];
 
 export default function ScrollToTop() {
   const { pathname } = useLocation();
-  const prevPathRef = useRef(pathname);
 
   useEffect(() => {
-    const isLegalNow = LEGAL_PATHS.includes(pathname);
-    const wasLegalBefore = LEGAL_PATHS.includes(prevPathRef.current);
-
-    if (isLegalNow || wasLegalBefore) {
-      window.scrollTo(0, 0);
-    }
-    prevPathRef.current = pathname;
+    // Scroll to top on every route change
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant'
+    });
   }, [pathname]);
 
   return null;

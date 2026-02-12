@@ -2,7 +2,27 @@ import axios from 'axios';
 
 // Configure axios defaults
 // In development, Vite proxy handles /api requests
-axios.defaults.baseURL = import.meta.env.VITE_API_URL || '';
+// If accessing via network IP, use the same hostname with port 3000
+const getBaseURL = () => {
+  if (import.meta.env.VITE_API_URL) {
+    return import.meta.env.VITE_API_URL;
+  }
+  
+  // Always use the same hostname as the frontend with port 3000 for backend
+  const hostname = window.location.hostname;
+  const protocol = window.location.protocol;
+  
+  // If accessing via network IP (not localhost), construct API URL
+  if (hostname !== 'localhost' && hostname !== '127.0.0.1') {
+    return `${protocol}//${hostname}:3000`;
+  }
+  
+  // Default: use proxy (empty string means relative URLs)
+  return '';
+};
+
+const baseURL = getBaseURL();
+axios.defaults.baseURL = baseURL;
 axios.defaults.timeout = 30000; // Increased timeout
 axios.defaults.headers.common['Content-Type'] = 'application/json';
 

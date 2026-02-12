@@ -4,12 +4,32 @@ import { Icon } from '@iconify/react';
 import { useTranslation } from 'react-i18next';
 
 const INSTAGRAM_URL = 'https://www.instagram.com/softionix.group?igsh=NHU4bTJ2ZmxudWh0';
+// Phone number: 0782 00 341 (Moldova)
+const PHONE_NUMBER = '+37378200341'; // Moldova country code +373, remove leading 0 and spaces
+const PHONE_NUMBER_CLEAN = PHONE_NUMBER.replace('+', ''); // 37378200341
+const WHATSAPP_URL = `https://wa.me/${PHONE_NUMBER_CLEAN}`; // WhatsApp: 37378200341
+// Viber: try different formats - some work better than others
+const VIBER_URL = `viber://chat?number=${PHONE_NUMBER_CLEAN}`; // Viber deep link without +
 
 function Footer() {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
   const footerRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+
+  const handleViberClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+      // Mobile: let the default href work - browser will ask to open Viber
+      // No need to prevent default or add delays
+    } else {
+      // Desktop: try to open Viber app, but don't show annoying popups
+      e.preventDefault();
+      window.location.href = `viber://chat?number=${PHONE_NUMBER_CLEAN}`;
+      // If Viber is not installed, browser will handle it gracefully
+    }
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -119,11 +139,16 @@ function Footer() {
         <div className={`border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 ${isVisible ? 'animate-fade-scale delay-400' : ''}`} style={{ opacity: isVisible ? 1 : 0 }}>
           <p className="text-slate-500 text-xs">© {currentYear} {t('footer.copyright')}</p>
           <div className="flex gap-4 text-slate-400">
-            <a href="#" className="h-9 w-9 rounded-lg glass border border-white/10 flex items-center justify-center hover:text-indigo-400 hover:border-indigo-500/30 hover:bg-indigo-500/10 transition-all group">
-              <Icon icon="lucide:twitter" width={18} className="group-hover:scale-110 transition-transform" />
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-lg glass border border-white/10 flex items-center justify-center hover:text-green-400 hover:border-green-500/30 hover:bg-green-500/10 transition-all group" aria-label="WhatsApp">
+              <Icon icon="mdi:whatsapp" width={18} className="group-hover:scale-110 transition-transform" />
             </a>
-            <a href="#" className="h-9 w-9 rounded-lg glass border border-white/10 flex items-center justify-center hover:text-indigo-400 hover:border-indigo-500/30 hover:bg-indigo-500/10 transition-all group">
-              <Icon icon="lucide:github" width={18} className="group-hover:scale-110 transition-transform" />
+            <a 
+              href={VIBER_URL} 
+              onClick={handleViberClick}
+              className="h-9 w-9 rounded-lg glass border border-white/10 flex items-center justify-center hover:text-purple-400 hover:border-purple-500/30 hover:bg-purple-500/10 transition-all group" 
+              aria-label="Viber"
+            >
+              <Icon icon="simple-icons:viber" width={18} className="group-hover:scale-110 transition-transform" />
             </a>
             <a href="#" className="h-9 w-9 rounded-lg glass border border-white/10 flex items-center justify-center hover:text-indigo-400 hover:border-indigo-500/30 hover:bg-indigo-500/10 transition-all group">
               <Icon icon="lucide:linkedin" width={18} className="group-hover:scale-110 transition-transform" />
