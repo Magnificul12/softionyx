@@ -8,8 +8,9 @@ const INSTAGRAM_URL = 'https://www.instagram.com/softionix.group?igsh=NHU4bTJ2Zm
 const PHONE_NUMBER = '+37378200341'; // Moldova country code +373, remove leading 0 and spaces
 const PHONE_NUMBER_CLEAN = PHONE_NUMBER.replace('+', ''); // 37378200341
 const WHATSAPP_URL = `https://wa.me/${PHONE_NUMBER_CLEAN}`; // WhatsApp: 37378200341
-// Viber: try different formats - some work better than others
-const VIBER_URL = `viber://chat?number=${PHONE_NUMBER_CLEAN}`; // Viber deep link without +
+// Viber: use public chat link format (works if number has public Viber account)
+// If public chat doesn't work, try: viber://contact?number=+37378200341
+const VIBER_URL = `viber://contact?number=${PHONE_NUMBER}`; // Viber deep link with + sign
 
 function Footer() {
   const { t } = useTranslation();
@@ -20,15 +21,18 @@ function Footer() {
   const handleViberClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
-    if (isMobile) {
-      // Mobile: let the default href work - browser will ask to open Viber
-      // No need to prevent default or add delays
-    } else {
-      // Desktop: try to open Viber app, but don't show annoying popups
+    if (!isMobile) {
+      // Desktop: Viber Desktop may need different format
+      // Try chat protocol without + first (sometimes works better on desktop)
       e.preventDefault();
       window.location.href = `viber://chat?number=${PHONE_NUMBER_CLEAN}`;
-      // If Viber is not installed, browser will handle it gracefully
+      
+      // If that doesn't work, try with + after a short delay
+      setTimeout(() => {
+        window.location.href = `viber://contact?number=${PHONE_NUMBER}`;
+      }, 500);
     }
+    // Mobile: let default href work (already working)
   };
 
   useEffect(() => {
