@@ -55,7 +55,10 @@ export default function About() {
     { name: 'Vutcari Ion', role: 'CEO & Founder', bio: 'Leading strategy and innovation for SoftIonyx.', initials: 'VI' },
     { name: 'Popovici Vasile', role: 'CTO', bio: 'Architecting reliable, scalable, and secure platforms.', initials: 'PV' },
     { name: 'Tertea Nicu', role: 'Lead Developer', bio: 'Building high-quality software with modern stacks.', initials: 'TN' },
-    { name: 'Elena Romasenco', role: 'Project Manager', bio: 'Ensuring seamless project delivery and client satisfaction.', initials: 'ER' }
+    { name: 'Elena Romasenco', role: 'Product Owner', bio: 'Ensuring seamless project delivery and client satisfaction.', initials: 'ER' },
+    { name: 'Bulai Constantin', role: 'Developer', bio: 'Creating innovative solutions with cutting-edge technologies.', initials: 'BC' },
+    { name: 'Ivasenco Alex', role: 'Developer', bio: 'Delivering robust and efficient software solutions.', initials: 'IA' },
+    { name: 'Horozova Olga', role: 'Developer', bio: 'Building scalable applications with modern frameworks.', initials: 'HO' }
   ];
 
   // Duplicate members for seamless infinite scroll
