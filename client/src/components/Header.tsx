@@ -41,12 +41,12 @@ export default function Header() {
         : 'border-white/5 bg-slate-950/70 backdrop-blur-xl'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center">
-        <Link to="/" className="flex items-center gap-3 group cursor-pointer overflow-visible">
+        <Link to="/" className="flex items-center gap-3 group cursor-pointer overflow-visible shrink-0">
           <div className="relative flex items-center justify-center overflow-visible">
             <img 
               src="/logo.png" 
               alt="SoftIonyx Logo" 
-              className="relative z-10 h-24 sm:h-28 md:h-32 w-auto group-hover:opacity-90 transition-opacity duration-300 object-contain drop-shadow-[0_6px_18px_rgba(15,23,42,0.45)] logo-slide-in"
+              className="relative z-10 h-14 sm:h-16 md:h-20 w-auto max-h-20 object-contain logo-slide-in"
             />
           </div>
         </Link>
