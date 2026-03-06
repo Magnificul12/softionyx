@@ -2,7 +2,6 @@
   "nav": {
     "services": "Servicii",
     "solutions": "Soluții",
-    "store": "Magazin",
     "about": "Despre",
     "contact": "Contact",
     "admin": "Admin",
@@ -396,12 +395,6 @@
       "subtitle": "Spune-ne ce construiești și îți propunem cel mai rapid drum spre producție.",
       "button": "Solicită ajutor"
     }
-  },
-  "storePage": {
-    "heroTitlePrefix": "Magazin",
-    "heroTitleHighlight": "Produse",
-    "heroSubtitle": "Template-uri, componente și instrumente digitale premium.",
-    "notice": "Magazinul este în pregătire. Produsele vor apărea în curând."
   },
   "requestHelp": {
     "heroTitlePrefix": "Solicită",

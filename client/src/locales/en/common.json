@@ -2,7 +2,6 @@
   "nav": {
     "services": "Services",
     "solutions": "Solutions",
-    "store": "Store",
     "about": "About",
     "contact": "Contact",
     "admin": "Admin",
@@ -396,12 +395,6 @@
       "subtitle": "Tell us what you are building and we'll map the fastest path to production.",
       "button": "Request help"
     }
-  },
-  "storePage": {
-    "heroTitlePrefix": "Store",
-    "heroTitleHighlight": "Products",
-    "heroSubtitle": "Premium templates, components, and digital tools built for modern teams.",
-    "notice": "The store is being curated. New items will appear here soon."
   },
   "requestHelp": {
     "heroTitlePrefix": "Request",
