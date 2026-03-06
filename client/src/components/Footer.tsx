@@ -184,7 +184,7 @@ function Footer() {
             >
               <ViberIcon className="group-hover:scale-110 transition-transform" />
             </a>
-            <a href="#" className="h-9 w-9 rounded-lg glass border border-white/10 flex items-center justify-center hover:text-indigo-400 hover:border-indigo-500/30 hover:bg-indigo-500/10 transition-all group" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/softionyx-group/" target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-lg glass border border-white/10 flex items-center justify-center hover:text-indigo-400 hover:border-indigo-500/30 hover:bg-indigo-500/10 transition-all group" aria-label="LinkedIn">
               <LinkedInIcon className="group-hover:scale-110 transition-transform" />
             </a>
             <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-lg glass border border-white/10 flex items-center justify-center hover:text-indigo-400 hover:border-indigo-500/30 hover:bg-indigo-500/10 transition-all group" aria-label="Instagram">
