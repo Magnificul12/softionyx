@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
-import { Icon } from '@iconify/react';
+import { Icon } from '../components/Icons';
 import { useTranslation } from 'react-i18next';
 
 export default function Login() {
@@ -76,13 +76,13 @@ export default function Login() {
           <form onSubmit={handleSubmit} className="space-y-6">
             {success && (
               <div className="p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-sm flex items-center gap-2">
-                <Icon icon="lucide:check-circle" width={20} />
+                <Icon name="check-circle" width={20} />
                 <span>{t('login.success')}</span>
               </div>
             )}
             {error && (
               <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/20 text-red-300 text-sm flex items-center gap-2">
-                <Icon icon="lucide:alert-circle" width={20} />
+                <Icon name="alert-circle" width={20} />
                 <span>{error}</span>
               </div>
             )}
@@ -91,7 +91,7 @@ export default function Login() {
               <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">{t('login.fields.email')}</label>
               <div className="relative group">
                 <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500 group-focus-within:text-indigo-400 transition-colors">
-                  <Icon icon="lucide:mail" width={16} />
+                  <Icon name="mail" width={16} />
                 </span>
                 <input
                   type="email"
@@ -110,7 +110,7 @@ export default function Login() {
               <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">{t('login.fields.password')}</label>
               <div className="relative group">
                 <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500 group-focus-within:text-indigo-400 transition-colors">
-                  <Icon icon="lucide:lock" width={16} />
+                  <Icon name="lock" width={16} />
                 </span>
                 <input
                   type="password"
@@ -132,7 +132,7 @@ export default function Login() {
               {loading ? t('login.loading') : (
                 <>
                   <span>{t('login.cta')}</span>
-                  <Icon icon="lucide:arrow-right" width={16} />
+                  <Icon name="arrow-right" width={16} />
                 </>
               )}
             </button>

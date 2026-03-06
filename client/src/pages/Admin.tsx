@@ -4,6 +4,7 @@ import { Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import axios from '../utils/axios';
 import SEO from '../components/SEO';
+import { Icon } from '../components/Icons';
 
 interface DashboardStats {
   totalContacts: number;
@@ -95,7 +96,7 @@ export default function Admin() {
                       : 'bg-white/[0.02] border border-white/5 text-slate-400 hover:text-white hover:bg-white/[0.04]'
                   }`}
                 >
-                  <span className="iconify" data-icon={tab.icon} data-width="20"></span>
+                  <Icon name={tab.icon} width={20} />
                   {t(tab.label)}
                 </button>
               ))}

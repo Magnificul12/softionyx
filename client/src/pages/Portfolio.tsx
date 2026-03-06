@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Icon } from '../components/Icons';
 
 const projects = [
   {
@@ -112,7 +113,7 @@ export default function Portfolio() {
               >
                 <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="h-48 rounded-lg bg-gradient-to-br from-indigo-500/20 via-purple-500/20 to-pink-500/20 mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-500 relative z-10 shadow-lg">
-                  <span className="iconify text-6xl text-indigo-400/50 group-hover:text-indigo-300 group-hover:scale-110 transition-all duration-300" data-icon="lucide:folder" data-width="64"></span>
+                  <Icon name="folder" width={64} className="text-indigo-400/50 group-hover:text-indigo-300 group-hover:scale-110 transition-all duration-300" />
                 </div>
                 <div className="text-xs text-indigo-400 mb-2 font-medium">{t(project.category)}</div>
                 <h3 className="text-xl font-medium text-white mb-2">{t(project.title)}</h3>

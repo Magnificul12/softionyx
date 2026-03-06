@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useLocation, Link } from 'react-router-dom';
-import { Icon } from '@iconify/react';
+import { Icon } from '../components/Icons';
 
 type LegalType = 'privacy' | 'terms' | 'cookies';
 
@@ -30,7 +30,7 @@ export default function LegalPage() {
             to="/"
             className="inline-flex items-center gap-2 text-slate-400 hover:text-indigo-400 text-sm mb-8 transition-colors"
           >
-            <Icon icon="lucide:arrow-left" width={18} />
+            <Icon name="arrow-left" width={18} />
             {t('legal.back')}
           </Link>
           <h1 className="text-4xl md:text-5xl font-medium text-white tracking-tight mb-4">

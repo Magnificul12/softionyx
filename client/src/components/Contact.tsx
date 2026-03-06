@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import axios from '../utils/axios';
+import { Icon } from './Icons';
 
 // Lista completă de coduri de țară (sortată alfabetic după numele țării)
 const countryCodesRaw = [
@@ -254,7 +255,7 @@ function Contact() {
               <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">{t('homeContact.fields.name')}</label>
               <div className="relative group">
                 <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500 group-focus-within:text-indigo-400 transition-colors">
-                  <span className="iconify" data-icon="lucide:user" data-width="16"></span>
+                  <Icon name="user" width={16} />
                 </span>
                 <input
                   type="text"
@@ -272,7 +273,7 @@ function Contact() {
               <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">{t('homeContact.fields.email')}</label>
               <div className="relative group">
                 <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500 group-focus-within:text-indigo-400 transition-colors">
-                  <span className="iconify" data-icon="lucide:mail" data-width="16"></span>
+                  <Icon name="mail" width={16} />
                 </span>
                 <input
                   type="email"
@@ -356,7 +357,7 @@ function Contact() {
               <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">{t('homeContact.fields.subject')}</label>
               <div className="relative group">
                 <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500 group-focus-within:text-indigo-400 transition-colors">
-                  <span className="iconify" data-icon="lucide:layers" data-width="16"></span>
+                  <Icon name="layers" width={16} />
                 </span>
                 <input
                   type="text"
@@ -391,7 +392,7 @@ function Contact() {
               >
                 {isSubmitting ? t('homeContact.sending') : t('homeContact.cta')}
                 {!isSubmitting && (
-                  <span className="iconify group-hover:translate-x-1 transition-transform" data-icon="lucide:arrow-right" data-width="16"></span>
+                  <Icon name="arrow-right" width={16} className="group-hover:translate-x-1 transition-transform" />
                 )}
               </button>
             </div>

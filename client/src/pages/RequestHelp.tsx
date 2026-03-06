@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
 import { useTranslation } from 'react-i18next';
 import axios from '../utils/axios';
+import { Icon } from '../components/Icons';
 
 export default function RequestHelp() {
   const { t } = useTranslation();
@@ -224,7 +225,7 @@ export default function RequestHelp() {
               className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-3 rounded-lg transition-all shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? t('requestHelp.submitting') : t('requestHelp.cta')}
-              {!loading && <span className="iconify" data-icon="lucide:arrow-right" data-width="16"></span>}
+              {!loading && <Icon name="arrow-right" width={16} />}
             </button>
           </form>
         </div>

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import type { CSSProperties } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Icon } from '@iconify/react';
+import { Icon } from '../components/Icons';
 import { useTranslation } from 'react-i18next';
 import axios from '../utils/axios';
 import './ContactPage.css';
@@ -98,9 +98,7 @@ export default function Contact() {
   const { t } = useTranslation();
   const location = useLocation();
   const contactSectionRef = useRef<HTMLElement | null>(null);
-  const mapRef = useRef<HTMLDivElement | null>(null);
   const [contactVisible, setContactVisible] = useState(false);
-  const [showMap, setShowMap] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -301,7 +299,7 @@ export default function Contact() {
               <div className="space-y-6">
                 <div className="flex items-start gap-4 contact-reveal-item" style={{ ['--reveal-delay' as never]: '120ms' } as CSSProperties}>
                   <div className="h-12 w-12 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 flex-shrink-0">
-                    <Icon icon="lucide:mail" width={20} />
+                    <Icon name="mail" width={20} />
                   </div>
                   <div>
                     <h3 className="text-white font-medium mb-1">{t('contactPage.info.email')}</h3>
@@ -314,7 +312,7 @@ export default function Contact() {
                 </div>
                 <div className="flex items-start gap-4 contact-reveal-item" style={{ ['--reveal-delay' as never]: '240ms' } as CSSProperties}>
                   <div className="h-12 w-12 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 flex-shrink-0">
-                    <Icon icon="lucide:phone" width={20} />
+                    <Icon name="phone" width={20} />
                   </div>
                   <div>
                     <h3 className="text-white font-medium mb-1">{t('contactPage.info.phone')}</h3>
@@ -325,50 +323,28 @@ export default function Contact() {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 contact-reveal-item" style={{ ['--reveal-delay' as never]: '360ms' } as CSSProperties}>
-                  <button
-                    onClick={() => {
-                      setShowMap(!showMap);
-                      if (!showMap && mapRef.current) {
-                        setTimeout(() => {
-                          mapRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }, 100);
-                      }
-                    }}
-                    className="h-12 w-12 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 flex-shrink-0 hover:bg-indigo-500/20 hover:border-indigo-500/40 transition-all cursor-pointer"
-                    aria-label="Toggle map"
-                  >
-                    <Icon icon="lucide:map-pin" width={20} />
-                  </button>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=46.99045,28.87113"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-4 contact-reveal-item w-full text-left rounded-xl p-2 -m-2 hover:bg-white/[0.03] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50 no-underline"
+                  style={{ ['--reveal-delay' as never]: '360ms' } as CSSProperties}
+                  aria-label="Vezi locația în Google Maps"
+                >
+                  <span className="h-12 w-12 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 flex-shrink-0">
+                    <Icon name="map-pin" width={20} />
+                  </span>
                   <div>
                     <h3 className="text-white font-medium mb-1">{t('contactPage.info.address')}</h3>
                     <p className="text-slate-400 text-sm">
                       Mun. Chisinau Str. Nicolae Titulescu 36/B
                     </p>
+                    <p className="text-indigo-400/80 text-xs mt-1">
+                      Click pentru a deschide în Google Maps
+                    </p>
                   </div>
-                </div>
+                </a>
               </div>
-
-              {/* Map Container */}
-              {showMap && (
-                <div
-                  ref={mapRef}
-                  className="mt-8 contact-map-wrapper"
-                >
-                  <div className="contact-map-container rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-                    <iframe
-                      src="https://maps.google.com/maps?q=Mun.+Chisinau+Str.+Nicolae+Titulescu+36%2FB&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                      width="100%"
-                      height="450"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      className="contact-map-iframe"
-                    ></iframe>
-                  </div>
-                </div>
-              )}
             </div>
 
             {/* Contact Form */}
@@ -518,7 +494,7 @@ export default function Contact() {
                   >
                     {isSubmitting ? t('contactPage.sending') : t('contactPage.cta')}
                     {!isSubmitting && (
-                      <span className="iconify" data-icon="lucide:arrow-right" data-width="16"></span>
+                      <Icon name="arrow-right" width={16} />
                     )}
                   </button>
                 </div>

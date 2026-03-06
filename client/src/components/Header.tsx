@@ -1,8 +1,26 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Icon } from '@iconify/react';
 import { useTranslation } from 'react-i18next';
 import { useAuthStore } from '../store/authStore';
+
+function MenuIcon({ open }: { open: boolean }) {
+  const svgClass = 'text-white shrink-0';
+  if (open) {
+    return (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={svgClass} aria-hidden>
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    );
+  }
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={svgClass} aria-hidden>
+      <line x1="3" y1="12" x2="21" y2="12" />
+      <line x1="3" y1="6" x2="21" y2="6" />
+      <line x1="3" y1="18" x2="21" y2="18" />
+    </svg>
+  );
+}
 
 export default function Header() {
   const location = useLocation();
@@ -143,15 +161,16 @@ export default function Header() {
             </>
           ) : null}
           
-          {/* Mobile menu button */}
+          {/* Mobile menu button - SVG so it always shows without Iconify */}
           <button
-            className="md:hidden text-white p-2"
+            type="button"
+            className="md:hidden flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] text-white rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 active:bg-white/15 transition-colors touch-manipulation"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={isMobileMenuOpen ? 'Închide meniul' : 'Deschide meniul'}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
           >
-            <Icon icon={isMobileMenuOpen ? 'lucide:x' : 'lucide:menu'} width={24} />
+            <MenuIcon open={isMobileMenuOpen} />
           </button>
         </div>
       </div>

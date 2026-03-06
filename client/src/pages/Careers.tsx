@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Icon } from '../components/Icons';
 
 const jobListings = [
   {
@@ -80,15 +81,15 @@ export default function Careers() {
                     <h3 className="text-xl font-medium text-white mb-2">{t(job.title)}</h3>
                     <div className="flex flex-wrap gap-3 text-sm text-slate-400 mb-3">
                       <span className="flex items-center gap-1">
-                        <span className="iconify" data-icon="lucide:briefcase" data-width="16"></span>
+                        <Icon name="briefcase" width={16} />
                         {t(job.department)}
                       </span>
                       <span className="flex items-center gap-1">
-                        <span className="iconify" data-icon="lucide:map-pin" data-width="16"></span>
+                        <Icon name="map-pin" width={16} />
                         {t(job.location)}
                       </span>
                       <span className="flex items-center gap-1">
-                        <span className="iconify" data-icon="lucide:clock" data-width="16"></span>
+                        <Icon name="clock" width={16} />
                         {t(job.type)}
                       </span>
                     </div>
@@ -101,7 +102,7 @@ export default function Careers() {
                       </div>
                     )}
                   </div>
-                  <span className={`iconify transition-transform ${selectedJob === job.id ? 'rotate-180' : ''}`} data-icon="lucide:chevron-down" data-width="20"></span>
+                  <Icon name="chevron-down" width={20} className={`transition-transform ${selectedJob === job.id ? 'rotate-180' : ''}`} />
                 </div>
               </div>
             ))}

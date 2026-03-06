@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, memo } from 'react';
-import { Icon } from '@iconify/react';
+import { Icon } from './Icons';
 import { useTranslation } from 'react-i18next';
 
 function About() {
@@ -57,7 +57,7 @@ function About() {
                   style={{ opacity: isVisible ? 1 : 0 }}
                 >
                   <div className="mt-1 flex-shrink-0 h-8 w-8 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
-                    <Icon icon={item.icon} width={16} />
+                    <Icon name={item.icon} width={16} />
                   </div>
                   <div>
                     <h4 className="text-white font-medium text-lg">{t(item.title)}</h4>
@@ -82,7 +82,7 @@ function About() {
                   <div key={idx} className="group/stat glass rounded-lg p-4 sm:p-5 md:p-6 border border-white/5 hover:border-indigo-500/30 transition-all duration-300 hover:bg-white/[0.03]">
                     <div className="flex items-center gap-3 mb-2 sm:mb-3">
                       <div className="h-8 w-8 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover/stat:scale-110 transition-transform">
-                        <Icon icon={stat.icon} width={16} />
+                        <Icon name={stat.icon} width={16} />
                       </div>
                       <div className="text-[10px] sm:text-xs text-slate-500 font-medium uppercase tracking-wider">{t(stat.label)}</div>
                     </div>
