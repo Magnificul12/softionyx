@@ -2,6 +2,7 @@
   "nav": {
     "services": "Servicii",
     "solutions": "Soluții",
+    "portfolio": "Portofoliu",
     "about": "Despre",
     "contact": "Contact",
     "admin": "Admin",
@@ -586,37 +587,12 @@
     "heroSubtitle": "Proiecte de succes și soluții pentru clienți",
     "categories": {
       "all": "Toate",
-      "web": "Web Development",
-      "mobile": "Mobile App",
-      "cloud": "Cloud",
-      "ai": "AI & Data",
-      "cyber": "Cybersecurity",
-      "devops": "DevOps"
+      "web": "Site-uri web"
     },
     "projects": {
-      "ecommerce": {
-        "title": "Platformă E-Commerce",
-        "desc": "Soluție e-commerce modernă cu plăți integrate"
-      },
-      "banking": {
-        "title": "Aplicație Banking",
-        "desc": "Aplicație bancară cu autentificare biometrică"
-      },
-      "cloud": {
-        "title": "Migrare Cloud",
-        "desc": "Migrare completă a infrastructurii în cloud"
-      },
-      "ai": {
-        "title": "Dashboard Analytics AI",
-        "desc": "Dashboard în timp real cu insight-uri AI"
-      },
-      "cyber": {
-        "title": "Audit de securitate",
-        "desc": "Audit complet și testare de penetrare"
-      },
-      "devops": {
-        "title": "Pipeline DevOps",
-        "desc": "Implementare pipeline CI/CD automat"
+      "rightmob": {
+        "title": "Site RightMob.md",
+        "desc": "Site de prezentare pentru mobilier premium Right Mob."
       }
     }
   },

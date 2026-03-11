@@ -2,6 +2,7 @@
   "nav": {
     "services": "Services",
     "solutions": "Solutions",
+    "portfolio": "Portfolio",
     "about": "About",
     "contact": "Contact",
     "admin": "Admin",
@@ -586,37 +587,12 @@
     "heroSubtitle": "Showcasing our successful projects and client solutions",
     "categories": {
       "all": "All",
-      "web": "Web Development",
-      "mobile": "Mobile App",
-      "cloud": "Cloud Solutions",
-      "ai": "AI & Data",
-      "cyber": "Cybersecurity",
-      "devops": "DevOps"
+      "web": "Websites"
     },
     "projects": {
-      "ecommerce": {
-        "title": "E-Commerce Platform",
-        "desc": "Modern e-commerce solution with payment integration"
-      },
-      "banking": {
-        "title": "Mobile Banking App",
-        "desc": "Secure mobile banking application with biometric authentication"
-      },
-      "cloud": {
-        "title": "Cloud Migration",
-        "desc": "Complete cloud infrastructure migration for enterprise"
-      },
-      "ai": {
-        "title": "AI Analytics Dashboard",
-        "desc": "Real-time analytics dashboard with AI-powered insights"
-      },
-      "cyber": {
-        "title": "Cybersecurity Audit",
-        "desc": "Comprehensive security audit and penetration testing"
-      },
-      "devops": {
-        "title": "DevOps Pipeline",
-        "desc": "Automated CI/CD pipeline implementation"
+      "rightmob": {
+        "title": "RightMob.md Website",
+        "desc": "Presentation website for Right Mob premium furniture."
       }
     }
   },

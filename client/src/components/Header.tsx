@@ -93,6 +93,17 @@ export default function Header() {
             {t('nav.solutions')}
           </Link>
           <Link 
+            to="/portfolio" 
+            className={`relative hover:text-white transition-colors duration-200 ${
+              location.pathname === '/portfolio' ? 'text-white' : 'text-slate-400'
+            }`}
+          >
+            {location.pathname === '/portfolio' && (
+              <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-indigo-500"></span>
+            )}
+            {t('nav.portfolio')}
+          </Link>
+          <Link 
             to="/about" 
             className={`relative hover:text-white transition-colors duration-200 ${
               location.pathname === '/about' ? 'text-white' : 'text-slate-400'
@@ -202,6 +213,7 @@ export default function Header() {
             </div>
             <Link to="/services" className="block text-base font-medium hover:text-white transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>{t('nav.services')}</Link>
             <Link to="/solutions" className="block text-base font-medium hover:text-white transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>{t('nav.solutions')}</Link>
+            <Link to="/portfolio" className="block text-base font-medium hover:text-white transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>{t('nav.portfolio')}</Link>
             <Link to="/about" className="block text-base font-medium hover:text-white transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>{t('nav.about')}</Link>
             <Link to="/contact" className="block text-base font-medium hover:text-white transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>{t('nav.contact')}</Link>
             {isAuthenticated ? (

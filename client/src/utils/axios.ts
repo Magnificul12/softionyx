@@ -1,23 +1,14 @@
 import axios from 'axios';
 
 // Configure axios defaults
-// In development, Vite proxy handles /api requests
-// If accessing via network IP, use the same hostname with port 3000
+// - Development: Vite proxy trimite /api către backend (baseURL '').
+// - Producție (softionyx.com): același domeniu, nginx face proxy /api -> Node (baseURL '').
+// - Dacă VITE_API_URL e setat (ex. alt domeniu pentru API), folosește-l.
 const getBaseURL = () => {
   if (import.meta.env.VITE_API_URL) {
     return import.meta.env.VITE_API_URL;
   }
-  
-  // Always use the same hostname as the frontend with port 3000 for backend
-  const hostname = window.location.hostname;
-  const protocol = window.location.protocol;
-  
-  // If accessing via network IP (not localhost), construct API URL
-  if (hostname !== 'localhost' && hostname !== '127.0.0.1') {
-    return `${protocol}//${hostname}:3000`;
-  }
-  
-  // Default: use proxy (empty string means relative URLs)
+  // Mereu URL relativ – request-urile merg la același host (localhost cu proxy sau domeniu live)
   return '';
 };
 

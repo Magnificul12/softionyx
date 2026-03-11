@@ -5,57 +5,15 @@ import { Icon } from '../components/Icons';
 const projects = [
   {
     id: 1,
-    title: 'portfolio.projects.ecommerce.title',
+    title: 'portfolio.projects.rightmob.title',
     category: 'portfolio.categories.web',
-    description: 'portfolio.projects.ecommerce.desc',
-    technologies: ['React', 'Node.js', 'MongoDB'],
-  },
-  {
-    id: 2,
-    title: 'portfolio.projects.banking.title',
-    category: 'portfolio.categories.mobile',
-    description: 'portfolio.projects.banking.desc',
-    technologies: ['React Native', 'Firebase', 'AWS'],
-  },
-  {
-    id: 3,
-    title: 'portfolio.projects.cloud.title',
-    category: 'portfolio.categories.cloud',
-    description: 'portfolio.projects.cloud.desc',
-    technologies: ['AWS', 'Docker', 'Kubernetes'],
-  },
-  {
-    id: 4,
-    title: 'portfolio.projects.ai.title',
-    category: 'portfolio.categories.ai',
-    description: 'portfolio.projects.ai.desc',
-    technologies: ['Python', 'TensorFlow', 'React'],
-  },
-  {
-    id: 5,
-    title: 'portfolio.projects.cyber.title',
-    category: 'portfolio.categories.cyber',
-    description: 'portfolio.projects.cyber.desc',
-    technologies: ['Security Tools', 'Compliance'],
-  },
-  {
-    id: 6,
-    title: 'portfolio.projects.devops.title',
-    category: 'portfolio.categories.devops',
-    description: 'portfolio.projects.devops.desc',
-    technologies: ['Jenkins', 'GitLab CI', 'Docker'],
+    description: 'portfolio.projects.rightmob.desc',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js'],
+    url: 'https://rightmob.md',
   },
 ];
 
-const categories = [
-  'portfolio.categories.all',
-  'portfolio.categories.web',
-  'portfolio.categories.mobile',
-  'portfolio.categories.cloud',
-  'portfolio.categories.ai',
-  'portfolio.categories.cyber',
-  'portfolio.categories.devops'
-];
+const categories = ['portfolio.categories.all', 'portfolio.categories.web'];
 
 export default function Portfolio() {
   const { t } = useTranslation();
@@ -111,14 +69,19 @@ export default function Portfolio() {
                 key={project.id}
                 className="group card-glow p-6 rounded-2xl glass border border-white/5 hover:border-indigo-500/30 hover:bg-white/[0.05] transition-all duration-500 backdrop-blur-md relative overflow-hidden"
               >
-                <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="h-48 rounded-lg bg-gradient-to-br from-indigo-500/20 via-purple-500/20 to-pink-500/20 mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-500 relative z-10 shadow-lg">
-                  <Icon name="folder" width={64} className="text-indigo-400/50 group-hover:text-indigo-300 group-hover:scale-110 transition-all duration-300" />
+                <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                <div className="h-48 rounded-lg overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-500 relative z-10 shadow-lg">
+                  <img
+                    src="/rightmob.png"
+                    alt="RightMob.md homepage"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
                 <div className="text-xs text-indigo-400 mb-2 font-medium">{t(project.category)}</div>
                 <h3 className="text-xl font-medium text-white mb-2">{t(project.title)}</h3>
                 <p className="text-slate-400 text-sm mb-4 font-light">{t(project.description)}</p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, idx) => (
                     <span
                       key={idx}
@@ -128,6 +91,17 @@ export default function Portfolio() {
                     </span>
                   ))}
                 </div>
+                {project.url && (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors"
+                  >
+                    Vizitează site-ul
+                    <Icon name="arrow-right" width={16} />
+                  </a>
+                )}
               </div>
             ))}
           </div>

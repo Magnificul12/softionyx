@@ -2,6 +2,7 @@
   "nav": {
     "services": "Услуги",
     "solutions": "Решения",
+    "portfolio": "Портфолио",
     "about": "О нас",
     "contact": "Контакты",
     "admin": "Админ",
@@ -586,37 +587,12 @@
     "heroSubtitle": "Успешные проекты и решения для клиентов",
     "categories": {
       "all": "Все",
-      "web": "Web Development",
-      "mobile": "Mobile App",
-      "cloud": "Cloud",
-      "ai": "AI & Data",
-      "cyber": "Cybersecurity",
-      "devops": "DevOps"
+      "web": "Веб‑сайты"
     },
     "projects": {
-      "ecommerce": {
-        "title": "E-Commerce платформа",
-        "desc": "Современное решение с платежной интеграцией"
-      },
-      "banking": {
-        "title": "Мобильный банк",
-        "desc": "Безопасное приложение с биометрией"
-      },
-      "cloud": {
-        "title": "Миграция в облако",
-        "desc": "Полная миграция инфраструктуры"
-      },
-      "ai": {
-        "title": "AI аналитика",
-        "desc": "Real‑time дашборд с AI‑инсайтами"
-      },
-      "cyber": {
-        "title": "Аудит безопасности",
-        "desc": "Полный аудит и penetration testing"
-      },
-      "devops": {
-        "title": "DevOps pipeline",
-        "desc": "Автоматизация CI/CD"
+      "rightmob": {
+        "title": "Сайт RightMob.md",
+        "desc": "Презентационный сайт премиальной мебели Right Mob."
       }
     }
   },
