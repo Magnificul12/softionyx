@@ -1,4 +1,7 @@
+import { useTranslation } from 'react-i18next';
+
 export default function Store() {
+  const { t } = useTranslation();
   return (
     <div className="pt-32 pb-20 min-h-screen">
       <section className="relative py-20 overflow-hidden">
@@ -7,10 +10,10 @@ export default function Store() {
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
           <div className="animate-in">
             <h1 className="text-5xl md:text-7xl font-medium text-white tracking-tighter mb-6">
-              Store <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-300">Products</span>
+              {t('storePage.heroTitlePrefix')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-300">{t('storePage.heroTitleHighlight')}</span>
             </h1>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto font-light">
-              Premium templates, components, and digital tools built for modern teams.
+              {t('storePage.heroSubtitle')}
             </p>
           </div>
         </div>
@@ -19,9 +22,7 @@ export default function Store() {
       <section className="py-16 relative z-10 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-8 text-center backdrop-blur-sm">
-            <p className="text-slate-400 text-sm font-light">
-              The store is being curated. New items will appear here soon.
-            </p>
+            <p className="text-slate-400 text-sm font-light">{t('storePage.notice')}</p>
           </div>
         </div>
       </section>

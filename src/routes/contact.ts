@@ -11,18 +11,30 @@ const router = express.Router();
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Invalid email address'),
-  phone: z.string().optional(),
+  phone: z
+    .string()
+    .optional()
+    .refine((val) => {
+      if (!val) return true;
+      if (!/^[0-9+\-() ]+$/.test(val)) return false;
+      const digitsOnly = val.replace(/[^0-9]/g, '');
+      return digitsOnly.length <= 15;
+    }, {
+      message:
+        'Phone number can only contain numbers and phone characters (+, -, spaces, parentheses), and cannot exceed 15 digits',
+    }),
   subject: z.string().min(3, 'Subject must be at least 3 characters'),
   message: z.string().min(10, 'Message must be at least 10 characters'),
 });
 
 router.post('/', contactLimiter, async (req: Request, res: Response) => {
   try {
+    const t = req.t as (key: string) => string;
     const { name, email, phone, subject, message } = contactSchema.parse(req.body);
 
     // Try to save to database (optional - don't fail if DB is not configured)
     try {
-      const result = await pool.query(
+      await pool.query(
         `INSERT INTO contact_submissions (name, email, subject, message)
          VALUES ($1, $2, $3, $4)
          RETURNING *`,
@@ -36,20 +48,20 @@ router.post('/', contactLimiter, async (req: Request, res: Response) => {
 
     // Send email notification (this is the main functionality)
     const contactEmail = process.env.CONTACT_EMAIL || process.env.SMTP_USER;
-    
+
     if (!contactEmail) {
       logger.warn('CONTACT_EMAIL or SMTP_USER not configured. Email will not be sent.');
-      return res.status(500).json({ 
-        success: false, 
-        error: 'Email configuration is missing. Please contact the administrator.' 
+      return res.status(500).json({
+        success: false,
+        error: 'Email configuration is missing. Please contact the administrator.',
       });
     }
 
     if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
       logger.warn('SMTP credentials not configured. Email will not be sent.');
-      return res.status(500).json({ 
-        success: false, 
-        error: 'Email service is not configured. Please contact the administrator.' 
+      return res.status(500).json({
+        success: false,
+        error: 'Email service is not configured. Please contact the administrator.',
       });
     }
 
@@ -95,32 +107,31 @@ router.post('/', contactLimiter, async (req: Request, res: Response) => {
       }
     } catch (emailError: any) {
       logger.error('Email sending error:', emailError);
-      return res.status(500).json({ 
-        success: false, 
-        error: 'Failed to send email. Please try again later or contact us directly.' 
+      return res.status(500).json({
+        success: false,
+        error: 'Failed to send email. Please try again later or contact us directly.',
       });
     }
 
-    res.json({ 
-      success: true, 
-      message: 'Thank you for your message! We will get back to you soon.' 
+    res.json({
+      success: true,
+      message: t('contact.success'),
     });
   } catch (error: any) {
     if (error instanceof z.ZodError) {
       logger.warn('Contact form validation error:', error.errors);
-      return res.status(400).json({ 
-        success: false, 
-        error: error.errors[0].message 
+      return res.status(400).json({
+        success: false,
+        error: error.errors[0].message,
       });
     }
-    
+
     logger.error('Contact form error:', error);
-    res.status(500).json({ 
-      success: false, 
-      error: 'Failed to send message. Please try again later.' 
+    res.status(500).json({
+      success: false,
+      error: req.t('contact.validation_error'),
     });
   }
 });
 
 export default router;
-
