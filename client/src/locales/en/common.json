@@ -546,39 +546,31 @@
     "heroTitlePrefix": "Our",
     "heroTitleHighlight": "Portfolio",
     "heroSubtitle": "Showcasing our successful projects and client solutions",
+    "visitSite": "Visit site",
     "categories": {
       "all": "All",
-      "web": "Web Development",
-      "mobile": "Mobile App",
-      "cloud": "Cloud Solutions",
-      "ai": "AI & Data",
-      "cyber": "Cybersecurity",
-      "devops": "DevOps"
+      "web": "Websites"
     },
     "projects": {
-      "ecommerce": {
-        "title": "E-Commerce Platform",
-        "desc": "Modern e-commerce solution with payment integration"
+      "rightmob": {
+        "title": "RightMob.md Website",
+        "desc": "Presentation website for Right Mob premium furniture.",
+        "imageAlt": "RightMob.md website preview"
       },
-      "banking": {
-        "title": "Mobile Banking App",
-        "desc": "Secure mobile banking application with biometric authentication"
+      "work2now": {
+        "title": "Work2Now",
+        "desc": "Web platform for job opportunities and connections between professionals and employers.",
+        "imageAlt": "Work2Now website preview"
       },
-      "cloud": {
-        "title": "Cloud Migration",
-        "desc": "Complete cloud infrastructure migration for enterprise"
+      "easywaste": {
+        "title": "Easy Waste Removal",
+        "desc": "Presentation site for waste collection and removal services in Ireland.",
+        "imageAlt": "Easy Waste Removal website preview"
       },
-      "ai": {
-        "title": "AI Analytics Dashboard",
-        "desc": "Real-time analytics dashboard with AI-powered insights"
-      },
-      "cyber": {
-        "title": "Cybersecurity Audit",
-        "desc": "Comprehensive security audit and penetration testing"
-      },
-      "devops": {
-        "title": "DevOps Pipeline",
-        "desc": "Automated CI/CD pipeline implementation"
+      "cetateniero": {
+        "title": "CetatenieRO.md",
+        "desc": "Informational site and services related to Romanian citizenship procedures.",
+        "imageAlt": "CetatenieRO.md website preview"
       }
     }
   },

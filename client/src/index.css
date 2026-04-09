@@ -327,6 +327,12 @@ body {
   opacity: 0;
 }
 
+/* Portfolio / page sections: intrare lină (easing „spline”) */
+.animate-in-portfolio {
+  animation: fadeInUp 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
 .animate-fade-in {
   animation: fadeIn 1s ease-out forwards;
 }
@@ -481,6 +487,7 @@ svg *,
 
 /* Performance optimizations */
 .animate-in,
+.animate-in-portfolio,
 .animate-fade-in,
 .animate-slide-left,
 .animate-slide-right,

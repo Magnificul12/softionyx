@@ -546,39 +546,31 @@
     "heroTitlePrefix": "Наше",
     "heroTitleHighlight": "Портфолио",
     "heroSubtitle": "Успешные проекты и решения для клиентов",
+    "visitSite": "Перейти на сайт",
     "categories": {
       "all": "Все",
-      "web": "Web Development",
-      "mobile": "Mobile App",
-      "cloud": "Cloud",
-      "ai": "AI & Data",
-      "cyber": "Cybersecurity",
-      "devops": "DevOps"
+      "web": "Веб‑сайты"
     },
     "projects": {
-      "ecommerce": {
-        "title": "E-Commerce платформа",
-        "desc": "Современное решение с платежной интеграцией"
+      "rightmob": {
+        "title": "Сайт RightMob.md",
+        "desc": "Презентационный сайт премиальной мебели Right Mob.",
+        "imageAlt": "Превью сайта RightMob.md"
       },
-      "banking": {
-        "title": "Мобильный банк",
-        "desc": "Безопасное приложение с биометрией"
+      "work2now": {
+        "title": "Work2Now",
+        "desc": "Веб‑платформа для поиска работы и связи специалистов с работодателями.",
+        "imageAlt": "Превью сайта Work2Now"
       },
-      "cloud": {
-        "title": "Миграция в облако",
-        "desc": "Полная миграция инфраструктуры"
+      "easywaste": {
+        "title": "Easy Waste Removal",
+        "desc": "Сайт услуг по сбору и вывозу отходов в Ирландии.",
+        "imageAlt": "Превью сайта Easy Waste Removal"
       },
-      "ai": {
-        "title": "AI аналитика",
-        "desc": "Real‑time дашборд с AI‑инсайтами"
-      },
-      "cyber": {
-        "title": "Аудит безопасности",
-        "desc": "Полный аудит и penetration testing"
-      },
-      "devops": {
-        "title": "DevOps pipeline",
-        "desc": "Автоматизация CI/CD"
+      "cetateniero": {
+        "title": "CetatenieRO.md",
+        "desc": "Информационный сайт и сервисы по процедурам гражданства Румынии.",
+        "imageAlt": "Превью сайта CetatenieRO.md"
       }
     }
   },
