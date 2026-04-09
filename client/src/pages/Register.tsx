@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
-import { Icon } from '@iconify/react';
+import { Icon } from '../components/Icons';
 import { useTranslation } from 'react-i18next';
 
 export default function Register() {
@@ -94,13 +94,13 @@ export default function Register() {
           <form onSubmit={handleSubmit} className="space-y-6">
             {success && (
               <div className="p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-sm flex items-center gap-2">
-                <Icon icon="lucide:check-circle" width={20} />
+                <Icon name="check-circle" width={20} />
                 <span>{t('register.success')}</span>
               </div>
             )}
             {error && (
               <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/20 text-red-300 text-sm flex items-center gap-2">
-                <Icon icon="lucide:alert-circle" width={20} />
+                <Icon name="alert-circle" width={20} />
                 <span>{error}</span>
               </div>
             )}
@@ -190,7 +190,7 @@ export default function Register() {
               {loading ? t('register.loading') : (
                 <>
                   <span>{t('register.cta')}</span>
-                  <Icon icon="lucide:arrow-right" width={16} />
+                  <Icon name="arrow-right" width={16} />
                 </>
               )}
             </button>

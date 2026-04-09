@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Icon } from '@iconify/react';
+import { Icon } from '../components/Icons';
 import { useTranslation } from 'react-i18next';
 import './AboutPage.css';
 
@@ -55,12 +55,14 @@ export default function About() {
     { name: 'Vutcari Ion', role: 'CEO & Founder', bio: 'Leading strategy and innovation for SoftIonyx.', initials: 'VI' },
     { name: 'Popovici Vasile', role: 'CTO', bio: 'Architecting reliable, scalable, and secure platforms.', initials: 'PV' },
     { name: 'Tertea Nicu', role: 'Lead Developer', bio: 'Building high-quality software with modern stacks.', initials: 'TN' },
-    { name: 'Elena Romasenco', role: 'Project Manager', bio: 'Ensuring seamless project delivery and client satisfaction.', initials: 'ER' }
+    { name: 'Elena Romasenco', role: 'Product Owner', bio: 'Ensuring seamless project delivery and client satisfaction.', initials: 'ER' },
+    { name: 'Bulai Constantin', role: 'Developer', bio: 'Creating innovative solutions with cutting-edge technologies.', initials: 'BC' },
+    { name: 'Ivasenco Alex', role: 'Developer', bio: 'Delivering robust and efficient software solutions.', initials: 'IA' },
+    { name: 'Horozova Olga', role: 'Developer', bio: 'Building scalable applications with modern frameworks.', initials: 'HO' }
   ];
 
   // Duplicate members for seamless infinite scroll
   const duplicatedMembers = [...teamMembers, ...teamMembers];
-
   return (
     <div className="pt-32 pb-20 min-h-screen">
       {/* Hero Section */}
@@ -101,7 +103,7 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="group p-8 rounded-2xl glass border border-white/5 hover:border-indigo-500/30 hover:bg-white/[0.04] transition-all duration-500 backdrop-blur-md card-glow about-reveal-item" style={{ ['--reveal-delay' as never]: '0ms' } as React.CSSProperties}>
               <div className="h-12 w-12 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
-                <Icon icon="lucide:target" width={24} />
+                <Icon name="target" width={24} />
               </div>
               <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-indigo-300 transition-colors">{t('aboutPage.missionTitle')}</h3>
               <p className="text-slate-400 text-sm leading-relaxed font-light group-hover:text-slate-300 transition-colors">
@@ -110,7 +112,7 @@ export default function About() {
             </div>
             <div className="group p-8 rounded-2xl glass border border-white/5 hover:border-purple-500/30 hover:bg-white/[0.04] transition-all duration-500 backdrop-blur-md card-glow about-reveal-item" style={{ ['--reveal-delay' as never]: '300ms' } as React.CSSProperties}>
               <div className="h-12 w-12 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
-                <Icon icon="lucide:eye" width={24} />
+                <Icon name="eye" width={24} />
               </div>
               <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-purple-300 transition-colors">{t('aboutPage.visionTitle')}</h3>
               <p className="text-slate-400 text-sm leading-relaxed font-light group-hover:text-slate-300 transition-colors">
@@ -119,7 +121,7 @@ export default function About() {
             </div>
             <div className="group p-8 rounded-2xl glass border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500 backdrop-blur-md card-glow about-reveal-item" style={{ ['--reveal-delay' as never]: '600ms' } as React.CSSProperties}>
               <div className="h-12 w-12 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
-                <Icon icon="lucide:heart" width={24} />
+                <Icon name="heart" width={24} />
               </div>
               <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-emerald-300 transition-colors">{t('aboutPage.valuesTitle')}</h3>
               <ul className="text-slate-400 text-sm space-y-2 font-light group-hover:text-slate-300 transition-colors">
@@ -150,14 +152,9 @@ export default function About() {
       </section>
 
       {/* Team Section */}
-      <section
-        ref={teamRef}
-        className={`py-20 relative z-10 border-t border-white/5 about-reveal-section ${visibleSections.has('team') ? 'is-visible' : ''}`}
-      >
+      <section className="py-20 relative z-10 border-t border-white/5">
         <div className="w-full">
-          <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-12 text-center px-6 about-reveal-item">
-            {t('aboutPage.teamTitle')}
-          </h2>
+          <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-12 text-center px-6">{t('aboutPage.teamTitle')}</h2>
           
           {/* Infinite Carousel Container */}
           <div className="relative overflow-hidden w-full">

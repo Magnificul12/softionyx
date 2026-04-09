@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
-import { Icon } from '@iconify/react';
+import { Icon } from '../components/Icons';
 import { useTranslation } from 'react-i18next';
 
 const colorClasses = {
@@ -135,11 +135,11 @@ export default function ServicesPage() {
                   onClick={() => setActiveServiceIndex(null)}
                   aria-label="Close service details"
                 >
-                  <span className="iconify" data-icon="lucide:x" data-width="20"></span>
+                  <Icon name="x" width={20} />
                 </button>
                 <div className="flex items-start gap-4 mb-6">
                     <div className={`h-12 w-12 rounded-lg ${colorClasses[activeService.color as keyof typeof colorClasses].bg} border ${colorClasses[activeService.color as keyof typeof colorClasses].border} flex items-center justify-center ${colorClasses[activeService.color as keyof typeof colorClasses].text} shadow-lg`}>
-                    <Icon icon={activeService.icon} width={24} />
+                    <Icon name={activeService.icon} width={24} />
                   </div>
                   <div>
                   <h3 className="text-2xl md:text-3xl font-semibold text-white mb-2">{activeService.title}</h3>
@@ -207,7 +207,7 @@ export default function ServicesPage() {
                   >
                     <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div className={`h-12 w-12 rounded-lg ${colors.bg} border ${colors.border} flex items-center justify-center ${colors.text} mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 relative z-10 shadow-lg`}>
-                      <Icon icon={service.icon} width={24} />
+                      <Icon name={service.icon} width={24} />
                     </div>
                     <h3 className="text-xl font-semibold text-white mb-3 relative z-10 group-hover:text-indigo-300 transition-colors">{service.title}</h3>
                     <p className="text-slate-400 text-sm leading-relaxed relative z-10 font-light group-hover:text-slate-300 transition-colors">{service.short}</p>
@@ -229,7 +229,7 @@ export default function ServicesPage() {
             className="inline-flex px-8 py-3.5 bg-white text-slate-950 rounded-lg font-semibold text-sm hover:bg-slate-200 transition-all shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_-5px_rgba(255,255,255,0.4)] items-center gap-2 group"
           >
             {t('servicesPage.ctaButton')}
-            <span className="iconify group-hover:translate-x-0.5 transition-transform" data-icon="lucide:arrow-right" data-width="16"></span>
+            <Icon name="arrow-right" width={16} className="group-hover:translate-x-0.5 transition-transform" />
           </Link>
         </div>
       </section>

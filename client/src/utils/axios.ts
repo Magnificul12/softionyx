@@ -1,8 +1,19 @@
 import axios from 'axios';
 
 // Configure axios defaults
-// In development, Vite proxy handles /api requests
-axios.defaults.baseURL = import.meta.env.VITE_API_URL || '';
+// - Development: Vite proxy trimite /api către backend (baseURL '').
+// - Producție (softionyx.com): același domeniu, nginx face proxy /api -> Node (baseURL '').
+// - Dacă VITE_API_URL e setat (ex. alt domeniu pentru API), folosește-l.
+const getBaseURL = () => {
+  if (import.meta.env.VITE_API_URL) {
+    return import.meta.env.VITE_API_URL;
+  }
+  // Mereu URL relativ – request-urile merg la același host (localhost cu proxy sau domeniu live)
+  return '';
+};
+
+const baseURL = getBaseURL();
+axios.defaults.baseURL = baseURL;
 axios.defaults.timeout = 30000; // Increased timeout
 axios.defaults.headers.common['Content-Type'] = 'application/json';
 

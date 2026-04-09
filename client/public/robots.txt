@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Blochează directoarele tehnice (dacă vor exista)
+Disallow: /admin
+
+Sitemap: https://softionyx.com/sitemap.xml
+

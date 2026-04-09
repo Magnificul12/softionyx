@@ -1,0 +1,17 @@
+node_modules/
+dist/
+client/node_modules/
+client/dist/
+.env
+*.env.local
+*.env.*.local
+*.log
+.DS_Store
+*.swp
+*.swo
+
+# Nginx / deploy config (locale serverului, nu în repo)
+nginx-*.conf
+deploy/
+scripts/deploy*
+

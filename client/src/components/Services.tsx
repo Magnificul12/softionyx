@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState, memo } from 'react';
-import { Icon } from '@iconify/react';
+import { Icon } from './Icons';
 import { useTranslation } from 'react-i18next';
 
 const services = [
@@ -127,7 +127,7 @@ function Services() {
             <p className="text-slate-400 text-lg font-light leading-relaxed">{t('homeServices.subtitle')}</p>
           </div>
           <Link to="/services#service-details" className="text-white hover:text-indigo-300 text-sm font-medium flex items-center gap-2 transition-colors border-b border-transparent hover:border-indigo-300 pb-0.5">
-            {t('homeServices.cta')} <Icon icon="lucide:arrow-right" width={16} />
+            {t('homeServices.cta')} <Icon name="arrow-right" width={16} />
           </Link>
         </div>
 
@@ -175,7 +175,7 @@ function Services() {
                 <div className={`absolute inset-0 bg-gradient-to-br ${colors.gradient} via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
                 <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className={`h-12 w-12 rounded-lg ${colors.bg} border ${colors.border} flex items-center justify-center ${colors.text} mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 relative z-10 shadow-lg`}>
-                  <Icon icon={service.icon} width={24} />
+                  <Icon name={service.icon} width={24} />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-3 relative z-10 group-hover:text-indigo-300 transition-colors">{t(service.title)}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed relative z-10 font-light group-hover:text-slate-300 transition-colors">{t(service.description)}</p>

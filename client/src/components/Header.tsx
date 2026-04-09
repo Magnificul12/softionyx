@@ -1,8 +1,26 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Icon } from '@iconify/react';
 import { useTranslation } from 'react-i18next';
 import { useAuthStore } from '../store/authStore';
+
+function MenuIcon({ open }: { open: boolean }) {
+  const svgClass = 'text-white shrink-0';
+  if (open) {
+    return (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={svgClass} aria-hidden>
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    );
+  }
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={svgClass} aria-hidden>
+      <line x1="3" y1="12" x2="21" y2="12" />
+      <line x1="3" y1="6" x2="21" y2="6" />
+      <line x1="3" y1="18" x2="21" y2="18" />
+    </svg>
+  );
+}
 
 export default function Header() {
   const location = useLocation();
@@ -41,12 +59,12 @@ export default function Header() {
         : 'border-white/5 bg-slate-950/70 backdrop-blur-xl'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center">
-        <Link to="/" className="flex items-center gap-3 group cursor-pointer overflow-visible">
+        <Link to="/" className="flex items-center gap-3 group cursor-pointer overflow-visible shrink-0">
           <div className="relative flex items-center justify-center overflow-visible">
             <img 
               src="/logo.png" 
               alt="SoftIonyx Logo" 
-              className="relative z-10 h-24 sm:h-28 md:h-32 w-auto group-hover:opacity-90 transition-opacity duration-300 object-contain drop-shadow-[0_6px_18px_rgba(15,23,42,0.45)] logo-slide-in"
+              className="relative z-10 h-14 sm:h-16 md:h-20 w-auto max-h-20 object-contain logo-slide-in"
             />
           </div>
         </Link>
@@ -75,15 +93,15 @@ export default function Header() {
             {t('nav.solutions')}
           </Link>
           <Link 
-            to="/store" 
+            to="/portfolio" 
             className={`relative hover:text-white transition-colors duration-200 ${
-              location.pathname === '/store' ? 'text-white' : 'text-slate-400'
+              location.pathname === '/portfolio' ? 'text-white' : 'text-slate-400'
             }`}
           >
-            {location.pathname === '/store' && (
+            {location.pathname === '/portfolio' && (
               <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-indigo-500"></span>
             )}
-            {t('nav.store')}
+            {t('nav.portfolio')}
           </Link>
           <Link 
             to="/about" 
@@ -154,15 +172,16 @@ export default function Header() {
             </>
           ) : null}
           
-          {/* Mobile menu button */}
+          {/* Mobile menu button - SVG so it always shows without Iconify */}
           <button
-            className="md:hidden text-white p-2"
+            type="button"
+            className="md:hidden flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] text-white rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 active:bg-white/15 transition-colors touch-manipulation"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={isMobileMenuOpen ? 'Închide meniul' : 'Deschide meniul'}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
           >
-            <Icon icon={isMobileMenuOpen ? 'lucide:x' : 'lucide:menu'} width={24} />
+            <MenuIcon open={isMobileMenuOpen} />
           </button>
         </div>
       </div>
@@ -194,7 +213,7 @@ export default function Header() {
             </div>
             <Link to="/services" className="block text-base font-medium hover:text-white transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>{t('nav.services')}</Link>
             <Link to="/solutions" className="block text-base font-medium hover:text-white transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>{t('nav.solutions')}</Link>
-            <Link to="/store" className="block text-base font-medium hover:text-white transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>{t('nav.store')}</Link>
+            <Link to="/portfolio" className="block text-base font-medium hover:text-white transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>{t('nav.portfolio')}</Link>
             <Link to="/about" className="block text-base font-medium hover:text-white transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>{t('nav.about')}</Link>
             <Link to="/contact" className="block text-base font-medium hover:text-white transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>{t('nav.contact')}</Link>
             {isAuthenticated ? (

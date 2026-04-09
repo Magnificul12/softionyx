@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import type { CSSProperties } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Icon } from '@iconify/react';
+import { Icon } from '../components/Icons';
 import { useTranslation } from 'react-i18next';
 import axios from '../utils/axios';
 import './ContactPage.css';
@@ -98,9 +98,7 @@ export default function Contact() {
   const { t } = useTranslation();
   const location = useLocation();
   const contactSectionRef = useRef<HTMLElement | null>(null);
-  const mapRef = useRef<HTMLDivElement | null>(null);
   const [contactVisible, setContactVisible] = useState(false);
-  const [showMap, setShowMap] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -116,23 +114,23 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
   const [emailError, setEmailError] = useState<string>('');
-  const countryCodeButtonRef = useRef<HTMLButtonElement | null>(null);
+  const countryCodeButtonRef = useRef<HTMLDivElement>(null);
   const [dropdownPosition, setDropdownPosition] = useState({ top: 0, left: 0 });
 
-  // Recalc position on open and on scroll/resize so list stays under button
   useEffect(() => {
     if (!isCountryDropdownOpen || !countryCodeButtonRef.current) return;
-    const update = () => {
-      if (!countryCodeButtonRef.current) return;
-      const rect = countryCodeButtonRef.current.getBoundingClientRect();
-      setDropdownPosition({ top: rect.bottom + 4, left: rect.left });
+    const updatePosition = () => {
+      if (countryCodeButtonRef.current) {
+        const rect = countryCodeButtonRef.current.getBoundingClientRect();
+        setDropdownPosition({ top: rect.bottom + 4, left: rect.left });
+      }
     };
-    update();
-    window.addEventListener('scroll', update, true);
-    window.addEventListener('resize', update);
+    updatePosition();
+    window.addEventListener('scroll', updatePosition, true);
+    window.addEventListener('resize', updatePosition);
     return () => {
-      window.removeEventListener('scroll', update, true);
-      window.removeEventListener('resize', update);
+      window.removeEventListener('scroll', updatePosition, true);
+      window.removeEventListener('resize', updatePosition);
     };
   }, [isCountryDropdownOpen]);
 
@@ -301,7 +299,7 @@ export default function Contact() {
               <div className="space-y-6">
                 <div className="flex items-start gap-4 contact-reveal-item" style={{ ['--reveal-delay' as never]: '120ms' } as CSSProperties}>
                   <div className="h-12 w-12 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 flex-shrink-0">
-                    <Icon icon="lucide:mail" width={20} />
+                    <Icon name="mail" width={20} />
                   </div>
                   <div>
                     <h3 className="text-white font-medium mb-1">{t('contactPage.info.email')}</h3>
@@ -314,7 +312,7 @@ export default function Contact() {
                 </div>
                 <div className="flex items-start gap-4 contact-reveal-item" style={{ ['--reveal-delay' as never]: '240ms' } as CSSProperties}>
                   <div className="h-12 w-12 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 flex-shrink-0">
-                    <Icon icon="lucide:phone" width={20} />
+                    <Icon name="phone" width={20} />
                   </div>
                   <div>
                     <h3 className="text-white font-medium mb-1">{t('contactPage.info.phone')}</h3>
@@ -325,57 +323,35 @@ export default function Contact() {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 contact-reveal-item" style={{ ['--reveal-delay' as never]: '360ms' } as CSSProperties}>
-                  <button
-                    onClick={() => {
-                      setShowMap(!showMap);
-                      if (!showMap && mapRef.current) {
-                        setTimeout(() => {
-                          mapRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }, 100);
-                      }
-                    }}
-                    className="h-12 w-12 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 flex-shrink-0 hover:bg-indigo-500/20 hover:border-indigo-500/40 transition-all cursor-pointer"
-                    aria-label="Toggle map"
-                  >
-                    <Icon icon="lucide:map-pin" width={20} />
-                  </button>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=46.99045,28.87113"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-4 contact-reveal-item w-full text-left rounded-xl p-2 -m-2 hover:bg-white/[0.03] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50 no-underline"
+                  style={{ ['--reveal-delay' as never]: '360ms' } as CSSProperties}
+                  aria-label="Vezi locația în Google Maps"
+                >
+                  <span className="h-12 w-12 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 flex-shrink-0">
+                    <Icon name="map-pin" width={20} />
+                  </span>
                   <div>
                     <h3 className="text-white font-medium mb-1">{t('contactPage.info.address')}</h3>
                     <p className="text-slate-400 text-sm">
                       Mun. Chisinau Str. Nicolae Titulescu 36/B
                     </p>
+                    <p className="text-indigo-400/80 text-xs mt-1">
+                      Click pentru a deschide în Google Maps
+                    </p>
                   </div>
-                </div>
+                </a>
               </div>
-
-              {/* Map Container */}
-              {showMap && (
-                <div
-                  ref={mapRef}
-                  className="mt-8 contact-map-wrapper"
-                >
-                  <div className="contact-map-container rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-                    <iframe
-                      src="https://maps.google.com/maps?q=Mun.+Chisinau+Str.+Nicolae+Titulescu+36%2FB&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                      width="100%"
-                      height="450"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      className="contact-map-iframe"
-                    ></iframe>
-                  </div>
-                </div>
-              )}
             </div>
 
             {/* Contact Form */}
-            <div className="glass-strong border border-white/10 rounded-2xl p-8 shadow-2xl relative overflow-visible contact-reveal-item" style={{ ['--reveal-delay' as never]: '480ms' } as CSSProperties}>
+            <div className="glass-strong border border-white/10 rounded-2xl p-8 shadow-2xl relative overflow-hidden contact-reveal-item" style={{ ['--reveal-delay' as never]: '480ms' } as CSSProperties}>
               <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl -z-10"></div>
               <h2 className="text-2xl font-semibold text-white mb-6 relative z-10">{t('contactPage.formTitle')}</h2>
-              <form onSubmit={handleSubmit} className="space-y-6 relative z-0">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 {status.type && (
                   <div className={`p-4 rounded-lg text-sm ${
                     status.type === 'success' 
@@ -422,19 +398,10 @@ export default function Contact() {
                   <div className="contact-reveal-item flex flex-col min-w-0" style={{ ['--reveal-delay' as never]: '840ms' } as CSSProperties}>
                     <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">{t('contactPage.fields.phone')}</label>
                     <div className="flex gap-2 min-w-0">
-                      <div className="relative shrink-0 z-[100]">
+                      <div className="relative shrink-0" ref={countryCodeButtonRef}>
                         <button
-                          ref={countryCodeButtonRef}
                           type="button"
-                              onClick={(e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                if (!isCountryDropdownOpen && countryCodeButtonRef.current) {
-                                  const rect = countryCodeButtonRef.current.getBoundingClientRect();
-                                  setDropdownPosition({ top: rect.bottom + 4, left: rect.left });
-                                }
-                                setIsCountryDropdownOpen(!isCountryDropdownOpen);
-                              }}
+                          onClick={() => setIsCountryDropdownOpen(!isCountryDropdownOpen)}
                           className="w-[70px] bg-slate-950/50 border border-white/10 rounded-lg px-1.5 py-3 text-sm text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all cursor-pointer pr-6 flex items-center justify-center"
                           style={{ 
                             backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'none\' viewBox=\'0 0 20 20\'%3E%3Cpath stroke=\'%236b7280\' stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1.5\' d=\'M6 8l4 4 4-4\'/%3E%3C/svg%3E")', 
@@ -450,45 +417,36 @@ export default function Contact() {
                         {isCountryDropdownOpen && createPortal(
                           <>
                             <div
-                              className="country-dropdown-backdrop"
-                              style={{ position: 'fixed', inset: 0, zIndex: 2147483646 }}
+                              className="fixed inset-0 z-[9998]"
                               onClick={() => setIsCountryDropdownOpen(false)}
-                              aria-hidden="true"
+                              aria-hidden
                             />
                             <div
-                              className="country-dropdown-list country-dropdown-panel"
-                              role="listbox"
+                              className="country-code-dropdown w-[280px] border border-white/10 rounded-lg shadow-2xl z-[9999] max-h-[200px] overflow-y-auto"
                               style={{
                                 position: 'fixed',
                                 top: dropdownPosition.top,
                                 left: dropdownPosition.left,
-                                width: '280px',
-                                maxHeight: '220px',
-                                overflowY: 'auto',
-                                zIndex: 2147483647,
-                                padding: '4px',
+                                backgroundColor: '#0f172a',
+                                backgroundImage: 'none',
                               }}
                             >
-                              {countryCodes.map((country, index) => {
-                                const isSelected = formData.countryCode === country.code;
-                                return (
-                                  <button
-                                    key={`${country.code}-${country.country}-${index}`}
-                                    type="button"
-                                    role="option"
-                                    aria-selected={isSelected}
-                                    onClick={() => {
-                                      setFormData((prev) => ({ ...prev, countryCode: country.code }));
-                                      setIsCountryDropdownOpen(false);
-                                    }}
-                                    className={`country-option w-full text-left px-3 py-2.5 text-sm rounded-lg flex items-center gap-3 ${isSelected ? 'selected' : 'text-white'}`}
-                                  >
-                                    <span className="font-medium tabular-nums">{country.code}</span>
-                                    <span className={isSelected ? 'text-slate-300' : 'text-slate-400'}>{country.country}</span>
-                                    {isSelected && <Icon icon="lucide:check" className="ml-auto w-4 h-4 shrink-0 text-indigo-400" />}
-                                  </button>
-                                );
-                              })}
+                              {countryCodes.map((country) => (
+                                <button
+                                  key={country.code}
+                                  type="button"
+                                  onClick={() => {
+                                    setFormData((prev) => ({ ...prev, countryCode: country.code }));
+                                    setIsCountryDropdownOpen(false);
+                                  }}
+                                  className={`w-full text-left px-3 py-2 text-sm text-white hover:bg-slate-700 transition-colors flex items-center gap-2 ${
+                                    formData.countryCode === country.code ? 'bg-indigo-600' : ''
+                                  }`}
+                                >
+                                  <span className="font-medium">{country.code}</span>
+                                  <span className="text-slate-400">{country.country}</span>
+                                </button>
+                              ))}
                             </div>
                           </>,
                           document.body
@@ -536,7 +494,7 @@ export default function Contact() {
                   >
                     {isSubmitting ? t('contactPage.sending') : t('contactPage.cta')}
                     {!isSubmitting && (
-                      <span className="iconify" data-icon="lucide:arrow-right" data-width="16"></span>
+                      <Icon name="arrow-right" width={16} />
                     )}
                   </button>
                 </div>

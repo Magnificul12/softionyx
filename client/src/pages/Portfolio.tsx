@@ -10,38 +10,6 @@ const projects = [
     description: 'portfolio.projects.rightmob.desc',
     technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js'],
     url: 'https://rightmob.md',
-    image: '/rightmob.png',
-    imageAlt: 'portfolio.projects.rightmob.imageAlt',
-  },
-  {
-    id: 2,
-    title: 'portfolio.projects.work2now.title',
-    category: 'portfolio.categories.web',
-    description: 'portfolio.projects.work2now.desc',
-    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js'],
-    url: 'https://work2now.com/',
-    image: '/Work2Now.png',
-    imageAlt: 'portfolio.projects.work2now.imageAlt',
-  },
-  {
-    id: 3,
-    title: 'portfolio.projects.easywaste.title',
-    category: 'portfolio.categories.web',
-    description: 'portfolio.projects.easywaste.desc',
-    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js'],
-    url: 'https://easywasteremoval.ie/',
-    image: '/easywaste-removal.png',
-    imageAlt: 'portfolio.projects.easywaste.imageAlt',
-  },
-  {
-    id: 4,
-    title: 'portfolio.projects.cetateniero.title',
-    category: 'portfolio.categories.web',
-    description: 'portfolio.projects.cetateniero.desc',
-    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js'],
-    url: 'https://cetateniero.md/',
-    image: '/CetatetiaRo-Main.jpg',
-    imageAlt: 'portfolio.projects.cetateniero.imageAlt',
   },
 ];
 
@@ -51,10 +19,9 @@ export default function Portfolio() {
   const { t } = useTranslation();
   const [selectedCategory, setSelectedCategory] = useState('portfolio.categories.all');
 
-  const filteredProjects =
-    selectedCategory === 'portfolio.categories.all'
-      ? projects
-      : projects.filter((project) => project.category === selectedCategory);
+  const filteredProjects = selectedCategory === 'portfolio.categories.all'
+    ? projects
+    : projects.filter(project => project.category === selectedCategory);
 
   return (
     <div className="pt-32 pb-20 min-h-screen">
@@ -63,15 +30,12 @@ export default function Portfolio() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] -z-10 animate-grid"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/5 via-transparent to-transparent -z-10"></div>
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
-          <h1 className="text-5xl md:text-7xl font-medium text-white tracking-tighter mb-6 animate-in-portfolio">
-            {t('portfolio.heroTitlePrefix')}{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-300">
-              {t('portfolio.heroTitleHighlight')}
-            </span>
-          </h1>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto font-light animate-in-portfolio delay-100">
-            {t('portfolio.heroSubtitle')}
-          </p>
+          <div className="animate-in">
+            <h1 className="text-5xl md:text-7xl font-medium text-white tracking-tighter mb-6">
+              {t('portfolio.heroTitlePrefix')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-300">{t('portfolio.heroTitleHighlight')}</span>
+            </h1>
+            <p className="text-xl text-slate-400 max-w-2xl mx-auto font-light">{t('portfolio.heroSubtitle')}</p>
+          </div>
         </div>
       </section>
 
@@ -79,14 +43,11 @@ export default function Portfolio() {
       <section className="py-12 relative z-10 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-wrap gap-4 justify-center">
-            {categories.map((categoryKey, i) => (
+            {categories.map((categoryKey) => (
               <button
                 key={categoryKey}
-                type="button"
                 onClick={() => setSelectedCategory(categoryKey)}
-                className={`animate-in-portfolio px-6 py-2 rounded-full text-sm font-medium transition-all ${
-                  i === 0 ? 'delay-200' : 'delay-300'
-                } ${
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
                   selectedCategory === categoryKey
                     ? 'bg-indigo-600 text-white'
                     : 'bg-white/[0.02] border border-white/5 text-slate-400 hover:text-white hover:border-indigo-500/20'
@@ -102,25 +63,22 @@ export default function Portfolio() {
       {/* Projects Grid */}
       <section className="py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-6">
-          <div
-            key={selectedCategory}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            {filteredProjects.map((project, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredProjects.map((project) => (
               <div
                 key={project.id}
-                className="group card-glow animate-in-portfolio p-6 rounded-2xl glass border border-white/5 hover:border-indigo-500/30 hover:bg-white/[0.05] transition-all duration-500 backdrop-blur-md relative overflow-hidden"
-                style={{ animationDelay: `${420 + index * 130}ms` }}
+                className="group card-glow p-6 rounded-2xl glass border border-white/5 hover:border-indigo-500/30 hover:bg-white/[0.05] transition-all duration-500 backdrop-blur-md relative overflow-hidden"
               >
                 <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-                <div className="h-48 rounded-lg overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-500 relative z-10 shadow-lg bg-slate-900/50">
+                <div className="h-48 rounded-lg overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-500 relative z-10 shadow-lg">
                   <img
-                    src={project.image}
-                    alt={t(project.imageAlt)}
-                    className="w-full h-full object-cover object-top"
+                    src="/rightmob.png"
+                    alt="RightMob.md homepage"
+                    className="w-full h-full object-cover"
                     loading="lazy"
                   />
                 </div>
+                <div className="text-xs text-indigo-400 mb-2 font-medium">{t(project.category)}</div>
                 <h3 className="text-xl font-medium text-white mb-2">{t(project.title)}</h3>
                 <p className="text-slate-400 text-sm mb-4 font-light">{t(project.description)}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -138,14 +96,10 @@ export default function Portfolio() {
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group/visit mt-1 inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-indigo-500/35 bg-gradient-to-r from-indigo-500/15 via-indigo-500/10 to-violet-500/10 px-4 py-2.5 text-sm font-semibold text-indigo-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-sm transition-all duration-300 hover:border-indigo-400/55 hover:from-indigo-500/25 hover:to-violet-500/20 hover:text-white hover:shadow-[0_0_28px_-6px_rgba(99,102,241,0.55)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500/60"
+                    className="inline-flex items-center text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors"
                   >
-                    {t('portfolio.visitSite')}
-                    <Icon
-                      name="arrow-right"
-                      width={16}
-                      className="shrink-0 transition-transform duration-300 group-hover/visit:translate-x-0.5"
-                    />
+                    Vizitează site-ul
+                    <Icon name="arrow-right" width={16} />
                   </a>
                 )}
               </div>
