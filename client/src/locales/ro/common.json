@@ -585,6 +585,7 @@
     "heroTitlePrefix": "Portofoliul",
     "heroTitleHighlight": "Nostru",
     "heroSubtitle": "Proiecte de succes și soluții pentru clienți",
+    "visitSite": "Vizitează site-ul",
     "categories": {
       "all": "Toate",
       "web": "Site-uri web"
@@ -592,7 +593,23 @@
     "projects": {
       "rightmob": {
         "title": "Site RightMob.md",
-        "desc": "Site de prezentare pentru mobilier premium Right Mob."
+        "desc": "Site de prezentare pentru mobilier premium Right Mob.",
+        "imageAlt": "Previzualizare site RightMob.md"
+      },
+      "work2now": {
+        "title": "Work2Now",
+        "desc": "Platformă web pentru oportunități de muncă și conectare între profesioniști și angajatori.",
+        "imageAlt": "Previzualizare site Work2Now"
+      },
+      "easywaste": {
+        "title": "Easy Waste Removal",
+        "desc": "Site de prezentare pentru servicii de colectare și eliminare deșeuri în Irlanda.",
+        "imageAlt": "Previzualizare site Easy Waste Removal"
+      },
+      "cetateniero": {
+        "title": "CetatenieRO.md",
+        "desc": "Site informativ și servicii legate de procedurile de cetățenie română.",
+        "imageAlt": "Previzualizare site CetatenieRO.md"
       }
     }
   },

@@ -585,6 +585,7 @@
     "heroTitlePrefix": "Наше",
     "heroTitleHighlight": "Портфолио",
     "heroSubtitle": "Успешные проекты и решения для клиентов",
+    "visitSite": "Перейти на сайт",
     "categories": {
       "all": "Все",
       "web": "Веб‑сайты"
@@ -592,7 +593,23 @@
     "projects": {
       "rightmob": {
         "title": "Сайт RightMob.md",
-        "desc": "Презентационный сайт премиальной мебели Right Mob."
+        "desc": "Презентационный сайт премиальной мебели Right Mob.",
+        "imageAlt": "Превью сайта RightMob.md"
+      },
+      "work2now": {
+        "title": "Work2Now",
+        "desc": "Веб‑платформа для поиска работы и связи специалистов с работодателями.",
+        "imageAlt": "Превью сайта Work2Now"
+      },
+      "easywaste": {
+        "title": "Easy Waste Removal",
+        "desc": "Сайт услуг по сбору и вывозу отходов в Ирландии.",
+        "imageAlt": "Превью сайта Easy Waste Removal"
+      },
+      "cetateniero": {
+        "title": "CetatenieRO.md",
+        "desc": "Информационный сайт и сервисы по процедурам гражданства Румынии.",
+        "imageAlt": "Превью сайта CetatenieRO.md"
       }
     }
   },

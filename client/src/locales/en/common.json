@@ -585,6 +585,7 @@
     "heroTitlePrefix": "Our",
     "heroTitleHighlight": "Portfolio",
     "heroSubtitle": "Showcasing our successful projects and client solutions",
+    "visitSite": "Visit site",
     "categories": {
       "all": "All",
       "web": "Websites"
@@ -592,7 +593,23 @@
     "projects": {
       "rightmob": {
         "title": "RightMob.md Website",
-        "desc": "Presentation website for Right Mob premium furniture."
+        "desc": "Presentation website for Right Mob premium furniture.",
+        "imageAlt": "RightMob.md website preview"
+      },
+      "work2now": {
+        "title": "Work2Now",
+        "desc": "Web platform for job opportunities and connections between professionals and employers.",
+        "imageAlt": "Work2Now website preview"
+      },
+      "easywaste": {
+        "title": "Easy Waste Removal",
+        "desc": "Presentation site for waste collection and removal services in Ireland.",
+        "imageAlt": "Easy Waste Removal website preview"
+      },
+      "cetateniero": {
+        "title": "CetatenieRO.md",
+        "desc": "Informational site and services related to Romanian citizenship procedures.",
+        "imageAlt": "CetatenieRO.md website preview"
       }
     }
   },
