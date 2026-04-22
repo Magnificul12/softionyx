@@ -2,20 +2,128 @@
 <html lang="ro" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="SoftIonyx Technologies - Professional IT Solutions. Websites, Frontend/Backend Development, Blockchain Analytics, and Programming Services." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0f19" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Favicons / App Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/favicon-maskable-512.png" color="#0b0f19" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Primary Meta (va fi suprascris per-pagină de React Helmet) -->
     <title>SoftIonyx Technologies - Professional IT Solutions</title>
-    <!-- Iconify: script pentru iconițe (API + span.iconify); @iconify/react folosește același API -->
-    <link rel="preconnect" href="https://code.iconify.design">
-    <link rel="preconnect" href="https://api.iconify.design">
-    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <meta name="title" content="SoftIonyx Technologies - Professional IT Solutions" />
+    <meta name="description" content="SoftIonyx Technologies - soluții IT profesionale: dezvoltare web, aplicații mobile, frontend & backend, blockchain analytics și servicii de programare pe multiple limbaje." />
+    <meta name="keywords" content="IT solutions, web development, software development, blockchain, programming, SoftIonyx, dezvoltare web, aplicații mobile" />
+    <meta name="author" content="SoftIonyx Technologies" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <!-- canonical is emitted per-page by React Helmet (components/SEO.tsx) -->
+
+    <!-- Search engine verification (uncomment and fill with real codes) -->
+    <!--
+    <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" />
+    <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" />
+    <meta name="yandex-verification" content="YOUR_YANDEX_VERIFICATION_CODE" />
+    -->
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://softionyx.com/" />
+    <meta property="og:site_name" content="SoftIonyx" />
+    <meta property="og:title" content="SoftIonyx Technologies - Professional IT Solutions" />
+    <meta property="og:description" content="Soluții IT profesionale: dezvoltare web, aplicații mobile, frontend & backend, blockchain analytics și servicii de programare." />
+    <meta property="og:image" content="https://softionyx.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="ro_RO" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale:alternate" content="ru_RU" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://softionyx.com/" />
+    <meta name="twitter:title" content="SoftIonyx Technologies - Professional IT Solutions" />
+    <meta name="twitter:description" content="Soluții IT profesionale: dezvoltare web, aplicații mobile, frontend & backend, blockchain analytics și servicii de programare." />
+    <meta name="twitter:image" content="https://softionyx.com/og-image.jpg" />
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "SoftIonyx Technologies",
+      "alternateName": "SoftIonyx",
+      "url": "https://softionyx.com",
+      "logo": "https://softionyx.com/logo.png",
+      "description": "Soluții IT profesionale: dezvoltare web, aplicații mobile, frontend & backend, blockchain analytics și servicii de programare.",
+      "email": "contact@softionyx.com",
+      "sameAs": []
+    }
+    </script>
+
+    <!-- Structured Data: WebSite + SearchAction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "SoftIonyx",
+      "url": "https://softionyx.com",
+      "inLanguage": ["ro", "en", "ru"],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://softionyx.com/blog?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Fonts: Preconnect + preload critical Inter weight (400 for body text = highest usage) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap"
+    />
+
+    <!-- Iconify API (used by @iconify/react at runtime). Only preconnect; no blocking script. -->
+    <link rel="preconnect" href="https://api.iconify.design" crossorigin />
+
+    <!--
+      Analytics: drop in your provider here.
+      Plausible example (GDPR-friendly, no cookie banner needed):
+      <script defer data-domain="softionyx.com" src="https://plausible.io/js/script.js"></script>
+
+      Google Analytics 4 example:
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+      </script>
+    -->
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <div style="padding: 2rem; text-align: center; background: #0b0f19; color: #cbd5e1; font-family: sans-serif;">
+        Aceasta aplicație folosește JavaScript. Activează JavaScript în browser pentru a continua.
+      </div>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

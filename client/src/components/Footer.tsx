@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { LangLink } from '../i18n/routing';
 import { useEffect, useRef, useState, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Icon, HexagonIcon } from './Icons';
@@ -91,20 +91,20 @@ function Footer() {
   }, []);
 
   return (
-    <footer ref={footerRef} className="relative border-t border-white/10 bg-gradient-to-b from-slate-950 to-slate-900/50 relative z-10 pt-20 pb-12 overflow-hidden">
+    <footer ref={footerRef} className="relative border-t border-white/10 bg-gradient-to-b from-slate-950 to-slate-900/50 z-10 pt-12 sm:pt-16 md:pt-20 pb-8 sm:pb-10 md:pb-12 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px] opacity-50"></div>
       <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent"></div>
       
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12 md:mb-16">
           <div className={`col-span-2 md:col-span-1 ${isVisible ? 'animate-slide-left' : ''}`} style={{ opacity: isVisible ? 1 : 0 }}>
-            <div className="flex items-center gap-2 mb-6">
+            <div className="flex items-center gap-2 mb-4 sm:mb-6">
               <div className="relative">
                 <span className="absolute inset-0 bg-indigo-500 blur-md opacity-30"></span>
                 <HexagonIcon width={24} className="text-indigo-400 relative z-10" />
               </div>
-              <span className="text-white font-semibold tracking-tight text-lg">SOFTIONYX</span>
+              <span className="text-white font-semibold tracking-tight text-base sm:text-lg">SOFTIONYX</span>
             </div>
             <p className="text-slate-400 text-xs leading-relaxed max-w-xs font-light">
               {t('footer.tagline')}
@@ -112,67 +112,85 @@ function Footer() {
           </div>
           
           <div className={isVisible ? 'animate-fade-scale delay-100' : ''} style={{ opacity: isVisible ? 1 : 0 }}>
-            <h4 className="text-white font-semibold text-sm mb-6">{t('footer.sections.services')}</h4>
-            <ul className="space-y-3 text-xs text-slate-400 font-light">
-              <li><Link to="/services" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
+            <h4 className="text-white font-semibold text-sm mb-4 sm:mb-6">{t('footer.sections.services')}</h4>
+            <ul className="space-y-2.5 sm:space-y-3 text-xs text-slate-400 font-light">
+              {/* Deep links to each service landing page — helps Google discover
+                  them through internal linking and signals topical relevance. */}
+              <li><LangLink to="/services/dezvoltare-web" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon name="arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                {t('footer.links.web')}
-              </Link></li>
-              <li><Link to="/services" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
+                Dezvoltare Web
+              </LangLink></li>
+              <li><LangLink to="/services/aplicatii-mobile" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon name="arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                {t('footer.links.frontendBackend')}
-              </Link></li>
-              <li><Link to="/services" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
+                Aplicații Mobile
+              </LangLink></li>
+              <li><LangLink to="/services/e-commerce" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon name="arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                {t('footer.links.blockchain')}
-              </Link></li>
-              <li><Link to="/services" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
+                E-commerce
+              </LangLink></li>
+              <li><LangLink to="/services/software-custom" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon name="arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                {t('footer.links.programming')}
-              </Link></li>
+                Software Custom
+              </LangLink></li>
+              <li><LangLink to="/services/seo-optimizare" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
+                <Icon name="arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                SEO & Marketing
+              </LangLink></li>
+              <li><LangLink to="/services/mentenanta-site" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
+                <Icon name="arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                Mentenanță
+              </LangLink></li>
+              <li><LangLink to="/services/cyber-security" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
+                <Icon name="arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                Cybersecurity
+              </LangLink></li>
+              <li><LangLink to="/services/blockchain" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
+                <Icon name="arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                Blockchain
+              </LangLink></li>
             </ul>
           </div>
 
           <div className={isVisible ? 'animate-fade-scale delay-200' : ''} style={{ opacity: isVisible ? 1 : 0 }}>
-            <h4 className="text-white font-semibold text-sm mb-6">{t('footer.sections.company')}</h4>
-            <ul className="space-y-3 text-xs text-slate-400 font-light">
-              <li><Link to="/about" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
+            <h4 className="text-white font-semibold text-sm mb-4 sm:mb-6">{t('footer.sections.company')}</h4>
+            <ul className="space-y-2.5 sm:space-y-3 text-xs text-slate-400 font-light">
+              <li><LangLink to="/about" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon name="arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 {t('footer.links.about')}
-              </Link></li>
-              <li><Link to="/careers" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
+              </LangLink></li>
+              <li><LangLink to="/careers" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon name="arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 {t('footer.links.careers')}
-              </Link></li>
-              <li><Link to="/contact" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
+              </LangLink></li>
+              <li><LangLink to="/contact" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon name="arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 {t('footer.links.contact')}
-              </Link></li>
+              </LangLink></li>
             </ul>
           </div>
 
           <div className={isVisible ? 'animate-slide-right delay-300' : ''} style={{ opacity: isVisible ? 1 : 0 }}>
-            <h4 className="text-white font-semibold text-sm mb-6">{t('footer.sections.legal')}</h4>
-            <ul className="space-y-3 text-xs text-slate-400 font-light">
-              <li><Link to="/privacy" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
+            <h4 className="text-white font-semibold text-sm mb-4 sm:mb-6">{t('footer.sections.legal')}</h4>
+            <ul className="space-y-2.5 sm:space-y-3 text-xs text-slate-400 font-light">
+              <li><LangLink to="/privacy" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon name="arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 {t('footer.links.privacy')}
-              </Link></li>
-              <li><Link to="/terms" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
+              </LangLink></li>
+              <li><LangLink to="/terms" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon name="arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 {t('footer.links.terms')}
-              </Link></li>
-              <li><Link to="/cookies" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
+              </LangLink></li>
+              <li><LangLink to="/cookies" className="hover:text-indigo-400 transition-colors flex items-center gap-2 group">
                 <Icon name="arrow-right" width={12} className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 {t('footer.links.cookies')}
-              </Link></li>
+              </LangLink></li>
             </ul>
           </div>
         </div>
         
-        <div className={`border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 ${isVisible ? 'animate-fade-scale delay-400' : ''}`} style={{ opacity: isVisible ? 1 : 0 }}>
-          <p className="text-slate-500 text-xs">© {currentYear} {t('footer.copyright')}</p>
-          <div className="flex gap-4 text-slate-400">
+        <div className={`border-t border-white/10 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center gap-4 ${isVisible ? 'animate-fade-scale delay-400' : ''}`} style={{ opacity: isVisible ? 1 : 0 }}>
+          <p className="text-slate-500 text-xs text-center md:text-left">© {currentYear} {t('footer.copyright')}</p>
+          <div className="flex gap-3 sm:gap-4 text-slate-400">
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-lg glass border border-white/10 flex items-center justify-center hover:text-green-400 hover:border-green-500/30 hover:bg-green-500/10 transition-all group" aria-label="WhatsApp">
               <WhatsAppIcon className="group-hover:scale-110 transition-transform" />
             </a>

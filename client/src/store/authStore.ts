@@ -27,7 +27,7 @@ interface RegisterData {
   phone?: string;
 }
 
-export const useAuthStore = create<AuthState>((set, get) => {
+export const useAuthStore = create<AuthState>((set) => {
   // Load token from localStorage on init
   const savedToken = localStorage.getItem('token');
   if (savedToken) {

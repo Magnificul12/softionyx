@@ -5,6 +5,9 @@ import { useLocation } from 'react-router-dom';
 import { Icon } from '../components/Icons';
 import { useTranslation } from 'react-i18next';
 import axios from '../utils/axios';
+import SEO from '../components/SEO';
+import { buildBreadcrumbList } from '../utils/structuredData';
+import { trackEvent } from '../utils/analytics';
 import './ContactPage.css';
 
 // Lista completă de coduri de țară (sortată alfabetic după numele țării)
@@ -122,7 +125,9 @@ export default function Contact() {
     const updatePosition = () => {
       if (countryCodeButtonRef.current) {
         const rect = countryCodeButtonRef.current.getBoundingClientRect();
-        setDropdownPosition({ top: rect.bottom + 4, left: rect.left });
+        const maxWidth = Math.min(280, window.innerWidth - 16);
+        const left = Math.max(8, Math.min(rect.left, window.innerWidth - maxWidth - 8));
+        setDropdownPosition({ top: rect.bottom + 4, left });
       }
     };
     updatePosition();
@@ -215,6 +220,7 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     setStatus({ type: null, message: '' });
+    trackEvent('contact_start', { metadata: { subject: formData.subject } });
 
     // Validare email
     if (!validateEmail(formData.email)) {
@@ -259,6 +265,7 @@ export default function Contact() {
       setStatus({ type: 'success', message: response.data.message });
       setFormData({ name: '', email: '', countryCode: '+373', phone: '', subject: '', message: '' });
       setEmailError('');
+      trackEvent('contact_submit', { metadata: { subject: formData.subject } });
     } catch (error: any) {
       setStatus({
         type: 'error',
@@ -270,17 +277,36 @@ export default function Contact() {
   };
 
   return (
-    <div className="pt-32 pb-20 min-h-screen">
+    <>
+      <SEO
+        title="Contact SoftIonyx - Discută cu Specialiștii Noștri IT"
+        description="Contactează echipa SoftIonyx pentru consultanță IT, ofertă personalizată sau colaborare. Răspundem rapid solicitărilor tale despre dezvoltare web, mobile, backend și blockchain."
+        keywords="contact SoftIonyx, consultanță IT, ofertă dezvoltare, email SoftIonyx, colaborare software"
+        url="/contact"
+        jsonLd={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'ContactPage',
+            name: 'Contact SoftIonyx',
+            url: 'https://softionyx.com/contact',
+          },
+          buildBreadcrumbList([
+            { name: 'Acasă', path: '/' },
+            { name: 'Contact', path: '/contact' },
+          ]),
+        ]}
+      />
+    <div className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-10 sm:py-16 md:py-20 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] -z-10 animate-grid"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/5 via-transparent to-transparent -z-10"></div>
-        <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center relative z-10">
           <div className="animate-in">
-            <h1 className="text-5xl md:text-7xl font-medium text-white tracking-tighter mb-6">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-medium text-white tracking-tighter mb-4 sm:mb-6 [text-wrap:balance] leading-[1.15]">
               {t('contactPage.heroTitlePrefix')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-300">{t('contactPage.heroTitleHighlight')}</span>
             </h1>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto font-light">{t('contactPage.heroSubtitle')}</p>
+            <p className="text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto font-light px-2">{t('contactPage.heroSubtitle')}</p>
           </div>
         </div>
       </section>
@@ -289,13 +315,13 @@ export default function Contact() {
       <section
         id="contact-info"
         ref={contactSectionRef}
-        className={`py-20 relative z-10 contact-reveal-section ${contactVisible ? 'is-visible' : ''}`}
+        className={`py-12 sm:py-16 md:py-20 relative z-10 contact-reveal-section ${contactVisible ? 'is-visible' : ''}`}
       >
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-start">
             {/* Contact Info */}
             <div>
-              <h2 className="text-3xl font-medium text-white mb-8 contact-reveal-item">{t('contactPage.infoTitle')}</h2>
+              <h2 className="text-2xl sm:text-3xl font-medium text-white mb-6 sm:mb-8 contact-reveal-item [text-wrap:balance]">{t('contactPage.infoTitle')}</h2>
               <div className="space-y-6">
                 <div className="flex items-start gap-4 contact-reveal-item" style={{ ['--reveal-delay' as never]: '120ms' } as CSSProperties}>
                   <div className="h-12 w-12 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 flex-shrink-0">
@@ -348,9 +374,9 @@ export default function Contact() {
             </div>
 
             {/* Contact Form */}
-            <div className="glass-strong border border-white/10 rounded-2xl p-8 shadow-2xl relative overflow-hidden contact-reveal-item" style={{ ['--reveal-delay' as never]: '480ms' } as CSSProperties}>
+            <div className="glass-strong border border-white/10 rounded-2xl p-5 sm:p-6 md:p-8 shadow-2xl relative overflow-hidden contact-reveal-item" style={{ ['--reveal-delay' as never]: '480ms' } as CSSProperties}>
               <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl -z-10"></div>
-              <h2 className="text-2xl font-semibold text-white mb-6 relative z-10">{t('contactPage.formTitle')}</h2>
+              <h2 className="text-xl sm:text-2xl font-semibold text-white mb-5 sm:mb-6 relative z-10">{t('contactPage.formTitle')}</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 {status.type && (
                   <div className={`p-4 rounded-lg text-sm ${
@@ -422,7 +448,7 @@ export default function Contact() {
                               aria-hidden
                             />
                             <div
-                              className="country-code-dropdown w-[280px] border border-white/10 rounded-lg shadow-2xl z-[9999] max-h-[200px] overflow-y-auto"
+                              className="country-code-dropdown w-[min(280px,calc(100vw-1rem))] border border-white/10 rounded-lg shadow-2xl z-[9999] max-h-[240px] overflow-y-auto"
                               style={{
                                 position: 'fixed',
                                 top: dropdownPosition.top,
@@ -504,5 +530,6 @@ export default function Contact() {
         </div>
       </section>
     </div>
+    </>
   );
 }

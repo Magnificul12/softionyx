@@ -1,7 +1,22 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { Icon } from '../components/Icons';
 import { useTranslation } from 'react-i18next';
+import SEO from '../components/SEO';
+import { buildBreadcrumbList, buildServiceSchema } from '../utils/structuredData';
+import { trackServiceView, trackServiceCTA } from '../utils/analytics';
+import { SERVICES as DETAIL_SERVICES } from '../data/services';
+import Reveal from '../components/Reveal';
+import { LangLink } from '../i18n/routing';
+
+const detailColorClasses: Record<string, { bg: string; border: string; text: string }> = {
+  indigo: { bg: 'bg-indigo-500/10', border: 'border-indigo-500/20', text: 'text-indigo-400' },
+  purple: { bg: 'bg-purple-500/10', border: 'border-purple-500/20', text: 'text-purple-400' },
+  emerald: { bg: 'bg-emerald-500/10', border: 'border-emerald-500/20', text: 'text-emerald-400' },
+  blue: { bg: 'bg-blue-500/10', border: 'border-blue-500/20', text: 'text-blue-400' },
+  orange: { bg: 'bg-orange-500/10', border: 'border-orange-500/20', text: 'text-orange-400' },
+  pink: { bg: 'bg-pink-500/10', border: 'border-pink-500/20', text: 'text-pink-400' },
+};
 
 const colorClasses = {
   indigo: { bg: 'bg-indigo-500/10', border: 'border-indigo-500/20', text: 'text-indigo-400' },
@@ -13,13 +28,20 @@ const colorClasses = {
 };
 
 export default function ServicesPage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const numberLocale =
+    i18n.language.split('-')[0] === 'ro'
+      ? 'ro-RO'
+      : i18n.language.split('-')[0] === 'ru'
+        ? 'ru-RU'
+        : 'en-US';
   const location = useLocation();
   const [activeServiceIndex, setActiveServiceIndex] = useState<number | null>(null);
   const modalRef = useRef<HTMLDivElement | null>(null);
   const detailsRef = useRef<HTMLDivElement | null>(null);
   const services = [
     {
+      slug: 'cyber',
       icon: 'lucide:shield',
       title: t('servicesPage.items.cyber.title'),
       short: t('servicesPage.items.cyber.short'),
@@ -30,6 +52,7 @@ export default function ServicesPage() {
       color: 'indigo'
     },
     {
+      slug: 'cloud',
       icon: 'lucide:cloud',
       title: t('servicesPage.items.cloud.title'),
       short: t('servicesPage.items.cloud.short'),
@@ -40,6 +63,7 @@ export default function ServicesPage() {
       color: 'purple'
     },
     {
+      slug: 'software',
       icon: 'lucide:code-2',
       title: t('servicesPage.items.software.title'),
       short: t('servicesPage.items.software.short'),
@@ -50,6 +74,7 @@ export default function ServicesPage() {
       color: 'emerald'
     },
     {
+      slug: 'data',
       icon: 'lucide:database',
       title: t('servicesPage.items.data.title'),
       short: t('servicesPage.items.data.short'),
@@ -60,6 +85,7 @@ export default function ServicesPage() {
       color: 'blue'
     },
     {
+      slug: 'automation',
       icon: 'lucide:workflow',
       title: t('servicesPage.items.automation.title'),
       short: t('servicesPage.items.automation.short'),
@@ -70,6 +96,7 @@ export default function ServicesPage() {
       color: 'purple'
     },
     {
+      slug: 'blockchain',
       icon: 'lucide:blocks',
       title: t('servicesPage.items.blockchain.title'),
       short: t('servicesPage.items.blockchain.short'),
@@ -82,9 +109,18 @@ export default function ServicesPage() {
   ];
   const activeService = activeServiceIndex !== null ? services[activeServiceIndex] : null;
 
+  const servicesJsonLd = services.map((s) =>
+    buildServiceSchema({
+      name: s.title,
+      description: s.short,
+      serviceType: s.title,
+    })
+  );
+
   useEffect(() => {
     if (activeService && modalRef.current) {
       modalRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      trackServiceView(activeService.slug, activeService.title);
     }
   }, [activeService]);
 
@@ -95,24 +131,38 @@ export default function ServicesPage() {
   }, [location.hash]);
 
   return (
-    <div className="pt-32 pb-20 min-h-screen">
+    <>
+      <SEO
+        title="Servicii SoftIonyx - Dezvoltare Web, Mobile, Backend & Blockchain"
+        description="Serviciile SoftIonyx: dezvoltare web full-stack, aplicații mobile iOS/Android, backend scalabil, frontend modern, blockchain analytics și programare custom pe multiple limbaje."
+        keywords="servicii IT, dezvoltare web, aplicații mobile, backend, frontend, blockchain, API development, programare custom"
+        url="/services"
+        jsonLd={[
+          buildBreadcrumbList([
+            { name: 'Acasă', path: '/' },
+            { name: 'Servicii', path: '/services' },
+          ]),
+          ...servicesJsonLd,
+        ]}
+      />
+    <div className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-10 sm:py-16 md:py-20 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] -z-10 animate-grid"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/5 via-transparent to-transparent -z-10"></div>
-        <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center relative z-10">
           <div className="animate-in">
-            <h1 className="text-5xl md:text-7xl font-medium text-white tracking-tighter mb-6">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-medium text-white tracking-tighter mb-4 sm:mb-6 [text-wrap:balance] leading-[1.15]">
               {t('servicesPage.heroTitlePrefix')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-300">{t('servicesPage.heroTitleHighlight')}</span>
             </h1>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto font-light">{t('servicesPage.heroSubtitle')}</p>
+            <p className="text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto font-light px-2">{t('servicesPage.heroSubtitle')}</p>
           </div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 relative z-10">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-12 sm:py-16 md:py-20 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div
             ref={detailsRef}
             id="service-details"
@@ -127,7 +177,7 @@ export default function ServicesPage() {
               ></div>
               <div
                 ref={modalRef}
-                className="relative z-10 max-w-3xl mx-auto p-8 md:p-10 rounded-2xl glass border border-white/10 shadow-2xl service-modal-enter"
+                className="relative z-10 max-w-3xl mx-auto p-5 sm:p-8 md:p-10 rounded-2xl glass border border-white/10 shadow-2xl service-modal-enter"
               >
                 <button
                   type="button"
@@ -194,7 +244,7 @@ export default function ServicesPage() {
               </div>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 service-grid-enter">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 service-grid-enter">
               {services.map((service, index) => {
                 const colors = colorClasses[service.color as keyof typeof colorClasses];
                 return (
@@ -202,7 +252,7 @@ export default function ServicesPage() {
                     key={index}
                     type="button"
                     onClick={() => setActiveServiceIndex(index)}
-                    className="text-left group card-glow service-card p-8 rounded-2xl glass border border-white/5 hover:border-indigo-500/30 hover:bg-white/[0.05] transition-all duration-500 backdrop-blur-md relative overflow-hidden animate-in"
+                    className="text-left group card-glow service-card p-5 sm:p-6 md:p-8 rounded-2xl glass border border-white/5 hover:border-indigo-500/30 hover:bg-white/[0.05] transition-all duration-500 backdrop-blur-md relative overflow-hidden animate-in"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -219,20 +269,76 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* ─────────── Detail Services Index (SEO-focused local landing pages) */}
+      <section className="py-12 sm:py-16 md:py-20 relative z-10 border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <Reveal variant="fade-up" className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
+            <span className="inline-block px-3 py-1 rounded-full text-[10px] sm:text-xs font-medium uppercase tracking-wider bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-4">
+              {t('servicesPage.detailIndex.eyebrow')}
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-white tracking-tighter mb-3 [text-wrap:balance]">
+              {t('servicesPage.detailIndex.title')}
+            </h2>
+            <p className="text-sm sm:text-base text-slate-400 font-light [text-wrap:balance]">
+              {t('servicesPage.detailIndex.subtitle')}
+            </p>
+          </Reveal>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+            {DETAIL_SERVICES.map((s, i) => {
+              const c = detailColorClasses[s.color] || detailColorClasses.indigo;
+              return (
+                <Reveal key={s.slug} variant="fade-up" delay={(i % 4) * 80}>
+                  <LangLink
+                    to={`/services/${s.slug}`}
+                    className="group block p-4 sm:p-5 rounded-xl glass border border-white/5 hover:border-white/10 hover:bg-white/[0.02] transition-all"
+                  >
+                    <div
+                      className={`h-10 w-10 rounded-lg ${c.bg} border ${c.border} flex items-center justify-center ${c.text} mb-3 group-hover:scale-110 transition-transform`}
+                    >
+                      <Icon name={s.icon} width={18} />
+                    </div>
+                    <h3 className="text-sm sm:text-base font-semibold text-white mb-1 group-hover:text-indigo-300 transition-colors">
+                      {s.serviceType}
+                    </h3>
+                    <p className="text-xs text-slate-500 font-light line-clamp-2 mb-3">
+                      {t(`content.${s.slug}.tagline`, { ns: 'services', defaultValue: '' })}
+                    </p>
+                    <span className="inline-flex items-center gap-1 text-xs text-slate-400 group-hover:text-white transition-colors">
+                      {t('servicesMenu.priceFrom')} {s.priceFrom?.toLocaleString(numberLocale)} {s.priceCurrency}
+                      <Icon
+                        name="arrow-right"
+                        width={10}
+                        className="ml-1 group-hover:translate-x-0.5 transition-transform"
+                      />
+                    </span>
+                  </LangLink>
+                </Reveal>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="py-20 relative z-10 border-t border-white/5">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tighter mb-6">{t('servicesPage.ctaTitle')}</h2>
-          <p className="text-lg text-slate-400 mb-8 font-light">{t('servicesPage.ctaSubtitle')}</p>
-          <Link
+      <section className="py-12 sm:py-16 md:py-20 relative z-10 border-t border-white/5">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-medium text-white tracking-tighter mb-4 sm:mb-6 [text-wrap:balance]">{t('servicesPage.ctaTitle')}</h2>
+          <p className="text-sm sm:text-base md:text-lg text-slate-400 mb-6 sm:mb-8 font-light">{t('servicesPage.ctaSubtitle')}</p>
+          <LangLink
             to="/contact#contact-info"
-            className="inline-flex px-8 py-3.5 bg-white text-slate-950 rounded-lg font-semibold text-sm hover:bg-slate-200 transition-all shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_-5px_rgba(255,255,255,0.4)] items-center gap-2 group"
+            onClick={() =>
+              activeService
+                ? trackServiceCTA(activeService.slug, activeService.title)
+                : trackServiceCTA('all', 'Services page CTA')
+            }
+            className="inline-flex w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 bg-white text-slate-950 rounded-lg font-semibold text-sm hover:bg-slate-200 transition-all shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_-5px_rgba(255,255,255,0.4)] items-center justify-center gap-2 group"
           >
             {t('servicesPage.ctaButton')}
             <Icon name="arrow-right" width={16} className="group-hover:translate-x-0.5 transition-transform" />
-          </Link>
+          </LangLink>
         </div>
       </section>
     </div>
+    </>
   );
 }

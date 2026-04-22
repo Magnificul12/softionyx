@@ -15,15 +15,6 @@ function SvgIcon({ children, className, width = defaultSize, height }: IconProps
   );
 }
 
-function SvgIconFill({ children, className, width = defaultSize, height }: IconProps & { children: React.ReactNode }) {
-  const h = height ?? width;
-  return (
-    <svg width={width} height={h} viewBox="0 0 24 24" fill="currentColor" className={`${iconClass} ${className ?? ''}`} aria-hidden>
-      {children}
-    </svg>
-  );
-}
-
 export function HexagonIcon(p: IconProps) {
   return (
     <SvgIcon {...p}>
@@ -363,6 +354,102 @@ export function BookIcon(p: IconProps) {
   );
 }
 
+export function ChevronRightIcon(p: IconProps) {
+  return (
+    <SvgIcon {...p}>
+      <path d="m9 18 6-6-6-6" />
+    </SvgIcon>
+  );
+}
+
+export function CheckIcon(p: IconProps) {
+  return (
+    <SvgIcon {...p}>
+      <path d="M20 6 9 17l-5-5" />
+    </SvgIcon>
+  );
+}
+
+export function PlusIcon(p: IconProps) {
+  return (
+    <SvgIcon {...p}>
+      <path d="M5 12h14M12 5v14" />
+    </SvgIcon>
+  );
+}
+
+export function MinusIcon(p: IconProps) {
+  return (
+    <SvgIcon {...p}>
+      <path d="M5 12h14" />
+    </SvgIcon>
+  );
+}
+
+export function TrendingUpIcon(p: IconProps) {
+  return (
+    <SvgIcon {...p}>
+      <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+      <polyline points="16 7 22 7 22 13" />
+    </SvgIcon>
+  );
+}
+
+export function QuoteIcon(p: IconProps) {
+  return (
+    <SvgIcon {...p}>
+      <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h1c1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" />
+      <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h1c1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" />
+    </SvgIcon>
+  );
+}
+
+export function ExternalLinkIcon(p: IconProps) {
+  return (
+    <SvgIcon {...p}>
+      <path d="M15 3h6v6" />
+      <path d="M10 14 21 3" />
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+    </SvgIcon>
+  );
+}
+
+export function SmartphoneIcon(p: IconProps) {
+  return (
+    <SvgIcon {...p}>
+      <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+      <path d="M12 18h.01" />
+    </SvgIcon>
+  );
+}
+
+export function ShoppingCartIcon(p: IconProps) {
+  return (
+    <SvgIcon {...p}>
+      <circle cx="8" cy="21" r="1" />
+      <circle cx="19" cy="21" r="1" />
+      <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+    </SvgIcon>
+  );
+}
+
+export function SearchIcon(p: IconProps) {
+  return (
+    <SvgIcon {...p}>
+      <circle cx="11" cy="11" r="8" />
+      <path d="m21 21-4.3-4.3" />
+    </SvgIcon>
+  );
+}
+
+export function WrenchIcon(p: IconProps) {
+  return (
+    <SvgIcon {...p}>
+      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+    </SvgIcon>
+  );
+}
+
 /** Map icon name (lucide:xxx or xxx) to component */
 const iconMap: Record<string, React.ComponentType<IconProps>> = {
   hexagon: HexagonIcon,
@@ -402,6 +489,17 @@ const iconMap: Record<string, React.ComponentType<IconProps>> = {
   'bar-chart-3': BarChart3Icon,
   settings: SettingsIcon,
   book: BookIcon,
+  'chevron-right': ChevronRightIcon,
+  check: CheckIcon,
+  plus: PlusIcon,
+  minus: MinusIcon,
+  'trending-up': TrendingUpIcon,
+  quote: QuoteIcon,
+  'external-link': ExternalLinkIcon,
+  smartphone: SmartphoneIcon,
+  'shopping-cart': ShoppingCartIcon,
+  search: SearchIcon,
+  wrench: WrenchIcon,
 };
 
 export function Icon({ name, ...props }: IconProps & { name: string }) {

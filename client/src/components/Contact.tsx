@@ -228,17 +228,17 @@ function Contact() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-32 relative overflow-hidden z-10">
+    <section ref={sectionRef} className="py-16 sm:py-24 md:py-32 relative overflow-hidden z-10">
       {/* Glow effect behind form */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] sm:w-[600px] sm:h-[600px] bg-indigo-600/10 rounded-full blur-[80px] sm:blur-[120px] pointer-events-none"></div>
 
-      <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
         <div className={isVisible ? 'animate-fade-scale delay-100' : ''} style={{ opacity: isVisible ? 1 : 0 }}>
-          <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tighter mb-6">{t('homeContact.title')}</h2>
-          <p className="text-slate-400 text-lg font-light mb-12">{t('homeContact.subtitle')}</p>
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-medium text-white tracking-tighter mb-4 sm:mb-6 [text-wrap:balance]">{t('homeContact.title')}</h2>
+          <p className="text-slate-400 text-sm sm:text-base md:text-lg font-light mb-8 sm:mb-12 px-2">{t('homeContact.subtitle')}</p>
         </div>
         
-        <div className={`glass-strong border border-white/10 rounded-2xl p-8 md:p-12 max-w-lg mx-auto text-left shadow-2xl relative overflow-hidden ${isVisible ? 'animate-fade-scale delay-200' : ''}`} style={{ opacity: isVisible ? 1 : 0 }}>
+        <div className={`glass-strong border border-white/10 rounded-2xl p-5 sm:p-8 md:p-12 max-w-lg mx-auto text-left shadow-2xl relative overflow-hidden ${isVisible ? 'animate-fade-scale delay-200' : ''}`} style={{ opacity: isVisible ? 1 : 0 }}>
           <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl -z-10"></div>
           <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
             {status.type && (
@@ -320,7 +320,7 @@ function Contact() {
                         className="fixed inset-0 z-40" 
                         onClick={() => setIsCountryDropdownOpen(false)}
                       ></div>
-                      <div className="absolute top-full left-0 mt-1 w-[280px] bg-[#0f172a] border border-white/10 rounded-lg shadow-2xl z-50 max-h-[200px] overflow-y-auto">
+                      <div className="absolute top-full left-0 mt-1 w-[min(280px,calc(100vw-3rem))] bg-[#0f172a] border border-white/10 rounded-lg shadow-2xl z-50 max-h-[240px] overflow-y-auto">
                         {countryCodes.map((country) => (
                           <button
                             key={country.code}

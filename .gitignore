@@ -14,3 +14,15 @@ client/dist/
 nginx-*.conf
 deploy/
 scripts/deploy*
+
+# Generated SEO artifacts (recreated on build via scripts/)
+client/public/sitemap.xml
+client/public/sitemap-pages.xml
+client/public/sitemap-blog.xml
+client/public/blog/rss.xml
+
+# Generated images (recreated via scripts/)
+client/public/og-image.jpg
+
+# Local root media dropzone (keep public/ as source of truth)
+/Blockchain.mp4

@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import type { CSSProperties } from 'react';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import SEO from '../components/SEO';
+import { buildBreadcrumbList } from '../utils/structuredData';
 import './Solutions.css';
+import { LangLink } from '../i18n/routing';
 
 export default function Solutions() {
   const { t } = useTranslation();
@@ -90,16 +92,27 @@ export default function Solutions() {
   ];
 
   return (
-    <div className="pt-32 pb-20 min-h-screen">
-      <section className="relative py-20 overflow-hidden">
+    <>
+      <SEO
+        title="Soluții SoftIonyx - Platforme Digitale & Sisteme Personalizate"
+        description="Descoperă soluțiile SoftIonyx: platforme digitale end-to-end, integrări personalizate, automatizări și sisteme scalabile construite pentru nevoile afacerii tale."
+        keywords="soluții digitale, platforme software, automatizări, integrări custom, sisteme enterprise"
+        url="/solutions"
+        jsonLd={buildBreadcrumbList([
+          { name: 'Acasă', path: '/' },
+          { name: 'Soluții', path: '/solutions' },
+        ])}
+      />
+    <div className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 min-h-screen">
+      <section className="relative py-10 sm:py-16 md:py-20 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] -z-10 animate-grid"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/5 via-transparent to-transparent -z-10"></div>
-        <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center relative z-10">
           <div className="animate-in">
-            <h1 className="text-5xl md:text-7xl font-medium text-white tracking-tighter mb-6">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-medium text-white tracking-tighter mb-4 sm:mb-6 [text-wrap:balance] leading-[1.15]">
               {t('solutionsPage.heroTitlePrefix')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-300">{t('solutionsPage.heroTitleHighlight')}</span>
             </h1>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto font-light">
+            <p className="text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto font-light px-2">
               {t('solutionsPage.heroSubtitle')}
             </p>
           </div>
@@ -108,9 +121,9 @@ export default function Solutions() {
 
       <section
         ref={solutionsSectionRef}
-        className="solutions-grid-section relative z-10 border-t border-white/5 py-24"
+        className="solutions-grid-section relative z-10 border-t border-white/5 py-12 sm:py-16 md:py-24"
       >
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="solutions-grid">
             {solutions.map((solution, idx) => (
               <div
@@ -133,22 +146,22 @@ export default function Solutions() {
 
       <section
         ref={highlightsRef}
-        className={`py-20 relative z-10 border-t border-white/5 solutions-reveal-once ${highlightsVisible ? 'is-visible' : ''}`}
+        className={`py-12 sm:py-16 md:py-20 relative z-10 border-t border-white/5 solutions-reveal-once ${highlightsVisible ? 'is-visible' : ''}`}
       >
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-start">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-6 sm:gap-8 lg:gap-10 items-start">
             <div>
-              <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4 solutions-reveal-item">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-3 sm:mb-4 solutions-reveal-item [text-wrap:balance]">
                 {t('solutionsPage.highlights.title')}
               </h2>
-              <p className="text-slate-400 text-base md:text-lg font-light max-w-xl solutions-reveal-item">
+              <p className="text-slate-400 text-sm sm:text-base md:text-lg font-light max-w-xl solutions-reveal-item">
                 {t('solutionsPage.highlights.subtitle')}
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mt-6 sm:mt-8">
                 {highlights.map((item, idx) => (
                   <div
                     key={item.title}
-                    className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 solutions-reveal-item min-h-[120px] flex flex-col"
+                    className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 sm:p-5 solutions-reveal-item min-h-[110px] sm:min-h-[120px] flex flex-col"
                     style={{ ['--reveal-delay' as never]: `${120 + idx * 90}ms` } as CSSProperties}
                   >
                     <h3 className="text-white font-medium mb-2">{item.title}</h3>
@@ -159,33 +172,34 @@ export default function Solutions() {
             </div>
 
             <div
-              className="rounded-3xl border border-white/10 bg-gradient-to-br from-indigo-500/10 via-slate-950/80 to-slate-950/70 p-8 md:p-10 shadow-2xl solutions-reveal-item"
+              className="rounded-3xl border border-white/10 bg-gradient-to-br from-indigo-500/10 via-slate-950/80 to-slate-950/70 p-5 sm:p-8 md:p-10 shadow-2xl solutions-reveal-item"
               style={{ ['--reveal-delay' as never]: `220ms` } as CSSProperties}
             >
-              <h3 className="text-2xl md:text-3xl font-semibold text-white mb-3">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-2 sm:mb-3">
                 {t('solutionsPage.cta.title')}
               </h3>
-              <p className="text-slate-400 text-sm md:text-base font-light mb-6">
+              <p className="text-slate-400 text-sm md:text-base font-light mb-5 sm:mb-6">
                 {t('solutionsPage.cta.subtitle')}
               </p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 text-center mb-8">
+              <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 text-center mb-6 sm:mb-8">
                 {stats.map((stat) => (
-                  <div key={stat.label} className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 min-w-0">
-                    <div className="text-white text-lg font-semibold">{stat.value}</div>
-                    <div className="text-xs text-slate-400 font-light">{stat.label}</div>
+                  <div key={stat.label} className="rounded-xl sm:rounded-2xl border border-white/10 bg-white/[0.04] px-2 sm:px-4 py-2 sm:py-3 min-w-0">
+                    <div className="text-white text-base sm:text-lg font-semibold truncate">{stat.value}</div>
+                    <div className="text-[10px] sm:text-xs text-slate-400 font-light leading-tight">{stat.label}</div>
                   </div>
                 ))}
               </div>
-              <Link
+              <LangLink
                 to="/contact#contact-info"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white text-slate-950 font-medium text-sm hover:bg-indigo-100 transition-colors"
+                className="inline-flex w-full sm:w-auto items-center justify-center px-6 py-3 rounded-lg bg-white text-slate-950 font-medium text-sm hover:bg-indigo-100 transition-colors"
               >
                 {t('solutionsPage.cta.button')}
-              </Link>
+              </LangLink>
             </div>
           </div>
         </div>
       </section>
     </div>
+    </>
   );
 }

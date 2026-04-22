@@ -8,7 +8,7 @@ import { Icon } from '../components/Icons';
 export default function RequestHelp() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { user, isAuthenticated, loadUser } = useAuthStore();
+  const { isAuthenticated, loadUser } = useAuthStore();
   const serviceTypes = t('requestHelp.serviceTypes', { returnObjects: true }) as string[];
   const [formData, setFormData] = useState({
     name: '',
@@ -87,20 +87,20 @@ export default function RequestHelp() {
   };
 
   return (
-    <div className="pt-32 pb-20 min-h-screen relative overflow-hidden">
+    <div className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 min-h-screen relative overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] -z-10 animate-grid"></div>
       <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/5 via-transparent to-transparent -z-10"></div>
-      <div className="max-w-4xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-12 animate-in">
-          <h1 className="text-5xl md:text-7xl font-medium text-white tracking-tighter mb-6">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12 animate-in">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-medium text-white tracking-tighter mb-4 sm:mb-6 [text-wrap:balance] leading-[1.15]">
             {t('requestHelp.heroTitlePrefix')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-300">{t('requestHelp.heroTitleHighlight')}</span>
           </h1>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto font-light">{t('requestHelp.heroSubtitle')}</p>
+          <p className="text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto font-light px-2">{t('requestHelp.heroSubtitle')}</p>
         </div>
 
-        <div className="glass-strong border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+        <div className="glass-strong border border-white/10 rounded-2xl p-5 sm:p-6 md:p-8 lg:p-12 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl -z-10"></div>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             {status.type && (
               <div className={`p-4 rounded-lg text-sm ${
                 status.type === 'success' 
@@ -111,7 +111,7 @@ export default function RequestHelp() {
               </div>
             )}
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">{t('requestHelp.fields.fullName')}</label>
                 <input
@@ -136,7 +136,7 @@ export default function RequestHelp() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">{t('requestHelp.fields.company')}</label>
                 <input
@@ -159,7 +159,7 @@ export default function RequestHelp() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <label className="block text-xs font-medium text-slate-400 mb-2 ml-1 uppercase tracking-wider">{t('requestHelp.fields.serviceType')}</label>
                 <select

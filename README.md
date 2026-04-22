@@ -59,12 +59,23 @@ cd ..
 ### 2. Database Setup
 
 ```bash
-# Create database
+# 1. Create the database
 createdb softionyx
 
-# Run schema
-psql -d softionyx -f database/schema.sql
+# 2. Create the base schema and apply every migration.
+#    The runner tracks what has been applied in a `_migrations`
+#    table, so it is safe to re-run at any time.
+npm run db:init         # applies schema.sql + all migrations
+# or, on an existing database:
+npm run db:migrate      # only applies pending migrations
+
+# 3. (optional) inspect what's applied
+npm run db:migrate:status
 ```
+
+Every new schema change goes into a new timestamped file under
+`database/migrations/` — never edit a migration that has already been
+applied, the runner will refuse to continue if the checksum changes.
 
 ### 3. Environment Configuration
 

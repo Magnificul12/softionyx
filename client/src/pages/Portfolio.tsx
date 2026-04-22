@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Icon } from '../components/Icons';
+import SEO from '../components/SEO';
+import ResponsiveImage from '../components/ResponsiveImage';
+import { buildBreadcrumbList } from '../utils/structuredData';
 
 const projects = [
   {
@@ -57,34 +60,45 @@ export default function Portfolio() {
       : projects.filter((project) => project.category === selectedCategory);
 
   return (
-    <div className="pt-32 pb-20 min-h-screen">
+    <>
+      <SEO
+        title="Portofoliu SoftIonyx - Proiecte Realizate & Studii de Caz"
+        description="Explorează portofoliul SoftIonyx: proiecte web, aplicații mobile, platforme enterprise și soluții blockchain livrate cu succes clienților noștri."
+        keywords="portofoliu IT, studii de caz, proiecte web, case studies, referințe SoftIonyx"
+        url="/portfolio"
+        jsonLd={buildBreadcrumbList([
+          { name: 'Acasă', path: '/' },
+          { name: 'Portofoliu', path: '/portfolio' },
+        ])}
+      />
+    <div className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-10 sm:py-16 md:py-20 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] -z-10 animate-grid"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/5 via-transparent to-transparent -z-10"></div>
-        <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
-          <h1 className="text-5xl md:text-7xl font-medium text-white tracking-tighter mb-6 animate-in-portfolio">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center relative z-10">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-medium text-white tracking-tighter mb-4 sm:mb-6 animate-in-portfolio [text-wrap:balance] leading-[1.15]">
             {t('portfolio.heroTitlePrefix')}{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-300">
               {t('portfolio.heroTitleHighlight')}
             </span>
           </h1>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto font-light animate-in-portfolio delay-100">
+          <p className="text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto font-light animate-in-portfolio delay-100 px-2">
             {t('portfolio.heroSubtitle')}
           </p>
         </div>
       </section>
 
       {/* Category Filter */}
-      <section className="py-12 relative z-10 border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap gap-4 justify-center">
+      <section className="py-8 sm:py-10 md:py-12 relative z-10 border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex flex-wrap gap-2 sm:gap-3 md:gap-4 justify-center">
             {categories.map((categoryKey, i) => (
               <button
                 key={categoryKey}
                 type="button"
                 onClick={() => setSelectedCategory(categoryKey)}
-                className={`animate-in-portfolio px-6 py-2 rounded-full text-sm font-medium transition-all ${
+                className={`animate-in-portfolio px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
                   i === 0 ? 'delay-200' : 'delay-300'
                 } ${
                   selectedCategory === categoryKey
@@ -100,29 +114,32 @@ export default function Portfolio() {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-20 relative z-10">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-12 sm:py-16 md:py-20 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div
             key={selectedCategory}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
           >
             {filteredProjects.map((project, index) => (
               <div
                 key={project.id}
-                className="group card-glow animate-in-portfolio p-6 rounded-2xl glass border border-white/5 hover:border-indigo-500/30 hover:bg-white/[0.05] transition-all duration-500 backdrop-blur-md relative overflow-hidden"
+                className="group card-glow animate-in-portfolio p-4 sm:p-5 md:p-6 rounded-2xl glass border border-white/5 hover:border-indigo-500/30 hover:bg-white/[0.05] transition-all duration-500 backdrop-blur-md relative overflow-hidden"
                 style={{ animationDelay: `${420 + index * 130}ms` }}
               >
                 <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-                <div className="h-48 rounded-lg overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-500 relative z-10 shadow-lg bg-slate-900/50">
-                  <img
+                <div className="aspect-[16/9] sm:h-48 sm:aspect-auto rounded-lg overflow-hidden mb-4 group-hover:scale-[1.02] transition-transform duration-500 relative z-10 shadow-lg bg-slate-900/50">
+                  <ResponsiveImage
                     src={project.image}
                     alt={t(project.imageAlt)}
                     className="w-full h-full object-cover object-top"
                     loading="lazy"
+                    width={800}
+                    height={450}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   />
                 </div>
-                <h3 className="text-xl font-medium text-white mb-2">{t(project.title)}</h3>
-                <p className="text-slate-400 text-sm mb-4 font-light">{t(project.description)}</p>
+                <h3 className="text-lg sm:text-xl font-medium text-white mb-2">{t(project.title)}</h3>
+                <p className="text-slate-400 text-sm mb-4 font-light leading-relaxed">{t(project.description)}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, idx) => (
                     <span
@@ -154,5 +171,6 @@ export default function Portfolio() {
         </div>
       </section>
     </div>
+    </>
   );
 }

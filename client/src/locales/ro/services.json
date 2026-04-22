@@ -1,0 +1,1002 @@
+{
+  "detail": {
+    "ourServicesBadge": "Servicii Softionyx",
+    "sectionWhatWeOffer": "Ce oferim concret",
+    "cardDeliver": "Ce livrăm",
+    "cardForWhom": "Pentru cine",
+    "cardOutcomes": "Rezultate tipice",
+    "techStack": "Stack tehnologic",
+    "howWeWork": "Cum lucrăm",
+    "caseStudyTitle": "Studiu de caz",
+    "caseStudyPrev": "Proiectul anterior",
+    "caseStudyNext": "Proiectul următor",
+    "caseStudySlideStatus": "Proiect {{current}} din {{total}}",
+    "caseStudyGoToSlide": "Afișează proiectul {{current}} din {{total}}",
+    "viewFullPortfolio": "Vezi tot portofoliul",
+    "viewLiveProject": "Vezi proiectul live",
+    "pricingTitle": "Pachete & Prețuri",
+    "pricingSubtitle": "Prețurile de mai jos sunt orientative. Oferta finală o stabilim împreună după o discuție de 30 minute.",
+    "mostPopular": "Cel mai popular",
+    "requestCustom": "Cere ofertă personalizată",
+    "fromPrefix": "de la",
+    "faqTitle": "Întrebări frecvente",
+    "relatedServices": "Servicii complementare",
+    "learnMore": "Află mai mult",
+    "readyToStart": "Gata să începem?",
+    "readyToStartSubtitle": "Răspundem în 24h lucrătoare. Prima discuție e gratuită și fără obligații — vedem împreună dacă suntem un fit bun pentru proiectul tău.",
+    "ctaRequestFreeQuote": "Cere ofertă gratuită",
+    "ctaViewPricing": "Vezi prețuri",
+    "ctaViewPortfolio": "Vezi portofoliu",
+    "breadcrumbHome": "Acasă",
+    "breadcrumbServices": "Servicii"
+  },
+  "content": {
+    "dezvoltare-web": {
+      "metaTitle": "Dezvoltare Web — Site-uri & Aplicații Web | SoftIonyx",
+      "metaDescription": "Dezvoltare web profesională pentru echipe din întreaga lume: site-uri corporative, platforme SaaS, aplicații web custom. Stack modern, design responsive, SEO inclus. Cere ofertă.",
+      "keywords": "dezvoltare web, creare site web, aplicații web, web development, agenție software, Europa, remote",
+      "h1": "Dezvoltare Web Profesională",
+      "tagline": "Site-uri și aplicații web care aduc clienți, nu doar vizitatori.",
+      "intro": [
+        "Construim site-uri web și aplicații care scalează odată cu afacerea ta. De la landing page-uri de conversie înaltă la platforme SaaS complexe cu zeci de mii de utilizatori — echipa SoftIonyx livrează cod curat, performant și optimizat pentru motoarele de căutare.",
+        "Folosim stack-ul modern (React, TypeScript, Node.js, PostgreSQL) pe care îl folosesc produse globale, la bugete realiste pentru startup-uri și companii consacrate. Toate site-urile noastre sunt mobile-first, accesibile (WCAG) și optimizate pentru Core Web Vitals — factorii pe care Google îi folosește pentru ranking.",
+        "Spre deosebire de agențiile care livrează șabloane generice, noi construim fiecare proiect de la zero în jurul obiectivelor tale de business — astfel încât fiecare pagină să aibă un scop clar și măsurabil."
+      ],
+      "whatWeDo": [
+        "Site-uri corporative & prezentare (cu SEO inclus)",
+        "Platforme SaaS multi-tenant cu billing integrat",
+        "Aplicații web custom (dashboards, CRM, ERP)",
+        "Progressive Web Apps (PWA) — funcționează și offline",
+        "Redesign & migrare de la site-uri legacy / stack-uri vechi",
+        "Integrări API cu sisteme externe (Stripe, PayU, SMS, ERP)",
+        "Optimizare performanță & Core Web Vitals",
+        "Mentenanță continuă & suport tehnic"
+      ],
+      "forWhom": [
+        "Startup-uri care lansează un produs SaaS",
+        "Companii locale care vor să migreze de la un site vechi",
+        "E-commerce-uri care depășesc limitele unui magazin șablon sau SaaS",
+        "Agenții care au nevoie de partener tehnic pentru clienții lor",
+        "Investitori imobiliari (vezi RightMob)"
+      ],
+      "outcomes": [
+        "Site rapid (LCP < 2.5s, scor Lighthouse 90+)",
+        "Ranking mai bun în Google pentru cuvintele tale cheie",
+        "Conversii mai mari datorită UX-ului bine gândit",
+        "Cod ușor de menținut și extins pe termen lung",
+        "Independență tehnologică — codul e al tău"
+      ],
+      "process": [
+        {
+          "title": "1. Discovery & Strategie (1-2 săptămâni)",
+          "description": "Ne întâlnim, analizăm obiectivele, competiția și audiența. Stabilim KPI-uri măsurabili și arhitectura tehnică."
+        },
+        {
+          "title": "2. Design & Prototipare (2-3 săptămâni)",
+          "description": "Wireframes → mockup-uri high-fidelity în Figma → prototip interactiv. Iterăm până ești mulțumit înainte să scriem o linie de cod."
+        },
+        {
+          "title": "3. Dezvoltare & Testing (4-8 săptămâni)",
+          "description": "Sprinturi de 1-2 săptămâni cu demo la final. Testare automată, QA manual, optimizare performanță."
+        },
+        {
+          "title": "4. Lansare & Optimizare (ongoing)",
+          "description": "Deploy pe infrastructura ta sau a noastră. Monitorizare, A/B testing, optimizări SEO lunare."
+        }
+      ],
+      "pricing": [
+        {
+          "name": "Landing Page",
+          "description": "Pagină unică de conversie, mobile-first, SEO optimizat.",
+          "features": [
+            "Până la 5 secțiuni",
+            "Design custom în Figma",
+            "Formular contact + integrare email",
+            "SEO on-page + structured data",
+            "Hosting primul an inclus",
+            "Livrare în 2-3 săptămâni"
+          ]
+        },
+        {
+          "name": "Site Corporativ",
+          "description": "Site complet pentru compania ta, multi-lingv, cu blog.",
+          "features": [
+            "8-15 pagini",
+            "Multi-limbă (ro/en/ru)",
+            "Blog cu CMS propriu",
+            "SEO avansat + sitemap dinamic",
+            "Google Analytics & Search Console",
+            "Suport 3 luni post-lansare",
+            "Livrare în 6-8 săptămâni"
+          ]
+        },
+        {
+          "name": "Aplicație Web Custom",
+          "description": "SaaS / dashboard / platformă custom de la zero.",
+          "features": [
+            "Discovery & arhitectură",
+            "Autentificare + roluri",
+            "Dashboard admin",
+            "Integrări API (plăți, email, etc.)",
+            "Infrastructură cloud",
+            "Suport & mentenanță 6 luni",
+            "Livrare în 3-6 luni"
+          ]
+        }
+      ],
+      "caseStudies": [
+        {
+          "name": "RightMob — Platformă Imobiliară",
+          "summary": "Am construit de la zero platforma de intermediere imobiliară RightMob.md — pentru agenții imobiliare și investitori activi online.",
+          "highlights": [
+            "Arhitectură React + Node.js + PostgreSQL",
+            "Căutare avansată cu filtre multiple",
+            "Panou admin pentru managementul anunțurilor",
+            "Mobile-first, încarcă sub 2 secunde",
+            "SEO pentru căutări imobiliare locale și regionale"
+          ]
+        },
+        {
+          "name": "EasyWaste Removal — Aplicație Logistică",
+          "summary": "Platformă de rezervare servicii logistice pentru clienți din Irlanda, cu programări, plăți online și flux complet de management comenzi.",
+          "highlights": [
+            "Stack modern React + Node.js",
+            "Integrare plăți Stripe",
+            "Dashboard pentru operatori",
+            "Optimizat pentru mobile (majoritatea traficului)",
+            "Deployment pe infrastructură cloud scalabilă"
+          ]
+        },
+        {
+          "name": "CetatenieRO.md — servicii cetățenie",
+          "summary": "Site informativ și canal de lead-uri pentru servicii de cetățenie română — conținut structurat, ghiduri și contact clar pentru clienți din diaspora europeană.",
+          "highlights": [
+            "Structură de conținut SEO pentru subiecte sensibile și termeni legali",
+            "React + TypeScript, încărcare rapidă și accesibilitate îmbunătățită",
+            "Formulare și CTA-uri optimizate pentru conversie",
+            "Multi-limbă și mesaj consistent pe toate paginile",
+            "Găzduire securizată, HTTPS și practici GDPR"
+          ]
+        }
+      ],
+      "testimonials": [
+        {
+          "quote": "Profesionalism de top. Au livrat la timp, au comunicat excelent și rezultatul depășește așteptările. Recomand cu încredere SoftIonyx oricărei afaceri serioase.",
+          "author": "Client RightMob",
+          "role": "Fondator platformă imobiliară"
+        },
+        {
+          "quote": "Platforma pentru programări și plăți funcționează impecabil; clienții noștri din Irlanda o folosesc zilnic. Echipa SoftIonyx a înțeles exact fluxul operațional și l-a transpus online fără compromisuri.",
+          "author": "Client EasyWaste Removal",
+          "role": "Operațiuni & logistică"
+        },
+        {
+          "quote": "Site-ul clar, structurat și bine poziționat în căutări ne aduce constant cereri calificate din diaspora. Colaborarea a fost transparentă de la wireframe la lansare.",
+          "author": "Client CetatenieRO",
+          "role": "Servicii consultanță cetățenie"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Cât costă dezvoltarea unui site web?",
+          "answer": "Un landing page pornește de la 800 EUR, un site corporativ complet de la 2500 EUR, iar o aplicație web custom de la 8000 EUR. Prețul depinde de complexitate, numărul de pagini, integrări și funcționalități custom. Oferim întotdeauna estimare gratuită după o conversație de 30 de minute."
+        },
+        {
+          "question": "Cât durează să faceți un site web?",
+          "answer": "Un landing page simplu: 2-3 săptămâni. Un site corporativ: 6-8 săptămâni. O aplicație web custom: 3-6 luni. Lucrăm în sprinturi agile de 1-2 săptămâni, cu demo la final de fiecare sprint, ca să vezi progresul constant."
+        },
+        {
+          "question": "Ce tehnologii folosiți?",
+          "answer": "React + TypeScript pentru frontend (ce folosesc Facebook, Netflix, Airbnb), Node.js pentru backend, PostgreSQL pentru baza de date, Tailwind CSS pentru design. Pentru proiecte care necesită SEO maxim, folosim Next.js cu SSR/SSG. Toate proiectele sunt hosted pe infrastructură cloud modernă (AWS, Vercel, DigitalOcean)."
+        },
+        {
+          "question": "Site-ul va fi optimizat pentru Google?",
+          "answer": "Da, absolut. Toate site-urile noastre includ: SEO on-page (meta tags, structured data, sitemap), Core Web Vitals optimizate (LCP, FID, CLS), URL-uri prietenoase, schema.org markup, hreflang pentru site-uri multi-limbă. Înregistrăm site-ul în Google Search Console și îți livrăm un raport SEO inițial."
+        },
+        {
+          "question": "Codul sursă îmi va aparține?",
+          "answer": "Da, 100%. După ce achiți proiectul, primești toate drepturile asupra codului, designul Figma, documentația tehnică. Nu te legăm de infrastructura noastră — poți muta site-ul oriunde vrei."
+        },
+        {
+          "question": "Oferiți mentenanță după lansare?",
+          "answer": "Da. Oferim pachete de mentenanță lunare (de la 150 EUR/lună) care includ: actualizări securitate, backup-uri, monitorizare uptime, modificări minore de conținut, rapoarte lunare. Pentru pachetul \"Site Corporativ\" primul 3 luni de suport sunt incluse gratuit."
+        },
+        {
+          "question": "Lucrați remote cu clienți din alte țări sau fusuri orare?",
+          "answer": "Da, avem clienți din România, Irlanda, Germania și SUA. Comunicăm în română, rusă, engleză. Toate proiectele sunt conduse remote cu instrumente moderne (Slack, Figma, Linear, Loom)."
+        }
+      ],
+      "testimonial": {
+        "quote": "Profesionalism de top. Au livrat la timp, au comunicat excelent și rezultatul depășește așteptările. Recomand cu încredere SoftIonyx oricărei afaceri serioase.",
+        "author": "Client RightMob",
+        "role": "Fondator platformă imobiliară"
+      }
+    },
+    "aplicatii-mobile": {
+      "metaTitle": "Aplicații Mobile — iOS & Android | SoftIonyx",
+      "metaDescription": "Dezvoltare aplicații mobile native și cross-platform pentru iOS și Android. React Native, Flutter, Swift. De la MVP la produse cu milioane de utilizatori.",
+      "keywords": "aplicații mobile, dezvoltare iOS, dezvoltare Android, React Native, Flutter, aplicații cross-platform, remote",
+      "h1": "Dezvoltare Aplicații Mobile iOS & Android",
+      "tagline": "Aplicații mobile care rămân pe ecranul de start, nu în fundul sertarului.",
+      "intro": [
+        "Construim aplicații mobile care chiar sunt folosite. Nu doar produse tehnice frumoase, ci produse care rezolvă probleme reale și aduc utilizatori fideli. Am livrat aplicații pentru clienți din mai multe țări și fusuri orare, cu același proces clar și predictibil.",
+        "Pentru majoritatea business-urilor recomandăm abordarea cross-platform cu React Native sau Flutter — un singur cod pentru iOS și Android, cost cu 40-60% mai mic și timp de livrare redus. Pentru produse care au nevoie de performanță maximă sau funcționalități specifice platformei (AR, ML on-device), construim aplicații native cu Swift și Kotlin.",
+        "Ne ocupăm de tot ciclul de viață: de la idee și UX research, la design, dezvoltare, publicare în App Store & Google Play, marketing, analiză comportament utilizatori și iterații lunare."
+      ],
+      "whatWeDo": [
+        "Aplicații native iOS (Swift, SwiftUI)",
+        "Aplicații native Android (Kotlin, Jetpack Compose)",
+        "Aplicații cross-platform (React Native, Flutter)",
+        "MVP pentru startup-uri în 8-12 săptămâni",
+        "Publicare în App Store & Google Play",
+        "Integrări native (camera, GPS, push notifications, Apple/Google Pay)",
+        "Backend & API pentru aplicații mobile",
+        "Mentenanță, updates, actualizări iOS/Android"
+      ],
+      "forWhom": [
+        "Startup-uri care vor să lanseze un MVP rapid",
+        "Companii de logistică și servicii on-demand",
+        "Retaileri care vor aplicație cu loializare + plăți",
+        "Servicii on-demand (booking, delivery, taxi)",
+        "Platforme de conținut și comunități"
+      ],
+      "outcomes": [
+        "MVP funcțional în App Store / Google Play în 8-12 săptămâni",
+        "Rating 4.5+ în store datorită QA-ului riguros",
+        "Cost cu 40-60% mai mic decât dezvoltarea nativă separată",
+        "Analytics integrate ca să vezi ce folosesc userii",
+        "Infrastructură scalabilă pentru creștere rapidă"
+      ],
+      "process": [
+        {
+          "title": "1. Discovery & UX Research (1-2 săptămâni)",
+          "description": "Interviuri cu utilizatori potențiali, analiza competiție, user flows, definire feature scope pentru MVP."
+        },
+        {
+          "title": "2. Design UI & Prototipare (2-4 săptămâni)",
+          "description": "Design în Figma cu toate ecranele, prototip navigabil pe telefon, testare cu utilizatori reali înainte de dezvoltare."
+        },
+        {
+          "title": "3. Dezvoltare & QA (6-12 săptămâni)",
+          "description": "Sprinturi bi-săptămânale, build-uri de test pentru client, QA automat + manual pe multiple device-uri."
+        },
+        {
+          "title": "4. Publicare & Launch (1-2 săptămâni)",
+          "description": "Review Apple & Google, optimizare ASO (App Store Optimization), go-live și suport tehnic 24/7 în prima săptămână."
+        }
+      ],
+      "pricing": [
+        {
+          "name": "MVP Cross-Platform",
+          "description": "Aplicație pentru iOS & Android cu funcționalități esențiale.",
+          "features": [
+            "Autentificare + profile",
+            "Până la 8-10 ecrane core",
+            "Backend API inclus",
+            "Push notifications",
+            "Publicare App Store + Google Play",
+            "Livrare în 8-10 săptămâni"
+          ]
+        },
+        {
+          "name": "Aplicație Completă",
+          "description": "Aplicație matură cu plăți, chat, analytics, admin panel.",
+          "features": [
+            "15-25+ ecrane",
+            "Integrări plăți (Stripe, Apple/Google Pay)",
+            "Chat real-time",
+            "Panou admin web",
+            "Analytics (Mixpanel, Amplitude)",
+            "Suport 6 luni inclus",
+            "Livrare în 3-5 luni"
+          ]
+        },
+        {
+          "name": "Aplicație Nativă Complexă",
+          "description": "Swift + Kotlin native pentru cerințe avansate (AR, ML, streaming).",
+          "features": [
+            "Cod 100% nativ",
+            "Performanță maximă",
+            "Funcții avansate device",
+            "SDK-uri custom la cerere",
+            "Tech lead dedicat",
+            "Livrare în 5-8 luni"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Cât costă dezvoltarea unei aplicații mobile?",
+          "answer": "Un MVP cross-platform pornește de la 6000 EUR. O aplicație completă cu plăți și chat: 15000-25000 EUR. Aplicații native complexe (cu AR, ML, streaming) pot ajunge la 40000+ EUR. Comparativ cu agențiile din Europa de Vest, suntem cu 50-70% mai accesibili la aceeași calitate."
+        },
+        {
+          "question": "React Native vs Flutter vs nativ — ce recomandați?",
+          "answer": "Pentru 80% din proiecte recomandăm React Native sau Flutter (cross-platform) — un cod pentru iOS și Android, timp și cost reduse, performanță suficientă pentru majoritatea cazurilor. Nativ (Swift + Kotlin) îl folosim doar pentru aplicații cu nevoi specifice: gaming, AR, ML on-device, streaming video avansat."
+        },
+        {
+          "question": "Cât durează de la idee la publicare în store?",
+          "answer": "MVP: 8-12 săptămâni. Aplicație completă: 4-6 luni. Aplicație complexă: 6-12 luni. Procesul include și reviewul de 1-7 zile în App Store / Google Play, pe care îl gestionăm integral."
+        },
+        {
+          "question": "Vă ocupați și de publicarea în App Store / Google Play?",
+          "answer": "Da, complet. Creăm conturile developer (dacă nu le ai), pregătim toate activele (icon-uri, screenshot-uri, descrieri optimizate ASO), trecem prin procesul de review și ne asigurăm că aplicația e aprobată. Oferim și ASO (App Store Optimization) pentru a crește descoperirea organică."
+        },
+        {
+          "question": "Ce se întâmplă dacă Apple/Google actualizează sistemul?",
+          "answer": "Oferim pachete de mentenanță (de la 200 EUR/lună) care includ actualizarea aplicației la noile versiuni iOS/Android, fixuri pentru API-uri deprecate, update-uri de securitate și compatibilitate cu device-uri noi."
+        },
+        {
+          "question": "Cine deține codul și conturile developer?",
+          "answer": "Tu, 100%. Toate conturile (App Store, Google Play, Firebase, AWS) sunt pe numele companiei tale. Codul sursă îți aparține complet după ce achiți proiectul. Nu te legăm nicicum de noi — poți transfera oricând aplicația altui developer."
+        }
+      ]
+    },
+    "e-commerce": {
+      "metaTitle": "Magazine Online — E-commerce | SoftIonyx",
+      "metaDescription": "Magazine online profesionale pe stack custom și headless: UX rapid, plăți locale (MAIB, PayNet), livrare, fluxuri fiscale. Cere ofertă.",
+      "keywords": "magazin online, e-commerce custom, headless commerce, dezvoltare magazin, MAIB integrare, PayNet, internațional",
+      "h1": "Dezvoltare Magazine Online & E-commerce",
+      "tagline": "Magazine online care vând — nu doar arată bine.",
+      "intro": [
+        "Construim magazine online care transformă vizitatorii în clienți. Cu experiență pe piețe din Europa și proiecte internaționale, știm cum să legăm plăți, facturare și curieri acolo unde operezi — inclusiv integrări MAIB/PayNet când ai nevoie de ele în regiune.",
+        "Ne concentrăm pe comerț custom și headless (React / Next.js + Node.js) când ai nevoie de performanță, integrări adânci și control complet — nu de limitele unui SaaS închis.",
+        "Fiecare magazin include optimizare SEO pentru categorii și produse, viteză sub 2 secunde, UX mobile-first (majoritatea traficului e-commerce e mobil), și integrări cu instrumentele de marketing de care ai nevoie."
+      ],
+      "whatWeDo": [
+        "Platforme e-commerce custom (React + Node.js)",
+        "Storefront-uri headless legate de back-office-ul tău",
+        "Integrări plăți (MAIB, PayNet, Stripe, PayPal)",
+        "Integrări livrare (Nova Post, DPD, curieri locali)",
+        "Facturare & integrare 1C / SAGA / MyFin",
+        "Sistem fidelizare & vouchere",
+        "Marketing automation (email, SMS, remarketing)",
+        "SEO pentru categorii & produse",
+        "Migrare de pe alt magazin fără pierdere date"
+      ],
+      "forWhom": [
+        "Brand-uri locale care vând online (fashion, cosmetice, alimente)",
+        "Distribuitori B2B cu catalog mare",
+        "Servicii cu rezervare online",
+        "Retaileri cu magazin fizic care vor online",
+        "Magazine care depășesc constrângerile unui șablon sau SaaS"
+      ],
+      "outcomes": [
+        "Conversie mai mare (2-5% standard industry)",
+        "Coș mediu mai mare prin cross-sell & upsell",
+        "Costuri reduse la procesare comenzi",
+        "Clienți loiali prin programe fidelitate",
+        "Vizibilitate organică în Google Shopping"
+      ],
+      "process": [
+        {
+          "title": "1. Strategie & Planificare (1 săptămână)",
+          "description": "Analiza produselor, segmente client, competiție, alegere arhitectură optimă (SaaS găzduit vs custom / headless)."
+        },
+        {
+          "title": "2. Design & Configurare (2-4 săptămâni)",
+          "description": "Design magazin, structurare categorii, importare catalog, configurare plăți și livrare."
+        },
+        {
+          "title": "3. Integrări & Launch (2-4 săptămâni)",
+          "description": "Integrare cu sisteme externe (ERP, facturare, curier), testare comenzi end-to-end, go-live."
+        },
+        {
+          "title": "4. Marketing & Optimizare (ongoing)",
+          "description": "Google Shopping, Facebook Ads, SEO, email marketing, A/B testing continuu pentru creșterea conversiei."
+        }
+      ],
+      "pricing": [
+        {
+          "name": "Commerce MVP",
+          "description": "Storefront custom pentru catalog mai mic — gata de vânzare în câteva săptămâni.",
+          "features": [
+            "UX adaptat catalogului tău",
+            "Până la ~100 SKU-uri importate",
+            "Integrări plăți locale unde e cazul (MAIB, PayNet)",
+            "Integrare curier",
+            "SEO de bază",
+            "Training echipa ta"
+          ]
+        },
+        {
+          "name": "Magazin Custom",
+          "description": "Platformă custom cu funcționalități adaptate business-ului tău.",
+          "features": [
+            "Design unic",
+            "Funcționalități personalizate",
+            "Multi-limbă (ro/en/ru)",
+            "Integrare ERP / 1C",
+            "Sistem fidelitate",
+            "SEO avansat",
+            "Livrare în 2-3 luni"
+          ]
+        },
+        {
+          "name": "E-commerce Enterprise",
+          "description": "Soluție scalabilă pentru magazine cu volum mare și multi-depozit.",
+          "features": [
+            "Headless commerce (Next.js + Medusa)",
+            "Multi-depozit & multi-valută",
+            "B2B portal separat",
+            "API pentru marketplace-uri",
+            "Arhitectură scalabilă cloud",
+            "Suport dedicat 12 luni"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Lucrați pe SaaS sau doar custom?",
+          "answer": "Suntem specializați în build-uri custom și headless pe care le putem deține cap-coadă: performanță, integrări, mentenanță pe termen lung. Dacă ai deja un coș SaaS, putem integra prin API, dar nu implementăm magazine tip SaaS închis sau CMS PHP clasic ca ofertă principală."
+        },
+        {
+          "question": "Integrați MAIB și PayNet pentru plăți locale?",
+          "answer": "Da, pe stack-urile pe care le livrăm (custom / headless). Avem experiență cu MAIB e-commerce, PayNet, VictoriaBank și terminale locale. Configurăm plăți sigure 3D Secure, facturare automată și reconciliere contabilă."
+        },
+        {
+          "question": "Pot migra de la un magazin existent fără să pierd datele?",
+          "answer": "Da, complet. Migrăm catalogul de produse, istoric comenzi, conturi clienți, recenzii, din orice platformă (OpenCart, PrestaShop, Magento, alt magazin custom). Păstrăm URL-urile vechi cu redirect-uri 301 ca să nu pierzi pozițiile SEO."
+        },
+        {
+          "question": "Cum integrați cu curier și facturare?",
+          "answer": "Avem integrări directe cu Nova Post, DPD, curieri locali (printare etichete, tracking automat). Pentru facturare: 1C, SAGA, MyFin, sau fluxuri custom conform cerințelor fiscale din țara ta (ex. ANAF, SFS)."
+        },
+        {
+          "question": "Ce include mentenanța unui magazin online?",
+          "answer": "Actualizări securitate, backup zilnic, monitorizare uptime, remedieri bug-uri, modificări conținut (produse, bannere, promoții), suport echipa ta, rapoarte lunare vânzări. De la 200 EUR/lună pentru magazine mici, 500+ EUR/lună pentru cele mari."
+        },
+        {
+          "question": "Oferiți și marketing (Google Ads, Facebook Ads, SEO)?",
+          "answer": "Da. Avem pachete de marketing digital lunare care includ Google Shopping, Facebook/Instagram Ads, SEO continuu, email marketing, analiză rezultate. Pentru e-commerce-uri recomandăm un buget de marketing de 3-10x investiția în platformă în primele 6 luni."
+        }
+      ]
+    },
+    "software-custom": {
+      "metaTitle": "Software Custom — CRM, ERP, SaaS | SoftIonyx",
+      "metaDescription": "Software custom pentru afacerea ta: CRM, ERP, platforme SaaS, sisteme interne de management. Livrare la timp, cod în proprietatea ta.",
+      "keywords": "software custom, CRM, ERP, SaaS, aplicații business, automatizări, internațional",
+      "h1": "Dezvoltare Software Custom pentru Business",
+      "tagline": "Software făcut pentru felul în care lucrezi tu — nu invers.",
+      "intro": [
+        "Soluțiile off-the-shelf (SAP, Salesforce, CMS-uri „pentru toți”) rareori se potrivesc 100% cu procesele tale reale. Când excelezi într-un nișă, ai nevoie de instrumente care susțin cum lucrezi — nu care te forțează să te adaptezi la un produs gândit pentru toată lumea.",
+        "Construim software custom pentru companii din întreaga lume: CRM-uri adaptate industriei, ERP-uri cu reguli fiscale și operaționale pentru piețele tale, platforme SaaS B2B, sisteme interne care automatizează munca repetitivă.",
+        "Procesul nostru începe întotdeauna cu înțelegerea profundă a afacerii tale. Petrecem primele săptămâni vorbind cu echipa ta, observând fluxurile actuale, identificând oportunități de automatizare. Abia apoi scriem cod."
+      ],
+      "whatWeDo": [
+        "CRM-uri custom (managementul clienților + vânzări)",
+        "ERP-uri adaptate industriei tale",
+        "Platforme SaaS B2B multi-tenant",
+        "Sisteme interne de management (inventar, producție, HR)",
+        "Portaluri clienți & employee self-service",
+        "Integrări între sisteme existente (ERP + ecommerce + contabilitate)",
+        "Automatizări workflow (aprobări, raportări)",
+        "Dashboards & BI (business intelligence)"
+      ],
+      "forWhom": [
+        "Companii care au depășit Excel și au nevoie de sistem centralizat",
+        "Startup-uri care construiesc un produs SaaS B2B",
+        "Business-uri cu procese unice ce nu se potrivesc pe SAP/Salesforce",
+        "Companii care vor să automatizeze munca manuală repetitivă",
+        "Organizații cu multe sisteme disparate care trebuie integrate"
+      ],
+      "outcomes": [
+        "Timp economisit: 20-50% din munca administrativă",
+        "Date centralizate, un singur punct de adevăr",
+        "Rapoarte în timp real în loc de cele manuale la final de lună",
+        "Procese standardizate, mai puține erori umane",
+        "Avantaj competitiv — instrument pe care competiția nu-l are"
+      ],
+      "process": [
+        {
+          "title": "1. Business Analysis (2-4 săptămâni)",
+          "description": "Interviuri cu echipa, mapare procese actuale, identificare oportunități automatizare, specificații funcționale detaliate."
+        },
+        {
+          "title": "2. Arhitectură & Prototipare (2-3 săptămâni)",
+          "description": "Design arhitectură tehnică, wireframes, prototip interactiv pentru validare înainte de dezvoltare."
+        },
+        {
+          "title": "3. Dezvoltare Iterativă (3-9 luni)",
+          "description": "Sprinturi de 2 săptămâni cu demo la final. Primul modul utilizabil în 6-8 săptămâni, creștem de acolo."
+        },
+        {
+          "title": "4. Deployment & Onboarding (2-4 săptămâni)",
+          "description": "Deploy pe infrastructura ta, migrare date din sistemele vechi, training pentru echipă, suport 3 luni inclus."
+        }
+      ],
+      "caseStudy": {
+        "name": "Work2Now — Platformă Recrutare",
+        "summary": "Platformă completă de recrutare și management candidați pentru companii din UE, cu dashboard pentru HR, portal candidați și sistem de matching automat.",
+        "highlights": [
+          "Arhitectură SaaS multi-tenant",
+          "Sistem matching candidați ↔ joburi",
+          "Portal separat pentru candidați și recrutori",
+          "Integrări ATS și sincronizare calendar",
+          "Scalabil pentru zeci de clienți enterprise"
+        ]
+      },
+      "faq": [
+        {
+          "question": "De ce să comand software custom în loc de o soluție gata?",
+          "answer": "Pentru că soluțiile off-the-shelf (Salesforce, SAP, Odoo) acoperă generic 60-70% din nevoi — restul de 30-40% rămân munci manuale sau workaround-uri. Software custom = fit 100% pe procesele tale + fără licențe lunare pe termen lung. ROI-ul se atinge de obicei în 12-18 luni pentru companii cu 20+ angajați."
+        },
+        {
+          "question": "Cât durează să construiți un CRM/ERP custom?",
+          "answer": "MVP utilizabil: 3-4 luni. Sistem complet: 6-12 luni. Folosim abordare iterativă — primul modul intră în producție în 6-8 săptămâni, restul se adaugă pe măsură ce construim. Nu așteptăm un an să vezi rezultate."
+        },
+        {
+          "question": "Cât costă un software custom pentru business?",
+          "answer": "Pornim de la 10000 EUR pentru un MVP simplu. Un CRM sau ERP complet: 25000-60000 EUR. Platforme SaaS B2B mature: 60000+ EUR. Comparativ cu licențe Salesforce/SAP pe 5 ani, software custom e de obicei cu 40-60% mai ieftin total — și îți rămâne ca activ."
+        },
+        {
+          "question": "Ce se întâmplă dacă am nevoie de modificări după lansare?",
+          "answer": "Oferim pachete de suport & evoluție lunare, de la 1000 EUR/lună. Includ modificări, feature-uri noi, suport, mentenanță. Pentru că codul e al tău, poți oricând să aduci alt dezvoltator — nu ești blocat cu noi."
+        },
+        {
+          "question": "Se integrează cu sistemele mele existente (contabilitate, ERP)?",
+          "answer": "Da, integrarea e parte din proiect. Lucrăm cu API-uri pentru 1C, SAGA, Saga Business, MyFin, QuickBooks, Xero, SAP, Odoo, Microsoft Dynamics, Stripe, PayU. Când sistemul extern nu are API, facem integrări prin import/export CSV automat sau RPA."
+        },
+        {
+          "question": "Datele mele sunt în siguranță?",
+          "answer": "Da. Aplicăm standarde enterprise: criptare TLS 1.3 în tranzit, AES-256 la rest, backup-uri automate zilnice, separare mediu dev/staging/prod, audit logs, autentificare 2FA, conformitate GDPR. Putem deploy pe infrastructura ta (on-premise) dacă preferi control total."
+        }
+      ]
+    },
+    "seo-optimizare": {
+      "metaTitle": "SEO — Optimizare Google | SoftIonyx",
+      "metaDescription": "Servicii SEO profesionale: audit, keyword research, SEO tehnic, content, link building. Creștem traficul organic al afacerii tale în Google.",
+      "keywords": "SEO, optimizare Google, audit SEO, SEO tehnic, content SEO, internațional",
+      "h1": "Optimizare SEO pentru Afaceri",
+      "tagline": "Apari în Google — fără să plătești pentru fiecare click.",
+      "intro": [
+        "SEO (Search Engine Optimization) = traficul pe care nu-l plătești. Odată ce ranghezi bine pentru cuvintele tale cheie, primești vizitatori calificați zilnic — gratuit. Dar ajunsul acolo cere strategie, tehnică și răbdare.",
+        "Oferim SEO complet pentru afaceri locale și internaționale: audit tehnic, keyword research adaptat piețelor tale țintă (servicii + oraș, B2B + industrie), content în limbile proiectului, link building etic și rapoarte lunare transparente.",
+        "Abordarea noastră e bazată pe date reale — nu promisiuni. Folosim Ahrefs, SEMrush, Google Search Console, Google Analytics. Primești rapoarte lunare care arată exact ce s-a făcut, ce s-a îmbunătățit și ce urmează."
+      ],
+      "whatWeDo": [
+        "Audit SEO complet (tehnic + on-page + off-page)",
+        "Keyword research pentru piețele tale țintă",
+        "SEO tehnic (Core Web Vitals, sitemap, schema.org, hreflang)",
+        "SEO on-page (meta tags, structura URL, headings, internal linking)",
+        "Content marketing (articole blog optimizate SEO)",
+        "Link building etic & digital PR",
+        "Local SEO (Google Business Profile, directoare locale)",
+        "E-commerce SEO (categorii, produse, Google Shopping)",
+        "Monitorizare + rapoarte lunare"
+      ],
+      "forWhom": [
+        "Business-uri locale care vor să apară când cineva caută în zonă",
+        "E-commerce-uri care vor să reducă dependența de reclame plătite",
+        "Firme B2B cu cicluri lungi de vânzare",
+        "Site-uri care au pierdut ranking după update Google",
+        "Startup-uri care vor să crească organic de la zero"
+      ],
+      "outcomes": [
+        "Trafic organic creștere 100-500% în 6-12 luni",
+        "Costuri marketing mai mici (mai puțin pe Google Ads)",
+        "Lead-uri de calitate mai bună (intenție reală)",
+        "Autoritate crescută în nișa ta",
+        "Rezultate care durează ani, nu zile"
+      ],
+      "process": [
+        {
+          "title": "1. Audit & Strategie (2-3 săptămâni)",
+          "description": "Audit complet 200+ puncte, analiză competiție, keyword research cu volume pe piețele țintă, plan de acțiune 6 luni."
+        },
+        {
+          "title": "2. SEO Tehnic (1-2 luni)",
+          "description": "Rezolvăm probleme tehnice: viteză, mobile, crawl errors, structured data, sitemap, canonical URLs."
+        },
+        {
+          "title": "3. Content & On-Page (ongoing)",
+          "description": "Publicăm 2-4 articole/lună, optimizăm paginile existente, creăm content pilon pe topic clusters."
+        },
+        {
+          "title": "4. Link Building & Local SEO (ongoing)",
+          "description": "Guest posting, digital PR, directoare locale, Google Business Profile, recenzii autentice."
+        }
+      ],
+      "pricing": [
+        {
+          "name": "Audit SEO One-Time",
+          "description": "Audit complet + plan de acțiune 30+ pagini. Livrat în 2 săptămâni.",
+          "features": [
+            "Audit tehnic 200+ puncte",
+            "Analiza competiție top 5",
+            "Keyword research (100+ cuvinte)",
+            "Plan de acțiune prioritizat",
+            "Call explicativ 1h"
+          ]
+        },
+        {
+          "name": "SEO Lunar",
+          "description": "Abonament SEO continuu — cel mai bun ROI pe termen lung.",
+          "features": [
+            "2 articole optimizate SEO/lună",
+            "Optimizare on-page continuă",
+            "Link building (2-5 link-uri/lună)",
+            "Monitorizare ranking 50+ keywords",
+            "Raport lunar detaliat",
+            "Suport email/call nelimitat"
+          ]
+        },
+        {
+          "name": "SEO Enterprise",
+          "description": "Pentru companii care vor scaling agresiv în 12 luni.",
+          "features": [
+            "4-8 articole/lună",
+            "Digital PR & link building premium",
+            "Content în multiple limbi",
+            "Consultant SEO dedicat",
+            "Dashboard custom",
+            "Rapoarte săptămânale"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Cât durează până văd rezultate de la SEO?",
+          "answer": "Primele îmbunătățiri: 1-3 luni (SEO tehnic are efect rapid). Rezultate vizibile în trafic: 4-6 luni. Rezultate majore: 6-12 luni. SEO e maraton, nu sprint — dar rezultatele durează ani. Comparativ, când oprești Google Ads, oprești și traficul."
+        },
+        {
+          "question": "Cât costă serviciile SEO?",
+          "answer": "Audit one-time: 400-800 EUR. Abonament lunar: 500-1500 EUR pentru business-uri mici-medii, 2000-5000 EUR pentru e-commerce și B2B complex. Comparativ cu Google Ads (unde plătești 0.3-2 EUR per click), SEO-ul se amortizează în 8-14 luni și continuă să producă trafic gratuit ani întregi."
+        },
+        {
+          "question": "Garantați poziția #1 pe Google?",
+          "answer": "Nu, și oricine îți promite asta te minte. Google folosește 200+ factori de ranking și algoritmul se schimbă constant. Ce garantăm: metodologie transparentă, rapoarte clare, îmbunătățiri măsurabile. În 90% din cazurile noastre clienții au văzut creștere de 2-5x în trafic organic în primul an."
+        },
+        {
+          "question": "Lucrați cu site-uri deja construite sau doar cu cele noi?",
+          "answer": "Cu ambele. De fapt, site-urile existente cu istoric au un avantaj (au deja autoritate pe domeniu). Facem audit, identificăm problemele, îmbunătățim ce există. Pentru site-uri noi, planificăm SEO-ul încă de la arhitectură."
+        },
+        {
+          "question": "Ce e Local SEO și am nevoie de el?",
+          "answer": "Local SEO = să apari când cineva caută în zona ta geografică (ex.: serviciu + oraș). Include Google Business Profile, recenzii, directoare locale, NAP consistent. Dacă ai clienți locali, e esențial — o mare parte din căutările Google au intenție locală."
+        },
+        {
+          "question": "De ce nu doar Google Ads — e mai rapid?",
+          "answer": "Google Ads = trafic rapid dar plătit continuu. Când oprești, se oprește. SEO = trafic stabil care crește în timp, fără costuri per click. Ideal: combini ambele. Ads pentru rezultate pe termen scurt, SEO pentru foundation pe termen lung. Clienții care fac doar Ads ajung cu costuri de 50+ EUR per lead în 2-3 ani."
+        }
+      ]
+    },
+    "mentenanta-site": {
+      "metaTitle": "Mentenanță Site Web — Suport Tehnic | SoftIonyx",
+      "metaDescription": "Mentenanță profesională site web: actualizări securitate, backup-uri zilnice, monitorizare 24/7, suport tehnic. Pachete lunare de la 150 EUR.",
+      "keywords": "mentenanță site, suport tehnic, administrare site, backup, actualizări securitate, 24/7",
+      "h1": "Mentenanță & Suport Website — Servicii Lunare",
+      "tagline": "Îți ții site-ul sigur, rapid și online. Noi ne ocupăm de restul.",
+      "intro": [
+        "Un site web nu e un proiect care se termină la lansare — e ca o mașină. Fără întreținere regulată, apar probleme: dependențe învechite, breșe de securitate exploatate, site care se blochează când e trafic mai mare, certificate SSL expirate, backup-uri lipsă.",
+        "Oferim mentenanță lunară pentru stack-urile moderne pe care le livrăm (React / Next.js / Node.js) și setup-uri compatibile. Ne ocupăm de actualizări de dependențe și securitate, backup-uri automate, monitorizare uptime 24/7, optimizare performanță, suport pentru tine și echipa ta.",
+        "Și, dacă se întâmplă ceva, avem timp de răspuns rapid — maxim 4 ore în zilele lucrătoare, 12 ore weekend. Nu te lăsăm cu site-ul picat peste weekend în timpul promoției Black Friday."
+      ],
+      "whatWeDo": [
+        "Actualizări dependențe, runtime și securitate pentru stack-ul tău",
+        "Backup-uri automate zilnice + restore în caz de probleme",
+        "Monitorizare uptime 24/7 cu alerte SMS/email",
+        "Scanare securitate & malware removal",
+        "Optimizare performanță (viteză încărcare, cache)",
+        "Monitorizare Core Web Vitals și fix automat",
+        "Modificări conținut (produse, articole, pagini, bannere)",
+        "Suport echipa ta (ticketing, email, chat)",
+        "Rapoarte lunare detaliate",
+        "Disaster recovery (recuperare după hack)"
+      ],
+      "forWhom": [
+        "Echipe cu site în producție fără inginer de platformă dedicat",
+        "E-commerce-uri unde downtime = pierdere vânzări",
+        "Site-uri corporate care trebuie să fie mereu online",
+        "Clienți vechi care vor să delege administrarea",
+        "Companii care au moștenit un site fără documentație"
+      ],
+      "outcomes": [
+        "Uptime 99.9%+ garantat",
+        "Site protejat de hacking & malware",
+        "Backup disponibil în orice moment",
+        "Echipa ta focusată pe business, nu pe probleme tehnice",
+        "Pace și liniște — știi că cineva se ocupă"
+      ],
+      "process": [
+        {
+          "title": "1. Onboarding (prima săptămână)",
+          "description": "Audit tehnic complet, setare backup-uri, instalare monitorizare, handover documentație."
+        },
+        {
+          "title": "2. Mentenanță Lunară",
+          "description": "Update-uri controlate în ferestre planificate, backup-uri zilnice, monitorizare continuă, rapoarte lunare."
+        },
+        {
+          "title": "3. Suport On-Demand",
+          "description": "Ticketing pentru probleme, modificări conținut, întrebări tehnice. SLA clar: 4 ore zilele lucrătoare, 12 ore weekend."
+        },
+        {
+          "title": "4. Review Trimestrial",
+          "description": "Ne întâlnim la 3 luni: analizăm performanța, probleme, oportunități de optimizare."
+        }
+      ],
+      "pricing": [
+        {
+          "name": "Basic",
+          "description": "Pentru site-uri mici prezentare (până la 10 pagini).",
+          "features": [
+            "Actualizări lunare",
+            "Backup săptămânal",
+            "Monitorizare uptime",
+            "Scanare malware",
+            "2h modificări conținut/lună",
+            "Raport lunar"
+          ]
+        },
+        {
+          "name": "Business",
+          "description": "Pentru site-uri corporate sau magazine online mici.",
+          "features": [
+            "Actualizări săptămânale",
+            "Backup zilnic + retention 30 zile",
+            "Monitorizare 24/7 cu SMS",
+            "Optimizare performanță",
+            "6h modificări/lună",
+            "SLA răspuns 4h",
+            "Suport prioritar"
+          ]
+        },
+        {
+          "name": "Enterprise",
+          "description": "Pentru e-commerce mari și site-uri critice.",
+          "features": [
+            "Mentenanță continuă",
+            "Backup orar",
+            "Monitorizare 24/7 + Datadog",
+            "Staging environment dedicat",
+            "20h modificări/lună",
+            "SLA răspuns 1h",
+            "Account manager dedicat"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Am nevoie de mentenanță dacă site-ul meu funcționează OK?",
+          "answer": "Da, chiar dacă \"pare\" OK. Multe incidente vin din dependențe neactualizate sau servere prost configurate. Fără backup, un incident grav poate însemna reconstruire de la zero. Mentenanța e ca asigurarea auto — nu vrei să o ai, dar când ai nevoie, contează enorm."
+        },
+        {
+          "question": "Ce se întâmplă dacă site-ul pică?",
+          "answer": "Suntem anunțați automat prin monitorizare. În 99% din cazuri rezolvăm în maxim 30 de minute. Dacă e problemă de hosting, escalăm la furnizorul de hosting. Dacă e hack, restaurăm din backup și închidem vulnerabilitatea în aceeași zi."
+        },
+        {
+          "question": "Includeți și modificări de conținut / design?",
+          "answer": "Da, fiecare pachet include ore de modificări (2-20h/lună). Pentru modificări suplimentare, avem tarif orar (35-50 EUR/h). Pentru modificări mari (redesign pagină, funcționalități noi), facem ofertă separată."
+        },
+        {
+          "question": "Ce platforme mentenați?",
+          "answer": "În principal site-uri livrate de noi sau stack-uri JavaScript moderne (React, Next.js, Node.js), cu acces clar la repo și hosting. Nu oferim mentenanță continuă pentru magazine tip SaaS închis sau CMS PHP storefront legacy. Pentru platforme proprietare complicate, facem audit înainte de contract."
+        },
+        {
+          "question": "Pot anula oricând?",
+          "answer": "Da, fără penalități. Contract lună la lună, anulare cu 30 zile notificare. Primești toate credențialele, backup complet și documentația tehnică la plecare."
+        },
+        {
+          "question": "De ce să nu fac eu actualizările?",
+          "answer": "Poți, dar riști: update-uri care sparg site-ul (plugin-uri incompatibile), lipsă backup înainte, nu știi ce e critic vs ce poate aștepta. Rezolvăm într-o oră ce pe tine te-ar ține o zi. Plus, dacă se rupe ceva, noi reparăm — pe tine te-ar costa un developer ad-hoc."
+        }
+      ]
+    },
+    "cyber-security": {
+      "metaTitle": "Cybersecurity — Securitate IT | SoftIonyx",
+      "metaDescription": "Servicii cybersecurity: audit securitate, penetration testing, protecție GDPR, IAM, monitorizare. Echipă specializată în securitate IT.",
+      "keywords": "cybersecurity, securitate IT, penetration testing, audit securitate, GDPR, protecție date",
+      "h1": "Securitate Cibernetică pentru Afaceri",
+      "tagline": "Nu aștepta să fii hacked ca să iei securitatea în serios.",
+      "intro": [
+        "Un incident de securitate costă în medie 4.45M USD la nivel global (raport IBM 2023). Pentru o companie mică sau medie, chiar și un atac ransomware \"mic\" poate însemna săptămâni de downtime, pierderi de clienți, penalități GDPR și daune reputaționale greu de recuperat.",
+        "Ajutăm companiile să se protejeze prin audituri de securitate, penetration testing, implementare Zero-Trust, conformitate GDPR și ISO 27001, și monitorizare continuă. Avem experiență cu clienți FinTech, healthcare, e-commerce și SaaS.",
+        "Nu livrăm rapoarte tehnice de 200 de pagini pe care nu le citește nimeni. Livrăm priorități clare: ce trebuie rezolvat urgent, ce în 30 de zile, ce în 90. Plus planul concret de remediere."
+      ],
+      "whatWeDo": [
+        "Audituri securitate (web, mobile, infrastructură, cloud)",
+        "Penetration testing (black/gray/white box)",
+        "Evaluare vulnerabilități & remediere",
+        "Arhitectură Zero-Trust",
+        "Identity & Access Management (IAM)",
+        "SIEM / SOC — monitorizare & alertare",
+        "Incident response & disaster recovery",
+        "Conformitate GDPR, ISO 27001, SOC 2",
+        "DevSecOps & security în CI/CD",
+        "Training securitate pentru echipe"
+      ],
+      "forWhom": [
+        "FinTech-uri și bănci mici",
+        "E-commerce-uri care procesează plăți",
+        "SaaS B2B care vor să vândă la enterprise",
+        "Companii care stochează date personale (GDPR)",
+        "Clinici / healthcare cu date medicale",
+        "Orice companie după un incident de securitate"
+      ],
+      "outcomes": [
+        "Risc de breach redus cu 80%+",
+        "Conformitate GDPR/ISO demonstrabilă",
+        "Încredere mai mare din partea clienților enterprise",
+        "Răspuns rapid la incidente (minute, nu zile)",
+        "Somn liniștit pentru CEO & CTO"
+      ],
+      "process": [
+        {
+          "title": "1. Discovery & Scoping (1-2 săptămâni)",
+          "description": "Înțelegem arhitectura, definim scope-ul auditului, identificăm active critice."
+        },
+        {
+          "title": "2. Audit & Testing (2-4 săptămâni)",
+          "description": "Penetration testing, code review, infrastructure scan, analiză procese."
+        },
+        {
+          "title": "3. Raport & Prioritizare (1 săptămână)",
+          "description": "Raport structurat: vulnerabilități critice/high/medium/low, impact, efort remediere, recomandări."
+        },
+        {
+          "title": "4. Remediere & Verificare (ongoing)",
+          "description": "Implementăm fixuri, re-testăm, documentăm, training echipa, monitorizare continuă."
+        }
+      ],
+      "faq": [
+        {
+          "question": "Chiar am nevoie de audit de securitate?",
+          "answer": "Dacă stochezi date clienți, procesezi plăți, sau ai regulamente GDPR să respecți — da. Dacă lucrezi cu clienți enterprise, ei îți vor cere de obicei un audit sau certificare ISO 27001. Dacă ai avut deja un incident — cu siguranță. Mai bine prevenim decât să repari după un breach."
+        },
+        {
+          "question": "Cât costă un audit de securitate?",
+          "answer": "Audit web application: 2000-5000 EUR. Penetration testing infrastructură: 3000-8000 EUR. Audit complet + remediere + ISO 27001 prep: 15000-30000 EUR. Depinde de complexitate. Oferim ofertă fixă după scoping call de 1h."
+        },
+        {
+          "question": "GDPR și ISO 27001 — ce înseamnă pentru afacerea mea?",
+          "answer": "GDPR: obligatoriu dacă procesezi date personale ale cetățenilor UE. Amenzi până la 4% din cifra de afaceri. ISO 27001: standard internațional pentru securitatea informației, necesar când vinzi la enterprise. Ambele cer documentație, procese și controlere concrete — nu doar \"aveam o politică în sertar\"."
+        },
+        {
+          "question": "Ce facem dacă am fost deja hacked?",
+          "answer": "Incident response 24/7. Primul pas: izolăm impactul (oprim propagarea). Al doilea: analizăm ce s-a pierdut (forensics). Al treilea: restaurăm operațional (backup, fix vulnerabilitate). Al patrulea: raportăm conform GDPR (72h notificare autoritate). Ideal însă: apelezi la noi ÎNAINTE."
+        },
+        {
+          "question": "Pot să fac singur penetration testing cu Kali Linux?",
+          "answer": "Pentru învățare — da. Pentru a descoperi real vulnerabilitățile afacerii tale — nu, pentru că nu ai instrumentele, timpul și mai ales experiența de atacator. Penetration testing real e o artă care se construiește în ani. Plus: raportul tău intern nu e valid pentru conformitate."
+        },
+        {
+          "question": "Cât durează să fim \"secure\" 100%?",
+          "answer": "\"100% secure\" nu există — securitatea e proces continuu. Ce putem garanta: reducem riscul cu 80%+ în 90 de zile. Stabilizăm un program de securitate matur în 6-12 luni. Menținem prin monitorizare continuă și audituri anuale."
+        }
+      ]
+    },
+    "blockchain": {
+      "metaTitle": "Blockchain — Smart Contracts & Web3 | SoftIonyx",
+      "metaDescription": "Dezvoltare blockchain: smart contracts (Solidity), wallets, tokenizare, Web3 dApps, NFT. Experiență DeFi și audit securitate pentru contracte.",
+      "keywords": "blockchain, smart contracts, Web3, Solidity, NFT, DeFi",
+      "h1": "Dezvoltare Blockchain & Smart Contracts",
+      "tagline": "Web3 construit corect — de la smart contract la UX final.",
+      "intro": [
+        "Blockchain-ul nu e doar crypto speculation. Pentru business-uri serioase, oferă trasabilitate, transparență și eficiență — supply chain verificabil, plăți cross-border fără intermediari, tokenizare active reale, loialitate cu NFT.",
+        "Dezvoltăm soluții blockchain pentru clienți din întreaga lume: smart contracts pe Ethereum, Polygon, BSC, Solana. Aplicații Web3 (dApps). Integrări wallet (MetaMask, WalletConnect). Audituri de securitate pentru smart contracts existente.",
+        "Am văzut prea multe proiecte blockchain eșuate din cauza smart contract-urilor scrise prost (bani pierduți iremediabil) sau UX-ului imposibil pentru userii non-tech. Livrăm ambele — cod securizat și experiență user-friendly."
+      ],
+      "whatWeDo": [
+        "Smart contracts Solidity (Ethereum, Polygon, BSC)",
+        "Smart contracts Rust (Solana, NEAR)",
+        "Web3 dApps (frontend + integrare wallet)",
+        "NFT collections & marketplaces",
+        "Tokenizare active (real estate, art, equity)",
+        "DeFi protocols (staking, lending, DEX)",
+        "Blockchain privat (Hyperledger, Quorum)",
+        "Audit securitate smart contracts",
+        "Integrări plăți crypto (Stripe Crypto, CoinPayments)"
+      ],
+      "forWhom": [
+        "Startup-uri Web3 care lansează un protocol",
+        "Colecții NFT & brand-uri care vor să lanseze NFTs",
+        "Business-uri cu supply chain ce vor trasabilitate",
+        "Platforme de tokenizare active reale",
+        "DeFi protocols ce vor securitate enterprise"
+      ],
+      "outcomes": [
+        "Smart contracts auditate, fără vulnerabilități critice",
+        "UX simplu chiar și pentru utilizatori non-crypto",
+        "Infrastructură scalabilă (layer 2 când e posibil)",
+        "Conformitate cu regulamente (KYC/AML la nevoie)",
+        "Documentație tehnică completă"
+      ],
+      "process": [
+        {
+          "title": "1. Consultanță & Tokenomics (2-4 săptămâni)",
+          "description": "Analiză use-case, alegere blockchain (L1 vs L2), design tokenomics, modelare economică."
+        },
+        {
+          "title": "2. Smart Contract Development (3-6 săptămâni)",
+          "description": "Dezvoltare + testare extensivă (unit, integration, fuzz testing). Code review de 2 developeri."
+        },
+        {
+          "title": "3. Security Audit (2-3 săptămâni)",
+          "description": "Audit intern + (recomandat) audit extern de la firmă specializată. Fix vulnerabilități."
+        },
+        {
+          "title": "4. Frontend & Deployment (2-4 săptămâni)",
+          "description": "dApp UI, integrări wallet, deployment pe mainnet, monitorizare on-chain activity."
+        }
+      ],
+      "pricing": [
+        {
+          "name": "Genesis Protocol",
+          "description": "Infrastructură blockchain proprie pentru lansare rapidă (MVP + adopție inițială).",
+          "features": [
+            "Arhitectură blockchain custom (L1 modular)",
+            "Wallet nativ + sistem tranzacții securizat (nonce anti-replay)",
+            "Consensus eficient (PoS / Delegated, optimizat performanță)",
+            "Execuție smart contracts + mecanism gas anti-abuz",
+            "Block explorer + indexare date on-chain",
+            "API & SDK pentru integrare rapidă",
+            "Optimizare viteză & cost tranzacții",
+            "Setup infrastructură (node-uri + deploy)",
+            "Livrare în 3–5 luni"
+          ]
+        },
+        {
+          "name": "Nexus Protocol",
+          "description": "Rețea blockchain scalabilă, pregătită pentru trafic real și ecosistem activ.",
+          "features": [
+            "Tot din Genesis Protocol",
+            "Sharding avansat pentru scalabilitate reală",
+            "Validatori dinamici + staking & reward logic",
+            "Procesare paralelă tranzacții + optimizare throughput",
+            "Smart contract engine extins (execuție eficientă)",
+            "Dashboard admin + monitorizare rețea în timp real",
+            "Integrare API externă + plăți / servicii",
+            "Sistem upgrade & guvernanță on-chain",
+            "Audit de securitate avansat",
+            "Suport tehnic 6 luni",
+            "Livrare în 6–10 luni"
+          ]
+        },
+        {
+          "name": "Ascension Protocol",
+          "description": "Ecosistem blockchain complet, proiectat pentru scalare globală și adopție enterprise.",
+          "features": [
+            "Tot din Nexus Protocol",
+            "Consensus proprietar optimizat (viteză + securitate + eficiență)",
+            "Sharding multi-layer + cross-shard communication",
+            "Ecosistem complet: wallet, explorer, API public, SDK dezvoltatori",
+            "Framework smart contracts (tooling complet pentru devs)",
+            "Integrare AI (fraud detection, analytics, optimizare rețea)",
+            "Infrastructură distribuită global (cloud + noduri dedicate)",
+            "Sistem interoperabilitate (bridge-uri multi-chain)",
+            "Securitate enterprise + audit multiplu (extern + intern)",
+            "Scalabilitate pentru milioane de utilizatori",
+            "Suport & mentenanță 12 luni",
+            "Livrare în 10–18 luni"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Ce e smart contract și pentru ce îmi trebuie?",
+          "answer": "Un smart contract = cod care rulează automat pe blockchain când sunt îndeplinite condiții predefinite. Exemple: plată automat când se livrează marfă, distribuire royalties NFT, staking/unstaking tokens, vote în DAO. Util când vrei automatizare fără intermediari și transparență totală."
+        },
+        {
+          "question": "Cât costă dezvoltarea unui smart contract?",
+          "answer": "Smart contract simplu (ERC-20 token, ERC-721 NFT): 3000-8000 EUR. Smart contract complex (DeFi protocol, staking, lending): 15000-40000 EUR. Audit securitate recomandat: +5000-20000 EUR. Prețul reflectă riscul — un bug în cod = bani pierduți permanent."
+        },
+        {
+          "question": "Ce blockchain să aleg — Ethereum, Polygon, Solana?",
+          "answer": "Ethereum: cel mai sigur și cu cei mai mulți useri, dar fee-uri mari. Polygon: aproape la fel ca Ethereum, dar fee-uri <$0.01. Solana: foarte rapid și ieftin, dar ecosistem mai mic. BSC: fee-uri mici, dar centralizat. Recomandare: Polygon pentru majoritatea proiectelor noi."
+        },
+        {
+          "question": "De ce am nevoie de audit de securitate?",
+          "answer": "Pentru că smart contract-urile sunt imutabile după deployment. Un bug = bani pierduți permanent și fără recuperare. Exemple celebre: DAO hack (60M USD), Wormhole (325M USD), Ronin (625M USD). Auditul extern e standard în industrie pentru orice protocol cu TVL semnificativ."
+        },
+        {
+          "question": "Puteți face integrare plăți crypto pe site-ul meu?",
+          "answer": "Da. Folosim soluții ca Coinbase Commerce, CoinPayments, BTCPay Server (self-hosted), sau Stripe Crypto. Poți accepta Bitcoin, Ethereum, stablecoins (USDC, USDT). Integrarea durează 1-3 săptămâni în funcție de cerințe (KYC, facturare fiat conversion)."
+        },
+        {
+          "question": "Blockchain e legal în jurisdicția mea?",
+          "answer": "Dezvoltarea în sine este legală aproape peste tot; ce se reglementează diferit sunt serviciile financiare (exchange, custody, tokenizare de instrumente financiare) — acolo aplică legile și autoritățile din jurisdicția ta. Colaborăm cu avocați specializați pentru conformitate. Pentru multe cazuri (NFT, utility tokens, DeFi de uz comun), livrarea tehnică este standard."
+        }
+      ]
+    }
+  }
+}

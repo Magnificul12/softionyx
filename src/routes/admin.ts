@@ -2,14 +2,14 @@ import express, { Request, Response } from 'express';
 import { pool } from '../config/database';
 import { authenticate, AuthRequest } from '../middleware/auth';
 import logger from '../utils/logger';
-import { apiLimiter } from '../middleware/rateLimiter';
+import { adminLimiter } from '../middleware/rateLimiter';
 import { getDashboardStats } from '../utils/analytics';
 
 const router = express.Router();
 
 // All routes require authentication
 router.use(authenticate);
-router.use(apiLimiter);
+router.use(adminLimiter);
 
 // Get dashboard stats
 router.get('/stats', async (req: AuthRequest, res: Response) => {

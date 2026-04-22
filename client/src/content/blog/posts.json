@@ -1,0 +1,172 @@
+[
+  {
+    "slug": "ghid-complet-dezvoltare-web-moldova-2026",
+    "locale": "ro",
+    "title": "Ghid complet: dezvoltare web (2026) — de la strategie la lansare",
+    "metaTitle": "Ghid complet dezvoltare web 2026 | SoftIonyx — pilon SEO",
+    "metaDescription": "Tipuri de proiecte, stack, design, frontend/backend, CMS vs custom, securitate, hosting, buget, furnizor — ghid practic pentru echipe în Europa sau oriunde. Hub cu articole satelit.",
+    "keywords": "dezvoltare web europa, ghid web 2026, site custom, proiect software, arhitectura web",
+    "excerpt": "Pilon editorial: cum arată livrarea reală, ce decizii tehnice contează, unde se duc banii și cum eviți capcanele — cu legături către ghidurile satelit din serie.",
+    "cover": "/og-image.jpg",
+    "coverAlt": "Diagramă conceptuală: strategie, design, dezvoltare și lansare web",
+    "category": "development",
+    "tags": ["dezvoltare web", "Europa", "ghid", "2026", "hub"],
+    "author": {
+      "name": "Echipa SoftIonyx",
+      "role": "Redacție",
+      "avatar": "/favicon-48x48.png",
+      "bio": "Dezvoltare software, SEO și proiecte web pentru clienți în Europa și oriunde în lume."
+    },
+    "publishedAt": "2026-04-18",
+    "updatedAt": "2026-04-21",
+    "readingTimeMin": 24,
+    "featured": true,
+    "toc": [
+      { "id": "context-piata", "title": "Context: ce înseamnă „dezvoltare web” azi", "level": 2 },
+      { "id": "tipuri-proiecte", "title": "Tipuri de proiecte și ce livrabile presupun", "level": 2 },
+      { "id": "faza-strategie", "title": "Faza 1 — Strategie, brief și arhitectură informațională", "level": 2 },
+      { "id": "design-ux-ui", "title": "Faza 2 — UX, UI și design system", "level": 2 },
+      { "id": "implementare-tehnica", "title": "Faza 3 — Implementare: frontend, backend, integrări", "level": 2 },
+      { "id": "cms-custom-headless", "title": "CMS, custom, headless: cum alegi modelul potrivit", "level": 2 },
+      { "id": "ecommerce-seo-tehnic", "title": "E-commerce, plăți și bază de SEO tehnic", "level": 2 },
+      { "id": "securitate-performance", "title": "Securitate, performanță și calitate (QA)", "level": 2 },
+      { "id": "hosting-devops", "title": "Hosting, domenii, SSL și livrare continuă", "level": 2 },
+      { "id": "buget-timeline", "title": "Buget, timeline și contracte: ce e realist în 2026", "level": 2 },
+      { "id": "alegere-furnizor", "title": "Cum alegi furnizorul potrivit (agenție vs freelancer)", "level": 2 },
+      { "id": "greseli-frecvente", "title": "Greșeli frecvente care scumpesc sau întârzie proiectul", "level": 2 },
+      { "id": "checklist-lansare", "title": "Checklist înainte de lansare", "level": 2 },
+      { "id": "seria-dezvoltare-web", "title": "Continuă în serie: articole satelit", "level": 2 }
+    ],
+    "relatedSlugs": [
+      "cat-costa-site-web-moldova-2026",
+      "cms-vs-dezvoltare-custom-2026",
+      "hosting-performance-web-moldova-2026"
+    ],
+    "linksToServices": ["dezvoltare-web", "e-commerce", "mentenanta-site", "seo-optimizare"],
+    "clusterId": "dezvoltare-web",
+    "isPillar": true
+  },
+  {
+    "slug": "cat-costa-site-web-moldova-2026",
+    "locale": "ro",
+    "title": "Cât costă un site web în 2026? Ghid cu prețuri reale (Europa / orice piață)",
+    "metaTitle": "Cât costă un site web 2026? Prețuri reale — Ghid SoftIonyx",
+    "metaDescription": "Landing, corporate, e-commerce, aplicație custom: intervale de preț realiste, factori de cost și cum ceri o ofertă corectă — aplicabil în Europa sau oriunde.",
+    "keywords": "pret site web 2026, cost dezvoltare web, tarife site corporate, buget e-commerce, oferta web",
+    "excerpt": "De la ~800 EUR pentru un landing simplu la 15.000+ EUR pentru e-commerce complex — categorii, ce mișcă prețul și cum compari ofertele, indiferent de țară.",
+    "cover": "/og-image.jpg",
+    "coverAlt": "SoftIonyx — soluții IT profesionale (web, mobile, blockchain)",
+    "category": "business",
+    "tags": ["prețuri", "web development", "Europa", "ghid", "2026"],
+    "author": {
+      "name": "Echipa SoftIonyx",
+      "role": "Redacție",
+      "avatar": "/favicon-48x48.png",
+      "bio": "Dezvoltare software, SEO și proiecte web pentru clienți în Europa și oriunde în lume."
+    },
+    "publishedAt": "2026-04-21",
+    "updatedAt": "2026-04-21",
+    "readingTimeMin": 12,
+    "featured": false,
+    "toc": [
+      { "id": "introducere", "title": "De ce variază atât de mult prețul unui site web", "level": 2 },
+      { "id": "tipuri-de-site-uri", "title": "Tipuri de site-uri și prețuri reale în 2026", "level": 2 },
+      { "id": "landing-page", "title": "1. Landing page / site de prezentare simplu", "level": 3 },
+      { "id": "site-corporativ", "title": "2. Site corporativ / business", "level": 3 },
+      { "id": "e-commerce", "title": "3. Magazin online (e-commerce)", "level": 3 },
+      { "id": "aplicatie-custom", "title": "4. Aplicație web custom (SaaS, portal)", "level": 3 },
+      { "id": "factori-pret", "title": "Ce factori umflă (sau reduc) prețul final", "level": 2 },
+      { "id": "cms-vs-custom", "title": "CMS / headless vs dezvoltare custom — cum decizi", "level": 2 },
+      { "id": "costuri-ascunse", "title": "Costuri ascunse pe care nimeni nu le menționează", "level": 2 },
+      { "id": "cum-ceri-oferta", "title": "Cum ceri o ofertă corectă (și compari ofertele)", "level": 2 },
+      { "id": "faq", "title": "Întrebări frecvente", "level": 2 },
+      { "id": "concluzie", "title": "Concluzie: cât să aloci, realistic?", "level": 2 }
+    ],
+    "relatedSlugs": [
+      "ghid-complet-dezvoltare-web-moldova-2026",
+      "cms-vs-dezvoltare-custom-2026",
+      "hosting-performance-web-moldova-2026"
+    ],
+    "linksToServices": ["dezvoltare-web", "e-commerce", "software-custom"],
+    "clusterId": "dezvoltare-web",
+    "isPillar": false
+  },
+  {
+    "slug": "cms-vs-dezvoltare-custom-2026",
+    "locale": "ro",
+    "title": "CMS, headless sau dezvoltare custom (2026): ghid scurt pentru decidenți",
+    "metaTitle": "CMS vs dezvoltare custom 2026 | Ghid SoftIonyx",
+    "metaDescription": "Criterii pentru CMS clasic, CMS headless, platformă SaaS de magazin sau cod custom: cost total, viteză, securitate, scalare și mentenanță — fără vendor lock-in la un singur brand.",
+    "keywords": "cms headless, site custom, dezvoltare web europa, arhitectura web 2026, saas vs custom",
+    "excerpt": "Nu există stack universal perfect — alegerea ține de volumul de conținut, complexitatea catalogului și cum vrei să scalezi în următorii ani.",
+    "cover": "/og-image.jpg",
+    "coverAlt": "Schemă: CMS, API și aplicație custom",
+    "category": "development",
+    "tags": ["CMS", "headless", "custom", "arhitectură", "2026"],
+    "author": {
+      "name": "Echipa SoftIonyx",
+      "role": "Redacție",
+      "avatar": "/favicon-48x48.png",
+      "bio": "Dezvoltare software, SEO și proiecte web pentru clienți în Europa și oriunde în lume."
+    },
+    "publishedAt": "2026-04-20",
+    "updatedAt": "2026-04-21",
+    "readingTimeMin": 9,
+    "featured": false,
+    "toc": [
+      { "id": "intro-decizie", "title": "De ce decizia de platformă merită o pagină întreagă", "level": 2 },
+      { "id": "cms-headless", "title": "CMS clasic și headless: când ajută, când complică", "level": 2 },
+      { "id": "saas-magazin", "title": "Platformă SaaS pentru magazin: avantaje și limite", "level": 2 },
+      { "id": "custom-cand", "title": "Dezvoltare custom: pentru cazuri care nu încap în șabloane", "level": 2 },
+      { "id": "tabel-comparativ", "title": "Comparație practică: cost, timp, riscuri", "level": 2 },
+      { "id": "legaturi-serie", "title": "Continuă în aceeași serie", "level": 2 }
+    ],
+    "relatedSlugs": [
+      "ghid-complet-dezvoltare-web-moldova-2026",
+      "cat-costa-site-web-moldova-2026",
+      "hosting-performance-web-moldova-2026"
+    ],
+    "linksToServices": ["dezvoltare-web", "e-commerce", "mentenanta-site"],
+    "clusterId": "dezvoltare-web",
+    "isPillar": false
+  },
+  {
+    "slug": "hosting-performance-web-moldova-2026",
+    "locale": "ro",
+    "title": "Hosting, domenii și performanță web: Core Web Vitals pe scurt",
+    "metaTitle": "Hosting & performanță site 2026 | Core Web Vitals",
+    "metaDescription": "DNS, SSL, caching, CDN, imagini și Core Web Vitals: impact SEO și conversie — ghid practic pentru echipe în Europa sau oriunde.",
+    "keywords": "hosting, viteza site, core web vitals, ssl, cdn",
+    "excerpt": "Un site lent pierde poziții și conversii. Infrastructură sănătoasă: ce să ceri de la furnizor.",
+    "cover": "/og-image.jpg",
+    "coverAlt": "Server și grafice de performanță web",
+    "category": "development",
+    "tags": ["hosting", "performanță", "SEO tehnic", "CWV", "2026"],
+    "author": {
+      "name": "Echipa SoftIonyx",
+      "role": "Redacție",
+      "avatar": "/favicon-48x48.png",
+      "bio": "Dezvoltare software, SEO și proiecte web pentru clienți în Europa și oriunde în lume."
+    },
+    "publishedAt": "2026-04-19",
+    "updatedAt": "2026-04-21",
+    "readingTimeMin": 8,
+    "featured": false,
+    "toc": [
+      { "id": "intro-performanta", "title": "De ce infrastructura e parte din produs, nu „găzduire”", "level": 2 },
+      { "id": "domenii-dns", "title": "Domenii, DNS și SSL — bazele fără surprize", "level": 2 },
+      { "id": "hosting-tipuri", "title": "Shared vs VPS vs cloud managed: ce alegi", "level": 2 },
+      { "id": "cwv-seo", "title": "Core Web Vitals și legătura cu SEO", "level": 2 },
+      { "id": "optimizari", "title": "Optimizări rapide: imagini, cache, fonturi", "level": 2 },
+      { "id": "legaturi-serie", "title": "Continuă în aceeași serie", "level": 2 }
+    ],
+    "relatedSlugs": [
+      "ghid-complet-dezvoltare-web-moldova-2026",
+      "cat-costa-site-web-moldova-2026",
+      "cms-vs-dezvoltare-custom-2026"
+    ],
+    "linksToServices": ["mentenanta-site", "seo-optimizare", "dezvoltare-web"],
+    "clusterId": "dezvoltare-web",
+    "isPillar": false
+  }
+]

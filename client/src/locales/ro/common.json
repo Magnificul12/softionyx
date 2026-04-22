@@ -4,14 +4,28 @@
     "solutions": "Soluții",
     "portfolio": "Portofoliu",
     "about": "Despre",
+    "blog": "Blog",
     "contact": "Contact",
     "admin": "Admin",
     "logout": "Deconectare"
+  },
+  "servicesMenu": {
+    "eyebrow": "Servicii",
+    "subtitle": "Pagini dedicate cu prețuri și studii de caz",
+    "viewAll": "Vezi toate",
+    "priceFrom": "de la",
+    "toggleOpen": "Arată lista de servicii",
+    "toggleClose": "Ascunde lista de servicii"
   },
   "language": {
     "en": "EN",
     "ro": "RO",
     "ru": "RU"
+  },
+  "breadcrumbs": {
+    "home": "Acasă",
+    "blog": "Blog",
+    "ariaLabel": "Fil de navigare"
   },
   "hero": {
     "badge": "Soluții IT Profesionale",
@@ -118,6 +132,29 @@
     },
     "copyright": "SoftIonyx Technologies. Toate drepturile rezervate."
   },
+  "notFound": {
+    "badge": "Eroare 404",
+    "code": "404",
+    "title": "Pagina nu a fost găsită",
+    "subtitle": "Se pare că pagina pe care o cauți nu există, a fost mutată sau linkul este expirat.",
+    "searchPlaceholder": "Caută în SoftIonyx...",
+    "searchCta": "Caută",
+    "primaryCta": "Înapoi acasă",
+    "secondaryCta": "Ne contactezi",
+    "backCta": "Pagina anterioară",
+    "helpful": "Poate te ajută:",
+    "links": {
+      "home": "Acasă",
+      "services": "Servicii",
+      "solutions": "Soluții",
+      "portfolio": "Portfolio",
+      "blog": "Blog",
+      "contact": "Contact",
+      "about": "Despre noi",
+      "careers": "Cariere"
+    },
+    "requestedPath": "URL cerut"
+  },
   "legal": {
     "back": "Înapoi",
     "privacy": {
@@ -163,6 +200,11 @@
     "ctaTitle": "Gata să începi?",
     "ctaSubtitle": "Hai să discutăm cum îți putem ajuta proiectul",
     "ctaButton": "Contactează-ne",
+    "detailIndex": {
+      "eyebrow": "Explorează în detaliu",
+      "title": "Pagini dedicate pentru fiecare serviciu",
+      "subtitle": "Fiecare serviciu are pagina lui cu prețuri orientative, studii de caz, proces de lucru și întrebări frecvente."
+    },
     "items": {
       "cyber": {
         "title": "Securitate Cibernetică",
@@ -493,49 +535,47 @@
     }
   },
   "blog": {
-    "heroTitlePrefix": "Blog",
-    "heroTitleHighlight": "SoftIonyx",
-    "heroSubtitle": "Insight-uri, tutoriale și noutăți din partea echipei",
+    "heroTitlePrefix": "Blog &",
+    "heroTitleHighlight": "Insights",
+    "heroSubtitle": "Ghiduri practice și analize despre dezvoltare software, SEO și piața IT în Europa și nu numai.",
+    "seoTitle": "Blog SoftIonyx — Dezvoltare web, SEO și inginerie software",
+    "seoDescription": "Articole practice și ghiduri despre dezvoltare web, e-commerce, SEO și cybersecurity — pentru echipe în Europa și oriunde. Echipa SoftIonyx.",
+    "seoKeywords": "blog dezvoltare web, SEO tehnic, buget site web, articole software, IT Europa",
+    "searchPlaceholder": "Caută articol…",
+    "noResults": "Niciun articol nu se potrivește criteriilor tale.",
+    "clearFilters": "Șterge filtrele",
+    "featured": "Recomandat",
+    "readMore": "Citește",
+    "readingTime": "min de citit",
+    "readingTimeShort": "min",
+    "share": "Distribuie",
+    "copyLink": "Copiază link",
+    "copied": "Copiat!",
+    "related": "Articole similare",
+    "clusterSeries": "Din aceeași serie",
+    "clusterSeriesHint": "Articole din același cluster tematic — linking intern și autoritate tematică (hub & spoke).",
+    "viewAll": "Vezi toate",
+    "backToBlog": "Înapoi la blog",
+    "toc": "Cuprins",
+    "updated": "Actualizat",
+    "ctaTitle": "Vrei să primești ghiduri noi pe email?",
+    "ctaSubtitle": "Un email/lună cu cele mai bune articole — fără spam, poți dezabona oricând.",
+    "ctaAction": "Abonează-te",
+    "articleLoading": "Se încarcă articolul…",
+    "shareOn": "Distribuie pe {{network}}",
+    "notFoundTitle": "Articol inexistent",
+    "notFoundDescription": "Ne pare rău, articolul căutat nu există sau a fost mutat.",
+    "notFoundCta": "Înapoi la blog",
     "categories": {
       "all": "Toate",
-      "cloud": "Cloud",
-      "web": "Web Development",
-      "cyber": "Securitate",
-      "ai": "AI & Data",
-      "devops": "DevOps",
-      "mobile": "Mobile"
-    },
-    "posts": {
-      "cloud": {
-        "title": "Viitorul Cloud Computing în 2024",
-        "excerpt": "Explorăm cele mai noi tendințe și inovații în cloud..."
-      },
-      "react": {
-        "title": "Cele mai bune practici pentru React",
-        "excerpt": "Învață bune practici pentru aplicații React scalabile..."
-      },
-      "cyber": {
-        "title": "Amenințări de securitate în 2024",
-        "excerpt": "Înțelegerea peisajului în schimbare al securității..."
-      },
-      "ai": {
-        "title": "Tendințe AI și Machine Learning",
-        "excerpt": "Descoperă cele mai noi trenduri în AI și ML..."
-      }
-    },
-    "tags": {
-      "cloud": "Cloud",
-      "aws": "AWS",
-      "technology": "Tehnologie",
-      "react": "React",
-      "javascript": "JavaScript",
-      "frontend": "Frontend",
+      "business": "Business",
+      "development": "Dezvoltare",
+      "mobile": "Mobile",
+      "ecommerce": "E-commerce",
+      "seo": "SEO",
       "security": "Securitate",
-      "cyber": "Cybersecurity",
-      "threats": "Amenințări",
-      "ai": "AI",
-      "ml": "Machine Learning",
-      "dataScience": "Data Science"
+      "ai": "AI & Data",
+      "cloud": "Cloud"
     }
   },
   "careers": {
@@ -592,9 +632,9 @@
     },
     "projects": {
       "rightmob": {
-        "title": "Site RightMob.md",
-        "desc": "Site de prezentare pentru mobilier premium Right Mob.",
-        "imageAlt": "Previzualizare site RightMob.md"
+        "title": "RightMob.md — platformă imobiliară",
+        "desc": "Platformă web pentru intermediere imobiliară: listări, lead-uri și flux de lucru pentru agenții și investitori.",
+        "imageAlt": "Previzualizare platformă imobiliară RightMob.md"
       },
       "work2now": {
         "title": "Work2Now",

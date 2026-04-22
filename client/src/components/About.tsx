@@ -33,19 +33,19 @@ function About() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-32 relative z-10 border-t border-white/5">
+    <section ref={sectionRef} className="py-16 sm:py-24 md:py-32 relative z-10 border-t border-white/5">
       <div className="absolute inset-0 bg-slate-900/20"></div>
-      <div className="max-w-7xl mx-auto px-6 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
           <div className={isVisible ? 'animate-slide-left' : ''} style={{ opacity: isVisible ? 1 : 0 }}>
-            <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-8">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-medium text-white tracking-tight mb-4 sm:mb-6 md:mb-8 [text-wrap:balance]">
               {t('homeAbout.titleLine1')}<br />{t('homeAbout.titleLine2')}
             </h2>
-            <p className="text-slate-400 text-lg font-light mb-10 leading-relaxed">
+            <p className="text-slate-400 text-sm sm:text-base md:text-lg font-light mb-6 sm:mb-8 md:mb-10 leading-relaxed">
               {t('homeAbout.subtitle')}
             </p>
             
-            <div className="space-y-8">
+            <div className="space-y-5 sm:space-y-6 md:space-y-8">
               {[
                 { icon: 'lucide:zap', title: 'homeAbout.points.uptime.title', desc: 'homeAbout.points.uptime.desc', delay: 'delay-100' },
                 { icon: 'lucide:lock', title: 'homeAbout.points.threat.title', desc: 'homeAbout.points.threat.desc', delay: 'delay-200' },
@@ -53,15 +53,15 @@ function About() {
               ].map((item, idx) => (
                 <div 
                   key={idx}
-                  className={`flex items-start gap-5 ${isVisible ? `animate-fade-scale ${item.delay}` : ''}`}
+                  className={`flex items-start gap-3 sm:gap-4 md:gap-5 ${isVisible ? `animate-fade-scale ${item.delay}` : ''}`}
                   style={{ opacity: isVisible ? 1 : 0 }}
                 >
                   <div className="mt-1 flex-shrink-0 h-8 w-8 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
                     <Icon name={item.icon} width={16} />
                   </div>
-                  <div>
-                    <h4 className="text-white font-medium text-lg">{t(item.title)}</h4>
-                    <p className="text-slate-500 text-sm mt-1 font-light">{t(item.desc)}</p>
+                  <div className="min-w-0">
+                    <h4 className="text-white font-medium text-base sm:text-lg">{t(item.title)}</h4>
+                    <p className="text-slate-500 text-xs sm:text-sm mt-1 font-light leading-relaxed">{t(item.desc)}</p>
                   </div>
                 </div>
               ))}

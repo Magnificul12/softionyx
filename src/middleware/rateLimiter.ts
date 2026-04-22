@@ -49,6 +49,23 @@ export const contactLimiter = rateLimit({
   },
 });
 
+// Rate limiter for authenticated admin endpoints.
+// Much higher ceiling than the public API because the admin dashboard issues
+// ~10 parallel requests on mount + polls /live every 10s, and StrictMode
+// double-invokes effects in dev. Still bounded so a bug can't loop forever.
+export const adminLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 600,
+  standardHeaders: true,
+  legacyHeaders: false,
+  handler: (req, res) => {
+    logger.warn(`Admin rate limit exceeded for IP: ${req.ip}`);
+    res.status(429).json({
+      error: 'Too many admin requests, slow down.',
+    });
+  },
+});
+
 // Rate limiter for help requests
 export const helpRequestLimiter = rateLimit({
   windowMs: 60 * 60 * 1000, // 1 hour

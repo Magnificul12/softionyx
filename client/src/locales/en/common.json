@@ -4,14 +4,28 @@
     "solutions": "Solutions",
     "portfolio": "Portfolio",
     "about": "About",
+    "blog": "Blog",
     "contact": "Contact",
     "admin": "Admin",
     "logout": "Logout"
+  },
+  "servicesMenu": {
+    "eyebrow": "Services",
+    "subtitle": "Dedicated pages with pricing and case studies",
+    "viewAll": "View all",
+    "priceFrom": "from",
+    "toggleOpen": "Show services list",
+    "toggleClose": "Hide services list"
   },
   "language": {
     "en": "EN",
     "ro": "RO",
     "ru": "RU"
+  },
+  "breadcrumbs": {
+    "home": "Home",
+    "blog": "Blog",
+    "ariaLabel": "Breadcrumb"
   },
   "hero": {
     "badge": "Professional IT Solutions",
@@ -118,6 +132,29 @@
     },
     "copyright": "SoftIonyx Technologies. All rights reserved."
   },
+  "notFound": {
+    "badge": "Error 404",
+    "code": "404",
+    "title": "Page not found",
+    "subtitle": "It looks like the page you're looking for doesn't exist, has been moved, or the link has expired.",
+    "searchPlaceholder": "Search SoftIonyx...",
+    "searchCta": "Search",
+    "primaryCta": "Back to home",
+    "secondaryCta": "Contact us",
+    "backCta": "Previous page",
+    "helpful": "You might find it here:",
+    "links": {
+      "home": "Home",
+      "services": "Services",
+      "solutions": "Solutions",
+      "portfolio": "Portfolio",
+      "blog": "Blog",
+      "contact": "Contact",
+      "about": "About us",
+      "careers": "Careers"
+    },
+    "requestedPath": "Requested URL"
+  },
   "legal": {
     "back": "Back",
     "privacy": {
@@ -163,6 +200,11 @@
     "ctaTitle": "Ready to Get Started?",
     "ctaSubtitle": "Let's discuss how we can help bring your project to life",
     "ctaButton": "Contact Us",
+    "detailIndex": {
+      "eyebrow": "Explore in detail",
+      "title": "Dedicated pages for each service",
+      "subtitle": "Each service has its own page with indicative prices, case studies, workflow, and frequently asked questions."
+    },
     "items": {
       "cyber": {
         "title": "Cyber Security",
@@ -493,49 +535,143 @@
     }
   },
   "blog": {
-    "heroTitlePrefix": "Our",
-    "heroTitleHighlight": "Blog",
-    "heroSubtitle": "Insights, tutorials, and updates from our team",
+    "heroTitlePrefix": "Blog &",
+    "heroTitleHighlight": "Insights",
+    "heroSubtitle": "Practical guides and analyses on software development, SEO, and the IT market in Europe and beyond.",
+    "seoTitle": "SoftIonyx Blog — Web development, SEO, and engineering insights",
+    "seoDescription": "Practical articles and guides on web development, e-commerce, SEO, and cybersecurity — for teams in Europe and worldwide. Written by the SoftIonyx team.",
+    "seoKeywords": "web development blog, technical SEO, website pricing guide, software engineering articles, Europe IT",
+    "searchPlaceholder": "Search articles…",
+    "noResults": "No articles match your criteria.",
+    "clearFilters": "Clear filters",
+    "featured": "Featured",
+    "readMore": "Read",
+    "readingTime": "min read",
+    "readingTimeShort": "min",
+    "share": "Share",
+    "copyLink": "Copy link",
+    "copied": "Copied!",
+    "related": "Related articles",
+    "clusterSeries": "In this series",
+    "clusterSeriesHint": "More articles in the same topic cluster — built for deeper internal linking and topical authority.",
+    "viewAll": "View all",
+    "backToBlog": "Back to blog",
+    "toc": "Contents",
+    "updated": "Updated",
+    "ctaTitle": "Want new guides delivered by email?",
+    "ctaSubtitle": "One email per month with our best articles — no spam, unsubscribe any time.",
+    "ctaAction": "Subscribe",
+    "articleLoading": "Loading article…",
+    "shareOn": "Share on {{network}}",
+    "notFoundTitle": "Article not found",
+    "notFoundDescription": "Sorry, this article does not exist or has been moved.",
+    "notFoundCta": "Back to blog",
     "categories": {
       "all": "All",
-      "cloud": "Cloud Solutions",
-      "web": "Web Development",
-      "cyber": "Cybersecurity",
+      "business": "Business",
+      "development": "Development",
+      "mobile": "Mobile",
+      "ecommerce": "E-commerce",
+      "seo": "SEO",
+      "security": "Security",
       "ai": "AI & Data",
-      "devops": "DevOps",
-      "mobile": "Mobile"
-    },
-    "posts": {
-      "cloud": {
-        "title": "The Future of Cloud Computing in 2024",
-        "excerpt": "Exploring the latest trends and innovations in cloud computing..."
-      },
-      "react": {
-        "title": "Best Practices for React Development",
-        "excerpt": "Learn the essential best practices for building scalable React applications..."
-      },
-      "cyber": {
-        "title": "Cybersecurity Threats in 2024",
-        "excerpt": "Understanding the evolving landscape of cybersecurity threats..."
-      },
-      "ai": {
-        "title": "AI and Machine Learning Trends",
-        "excerpt": "Discover the latest trends in artificial intelligence and machine learning..."
+      "cloud": "Cloud"
+    }
+  },
+  "blogPosts": {
+    "cat-costa-site-web-moldova-2026": {
+      "title": "How much does a website cost in 2026? Complete guide with realistic budgets",
+      "metaTitle": "Website cost in 2026? Realistic budgets — SoftIonyx guide",
+      "metaDescription": "Full guide with realistic 2026 budgets: landing pages, corporate sites, e-commerce, custom apps. Cost factors, examples, and how to request a fair quote.",
+      "keywords": "website cost 2026, web development budget, agency rates, e-commerce build cost, Europe web project",
+      "excerpt": "From €800 for a simple landing page to €15,000+ for a complex e-commerce build — we walk through each category with realistic market ranges, what drives cost, and how to compare proposals fairly.",
+      "coverAlt": "SoftIonyx — professional IT solutions (web, mobile, blockchain)",
+      "authorName": "SoftIonyx Team",
+      "authorRole": "Editorial",
+      "authorBio": "We write about software development, SEO, and web delivery for clients in Europe and worldwide. 10+ years shipping web projects.",
+      "tags": ["Pricing", "Web development", "Guide", "2026"],
+      "toc": {
+        "introducere": "Why website prices vary so much",
+        "tipuri-de-site-uri": "Website types and realistic price ranges in 2026",
+        "landing-page": "1. Landing page / simple brochure site",
+        "site-corporativ": "2. Corporate / business website",
+        "e-commerce": "3. Online store (e-commerce)",
+        "aplicatie-custom": "4. Custom web app (SaaS, portal)",
+        "factori-pret": "What raises (or lowers) the final price",
+        "cms-vs-custom": "CMS / headless vs custom — what to choose?",
+        "costuri-ascunse": "Hidden costs nobody mentions",
+        "cum-ceri-oferta": "How to request a fair quote (and compare bids)",
+        "faq": "Frequently asked questions",
+        "concluzie": "Conclusion: what budget is realistic?"
       }
     },
-    "tags": {
-      "cloud": "Cloud",
-      "aws": "AWS",
-      "technology": "Technology",
-      "react": "React",
-      "javascript": "JavaScript",
-      "frontend": "Frontend",
-      "security": "Security",
-      "cyber": "Cybersecurity",
-      "threats": "Threats",
-      "ai": "AI",
-      "ml": "Machine Learning",
-      "dataScience": "Data Science"
+    "ghid-complet-dezvoltare-web-moldova-2026": {
+      "title": "Complete guide: web development in 2026 — from strategy to launch",
+      "metaTitle": "Complete web development guide 2026 | SoftIonyx pillar",
+      "metaDescription": "Project types, stack choices, design, frontend/backend, CMS vs custom, security, hosting, budgets, vendor selection, and a pre-launch checklist — hub page with satellite guides.",
+      "keywords": "web development guide, website project 2026, custom software, technical delivery, Europe",
+      "excerpt": "A pillar article on how real web delivery works: which technical decisions matter, where money goes, and how to avoid common traps — with links to satellite guides in the same cluster.",
+      "coverAlt": "Concept diagram: strategy, design, development, and web launch",
+      "authorName": "SoftIonyx Team",
+      "authorRole": "Editorial",
+      "authorBio": "We write about software development, SEO, and web delivery for clients in Europe and worldwide. 10+ years shipping web projects.",
+      "tags": ["Web development", "Guide", "2026", "Hub"],
+      "toc": {
+        "context-piata": "Context: what web development means today",
+        "tipuri-proiecte": "Project types and what you actually ship",
+        "faza-strategie": "Phase 1 — Strategy, brief, and information architecture",
+        "design-ux-ui": "Phase 2 — UX, UI, and a pragmatic design system",
+        "implementare-tehnica": "Phase 3 — Engineering: frontend, backend, integrations",
+        "cms-custom-headless": "CMS, custom, headless: choosing a model",
+        "ecommerce-seo-tehnic": "E-commerce, payments, and technical SEO foundations",
+        "securitate-performance": "Security, performance, and QA",
+        "hosting-devops": "Hosting, domains, SSL, and continuous delivery",
+        "buget-timeline": "Budget, timelines, and contracts — realistic in 2026",
+        "alegere-furnizor": "Choosing a partner (agency vs freelancer)",
+        "greseli-frecvente": "Common mistakes that inflate cost or delay launches",
+        "checklist-lansare": "Pre-launch checklist",
+        "seria-dezvoltare-web": "Continue the series — recommended satellites"
+      }
+    },
+    "cms-vs-dezvoltare-custom-2026": {
+      "title": "CMS, headless, or custom development (2026): a short guide for decision-makers",
+      "metaTitle": "CMS vs custom web development 2026 | SoftIonyx",
+      "metaDescription": "How to choose a classic CMS, headless CMS, SaaS storefront, or custom code: total cost, speed, security, scaling, and maintenance — without betting everything on one vendor.",
+      "keywords": "headless CMS, custom web app, web architecture 2026, SaaS vs custom, Europe web development",
+      "excerpt": "There is no universal “best” stack — only the fit for your content volume, catalog complexity, and how you want to scale over the next few years.",
+      "coverAlt": "Diagram: CMS, API, and custom application",
+      "authorName": "SoftIonyx Team",
+      "authorRole": "Editorial",
+      "authorBio": "We write about software development, SEO, and web delivery for clients in Europe and worldwide. 10+ years shipping web projects.",
+      "tags": ["CMS", "headless", "custom", "architecture", "2026"],
+      "toc": {
+        "intro-decizie": "Why platform choice deserves its own article",
+        "cms-headless": "Classic and headless CMS: when they help, when they get in the way",
+        "saas-magazin": "SaaS storefront platforms: pros and limits",
+        "custom-cand": "Custom development: when templates stop working",
+        "tabel-comparativ": "Practical comparison: cost, time, risk",
+        "legaturi-serie": "More from the same series"
+      }
+    },
+    "hosting-performance-web-moldova-2026": {
+      "title": "Hosting, domains, and web performance: Core Web Vitals explained",
+      "metaTitle": "Hosting & website performance 2026 | Core Web Vitals",
+      "metaDescription": "DNS, SSL, caching, CDN, image optimization, and Core Web Vitals: how they affect SEO and conversion — a practical guide for any team shipping to the web.",
+      "keywords": "hosting, site speed, Core Web Vitals, SSL, CDN",
+      "excerpt": "A beautiful but slow site loses Google rankings and checkout conversions. Here is what healthy infrastructure looks like and what to ask your provider.",
+      "coverAlt": "Server rack and web performance charts",
+      "authorName": "SoftIonyx Team",
+      "authorRole": "Editorial",
+      "authorBio": "We write about software development, SEO, and web delivery for clients in Europe and worldwide. 10+ years shipping web projects.",
+      "tags": ["Hosting", "Performance", "Technical SEO", "CWV", "2026"],
+      "toc": {
+        "intro-performanta": "Why infrastructure is part of the product",
+        "domenii-dns": "Domains, DNS, and SSL — boring until it breaks",
+        "hosting-tipuri": "Shared vs VPS vs managed cloud",
+        "cwv-seo": "Core Web Vitals and SEO",
+        "optimizari": "Quick wins: images, caching, fonts",
+        "legaturi-serie": "More from the cluster"
+      }
     }
   },
   "careers": {
@@ -592,9 +728,9 @@
     },
     "projects": {
       "rightmob": {
-        "title": "RightMob.md Website",
-        "desc": "Presentation website for Right Mob premium furniture.",
-        "imageAlt": "RightMob.md website preview"
+        "title": "RightMob.md — real estate platform",
+        "desc": "Web platform for property listings, lead capture, and workflows for agencies and investors.",
+        "imageAlt": "RightMob.md real estate platform preview"
       },
       "work2now": {
         "title": "Work2Now",

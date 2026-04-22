@@ -1,0 +1,1002 @@
+{
+  "detail": {
+    "ourServicesBadge": "SoftIonyx Services",
+    "sectionWhatWeOffer": "What we deliver",
+    "cardDeliver": "What we build",
+    "cardForWhom": "For whom",
+    "cardOutcomes": "Typical outcomes",
+    "techStack": "Tech stack",
+    "howWeWork": "How we work",
+    "caseStudyTitle": "Case study",
+    "caseStudyPrev": "Previous project",
+    "caseStudyNext": "Next project",
+    "caseStudySlideStatus": "Project {{current}} of {{total}}",
+    "caseStudyGoToSlide": "Show project {{current}} of {{total}}",
+    "viewFullPortfolio": "View full portfolio",
+    "viewLiveProject": "View live project",
+    "pricingTitle": "Packages & Pricing",
+    "pricingSubtitle": "Prices below are indicative. We finalise the offer together after a 30-minute discovery call.",
+    "mostPopular": "Most popular",
+    "requestCustom": "Request a custom quote",
+    "fromPrefix": "from",
+    "faqTitle": "Frequently asked questions",
+    "relatedServices": "Related services",
+    "learnMore": "Learn more",
+    "readyToStart": "Ready to get started?",
+    "readyToStartSubtitle": "We reply within 24 business hours. The first call is free, no strings attached — we'll see together if we're a good fit for your project.",
+    "ctaRequestFreeQuote": "Request free quote",
+    "ctaViewPricing": "View pricing",
+    "ctaViewPortfolio": "View portfolio",
+    "breadcrumbHome": "Home",
+    "breadcrumbServices": "Services"
+  },
+  "content": {
+    "dezvoltare-web": {
+      "metaTitle": "Web Development — Websites & Web Apps | SoftIonyx",
+      "metaDescription": "Professional web development for teams worldwide: corporate sites, SaaS platforms, custom web apps. Modern stack, responsive design, SEO included. Request a quote.",
+      "keywords": "web development, custom web apps, SaaS development, software agency, Europe, remote",
+      "h1": "Professional Web Development",
+      "tagline": "Websites and web apps that bring in customers — not just visitors.",
+      "intro": [
+        "We build websites and web apps that scale with your business. From high-converting landing pages to complex SaaS platforms with tens of thousands of users — SoftIonyx ships clean, performant code that's optimized for search engines.",
+        "We use the same modern stack (React, TypeScript, Node.js, PostgreSQL) relied on by global product teams, at budgets that work for startups and established companies alike. Every site we ship is mobile-first, accessible (WCAG), and optimized for Core Web Vitals — the ranking factors Google actually uses.",
+        "Unlike agencies that ship generic templates, we build every project from the ground up around your business goals — so every page has a clear, measurable purpose."
+      ],
+      "whatWeDo": [
+        "Corporate & marketing websites (SEO included)",
+        "Multi-tenant SaaS platforms with integrated billing",
+        "Custom web apps (dashboards, CRM, ERP)",
+        "Progressive Web Apps (PWA) — works offline too",
+        "Redesigns & migrations from legacy sites / older stacks",
+        "API integrations with external systems (Stripe, PayU, SMS, ERP)",
+        "Performance & Core Web Vitals optimization",
+        "Ongoing maintenance & technical support"
+      ],
+      "forWhom": [
+        "Startups launching a SaaS product",
+        "Local companies migrating from a legacy website",
+        "E-commerce teams outgrowing template or SaaS limits",
+        "Agencies needing a reliable technical partner for their clients",
+        "Real estate investors (see RightMob)"
+      ],
+      "outcomes": [
+        "Fast site (LCP < 2.5s, Lighthouse score 90+)",
+        "Better Google rankings for your target keywords",
+        "Higher conversion rates thanks to thoughtful UX",
+        "Code that's easy to maintain and extend long-term",
+        "Technology independence — the code is yours"
+      ],
+      "process": [
+        {
+          "title": "1. Discovery & Strategy (1-2 weeks)",
+          "description": "We meet, review your goals, competitors and audience. We define measurable KPIs and the technical architecture."
+        },
+        {
+          "title": "2. Design & Prototyping (2-3 weeks)",
+          "description": "Wireframes → high-fidelity mockups in Figma → interactive prototype. We iterate until you're happy before writing a line of code."
+        },
+        {
+          "title": "3. Development & Testing (4-8 weeks)",
+          "description": "1-2 week sprints with a demo at the end of each. Automated tests, manual QA, performance tuning."
+        },
+        {
+          "title": "4. Launch & Optimization (ongoing)",
+          "description": "Deploy on your infrastructure or ours. Monitoring, A/B testing, monthly SEO improvements."
+        }
+      ],
+      "pricing": [
+        {
+          "name": "Landing Page",
+          "description": "Single high-conversion page, mobile-first, SEO optimized.",
+          "features": [
+            "Up to 5 sections",
+            "Custom design in Figma",
+            "Contact form + email integration",
+            "On-page SEO + structured data",
+            "First year of hosting included",
+            "Delivered in 2-3 weeks"
+          ]
+        },
+        {
+          "name": "Corporate Website",
+          "description": "Full company website, multilingual, with a blog.",
+          "features": [
+            "8-15 pages",
+            "Multilingual (ro/en/ru)",
+            "Blog with a dedicated CMS",
+            "Advanced SEO + dynamic sitemap",
+            "Google Analytics & Search Console",
+            "3 months of post-launch support",
+            "Delivered in 6-8 weeks"
+          ]
+        },
+        {
+          "name": "Custom Web App",
+          "description": "SaaS / dashboard / custom platform built from scratch.",
+          "features": [
+            "Discovery & architecture",
+            "Authentication + roles",
+            "Admin dashboard",
+            "API integrations (payments, email, etc.)",
+            "Cloud infrastructure",
+            "6 months of support & maintenance",
+            "Delivered in 3-6 months"
+          ]
+        }
+      ],
+      "caseStudies": [
+        {
+          "name": "RightMob — Real Estate Platform",
+          "summary": "We built the RightMob.md real estate brokerage platform from scratch — for agencies and investors selling online.",
+          "highlights": [
+            "React + Node.js + PostgreSQL architecture",
+            "Advanced search with multiple filters",
+            "Admin panel for listing management",
+            "Mobile-first, loads in under 2 seconds",
+            "SEO tuned for local and regional property searches"
+          ]
+        },
+        {
+          "name": "EasyWaste Removal — Logistics Platform",
+          "summary": "A logistics services booking platform for clients in Ireland, with scheduling, online payments and a full order management workflow.",
+          "highlights": [
+            "Modern React + Node.js stack",
+            "Stripe payment integration",
+            "Operator dashboard",
+            "Optimized for mobile (where most traffic comes from)",
+            "Deployed on scalable cloud infrastructure"
+          ]
+        },
+        {
+          "name": "CetatenieRO.md — citizenship services",
+          "summary": "An informational website and lead channel for Romanian citizenship services — structured guides, clear CTAs, and a trustworthy experience for clients across Europe.",
+          "highlights": [
+            "SEO-focused content architecture for sensitive legal topics",
+            "React + TypeScript with fast loads and improved accessibility",
+            "Forms and CTAs tuned for qualified inquiries",
+            "Multilingual experience with consistent messaging",
+            "Secure hosting, HTTPS, and GDPR-minded practices"
+          ]
+        }
+      ],
+      "testimonials": [
+        {
+          "quote": "Top-tier professionalism. They delivered on time, communicated excellently, and the result exceeded our expectations. I confidently recommend SoftIonyx to any serious business.",
+          "author": "RightMob Client",
+          "role": "Real estate platform founder"
+        },
+        {
+          "quote": "The booking and payments flow works flawlessly; our customers in Ireland use it every day. SoftIonyx understood our operational process and shipped it online without cutting corners.",
+          "author": "EasyWaste Removal Client",
+          "role": "Operations & logistics"
+        },
+        {
+          "quote": "A clear, well-structured site that ranks well keeps bringing us qualified leads from the diaspora. The collaboration was transparent from wireframes to launch.",
+          "author": "CetatenieRO Client",
+          "role": "Citizenship advisory services"
+        }
+      ],
+      "faq": [
+        {
+          "question": "How much does a website cost?",
+          "answer": "A landing page starts from EUR 800, a full corporate website from EUR 2500, and a custom web app from EUR 8000. Pricing depends on complexity, number of pages, integrations and custom features. We always provide a free estimate after a 30-minute conversation."
+        },
+        {
+          "question": "How long does it take to build a website?",
+          "answer": "A simple landing page: 2-3 weeks. A corporate website: 6-8 weeks. A custom web app: 3-6 months. We work in 1-2 week agile sprints with a demo at the end of each one, so you see steady progress."
+        },
+        {
+          "question": "What technologies do you use?",
+          "answer": "React + TypeScript for the frontend (the same stack Facebook, Netflix and Airbnb use), Node.js on the backend, PostgreSQL for the database, and Tailwind CSS for styling. For projects that need maximum SEO, we reach for Next.js with SSR/SSG. Everything is hosted on modern cloud infrastructure (AWS, Vercel, DigitalOcean)."
+        },
+        {
+          "question": "Will the site be optimized for Google?",
+          "answer": "Absolutely. Every site we ship includes: on-page SEO (meta tags, structured data, sitemap), optimized Core Web Vitals (LCP, FID, CLS), clean URLs, schema.org markup, and hreflang for multilingual sites. We register the site with Google Search Console and deliver an initial SEO report."
+        },
+        {
+          "question": "Will I own the source code?",
+          "answer": "Yes, 100%. Once the project is paid for, you receive full rights to the code, the Figma designs and the technical documentation. We don't lock you into our infrastructure — you can move the site wherever you want."
+        },
+        {
+          "question": "Do you offer maintenance after launch?",
+          "answer": "Yes. We offer monthly maintenance packages (from EUR 150/month) that include: security updates, backups, uptime monitoring, minor content changes and monthly reports. The \"Corporate Website\" package includes the first 3 months of support for free."
+        },
+        {
+          "question": "Do you work remotely with clients in other countries or time zones?",
+          "answer": "Yes, we have clients in Romania, Ireland, Germany and the USA. We communicate in Romanian, Russian and English. All projects are run remotely with modern tools (Slack, Figma, Linear, Loom)."
+        }
+      ],
+      "testimonial": {
+        "quote": "Top-tier professionalism. They delivered on time, communicated excellently, and the result exceeded our expectations. I confidently recommend SoftIonyx to any serious business.",
+        "author": "RightMob Client",
+        "role": "Real estate platform founder"
+      }
+    },
+    "aplicatii-mobile": {
+      "metaTitle": "Mobile Apps — iOS & Android | SoftIonyx",
+      "metaDescription": "Native and cross-platform iOS & Android mobile app development. React Native, Flutter, Swift. From MVP to products with millions of users.",
+      "keywords": "mobile apps, iOS development, Android development, React Native, Flutter, cross-platform, remote",
+      "h1": "iOS & Android Mobile App Development",
+      "tagline": "Mobile apps that stay on the home screen — not buried in a drawer folder.",
+      "intro": [
+        "We build mobile apps that people actually use. Not just polished tech demos, but products that solve real problems and earn loyal users. We've shipped apps for clients across multiple countries and time zones with the same clear, predictable delivery process.",
+        "For most businesses we recommend a cross-platform approach with React Native or Flutter — a single codebase for iOS and Android, 40-60% lower cost and faster time to market. For products that need top-end performance or platform-specific features (AR, on-device ML), we build native apps in Swift and Kotlin.",
+        "We handle the full product lifecycle: from idea and UX research through design, development, App Store & Google Play submission, marketing, user analytics and monthly iteration cycles."
+      ],
+      "whatWeDo": [
+        "Native iOS apps (Swift, SwiftUI)",
+        "Native Android apps (Kotlin, Jetpack Compose)",
+        "Cross-platform apps (React Native, Flutter)",
+        "MVPs for startups in 8-12 weeks",
+        "App Store & Google Play submission",
+        "Native integrations (camera, GPS, push notifications, Apple/Google Pay)",
+        "Backend & API for mobile apps",
+        "Maintenance, feature updates, iOS/Android OS upgrades"
+      ],
+      "forWhom": [
+        "Startups that need to launch an MVP fast",
+        "Logistics and on-demand service companies",
+        "Retailers looking for a loyalty + payments app",
+        "On-demand services (booking, delivery, taxi)",
+        "Content platforms and community apps"
+      ],
+      "outcomes": [
+        "Working MVP on the App Store / Google Play in 8-12 weeks",
+        "4.5+ store ratings thanks to rigorous QA",
+        "40-60% lower cost than building two separate native apps",
+        "Built-in analytics so you can see what users actually do",
+        "Scalable infrastructure ready for fast growth"
+      ],
+      "process": [
+        {
+          "title": "1. Discovery & UX Research (1-2 weeks)",
+          "description": "Interviews with prospective users, competitive analysis, user flows, feature scoping for the MVP."
+        },
+        {
+          "title": "2. UI Design & Prototyping (2-4 weeks)",
+          "description": "Full screen design in Figma, a navigable prototype you can test on your phone, and validation with real users before a single line of code."
+        },
+        {
+          "title": "3. Development & QA (6-12 weeks)",
+          "description": "Bi-weekly sprints, test builds for the client, automated + manual QA across multiple devices."
+        },
+        {
+          "title": "4. Submission & Launch (1-2 weeks)",
+          "description": "Apple & Google review, ASO (App Store Optimization), go-live and 24/7 technical support during the first week."
+        }
+      ],
+      "pricing": [
+        {
+          "name": "Cross-Platform MVP",
+          "description": "iOS & Android app with the core features you need.",
+          "features": [
+            "Authentication + profiles",
+            "Up to 8-10 core screens",
+            "Backend API included",
+            "Push notifications",
+            "App Store + Google Play submission",
+            "Delivered in 8-10 weeks"
+          ]
+        },
+        {
+          "name": "Full-Featured App",
+          "description": "Mature app with payments, chat, analytics and an admin panel.",
+          "features": [
+            "15-25+ screens",
+            "Payment integrations (Stripe, Apple/Google Pay)",
+            "Real-time chat",
+            "Web admin panel",
+            "Analytics (Mixpanel, Amplitude)",
+            "6 months of support included",
+            "Delivered in 3-5 months"
+          ]
+        },
+        {
+          "name": "Complex Native App",
+          "description": "Native Swift + Kotlin for advanced needs (AR, ML, streaming).",
+          "features": [
+            "100% native code",
+            "Top-end performance",
+            "Advanced device features",
+            "Custom SDKs on request",
+            "Dedicated tech lead",
+            "Delivered in 5-8 months"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "How much does mobile app development cost?",
+          "answer": "A cross-platform MVP starts from EUR 6000. A full-featured app with payments and chat: EUR 15000-25000. Complex native apps (with AR, ML, streaming) can run EUR 40000+. Compared with agencies in Western Europe, we're 50-70% more affordable at the same quality bar."
+        },
+        {
+          "question": "React Native vs Flutter vs native — what do you recommend?",
+          "answer": "For 80% of projects we recommend React Native or Flutter (cross-platform) — one codebase for iOS and Android, lower time and cost, and performance that's more than enough for most use cases. Native (Swift + Kotlin) we only use for apps with specific needs: gaming, AR, on-device ML, or advanced video streaming."
+        },
+        {
+          "question": "How long does it take from idea to store launch?",
+          "answer": "MVP: 8-12 weeks. Full-featured app: 4-6 months. Complex app: 6-12 months. The timeline includes the 1-7 day review in the App Store / Google Play, which we manage end-to-end."
+        },
+        {
+          "question": "Do you also handle App Store / Google Play submission?",
+          "answer": "Yes, end-to-end. We create the developer accounts (if you don't have them), prepare all the assets (icons, screenshots, ASO-optimized descriptions), walk the app through review and make sure it gets approved. We also offer ASO (App Store Optimization) to grow organic discovery."
+        },
+        {
+          "question": "What happens when Apple/Google update their platforms?",
+          "answer": "We offer maintenance packages (from EUR 200/month) covering upgrades to new iOS/Android versions, fixes for deprecated APIs, security updates and compatibility with new devices."
+        },
+        {
+          "question": "Who owns the code and the developer accounts?",
+          "answer": "You do, 100%. All accounts (App Store, Google Play, Firebase, AWS) are in your company's name. The source code is fully yours once the project is paid for. We don't lock you in — you can hand the app off to another developer at any time."
+        }
+      ]
+    },
+    "e-commerce": {
+      "metaTitle": "Online Stores — E-commerce | SoftIonyx",
+      "metaDescription": "We build professional online stores on custom and headless stacks: fast UX, local payments (MAIB, PayNet), delivery, fiscal workflows. Request a quote.",
+      "keywords": "online store, e-commerce development, headless commerce, custom storefront, MAIB integration, PayNet, international",
+      "h1": "Online Store & E-commerce Development",
+      "tagline": "Online stores that sell — not just look good.",
+      "intro": [
+        "We build online stores that turn visitors into customers. With experience across Europe and international projects, we know how to wire payments, invoicing and carriers wherever you operate — including MAIB/PayNet when you need them in-region.",
+        "We focus on custom and headless commerce (React / Next.js + Node.js) when you need performance, deep integrations, and full control — not boxed SaaS limits.",
+        "Every store includes SEO optimization for categories and products, sub-2-second load times, mobile-first UX (most e-commerce traffic is mobile) and integrations with the marketing tools you actually need."
+      ],
+      "whatWeDo": [
+        "Custom e-commerce platforms (React + Node.js)",
+        "Headless storefronts wired to your back office",
+        "Payment integrations (MAIB, PayNet, Stripe, PayPal)",
+        "Shipping integrations (Nova Post, DPD, local couriers)",
+        "Invoicing & integration with 1C / SAGA / MyFin",
+        "Loyalty & voucher systems",
+        "Marketing automation (email, SMS, remarketing)",
+        "SEO for categories & product pages",
+        "Migration from another store with zero data loss"
+      ],
+      "forWhom": [
+        "Local brands selling online (fashion, cosmetics, food)",
+        "B2B distributors with large catalogs",
+        "Service businesses with online booking",
+        "Brick-and-mortar retailers expanding online",
+        "Stores outgrowing template or SaaS constraints"
+      ],
+      "outcomes": [
+        "Higher conversion rates (2-5% industry standard)",
+        "Larger average cart through cross-sell & upsell",
+        "Lower order processing costs",
+        "Loyal customers thanks to loyalty programs",
+        "Organic visibility in Google Shopping"
+      ],
+      "process": [
+        {
+          "title": "1. Strategy & Planning (1 week)",
+          "description": "Product analysis, customer segments, competitive review, choosing the optimal architecture (SaaS-hosted vs custom / headless)."
+        },
+        {
+          "title": "2. Design & Configuration (2-4 weeks)",
+          "description": "Store design, category structure, catalog import, payment and shipping setup."
+        },
+        {
+          "title": "3. Integrations & Launch (2-4 weeks)",
+          "description": "Integration with external systems (ERP, invoicing, couriers), end-to-end order testing, go-live."
+        },
+        {
+          "title": "4. Marketing & Optimization (ongoing)",
+          "description": "Google Shopping, Facebook Ads, SEO, email marketing, continuous A/B testing to grow conversion."
+        }
+      ],
+      "pricing": [
+        {
+          "name": "Commerce MVP",
+          "description": "Focused custom storefront for a smaller catalog — ready to sell in a few weeks.",
+          "features": [
+            "Tailored UX for your catalog",
+            "Up to ~100 SKUs imported",
+            "Local payment integrations (MAIB, PayNet) where needed",
+            "Carrier integration",
+            "Basic SEO",
+            "Training for your team"
+          ]
+        },
+        {
+          "name": "Custom Store",
+          "description": "Custom platform with features tailored to your business.",
+          "features": [
+            "Unique design",
+            "Custom functionality",
+            "Multilingual (ro/en/ru)",
+            "ERP / 1C integration",
+            "Loyalty system",
+            "Advanced SEO",
+            "Delivered in 2-3 months"
+          ]
+        },
+        {
+          "name": "E-commerce Enterprise",
+          "description": "Scalable solution for high-volume stores with multiple warehouses.",
+          "features": [
+            "Headless commerce (Next.js + Medusa)",
+            "Multi-warehouse & multi-currency",
+            "Separate B2B portal",
+            "Marketplace APIs",
+            "Scalable cloud architecture",
+            "12 months of dedicated support"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Do you build on SaaS storefronts or only custom?",
+          "answer": "We specialize in custom and headless builds we can own end-to-end: performance, integrations, and long-term maintainability. If you already use a SaaS cart, we can integrate via APIs, but we do not implement boxed SaaS or legacy PHP storefronts as a core offering."
+        },
+        {
+          "question": "Do you integrate MAIB and PayNet for local payments?",
+          "answer": "Yes on the stacks we ship (custom / headless). We have experience with MAIB e-commerce, PayNet, VictoriaBank and local terminals. We configure 3D Secure payments, automatic invoicing and accounting reconciliation."
+        },
+        {
+          "question": "Can I migrate from an existing store without losing data?",
+          "answer": "Yes, fully. We migrate product catalogs, order history, customer accounts and reviews from any platform (OpenCart, PrestaShop, Magento, other custom stores). We keep the old URLs with 301 redirects so you don't lose your SEO rankings."
+        },
+        {
+          "question": "How do you integrate shipping and invoicing?",
+          "answer": "We have direct integrations with Nova Post, DPD and local couriers (label printing, automatic tracking). For invoicing: 1C, SAGA, MyFin, or custom flows aligned with your country's tax rules (e.g. ANAF, SFS)."
+        },
+        {
+          "question": "What does online store maintenance include?",
+          "answer": "Security updates, daily backups, uptime monitoring, bug fixes, content changes (products, banners, promotions), support for your team and monthly sales reports. From EUR 200/month for small stores and EUR 500+/month for larger ones."
+        },
+        {
+          "question": "Do you also handle marketing (Google Ads, Facebook Ads, SEO)?",
+          "answer": "Yes. We offer monthly digital marketing packages covering Google Shopping, Facebook/Instagram Ads, ongoing SEO, email marketing and performance analysis. For e-commerce we typically recommend a marketing budget of 3-10x the platform investment in the first 6 months."
+        }
+      ]
+    },
+    "software-custom": {
+      "metaTitle": "Custom Software — CRM, ERP, SaaS | SoftIonyx",
+      "metaDescription": "Custom software for your business: CRM, ERP, SaaS platforms, internal management systems. On-time delivery, you own the code. Request a quote.",
+      "keywords": "custom software, CRM development, ERP, SaaS, business apps, software automation, international",
+      "h1": "Custom Business Software Development",
+      "tagline": "Software built around the way you work — not the other way around.",
+      "intro": [
+        "Off-the-shelf suites (SAP, Salesforce, one-size CMS products) rarely fit 100% of your actual processes. When you excel in a niche, you need tools that support how you work — not ones that force you to adapt to a product designed for everyone.",
+        "We build custom software for companies worldwide: industry-specific CRMs, ERPs with fiscal and operational rules for your markets, B2B SaaS platforms, internal systems that automate repetitive work.",
+        "Our process always starts with a deep understanding of your business. We spend the first few weeks talking with your team, observing the current flows and spotting opportunities for automation. Only then do we write code."
+      ],
+      "whatWeDo": [
+        "Custom CRMs (customer management + sales)",
+        "ERPs tailored to your industry",
+        "Multi-tenant B2B SaaS platforms",
+        "Internal management systems (inventory, production, HR)",
+        "Client portals & employee self-service",
+        "Integrations between existing systems (ERP + e-commerce + accounting)",
+        "Workflow automations (approvals, reporting)",
+        "Dashboards & BI (business intelligence)"
+      ],
+      "forWhom": [
+        "Companies that have outgrown Excel and need a centralized system",
+        "Startups building a B2B SaaS product",
+        "Businesses with unique processes that don't fit SAP/Salesforce",
+        "Companies looking to automate repetitive manual work",
+        "Organizations with many disconnected systems that need integrating"
+      ],
+      "outcomes": [
+        "Time saved: 20-50% of administrative work",
+        "Centralized data, a single source of truth",
+        "Real-time reports instead of manual end-of-month spreadsheets",
+        "Standardized processes with fewer human errors",
+        "A competitive edge — a tool your competitors don't have"
+      ],
+      "process": [
+        {
+          "title": "1. Business Analysis (2-4 weeks)",
+          "description": "Interviews with the team, mapping of current processes, identification of automation opportunities, detailed functional specifications."
+        },
+        {
+          "title": "2. Architecture & Prototyping (2-3 weeks)",
+          "description": "Technical architecture design, wireframes, an interactive prototype for validation before development starts."
+        },
+        {
+          "title": "3. Iterative Development (3-9 months)",
+          "description": "2-week sprints with a demo at the end of each. The first usable module is live in 6-8 weeks, and we build from there."
+        },
+        {
+          "title": "4. Deployment & Onboarding (2-4 weeks)",
+          "description": "Deploy to your infrastructure, migrate data from legacy systems, train your team, 3 months of support included."
+        }
+      ],
+      "caseStudy": {
+        "name": "Work2Now — Recruitment Platform",
+        "summary": "A full recruitment and candidate management platform for companies in the EU, with a dashboard for HR, a candidate portal and an automatic matching system.",
+        "highlights": [
+          "Multi-tenant SaaS architecture",
+          "Candidate ↔ job matching engine",
+          "Separate portals for candidates and recruiters",
+          "ATS integrations and calendar sync",
+          "Scalable to dozens of enterprise clients"
+        ]
+      },
+      "faq": [
+        {
+          "question": "Why commission custom software instead of buying something off the shelf?",
+          "answer": "Because off-the-shelf solutions (Salesforce, SAP, Odoo) cover 60-70% of your needs generically — the remaining 30-40% turns into manual work or workarounds. Custom software = 100% fit to your processes + no long-term monthly licensing. ROI is typically reached in 12-18 months for companies with 20+ employees."
+        },
+        {
+          "question": "How long does it take to build a custom CRM/ERP?",
+          "answer": "Usable MVP: 3-4 months. Complete system: 6-12 months. We use an iterative approach — the first module goes into production in 6-8 weeks, and the rest is added as we build. You don't wait a year to see results."
+        },
+        {
+          "question": "How much does custom business software cost?",
+          "answer": "We start from EUR 10000 for a simple MVP. A complete CRM or ERP: EUR 25000-60000. Mature B2B SaaS platforms: EUR 60000+. Compared with 5 years of Salesforce/SAP licenses, custom software is usually 40-60% cheaper in total — and it becomes an asset you own."
+        },
+        {
+          "question": "What if I need changes after launch?",
+          "answer": "We offer monthly support & evolution packages from EUR 1000/month. They include changes, new features, support and maintenance. Because the code is yours, you can bring in another developer any time — you're not locked in with us."
+        },
+        {
+          "question": "Does it integrate with my existing systems (accounting, ERP)?",
+          "answer": "Yes, integration is part of the project. We work with APIs for 1C, SAGA, Saga Business, MyFin, QuickBooks, Xero, SAP, Odoo, Microsoft Dynamics, Stripe and PayU. When the external system doesn't have an API, we build integrations via automated CSV import/export or RPA."
+        },
+        {
+          "question": "Is my data safe?",
+          "answer": "Yes. We apply enterprise-grade standards: TLS 1.3 in transit, AES-256 at rest, automated daily backups, separate dev/staging/prod environments, audit logs, 2FA authentication and GDPR compliance. We can deploy on your own infrastructure (on-premise) if you prefer full control."
+        }
+      ]
+    },
+    "seo-optimizare": {
+      "metaTitle": "SEO — Google Optimization | SoftIonyx",
+      "metaDescription": "Professional SEO services: audits, keyword research, technical SEO, content marketing, link building. Grow your organic traffic on Google.",
+      "keywords": "SEO, Google optimization, SEO audit, technical SEO, SEO content, international",
+      "h1": "SEO Optimization for Businesses",
+      "tagline": "Show up on Google — without paying for every click.",
+      "intro": [
+        "SEO (Search Engine Optimization) = traffic you don't have to pay for. Once you rank well for your target keywords, you get qualified visitors every day — for free. But getting there takes strategy, technical work and patience.",
+        "We offer full-service SEO for local and international businesses: technical audits, keyword research tuned to your target markets (service + city, B2B + industry), content in the languages your site needs, ethical link building and transparent monthly reports.",
+        "Our approach is based on hard data — not promises. We use Ahrefs, SEMrush, Google Search Console and Google Analytics. You get monthly reports that show exactly what was done, what improved and what's coming next."
+      ],
+      "whatWeDo": [
+        "Full SEO audit (technical + on-page + off-page)",
+        "Keyword research for your target markets",
+        "Technical SEO (Core Web Vitals, sitemap, schema.org, hreflang)",
+        "On-page SEO (meta tags, URL structure, headings, internal linking)",
+        "Content marketing (SEO-optimized blog articles)",
+        "Ethical link building & digital PR",
+        "Local SEO (Google Business Profile, local directories)",
+        "E-commerce SEO (categories, products, Google Shopping)",
+        "Monitoring + monthly reports"
+      ],
+      "forWhom": [
+        "Local businesses that need to show up when someone searches in their area",
+        "E-commerce stores looking to reduce dependency on paid ads",
+        "B2B firms with long sales cycles",
+        "Sites that lost rankings after a Google update",
+        "Startups that want to grow organically from zero"
+      ],
+      "outcomes": [
+        "100-500% organic traffic growth in 6-12 months",
+        "Lower marketing costs (less spend on Google Ads)",
+        "Higher-quality leads (real intent)",
+        "Greater authority in your niche",
+        "Results that last for years, not days"
+      ],
+      "process": [
+        {
+          "title": "1. Audit & Strategy (2-3 weeks)",
+          "description": "Full 200+ point audit, competitor analysis, keyword research with target-market volumes, 6-month action plan."
+        },
+        {
+          "title": "2. Technical SEO (1-2 months)",
+          "description": "We fix technical issues: speed, mobile, crawl errors, structured data, sitemap, canonical URLs."
+        },
+        {
+          "title": "3. Content & On-Page (ongoing)",
+          "description": "We publish 2-4 articles/month, optimize existing pages, build pillar content on topic clusters."
+        },
+        {
+          "title": "4. Link Building & Local SEO (ongoing)",
+          "description": "Guest posting, digital PR, local directories, Google Business Profile, authentic reviews."
+        }
+      ],
+      "pricing": [
+        {
+          "name": "One-Time SEO Audit",
+          "description": "Full audit + 30+ page action plan. Delivered in 2 weeks.",
+          "features": [
+            "200+ point technical audit",
+            "Top 5 competitor analysis",
+            "Keyword research (100+ keywords)",
+            "Prioritized action plan",
+            "1-hour walkthrough call"
+          ]
+        },
+        {
+          "name": "Monthly SEO",
+          "description": "Ongoing SEO retainer — the best long-term ROI.",
+          "features": [
+            "2 SEO-optimized articles/month",
+            "Continuous on-page optimization",
+            "Link building (2-5 links/month)",
+            "Ranking tracking for 50+ keywords",
+            "Detailed monthly report",
+            "Unlimited email/call support"
+          ]
+        },
+        {
+          "name": "SEO Enterprise",
+          "description": "For companies that want aggressive scaling over 12 months.",
+          "features": [
+            "4-8 articles/month",
+            "Digital PR & premium link building",
+            "Content in multiple languages",
+            "Dedicated SEO consultant",
+            "Custom dashboard",
+            "Weekly reports"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "How long until I see results from SEO?",
+          "answer": "First improvements: 1-3 months (technical SEO moves quickly). Visible traffic results: 4-6 months. Major results: 6-12 months. SEO is a marathon, not a sprint — but the results last for years. By contrast, when you stop running Google Ads, you stop getting traffic."
+        },
+        {
+          "question": "How much do SEO services cost?",
+          "answer": "One-time audit: EUR 400-800. Monthly retainer: EUR 500-1500 for small-to-medium businesses, EUR 2000-5000 for e-commerce and complex B2B. Compared with Google Ads (where you pay EUR 0.3-2 per click), SEO typically pays for itself in 8-14 months and keeps driving free traffic for years."
+        },
+        {
+          "question": "Do you guarantee the #1 spot on Google?",
+          "answer": "No — and anyone who promises that is lying. Google uses 200+ ranking factors and the algorithm changes constantly. What we guarantee: a transparent methodology, clear reports and measurable improvements. In 90% of our cases, clients saw 2-5x growth in organic traffic in the first year."
+        },
+        {
+          "question": "Do you work with existing sites or only new ones?",
+          "answer": "Both. In fact, existing sites with history have an advantage (they already have domain authority). We run an audit, identify issues and improve what's there. For new sites, we plan SEO from the architecture stage."
+        },
+        {
+          "question": "What is Local SEO and do I need it?",
+          "answer": "Local SEO = showing up when someone searches in your geographic area (e.g. service + city). It covers Google Business Profile, reviews, local directories and consistent NAP. If you have local customers, it's essential — a large share of Google searches have local intent."
+        },
+        {
+          "question": "Why not just Google Ads — isn't that faster?",
+          "answer": "Google Ads = fast traffic, but you pay continuously. When you stop, it stops. SEO = steady traffic that grows over time, with no cost per click. The ideal mix: both. Ads for short-term results, SEO as a long-term foundation. Clients who rely on Ads alone end up with EUR 50+ cost per lead in 2-3 years."
+        }
+      ]
+    },
+    "mentenanta-site": {
+      "metaTitle": "Website Maintenance — Technical Support | SoftIonyx",
+      "metaDescription": "Professional website maintenance: security updates, daily backups, 24/7 monitoring, technical support. Monthly plans starting at EUR 150.",
+      "keywords": "website maintenance, technical support, website administration, backups, security updates, 24/7",
+      "h1": "Website Maintenance & Support — Monthly Services",
+      "tagline": "Keep your site secure, fast and online. We take care of the rest.",
+      "intro": [
+        "A website isn't a project that ends at launch — it's more like a car. Without regular maintenance, problems pile up: outdated dependencies, exploited security holes, sites that buckle under heavier traffic, expired SSL certificates, missing backups.",
+        "We offer monthly maintenance for the modern stacks we deliver (React / Next.js / Node.js) and compatible setups. We handle dependency and security updates, automated backups, 24/7 uptime monitoring, performance tuning and technical support for you and your team.",
+        "And if something does happen, our response times are fast — 4 hours max on weekdays, 12 hours on weekends. We don't leave you with a downed site over the weekend in the middle of your Black Friday campaign."
+      ],
+      "whatWeDo": [
+        "Dependency, runtime and security updates for your stack",
+        "Automated daily backups + restore when something goes wrong",
+        "24/7 uptime monitoring with SMS/email alerts",
+        "Security scanning & malware removal",
+        "Performance tuning (load speed, caching)",
+        "Core Web Vitals monitoring and automatic fixes",
+        "Content changes (products, articles, pages, banners)",
+        "Support for your team (ticketing, email, chat)",
+        "Detailed monthly reports",
+        "Disaster recovery (recovery after a hack)"
+      ],
+      "forWhom": [
+        "Teams with a production site and no in-house platform engineer",
+        "E-commerce stores where downtime = lost sales",
+        "Corporate sites that need to stay online all the time",
+        "Long-time customers who want to outsource administration",
+        "Companies that inherited a site with no documentation"
+      ],
+      "outcomes": [
+        "99.9%+ uptime guaranteed",
+        "A site protected from hacking & malware",
+        "Backups available at any moment",
+        "Your team focused on the business, not technical problems",
+        "Peace of mind — you know someone has your back"
+      ],
+      "process": [
+        {
+          "title": "1. Onboarding (first week)",
+          "description": "Full technical audit, backup setup, monitoring installation, documentation handover."
+        },
+        {
+          "title": "2. Monthly Maintenance",
+          "description": "Controlled updates in scheduled windows, daily backups, continuous monitoring, monthly reports."
+        },
+        {
+          "title": "3. On-Demand Support",
+          "description": "Ticketing for issues, content changes and technical questions. Clear SLA: 4 hours on weekdays, 12 hours on weekends."
+        },
+        {
+          "title": "4. Quarterly Review",
+          "description": "We meet every 3 months to review performance, issues and opportunities for optimization."
+        }
+      ],
+      "pricing": [
+        {
+          "name": "Basic",
+          "description": "For small marketing sites (up to 10 pages).",
+          "features": [
+            "Monthly updates",
+            "Weekly backup",
+            "Uptime monitoring",
+            "Malware scanning",
+            "2h of content changes/month",
+            "Monthly report"
+          ]
+        },
+        {
+          "name": "Business",
+          "description": "For corporate sites or small online stores.",
+          "features": [
+            "Weekly updates",
+            "Daily backup + 30-day retention",
+            "24/7 monitoring with SMS",
+            "Performance optimization",
+            "6h of changes/month",
+            "4h response SLA",
+            "Priority support"
+          ]
+        },
+        {
+          "name": "Enterprise",
+          "description": "For large e-commerce stores and business-critical sites.",
+          "features": [
+            "Continuous maintenance",
+            "Hourly backup",
+            "24/7 monitoring + Datadog",
+            "Dedicated staging environment",
+            "20h of changes/month",
+            "1h response SLA",
+            "Dedicated account manager"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Do I need maintenance if my site seems fine?",
+          "answer": "Yes, even if it \"looks\" fine. Many incidents trace back to outdated dependencies or misconfigured servers. Without backups, a serious breach can mean rebuilding from scratch. Maintenance is like car insurance — you don't want to need it, but when you do, you really do."
+        },
+        {
+          "question": "What happens if the site goes down?",
+          "answer": "We're alerted automatically via monitoring. In 99% of cases we fix it in 30 minutes or less. If it's a hosting issue, we escalate to the hosting provider. If it's a hack, we restore from backup and close the vulnerability on the same day."
+        },
+        {
+          "question": "Do you also do content / design changes?",
+          "answer": "Yes, every package includes hours for changes (2-20h/month). For additional work, we charge an hourly rate (EUR 35-50/h). For large changes (page redesigns, new functionality) we provide a separate quote."
+        },
+        {
+          "question": "Which platforms do you maintain?",
+          "answer": "Primarily sites we built or modern JavaScript stacks (React, Next.js, Node.js) with clear repo and hosting access. We do not provide ongoing care for boxed SaaS carts or legacy PHP CMS storefronts. For complex proprietary platforms we run an audit before accepting the contract."
+        },
+        {
+          "question": "Can I cancel any time?",
+          "answer": "Yes, no penalties. Month-to-month contract with a 30-day cancellation notice. You get all credentials, a full backup and the technical documentation when you leave."
+        },
+        {
+          "question": "Why not handle updates myself?",
+          "answer": "You can, but you're taking risks: updates that break the site (incompatible plugins), no backup beforehand, not knowing what's critical vs. what can wait. We fix in an hour what might take you a full day. And if something breaks, we fix it — on your own, you'd be paying for an ad-hoc developer."
+        }
+      ]
+    },
+    "cyber-security": {
+      "metaTitle": "Cybersecurity — IT Security | SoftIonyx",
+      "metaDescription": "Cybersecurity services: security audits, penetration testing, GDPR compliance, IAM, continuous monitoring. Specialized IT security team.",
+      "keywords": "cybersecurity, IT security, penetration testing, security audit, GDPR, data protection",
+      "h1": "Cybersecurity for Businesses",
+      "tagline": "Don't wait to be hacked before taking security seriously.",
+      "intro": [
+        "A security incident costs an average of USD 4.45M globally (IBM 2023 report). For a small or mid-sized company, even a \"minor\" ransomware attack can mean weeks of downtime, lost customers, GDPR fines and reputational damage that's hard to recover from.",
+        "We help organizations protect themselves through security audits, penetration testing, Zero-Trust implementation, GDPR and ISO 27001 compliance, and continuous monitoring. Our team has experience with FinTech, healthcare, e-commerce and SaaS clients.",
+        "We don't hand you a 200-page technical report that no one reads. We deliver clear priorities: what has to be fixed right now, what within 30 days and what within 90. Plus a concrete remediation plan."
+      ],
+      "whatWeDo": [
+        "Security audits (web, mobile, infrastructure, cloud)",
+        "Penetration testing (black/gray/white box)",
+        "Vulnerability assessment & remediation",
+        "Zero-Trust architecture",
+        "Identity & Access Management (IAM)",
+        "SIEM / SOC — monitoring & alerting",
+        "Incident response & disaster recovery",
+        "GDPR, ISO 27001, SOC 2 compliance",
+        "DevSecOps & security in CI/CD",
+        "Security training for teams"
+      ],
+      "forWhom": [
+        "FinTechs and small banks",
+        "E-commerce stores that process payments",
+        "B2B SaaS companies selling to enterprise",
+        "Companies that store personal data (GDPR)",
+        "Clinics / healthcare providers handling medical data",
+        "Any company after a security incident"
+      ],
+      "outcomes": [
+        "Breach risk reduced by 80%+",
+        "Demonstrable GDPR/ISO compliance",
+        "Greater trust from enterprise clients",
+        "Fast incident response (minutes, not days)",
+        "Peaceful sleep for CEO & CTO"
+      ],
+      "process": [
+        {
+          "title": "1. Discovery & Scoping (1-2 weeks)",
+          "description": "We understand the architecture, define the audit scope and identify critical assets."
+        },
+        {
+          "title": "2. Audit & Testing (2-4 weeks)",
+          "description": "Penetration testing, code review, infrastructure scan, process analysis."
+        },
+        {
+          "title": "3. Report & Prioritization (1 week)",
+          "description": "Structured report: critical/high/medium/low vulnerabilities, impact, remediation effort, recommendations."
+        },
+        {
+          "title": "4. Remediation & Verification (ongoing)",
+          "description": "We implement fixes, re-test, document, train the team and set up continuous monitoring."
+        }
+      ],
+      "faq": [
+        {
+          "question": "Do I really need a security audit?",
+          "answer": "If you store customer data, process payments or have GDPR obligations to meet — yes. If you work with enterprise clients, they'll typically ask for an audit or ISO 27001 certification. If you've already had an incident — definitely. Prevention beats cleaning up after a breach."
+        },
+        {
+          "question": "How much does a security audit cost?",
+          "answer": "Web application audit: EUR 2000-5000. Infrastructure penetration testing: EUR 3000-8000. Full audit + remediation + ISO 27001 prep: EUR 15000-30000. It depends on complexity. We provide a fixed quote after a 1-hour scoping call."
+        },
+        {
+          "question": "GDPR and ISO 27001 — what do they mean for my business?",
+          "answer": "GDPR: mandatory if you process personal data of EU citizens. Fines up to 4% of annual revenue. ISO 27001: international standard for information security, often required when selling to enterprise. Both require documentation, processes and concrete controls — not just \"we had a policy in a drawer somewhere\"."
+        },
+        {
+          "question": "What do we do if we've already been hacked?",
+          "answer": "24/7 incident response. Step one: contain the impact (stop propagation). Step two: analyze what was lost (forensics). Step three: restore operations (backup, patch the vulnerability). Step four: report per GDPR (72-hour notification to the authority). Ideally though: call us BEFORE."
+        },
+        {
+          "question": "Can't I just run penetration tests myself with Kali Linux?",
+          "answer": "For learning — yes. For actually uncovering the real vulnerabilities in your business — no, because you don't have the tools, the time and, most of all, the attacker mindset built up over years. Real penetration testing is a craft. Plus: your internal report isn't valid for compliance purposes."
+        },
+        {
+          "question": "How long until we're \"100% secure\"?",
+          "answer": "\"100% secure\" doesn't exist — security is a continuous process. What we can promise: reducing risk by 80%+ in 90 days. Establishing a mature security program in 6-12 months. Maintaining it through continuous monitoring and annual audits."
+        }
+      ]
+    },
+    "blockchain": {
+      "metaTitle": "Blockchain — Smart Contracts & Web3 | SoftIonyx",
+      "metaDescription": "Blockchain development: smart contracts (Solidity), wallets, tokenization, Web3 dApps, NFT. DeFi experience and security reviews for contracts.",
+      "keywords": "blockchain, smart contracts, Web3, Solidity, NFT, DeFi",
+      "h1": "Blockchain & Smart Contract Development",
+      "tagline": "Web3 done right — from smart contract to final UX.",
+      "intro": [
+        "Blockchain isn't just crypto speculation. For serious businesses, it delivers traceability, transparency and efficiency — verifiable supply chains, cross-border payments without intermediaries, tokenized real-world assets and loyalty programs with NFTs.",
+        "We build blockchain solutions for clients worldwide: smart contracts on Ethereum, Polygon, BSC and Solana. Web3 applications (dApps). Wallet integrations (MetaMask, WalletConnect). Security audits for existing smart contracts.",
+        "We've seen too many blockchain projects fail because of poorly written smart contracts (funds lost with no recovery) or UX that's impossible for non-technical users. We ship both — secure code and a user-friendly experience."
+      ],
+      "whatWeDo": [
+        "Solidity smart contracts (Ethereum, Polygon, BSC)",
+        "Rust smart contracts (Solana, NEAR)",
+        "Web3 dApps (frontend + wallet integration)",
+        "NFT collections & marketplaces",
+        "Asset tokenization (real estate, art, equity)",
+        "DeFi protocols (staking, lending, DEX)",
+        "Private blockchain (Hyperledger, Quorum)",
+        "Smart contract security audits",
+        "Crypto payment integrations (Stripe Crypto, CoinPayments)"
+      ],
+      "forWhom": [
+        "Web3 startups launching a protocol",
+        "NFT collections & brands planning to launch NFTs",
+        "Businesses with supply chains that need traceability",
+        "Real-world asset tokenization platforms",
+        "DeFi protocols that need enterprise-grade security"
+      ],
+      "outcomes": [
+        "Audited smart contracts with no critical vulnerabilities",
+        "Simple UX, even for non-crypto users",
+        "Scalable infrastructure (layer 2 where possible)",
+        "Regulatory compliance (KYC/AML when required)",
+        "Complete technical documentation"
+      ],
+      "process": [
+        {
+          "title": "1. Consulting & Tokenomics (2-4 weeks)",
+          "description": "Use-case analysis, blockchain selection (L1 vs L2), tokenomics design, economic modeling."
+        },
+        {
+          "title": "2. Smart Contract Development (3-6 weeks)",
+          "description": "Development + extensive testing (unit, integration, fuzz testing). Code review by 2 developers."
+        },
+        {
+          "title": "3. Security Audit (2-3 weeks)",
+          "description": "Internal audit + (recommended) external audit from a specialized firm. Fix vulnerabilities."
+        },
+        {
+          "title": "4. Frontend & Deployment (2-4 weeks)",
+          "description": "dApp UI, wallet integrations, mainnet deployment, on-chain activity monitoring."
+        }
+      ],
+      "pricing": [
+        {
+          "name": "Genesis Protocol",
+          "description": "Your own blockchain infrastructure for a fast launch (MVP + early adoption).",
+          "features": [
+            "Custom blockchain architecture (modular L1)",
+            "Native wallet + secure transaction layer (anti-replay nonces)",
+            "Efficient consensus (PoS / delegated, performance-tuned)",
+            "Smart contract execution + anti-abuse gas mechanics",
+            "Block explorer + on-chain data indexing",
+            "API & SDK for fast integration",
+            "Transaction speed & cost optimization",
+            "Infrastructure setup (nodes + deployment)",
+            "Delivery in 3–5 months"
+          ]
+        },
+        {
+          "name": "Nexus Protocol",
+          "description": "A scalable blockchain network ready for real traffic and an active ecosystem.",
+          "features": [
+            "Everything in Genesis Protocol",
+            "Advanced sharding for real scalability",
+            "Dynamic validators + staking & reward logic",
+            "Parallel transaction processing + throughput tuning",
+            "Extended smart contract engine (efficient execution)",
+            "Admin dashboard + real-time network monitoring",
+            "External API integration + payments / services",
+            "Upgrade path & on-chain governance",
+            "Advanced security audit",
+            "6 months of technical support",
+            "Delivery in 6–10 months"
+          ]
+        },
+        {
+          "name": "Ascension Protocol",
+          "description": "A full blockchain ecosystem designed for global scale and enterprise adoption.",
+          "features": [
+            "Everything in Nexus Protocol",
+            "Proprietary consensus optimized (speed + security + efficiency)",
+            "Multi-layer sharding + cross-shard communication",
+            "Full ecosystem: wallet, explorer, public API, developer SDK",
+            "Smart contract framework (complete dev tooling)",
+            "AI integration (fraud detection, analytics, network optimization)",
+            "Globally distributed infrastructure (cloud + dedicated nodes)",
+            "Interoperability system (multi-chain bridges)",
+            "Enterprise security + multiple audits (external + internal)",
+            "Scale for millions of users",
+            "12 months of support & maintenance",
+            "Delivery in 10–18 months"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "What is a smart contract and why would I need one?",
+          "answer": "A smart contract = code that runs automatically on a blockchain when predefined conditions are met. Examples: automatic payment when goods are delivered, NFT royalty distribution, staking/unstaking tokens, DAO voting. Useful when you want automation without intermediaries and full transparency."
+        },
+        {
+          "question": "How much does smart contract development cost?",
+          "answer": "Simple smart contract (ERC-20 token, ERC-721 NFT): EUR 3000-8000. Complex smart contract (DeFi protocol, staking, lending): EUR 15000-40000. Recommended security audit: +EUR 5000-20000. The price reflects the risk — a bug in the code means permanently lost funds."
+        },
+        {
+          "question": "Which blockchain should I pick — Ethereum, Polygon, Solana?",
+          "answer": "Ethereum: most secure and with the largest user base, but high fees. Polygon: nearly the same as Ethereum, but with fees under $0.01. Solana: very fast and cheap, but a smaller ecosystem. BSC: low fees, but centralized. Our recommendation: Polygon for most new projects."
+        },
+        {
+          "question": "Why do I need a security audit?",
+          "answer": "Because smart contracts are immutable once deployed. A bug = permanently lost funds with no recovery. Famous examples: the DAO hack (USD 60M), Wormhole (USD 325M), Ronin (USD 625M). External audits are industry standard for any protocol with meaningful TVL."
+        },
+        {
+          "question": "Can you add crypto payments to my website?",
+          "answer": "Yes. We use solutions like Coinbase Commerce, CoinPayments, BTCPay Server (self-hosted) or Stripe Crypto. You can accept Bitcoin, Ethereum and stablecoins (USDC, USDT). Integration takes 1-3 weeks depending on requirements (KYC, fiat conversion invoicing)."
+        },
+        {
+          "question": "Is blockchain legal in my jurisdiction?",
+          "answer": "Building software is broadly legal everywhere; what varies is regulated financial activity (exchanges, custody, tokenization of securities) — that falls under your jurisdiction's laws and regulators. We work with specialized counsel when needed. For many common cases (NFTs, utility tokens, typical DeFi integrations), delivery is straightforward."
+        }
+      ]
+    }
+  }
+}

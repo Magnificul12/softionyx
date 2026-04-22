@@ -9,12 +9,47 @@
   --primary-glow: rgba(99, 102, 241, 0.4);
 }
 
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 body {
   background-color: var(--bg-color);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  /* Prevent iOS text size auto-adjust on orientation change */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Prevent horizontal overflow from rogue elements (e.g., wide tables, long URLs) */
+img,
+video,
+iframe,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure long unbreakable strings (URLs, codes) wrap instead of pushing the layout */
+p,
+li,
+dd,
+blockquote,
+figcaption {
+  overflow-wrap: anywhere;
+}
+
+/* Touch-friendly tap targets on mobile — enforce min 40px for inline anchors/buttons inside forms */
+@media (pointer: coarse) {
+  button,
+  a.btn,
+  [role='button'] {
+    min-height: 40px;
+  }
 }
 
 /* Custom Scrollbar - very subtle */
@@ -30,6 +65,15 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #020617;
+}
+
+/* Utility: hide scrollbar but keep scrolling functional (used for horizontal nav strips on mobile) */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
 
@@ -117,7 +161,13 @@ body {
   .shimmer,
   .service-modal-enter,
   .service-overlay-enter,
-  .service-grid-enter {
+  .service-grid-enter,
+  .animate-case-shell,
+  .animate-case-media-next,
+  .animate-case-media-prev,
+  .animate-case-copy-next,
+  .animate-case-copy-prev,
+  .animate-case-panel-expand {
     animation: none !important;
   }
 }
@@ -322,6 +372,73 @@ body {
   }
 }
 
+/* Service detail — case study carousel (slide change + “expansion” feel) */
+@keyframes caseStudyShellIn {
+  from {
+    opacity: 0.88;
+    transform: scale(0.988);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes caseStudyMediaNext {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translate3d(28px, 8px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes caseStudyMediaPrev {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translate3d(-28px, 8px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes caseStudyCopyNext {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translate3d(-20px, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes caseStudyCopyPrev {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translate3d(20px, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes caseStudyPanelExpand {
+  from {
+    opacity: 0;
+    transform: scale(0.96, 0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
 .animate-in {
   animation: fadeInUp 0.8s ease-out forwards;
   opacity: 0;
@@ -350,6 +467,30 @@ body {
 .animate-fade-scale {
   animation: fadeInScale 0.8s ease-out forwards;
   opacity: 0;
+}
+
+.animate-case-shell {
+  animation: caseStudyShellIn 0.48s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-case-media-next {
+  animation: caseStudyMediaNext 0.58s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-case-media-prev {
+  animation: caseStudyMediaPrev 0.58s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-case-copy-next {
+  animation: caseStudyCopyNext 0.66s cubic-bezier(0.16, 1, 0.3, 1) 0.09s both;
+}
+
+.animate-case-copy-prev {
+  animation: caseStudyCopyPrev 0.66s cubic-bezier(0.16, 1, 0.3, 1) 0.09s both;
+}
+
+.animate-case-panel-expand {
+  animation: caseStudyPanelExpand 0.52s cubic-bezier(0.16, 1, 0.3, 1) 0.14s both;
 }
 
 .delay-100 { animation-delay: 0.1s; }
@@ -424,6 +565,17 @@ body {
   animation: shimmer 3s infinite;
 }
 
+/* ═══ 404 page decorations ═══ */
+
+/* Slow rotation for radar sweep */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
 
 /* Selection */
 ::selection {
@@ -491,7 +643,13 @@ svg *,
 .animate-fade-in,
 .animate-slide-left,
 .animate-slide-right,
-.animate-fade-scale {
+.animate-fade-scale,
+.animate-case-shell,
+.animate-case-media-next,
+.animate-case-media-prev,
+.animate-case-copy-next,
+.animate-case-copy-prev,
+.animate-case-panel-expand {
   will-change: opacity, transform;
 }
 
@@ -502,6 +660,15 @@ svg *,
 .animate-slide-right,
 .animate-fade-scale {
   animation-fill-mode: forwards;
+}
+
+.animate-case-shell,
+.animate-case-media-next,
+.animate-case-media-prev,
+.animate-case-copy-next,
+.animate-case-copy-prev,
+.animate-case-panel-expand {
+  animation-fill-mode: both;
 }
 
 /* Optimize backdrop-filter usage */
@@ -527,6 +694,182 @@ select[name="countryCode"] option {
   background-color: rgb(15 23 42);
   color: white;
   max-height: 20px;
+}
+
+/* ============================================================
+   Blog / article typography — "prose-soft"
+   Applied on BlogPost body to give blog markup consistent look
+   without pulling in @tailwindcss/typography (keeps bundle lean).
+   ============================================================ */
+
+.prose-soft {
+  color: rgb(203 213 225);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  font-weight: 300;
+  max-width: 72ch;
+}
+
+.prose-soft > * + * {
+  margin-top: 1.1em;
+}
+
+.prose-soft h2 {
+  color: white;
+  font-size: 1.75rem;
+  line-height: 1.25;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  margin-top: 2.5em;
+  margin-bottom: 0.6em;
+  scroll-margin-top: 6rem;
+}
+
+.prose-soft h3 {
+  color: white;
+  font-size: 1.375rem;
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-top: 1.75em;
+  margin-bottom: 0.5em;
+  scroll-margin-top: 6rem;
+}
+
+.prose-soft h2 + h3 {
+  margin-top: 1em;
+}
+
+.prose-soft p {
+  color: rgb(203 213 225);
+}
+
+.prose-soft strong {
+  color: white;
+  font-weight: 500;
+}
+
+.prose-soft a {
+  color: rgb(165 180 252);
+  text-decoration: underline;
+  text-decoration-color: rgba(99, 102, 241, 0.35);
+  text-underline-offset: 3px;
+  transition: color 150ms ease;
+}
+
+.prose-soft a:hover {
+  color: rgb(196 181 253);
+  text-decoration-color: rgba(139, 92, 246, 0.7);
+}
+
+.prose-soft em {
+  color: rgb(226 232 240);
+  font-style: italic;
+}
+
+.prose-soft blockquote {
+  border-left: 3px solid rgba(99, 102, 241, 0.55);
+  padding: 0.25em 0 0.25em 1.25em;
+  margin: 1.5em 0;
+  color: rgb(226 232 240);
+  font-style: italic;
+}
+
+.prose-soft ul,
+.prose-soft ol {
+  padding-left: 1.4em;
+}
+
+.prose-soft ul { list-style-type: disc; }
+.prose-soft ol { list-style-type: decimal; }
+.prose-soft li { margin-top: 0.45em; }
+.prose-soft li::marker { color: rgba(129, 140, 248, 0.7); }
+
+.prose-soft code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.12em 0.4em;
+  border-radius: 0.375rem;
+  font-size: 0.9em;
+  color: rgb(196 181 253);
+}
+
+.prose-soft pre {
+  background: rgba(2, 6, 23, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+.prose-soft pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: rgb(226 232 240);
+}
+
+.prose-soft img {
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  margin: 1.5em auto;
+}
+
+.prose-soft hr {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 2.5em 0;
+}
+
+.prose-soft .not-prose {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.prose-soft .not-prose,
+.prose-soft .not-prose * {
+  max-width: none;
+}
+
+/* Active TOC item */
+.toc-link {
+  position: relative;
+  padding: 0.375rem 0 0.375rem 0.9rem;
+  color: rgb(148 163 184);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  display: block;
+  border-left: 2px solid transparent;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+
+.toc-link:hover {
+  color: rgb(226 232 240);
+}
+
+.toc-link.is-active {
+  color: rgb(196 181 253);
+  border-left-color: rgba(139, 92, 246, 0.8);
+}
+
+.toc-link--h3 {
+  padding-left: 1.8rem;
+  font-size: 0.8125rem;
+}
+
+/* Reading progress bar */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, rgb(99 102 241), rgb(168 85 247));
+  z-index: 60;
+  transition: width 80ms linear;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.35);
 }
 
 /* Reduce animation complexity when not in viewport */

@@ -1,12 +1,13 @@
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import HeroSplineBackground from './HeroSplineBackground';
+import { Icon } from './Icons';
+import { LangLink } from '../i18n/routing';
 
 export default function Hero() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden min-h-[100svh] flex flex-col justify-center">
+    <section className="relative pt-24 pb-12 sm:pt-28 sm:pb-16 md:pt-32 md:pb-20 overflow-hidden min-h-[100svh] flex flex-col justify-center">
       <HeroSplineBackground />
       {/* Enhanced Background Blobs (CSS only) */}
       <div className="absolute top-0 w-full h-full left-0 overflow-hidden -z-10">
@@ -26,9 +27,9 @@ export default function Hero() {
       {/* Mobile-only soft gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-indigo-900/20 to-slate-950/60 -z-10 sm:hidden"></div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 text-center">
         <div className="animate-in">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-xs font-medium text-indigo-300 mb-8 hover:bg-indigo-500/20 hover:border-indigo-500/40 transition-all cursor-default backdrop-blur-md shadow-lg shadow-indigo-500/10">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-[11px] sm:text-xs font-medium text-indigo-300 mb-6 sm:mb-8 hover:bg-indigo-500/20 hover:border-indigo-500/40 transition-all cursor-default backdrop-blur-md shadow-lg shadow-indigo-500/10">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
@@ -37,7 +38,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <h1 className="animate-in delay-100 text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-medium text-white tracking-tight mb-6 sm:mb-8 max-w-5xl mx-auto leading-[1.2]">
+        <h1 className="animate-in delay-100 text-[2rem] leading-[1.15] sm:text-5xl md:text-7xl lg:text-8xl sm:leading-[1.15] md:leading-[1.1] font-medium text-white tracking-tight mb-5 sm:mb-8 max-w-5xl mx-auto [text-wrap:balance]">
           {t('hero.titleLine1')} <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-white via-purple-200 to-indigo-300 animate-text-gradient relative inline-block pb-[0.15em]">
             {t('hero.titleHighlight')}
@@ -47,26 +48,26 @@ export default function Hero() {
           </span>
         </h1>
 
-        <p className="animate-in delay-200 text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 sm:mb-12 leading-relaxed font-light">
+        <p className="animate-in delay-200 text-sm sm:text-base md:text-xl text-slate-400 max-w-2xl mx-auto mb-8 sm:mb-10 md:mb-12 leading-relaxed font-light px-2">
           {t('hero.subtitle')}
         </p>
 
-        <div className="animate-in delay-300 flex flex-col md:flex-row items-center justify-center gap-4">
-          <Link
+        <div className="animate-in delay-300 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
+          <LangLink
             to="/contact#contact-info"
-            className="group relative w-full md:w-auto px-8 py-3.5 bg-white text-slate-950 rounded-lg font-semibold text-sm hover:bg-slate-100 transition-all shadow-[0_0_40px_-10px_rgba(255,255,255,0.4)] hover:shadow-[0_0_60px_-10px_rgba(255,255,255,0.6)] flex items-center justify-center gap-2 overflow-hidden"
+            className="group relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 bg-white text-slate-950 rounded-lg font-semibold text-sm hover:bg-slate-100 transition-all shadow-[0_0_40px_-10px_rgba(255,255,255,0.4)] hover:shadow-[0_0_60px_-10px_rgba(255,255,255,0.6)] flex items-center justify-center gap-2 overflow-hidden"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></span>
             <span className="relative z-10">{t('hero.ctaPrimary')}</span>
-            <span className="iconify group-hover:translate-x-1 transition-transform relative z-10" data-icon="lucide:arrow-right" data-width="16"></span>
-          </Link>
-          <Link
+            <Icon name="arrow-right" width={16} className="group-hover:translate-x-1 transition-transform relative z-10" />
+          </LangLink>
+          <LangLink
             to="/services"
-            className="group w-full md:w-auto px-8 py-3.5 glass border border-white/20 hover:border-indigo-500/40 hover:bg-white/10 text-white rounded-lg font-medium text-sm transition-all flex items-center justify-center gap-2 backdrop-blur-md hover:shadow-lg hover:shadow-indigo-500/20"
+            className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 glass border border-white/20 hover:border-indigo-500/40 hover:bg-white/10 text-white rounded-lg font-medium text-sm transition-all flex items-center justify-center gap-2 backdrop-blur-md hover:shadow-lg hover:shadow-indigo-500/20"
           >
-            <span className="iconify group-hover:rotate-12 transition-transform" data-icon="lucide:layers" data-width="18"></span>
+            <Icon name="layers" width={18} className="group-hover:rotate-12 transition-transform" />
             {t('hero.ctaSecondary')}
-          </Link>
+          </LangLink>
         </div>
       </div>
     </section>

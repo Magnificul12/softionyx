@@ -1,8 +1,61 @@
+# robots.txt for SoftIonyx Technologies
+# https://softionyx.com
+
 User-agent: *
 Allow: /
 
-# Blochează directoarele tehnice (dacă vor exista)
+# Block private / auth areas (nothing valuable for search indexes)
 Disallow: /admin
+Disallow: /login
+Disallow: /api/
 
+# Block internal tracking / search params
+Disallow: /*?utm_
+Disallow: /*?ref=
+Disallow: /*?fbclid=
+Disallow: /*?gclid=
+
+# Allow major crawlers to fetch all static assets (CSS/JS/images)
+User-agent: Googlebot
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.webp$
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.svg$
+Disallow: /admin
+Disallow: /login
+Disallow: /api/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /admin
+Disallow: /login
+Disallow: /api/
+
+# Block aggressive SEO scrapers that don't add value
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# AI training crawlers — allow (we want to be referenced)
+# but if you want to opt-out, switch these to Disallow: /
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap location
 Sitemap: https://softionyx.com/sitemap.xml
-
